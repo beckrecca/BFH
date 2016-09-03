@@ -16,7 +16,7 @@ class CreateMarkerLineTable extends Migration
             # ID is primary key, auto-incrementing
             $table->increments('id');
 
-            # `marker_id` and `line_id` are foreign keys for the hikes and markers tables
+            # `marker_id` and `line_id` are foreign keys for the lines and markers tables
             $table->integer('marker_id')->unsigned();
             $table->integer('line_id')->unsigned();
 

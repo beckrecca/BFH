@@ -23,4 +23,14 @@ class Hike extends Model
         # Define a one-to-many relationship.
         return $this->hasMany('\App\Image');
     }
+
+    /**
+    * Each Hike has one or multiple Tags and vice versa.
+    * This function defines that relationship.
+    **/
+    public function tags()
+    {
+        # define a many-to-many relationship
+        return $this->belongsToMany('\App\Tag');
+    }
 }
