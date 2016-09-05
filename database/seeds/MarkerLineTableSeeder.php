@@ -17,14 +17,14 @@ class MarkerLineTableSeeder extends Seeder
         $data = json_decode($json); 
         // for each marker line pair, insert into table
         foreach ($data as $obj) {
-        	/**
-            * Adapted from Sam Deering's article
-            * http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/
-            **/
-             DB::table('marker_line')->insert([
-                'marker_id' => $obj->marker_id,
-                'line_id' => $obj->line_id
-            ]);
+        	// Get the marker of this row
+            $marker_id = $obj->marker_id;
+            $marker = \App\Marker::find($marker_id);
+            // Get the line
+            $line_id = $obj->line_id;
+            $line = \App\Line::find($line_id);
+            // Connect this marker to this line
+            $marker->lines()->save($marker);
    		 }
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarkerLineTable extends Migration
+class CreateLineMarkerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateMarkerLineTable extends Migration
      */
     public function up()
     {
-        Schema::create('marker_line', function (Blueprint $table) {
+        Schema::create('line_marker', function (Blueprint $table) {
             # ID is primary key, auto-incrementing
             $table->increments('id');
 
@@ -33,6 +33,6 @@ class CreateMarkerLineTable extends Migration
      */
     public function down()
     {
-        Schema::drop('marker_line');
+        Schema::drop('line_marker');
     }
 }

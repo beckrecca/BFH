@@ -15,8 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/{id}', function($id) {
+Route::get('hike/{id}', function($id) {
     return $hike = \App\Hike::find($id);
+});
+Route::get('marker/{id}', function($id) {
+    return $hike = \App\Marker::find($id);
+});
+Route::get('line/{id}', function($id) {
+    return $hike = \App\Line::find($id);
+});
+Route::get('tag/{id}', function($id) {
+    return $hike = \App\Tag::find($id);
+});
+Route::get('image/{id}', function($id) {
+    return $hike = \App\Image::find($id);
 });
 
 Route::get('/debug', function() {
