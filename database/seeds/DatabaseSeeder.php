@@ -21,5 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsTableSeeder::class);
         // Call the images seeder
         $this->call(ImagesTableSeeder::class);
+        // Call the hike-tag seeder
+        $this->call(HikeTagTableSeeder::class);
+        // Call the marker-line seeder
+        $this->call(MarkerLineTableSeeder::class);
     }
 }

@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/{id}', function($id) {
+    return $hike = \App\Hike::find($id);
+});
+
 Route::get('/debug', function() {
 
     echo '<pre>';
