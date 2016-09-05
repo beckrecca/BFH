@@ -13,5 +13,9 @@ class DatabaseSeeder extends Seeder
     {
     	// Call the hikes seeder
         $this->call(HikesTableSeeder::class);
+        // Call the markers seeder
+        $this->call(MarkersTableSeeder::class);
+        // Call the lines seeder
+        $this->call(LinesTableSeeder::class);
     }
 }

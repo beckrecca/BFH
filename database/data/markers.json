@@ -1,0 +1,322 @@
+[
+   {
+      "name":"Arborway Main Entrance",
+      "address":"125 Arborway, Boston, MA 02130",
+      "lat":42.307367,
+      "lng":-71.120776,
+      "hike_id":1,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"Washington Street Gate",
+      "address":"3807 Washington St, Boston, MA 02130",
+      "lat":42.2996795,
+      "lng":-71.1150517,
+      "hike_id":1,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Chickatawbut Road Entrance",
+      "address":"Randolph Ave & Chickatawbut Rd, Milton, MA 02186",
+      "lat":42.224222,
+      "lng":-71.070678,
+      "hike_id":2,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Mass Audubon Blue Hills Trailside Museum",
+      "address":"1904 Canton Ave, Milton, MA 02186",
+      "lat":42.2168139,
+      "lng":-71.1189511,
+      "hike_id":2,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Eastern Skyline Trail Near Shea Rink",
+      "address":"717 Willard St, Quincy, MA 02169, USA",
+      "lat":42.233784,
+      "lng":-71.029424,
+      "hike_id":2,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Main Entrance",
+      "address":"500 Walk Hill Street Mattapan, MA 02126",
+      "lat":42.2880919,
+      "lng":-71.1013059,
+      "hike_id":3,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Main Entrance",
+      "address":"177 Forest St, Saugus, MA 01906",
+      "lat":42.4799002,
+      "lng":-71.0259151,
+      "hike_id":4,
+      "distance_to_mbta":1.1
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Brookline Reservoir Park Brookline, MA 02445",
+      "lat":42.3263381,
+      "lng":71.1357048,
+      "hike_id":5,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Charles River Esplanade",
+      "address":"21 David G Mugar Way, Boston, MA 02114",
+      "lat":42.3598546,
+      "lng":-71.073094,
+      "hike_id":6,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"Charles River Reservation IV",
+      "address":"Charles River Reservation Boston, MA 02116",
+      "lat":42.3546662,
+      "lng":-71.0815328,
+      "hike_id":6,
+      "distance_to_mbta":0.6
+   },
+   {
+      "name":"Magazine Beach Park",
+      "address":"668 Memorial Dr, Cambridge, MA 02139",
+      "lat":42.3552699,
+      "lng":-71.113821,
+      "hike_id":6,
+      "distance_to_mbta":0.9
+   },
+   {
+      "name":"Christian Herter Park",
+      "address":"Christian Herter Park Boston, MA 02134",
+      "lat":42.3657104,
+      "lng":-71.1353803,
+      "hike_id":6,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"John F Kennedy Park",
+      "address":"John F Kennedy Park, Dr Paul Dudley White Bike Path, Cambridge, MA 02138",
+      "lat":42.3706642,
+      "lng":-71.1231275,
+      "hike_id":6,
+      "distance_to_mbta":0.4
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Chestnut Hill Reservoir, Boston, MA 02467",
+      "lat":42.3348962,
+      "lng":-71.1582197,
+      "hike_id":7,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Main Entrance",
+      "address":"125 The Fenway Boston, MA 02115",
+      "lat":42.3414208,
+      "lng":-71.0923393,
+      "hike_id":8,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Fenway Victory Gardens",
+      "address":"1200 Boylston St Boston, MA 02215",
+      "lat":42.34468425,
+      "lng":-71.09267229,
+      "hike_id":8,
+      "distance_to_mbta":0.4
+   },
+   {
+      "name":"Back Bay Fens",
+      "address":"Back Bay Fens, Boston, MA 02215",
+      "lat":42.3424659,
+      "lng":-71.0942191,
+      "hike_id":8,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Higginson Circle",
+      "address":"Higginson Circle, Boston, MA 02215",
+      "lat":42.34175,
+      "lng":-71.1015879,
+      "hike_id":8,
+      "distance_to_mbta":0.3
+   },
+   {
+      "name":"Olmstead Park",
+      "address":"217 Jamaicaway, Boston, MA 02130",
+      "lat":42.3258562,
+      "lng":-71.1148667,
+      "hike_id":8,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Main Entrance",
+      "address":"95 Forest Hills Ave, Boston, MA 02130",
+      "lat":42.2957209,
+      "lng":-71.1035266,
+      "hike_id":9,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Fresh Pond, Cambridge, MA 02138",
+      "lat":42.3856582,
+      "lng":-71.1493077,
+      "hike_id":10,
+      "distance_to_mbta":0.6
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Hammond Pond Parking, Newton, MA",
+      "lat":42.3228937,
+      "lng":-71.1727903,
+      "hike_id":11,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Hemlock Gorge Reservation, Needham, MA",
+      "lat":42.3147431,
+      "lng":-71.2278378,
+      "hike_id":12,
+      "distance_to_mbta":0.5
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Woburn Pkwy, Winchester, MA 01890",
+      "lat":42.463035,
+      "lng":-71.155135,
+      "hike_id":13,
+      "distance_to_mbta":0.7
+   },
+   {
+      "name":"Main Entrance",
+      "address":"106 Pennybrook Rd, Lynn, MA 01905",
+      "lat":42.4768655,
+      "lng":-70.9862662,
+      "hike_id":14,
+      "distance_to_mbta":1.2
+   },
+   {
+      "name":"Great Woods Road Entrance",
+      "address":"Great Woods Road Playground, Lynn, MA 01904",
+      "lat":42.4933663,
+      "lng":-70.977156,
+      "hike_id":14,
+      "distance_to_mbta":0.3
+   },
+   {
+      "name":"Goodyear Ave Entrance",
+      "address":"Cross Fells Trail, Melrose, MA 02176",
+      "lat":42.4933663,
+      "lng":-70.977156,
+      "hike_id":15,
+      "distance_to_mbta":0.6
+   },
+   {
+      "name":"Whitmore Brook Entrance",
+      "address":"Whitmore Brook Entrance, Medford, MA 02155",
+      "lat":42.4357372,
+      "lng":-71.1266842,
+      "hike_id":15,
+      "distance_to_mbta":1.1
+   },
+   {
+      "name":"Main Entrance",
+      "address":"293 Moose Hill Pkwy, Sharon, MA 02067",
+      "lat":42.123719,
+      "lng":-71.207847,
+      "hike_id":16,
+      "distance_to_mbta":1.5
+   },
+   {
+      "name":"Main Entrance",
+      "address":"580 Mt Auburn St, Cambridge, MA 02138",
+      "lat":42.375208,
+      "lng":-71.1449735,
+      "hike_id":17,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Main Entrance",
+      "address":"208 S Great Rd, Lincoln, MA 01773",
+      "lat":42.4102729,
+      "lng":-71.3323422,
+      "hike_id":18,
+      "distance_to_mbta":0.6
+   },
+   {
+      "name":"Main Entrance",
+      "address":"1087 Main St, Malden, MA 02148",
+      "lat":42.4452365,
+      "lng":-71.0660557,
+      "hike_id":19,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Prospect Hill Road Entrance",
+      "address":"186 Prospect Hill Road, Waltham, MA 02451",
+      "lat":42.3813557,
+      "lng":-71.2547151,
+      "hike_id":20,
+      "distance_to_mbta":0.5
+   },
+   {
+      "name":"Totten Pond Road Entrance",
+      "address":"314 Totten Pond Road, Waltham, MA 02451",
+      "lat":42.3971998,
+      "lng":-71.2511563,
+      "hike_id":20,
+      "distance_to_mbta":0.9
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Stony Brook Reservation, Boston, MA 02132",
+      "lat":42.2643216,
+      "lng":-71.1418809,
+      "hike_id":21,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Main Entrance",
+      "address":"Great Esker Park, Weymouth, MA 02191",
+      "lat":42.2382275,
+      "lng":-70.9301594,
+      "hike_id":22,
+      "distance_to_mbta":0.8
+   },
+   {
+      "name":"Whitney Spur Rail Trail Entrance",
+      "address":"Whitney Spur Rail Trail, Cohasset, MA 02025",
+      "lat":42.2373926,
+      "lng":-70.8429337,
+      "hike_id":23,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"Main Entrance",
+      "address":"World's End, Martins Lane, Hingham, MA 02043",
+      "lat":42.2601649,
+      "lng":-70.8730019,
+      "hike_id":24,
+      "distance_to_mbta":1.4
+   },
+   {
+      "name":"The Riverway",
+      "address":"\nRiverway, Boston, MA",
+      "lat":42.3365012,
+      "lng":-71.1101831,
+      "hike_id":8,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"Jamaica Pond",
+      "address":"Jamaica Pond, Boston, MA 02130",
+      "lat":42.3171611,
+      "lng":-71.1203423,
+      "hike_id":8,
+      "distance_to_mbta":0.2
+   }
+]
