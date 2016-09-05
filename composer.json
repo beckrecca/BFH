@@ -1,6 +1,6 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "Boston Fare Hikes",
+    "description": "A navigational web exhibition of MBTA-accessible hiking locations and green spaces.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
