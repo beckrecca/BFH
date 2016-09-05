@@ -1,0 +1,932 @@
+[
+   {
+      "file":"00001.jpg",
+      "alt":"A dog partially concealed by grass carries a frisbee in a field in front of evergreen trees at the Arnold Arboretum.",
+      "title":"Hemlock Hill Road",
+      "hike_id":1
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Evergreen trees, including vibrant blue spruces, stand behind a field at the Arnold Arboretum.",
+      "title":"Hemlock Hill Road",
+      "hike_id":1
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"Two people walk down a grassy hill. From the top of Peters Hill, a green landscape can be seen with trees and buildings on hills.",
+      "title":"Peters Hill",
+      "hike_id":1
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"The Boston skyline sits on the horizon behind hills of dense green foliage and the grassy slope of Peters Hill.",
+      "title":"Boston skyline from Peters Hill",
+      "hike_id":1
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A small pond lies with cattails and other plants on its edge in the foreground, before more cattails and shrubs with pink flowers. In the background stand tall evergreen trees. ",
+      "title":"A pond on Meadow Road",
+      "hike_id":1
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"The golden light of a setting sun radiates through the branches of small deciduous trees in the foreground, setting them in silhouette. The grassy background is lit up golden.",
+      "title":"Forest Hills Road",
+      "hike_id":1
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"Tall deciduous trees stand in neat arrays.",
+      "title":"Bussey Hill Road",
+      "hike_id":1
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"Lilac, cattails, and sunflowers grow amongst dense grass. In the background, there is a mix of deciduous and evergreen trees. There is a brick building mostly hidden by trees in the background.",
+      "title":"Willow Path",
+      "hike_id":1
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"From a height, there is a forest with deciduous trees with spring blooms in the foreground, and some evergreen peaks in the distance. Far off, a green landscape, and the Boston skyline sits on the horizon.",
+      "title":"Zoomed in view of Boston from the Observation Tower in spring.",
+      "hike_id":2
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"From a height, there is a forest with deciduous trees with spring blooms in the foreground, and some evergreen peaks in the distance. Far off, a wide green landscape, and the apparently diminutive Boston skyline sits on the horizon.",
+      "title":"Zoomed out view of Boston from the Observation Tower in spring.",
+      "hike_id":2
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A dirt trail extends through a dense forest of deciduous trees.",
+      "title":"The Braintree Pass Path",
+      "hike_id":2
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"From the top of Nahanton Hill, the horizon is blue green, with the Blue Hills Reservoir just before it. In the foreground, there is dense green foliage. ",
+      "title":"The Blue Hills Reservoir from Nahanton Hill",
+      "hike_id":2
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"From the top of a great hill, a green landscape juts up with the Boston skyline on the horizon. In the foreground there is exposed rocky terrain and blueberry bushes.",
+      "title":"View of Boston from the Skyline Trail",
+      "hike_id":2
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"From the top of a great hill, a blue green horizon precedes a hilly green landscape. In the foreground, there are rocks and dried plant life.",
+      "title":"View from the Skyline Trail",
+      "hike_id":2
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"From the top of a great hill, a blue green horizon precedes a hilly green landscape. In the foreground, a rocky path winds its way between dried up plants and blueberry bushes.",
+      "title":"View from the Skyline Trail",
+      "hike_id":2
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A close up of ripe blueberries on the blueberry bushes at Blue Hills Reservation.",
+      "title":"Wild blueberries atop Blue Hills are ripe for the picking in mid-summer.",
+      "hike_id":2
+   },
+   {
+      "file":"00009.jpg",
+      "alt":"From the top of a great hill, a greenish blue landscape extends on the horizon before the Boston Skyline. In the foreground there are blueberry bushes, then evergreen trees.",
+      "title":"View of Boston from the Skyline Trail",
+      "hike_id":2
+   },
+   {
+      "file":"00010.jpg",
+      "alt":"A rocky dirt path goes down a hill, with the sun light dappled by the shadows of leaves. Dense deciduous forest borders the path as it slopes down the hill.",
+      "title":"Descent on the Skyline Trail",
+      "hike_id":2
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A dirt path curves to the left and behind the Brookline Reservoir. On the far edge of the water, there is a small terminal gatehouse. Alongside the path is a grassy area interspersed with trees.",
+      "title":"The Brookline Reservoir",
+      "hike_id":5
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"On the right, a small gatehouse sits on the edge of the Brookline Reservoir. Moving left, there is a dirt path, then some benches and trees on a grassy surface.",
+      "title":"Brookline Resevoir Park and the small gatehouse",
+      "hike_id":5
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"The Prudential Tower and the Hancock Tower of Boston can be seen on the horizon, behind trees, with the Brookline Reservoir taking up the foreground. Just before the trees on far end of the water, there is the historic Gatehouse.",
+      "title":"The Prudential Tower, the Hancock Tower, and the historic Gatehouse from the far end",
+      "hike_id":5
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Through murky water, fish can be seen. The surface of the Brookline Reservoir is brown and covered in rocks.",
+      "title":"The Reservoir is a fishing spot.",
+      "hike_id":5
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"In the foreground, a paved path stretches in front of two cherry blossom trees in bloom with pink flowers. Behind the trees, the Charles River, and a bridge spanning the river. The sky is clear blue.",
+      "title":"Cherry blossom trees",
+      "hike_id":6
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"On the right, a large cherry blossom tree on the shore of the Charles River. Behind the cherry blossom tree, green blooms from other obscured trees. To the right of the tree, extending behind it, there is a paved path. The path leads to a bridge over the river which can be seen in to the left of the tree. Before the bridge is the Charles River. On the other side of the river, there are trees with green blooms and grass. In the background, the Hancock Tower stands against blue skies.",
+      "title":"The Hancock Tower",
+      "hike_id":6
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"In the foreground, goslings and adult geese graze on the grass. Then, the Charles River flows in the background, and the other shore can be seen. A footbridge extends over the river. In the background, there are trees and buildings on either side.",
+      "title":"A happy family of geese at JFK Memorial Park in Cambridge",
+      "hike_id":6
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"There is so much snow on the ground that the pathway extending left to right is invisible, but joggers can be seen running right to left in the middle of the photo, while walkers head left from the right of the photo. Tall naked trees stand before the path, and shorter naked trees stand after it. Behind the park, Storrow Drive is plowed, and behind Storrow Drive, there are buildings. A footbridge over Storrow Drive is partially visible on the right.",
+      "title":"Charles River Esplanade",
+      "hike_id":6
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"On the left, two girls in heavy winter coats talk facing each other, sitting on the backs of a bench that is mostly buried in snow. Behind them, the Charles River extends, completely white with snow. The buildings of Cambridge can be seen to the left background, and the Longfellow bridge extends across the middle background. Behind the bridge, there are the buildings of the West End. In the upper right, the bare branches of a tree.",
+      "title":"The Charles River and the Longfellow bridge in wintertime",
+      "hike_id":6
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Under mostly clear skies, the Chestnut Hill Reservoir occupies most of the photo, with its path visible to the left and middle background. Trees are behind the path, and in the background the trees partially obscure buildings. In the middle left of the photo, there is a gatehouse.",
+      "title":"Part of the Chestnut Hill Reservoir and its gatehouse",
+      "hike_id":7
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Some ducks sit on the rocky shore of the Chestnut Hill Reservoir, with vines growing in the foreground.",
+      "title":"Very important duck business meeting",
+      "hike_id":7
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"In the background behind the Chestnut Hill Reservoir, from left to right, there are the Hancock Tower and the Prudential Tower, the Waterworks Museum, and other buildings.",
+      "title":"The Hancock Tower, the Prudential Tower, and the Waterworks Museum",
+      "hike_id":7
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Deciduous and evergreen trees stand on a shady brown hill. Behind the trees lies the Chestnut Hill Reservoir.",
+      "title":"There are short trail in the woods around the reservoir.",
+      "hike_id":7
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"Behind a dirt path, a chipmunk eats something. Behind the chipmunk, there are vines.",
+      "title":"A chipmunk has a little snack.",
+      "hike_id":7
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"The creator of Boston Fare Hikes, Rebecca Doris, stands in a heavy coat, blue hat, and red duck boots, center right, in front of a small naked tree. She stands on patchy hill, and in the background there are fields of different crops. Behind the fields, there are bare trees and evergreen trees.",
+      "title":"The trails at Drumlin Farm offer views of the fields",
+      "hike_id":18
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A spotted brown and white cow is being milked, chained in a stall inside a barn, while a father and son watch. She is mid-moo.",
+      "title":"Beautiful Jane, resident of Drumlin Farm.",
+      "hike_id":18
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A grey barn cat sleeps on a pile of hay",
+      "title":"Peace & contentment",
+      "hike_id":18
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"The roof of a pedestrian overpass arches over the Muddy River of the Riverway. Past the overpass, the river extends with a paved path on either side, surrounded by grass and trees.",
+      "title":"The man-made Muddy River of the Riverway",
+      "hike_id":8
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"With a tree hanging overhead, Leverett pond extends with dense deciduous trees on the other side.",
+      "title":"Leverett Pond at Olmsted Park",
+      "hike_id":8
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A paved walking path and a paved bike path extend parallel to each other through Olmsted Park. There are tall deciduous trees regularly placed in the park. In the foreground, there are a bench and a trash can.",
+      "title":"Olmsted Park",
+      "hike_id":8
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"A mother duck and her ducklings feed in shallow muddy waters at Leverett Pond.",
+      "title":"Make way...",
+      "hike_id":8
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"There are geese in the water at Leverett Pond. At the far side of the pond, there are dense deciduous trees and a bridge. To the left, there are also dense deciduous trees, partially overhanging the water.",
+      "title":"Geese at Leverett Pond",
+      "hike_id":8
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"In the lower left, a dock with sail boats and row boats surrounding it on all sides. A man stands on the dock facing his left watching a group of people in a row boat. A pond extends under blue skies to a shore that is densely wooded. There is a sail boat in mid center on the other side of the pond.",
+      "title":"Jamaica Pond",
+      "hike_id":8
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"In the front right, a red-hued golden retriever stands with his legs completely submerged in a pond. A stick floats in front of him. The pond is large, reflects a blue sky with scattered clouds, and the bottom of the pond in the foreground is muddy with large rocks. On the far side of the pond, there is a densely wooded park.",
+      "title":"Jamaica Pond",
+      "hike_id":8
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A small pond under blue skies reflects the dense trees surrounding it. A large tree grows in the left foreground, and lily pads float behind it.",
+      "title":"Wards Pond",
+      "hike_id":8
+   },
+   {
+      "file":"00009.jpg",
+      "alt":"In a thickly wooded park with leafy deciduous trees, a path parts in two directly in front. A sign points to the right for pedestrians, and to the left for bicycles. The pedestrian path disappears into shadow under trees behind a low rock wall. The bike path curves around a bend in the distance. A man walks on the bike path in the mid-left.",
+      "title":"Pedestrian and bike pathways at Olmsted Park",
+      "hike_id":8
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Seen from a height, the interior side of the Forest Hills Cemetery gate lies in the mid-background. In the foreground, there are dense trees and shrubbery. Behind and to the right of the gate are more dense green trees.",
+      "title":"An entrance at Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A paved path with tall evergreen trees on either side joins another path perpendicular to it. Beyond, there are the graves of the Forest Hills Cemetery.",
+      "title":"Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A brown bird sits in a tree",
+      "title":"Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"A low grave with a statue of a dog in the center front, with rows of graves behind it. In the background, there are tall deciduous trees.",
+      "title":"Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"On the side of a hill with a cobble stone wall and large rocks, there are grave plaques. On the top of the hill, there are tall deciduous trees, and many more trees in the background. ",
+      "title":"Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"Graves on a grassy, wooded hill before a triangle of paved paths. The background is densely wooded.",
+      "title":"Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"Bright orange sunrise lilies grow in the foreground, with the cemetery below.",
+      "title":"Lilies at Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"Tall pine trees grow surrounding a path covered in pine needles in the woods.",
+      "title":"There are brief wooded trails on the outskirts of the Forest Hills Cemetery",
+      "hike_id":9
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A dirt path extends on the top of the ridge of an esker. Trees grow along the left side of the path. Behind the trees, water is obscured.",
+      "title":"The top of an esker at Great Esker Park",
+      "hike_id":22
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"The Weymouth Back River under clear blue skies. There are dense trees on the far side of the river.",
+      "title":"Weymouth Back River",
+      "hike_id":22
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A cormorant flying out of the water of a salt marsh at high tide, leaving a skipping pattern on the water. Tall grasses grow in the foreground, while behind the bird there are dense trees behind more tall grass.",
+      "title":"A cormorant in the salt marshes at high tide",
+      "hike_id":22
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Tall pine trees and leafy deciduous trees grow on the slope of a hill brown with dry vegetation.",
+      "title":"The hills of the eskers snake up and down.",
+      "hike_id":22
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"In the distance, dense green deciduous trees. The sky is clear. The Weymouth Back River at high tide, in the middle background, blends into a salt marsh on the right. Tall grasses grow in the foreground and on the other side of the salt marsh. ",
+      "title":"The Weymouth Back River blending into salt marshes at high tide",
+      "hike_id":22
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"A path, with salt marsh on the left side and the Weymouth Back River on the right, is flooded at high tide. On the other side, a wooded esker rises.",
+      "title":"At high tide, some paths are flooded. ",
+      "hike_id":22
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"Seen from a grassy shore, a family of geese swims in a line on the Weymouth Back River",
+      "title":"A family of geese in the Weymouth Back River",
+      "hike_id":22
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"Dense green vegetation grows in a valley, surrounded by forest.",
+      "title":"Great Esker Park",
+      "hike_id":22
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Hammond Pond extends under partially cloudy skies. Lily pads float throughout the pond. On the other side of the pond, a forest grows.",
+      "title":"Hammond Pond",
+      "hike_id":11
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"On the left, wild pink flowers grow on tall stems alongside dense green vegetation. Hammond Pond and its lily pads lie on the right, extending back towards a forest.",
+      "title":"Hammond Pond",
+      "hike_id":11
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A massive rock of Roxbury Puddingstone sits in a forest, partially obscured by some trees in the foreground.",
+      "title":"Roxbury Puddingstone",
+      "hike_id":11
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"The water level of Hammond Pond is conspicuously low in this image, with some lily pads in the center lying on dirt. Rocks at the shore are exposed.",
+      "title":"Hammond Pond (2016 drought is apparent)",
+      "hike_id":11
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A boardwalk path extends across an area of densely forested wetlands, dried up due to drought.",
+      "title":"A wetland area in the Webster conservation (2016 drought is apparent)",
+      "hike_id":11
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"A trolley car with a green stripe and the T logo passes over a bright yellow crossing path marked 'Caution.' Power lines and trees protrude behind the trolley.",
+      "title":"The D line crosses through the Webster Conservation Area, but does not stop inside the conservation.",
+      "hike_id":11
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"Behind trees and various leafy vegetation, a rock outcropping with fissures on a hill has a dark opening suggesting a cave.",
+      "title":"Roxbury Conglomerate fissure caves at Webster Conservation Area",
+      "hike_id":11
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"Twisted and fallen trees create geometric shapes in a clearing in the woods.",
+      "title":"Webster Conservation Area",
+      "hike_id":11
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"From a height, the Charles River emerges from a densely wooded area. A bridge in the distance is mostly obscured by trees. The sky is clear.",
+      "title":"The Charles River at Hemlock Gorge Reservation",
+      "hike_id":12
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A large rock of Roxbury puddingstone lies on the right on the top of a hill in a sunny clearing. Dense forests stand in the background.",
+      "title":"Roxbury Puddingstone",
+      "hike_id":12
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"From under the shade of a partially visible overhanging tree, the image shows a waterfall of the Charles River. There are logs and bits of wood trapped at the height of the fall.",
+      "title":"Waterfalls at Hemlock Gorge Reservation",
+      "hike_id":12
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"The sun radiates through the trees on a densely wooded hill.",
+      "title":"Hemlock Gorge Reservation is small, but does have some hills.",
+      "hike_id":12
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A bridge is reflected in the Charles River, with dense deciduous trees on either side, and a branch hanging overhead.",
+      "title":"Hemlock Gorge Reservation",
+      "hike_id":12
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Dense vegetation grows in a rocky bowl-shaped valley. At the top of the valley grow dense trees.",
+      "title":"The abandoned reservoir on Horn Pond Mountain",
+      "hike_id":13
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"The Boston skyline stands on the horizon under a clear blue sky. Below the horizon, nothing but dense green trees and a mostly obscured body of water on the right.",
+      "title":"The Boston skyline from Horn Pond Mountain",
+      "hike_id":13
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"Surrounded by dense vegetation on either side, a man-made stone structure extends forward with two poles spaced a few feet apart extending straight out of the stone.",
+      "title":"Remnants of the abandoned reservoir",
+      "hike_id":13
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Many ferns grow in a mostly wooded area. A layer of leaves lies on the ground.",
+      "title":"Horn Pond Mountain",
+      "hike_id":13
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A small pond has trees on its far end.",
+      "title":"Horn Pond",
+      "hike_id":13
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A large pond lies with its shore visible on the left. The shore has a large rock outcropping and several large rocks all along it, with dense trees behind. In the distance, the shores are densely wooded.",
+      "title":"Breed's Pond",
+      "hike_id":14
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Through the silhouette of tall pine trees, a pond lies ahead.",
+      "title":"Breed's Pond",
+      "hike_id":14
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A stone staircase climbs uphill, with rocks and fallen branches on the right. Towards the top, trees grow on either side.",
+      "title":"The staircase to Dungeon Rock",
+      "hike_id":14
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"A close up of the bark on a pine tree front-left, in front of a forest of tall pines and deciduous trees.",
+      "title":"Lynn Woods Reservation",
+      "hike_id":14
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A pond extends with dense trees on the far shore. On the hither shore, green grass grows interspersed with large rocks and boulders. A large boulder stands in the pond on the middle-right.",
+      "title":"Walden Pond from the Overlook Trail",
+      "hike_id":14
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"A path climbs up a hill interspersed with trees and puddingstone boulders.",
+      "title":"A steady climb on Overlook Trail",
+      "hike_id":14
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"The far and hither shores of a pond can be seen from a height. Only the tops of the trees on the hither shore can be seen, but the far shore has some grass and rocks before the dense forest continues.",
+      "title":"Walden Pond from Overlook Crag",
+      "hike_id":14
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A huge boulder is partially obscured by trees and vegetation in a dense forest. Some smaller boulders in the foreground are textured, puddingstone.",
+      "title":"Great Frog Boulder",
+      "hike_id":14
+   },
+   {
+      "file":"00009.jpg",
+      "alt":"A single pine sapling grows out of a massive pink-hued boulder. In the background, dense woods.",
+      "title":"Lynn Woods Reservation",
+      "hike_id":14
+   },
+   {
+      "file":"00010.jpg",
+      "alt":"A rocky trail bends through sparse woods. A red trail marker is visible on a tree in the distance.",
+      "title":"Overlook Trail",
+      "hike_id":14
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A waterfall trickles down a cliff of rock that has been cut into rectangular shapes.",
+      "title":"The Cascade",
+      "hike_id":15
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"At the top of a waterfall, a stream flows downward from right to left over rectangular shaped rocks. Mostly bare trees with some spring buds grow in the background.",
+      "title":"The Cascade",
+      "hike_id":15
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"From the top of a dark rock, a mostly naked forest extends below. There are a few evergreen trees. Past the trees, the Boston skyline can be seen on the horizon.",
+      "title":"The Boston skyline from Black Rock",
+      "hike_id":15
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"From the top of a rocky hill, a suburb interspersed with bare deciduous trees and evergreen trees expands below. A large brown bird of prey flies in the clear sky. At a distance, on the edge of a cliff, a rock climber in red turns and regards the bird.",
+      "title":"Melrose from Black Rock",
+      "hike_id":15
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Tall pine trees stand in a sparse forest with the ground covered in dead leaves.",
+      "title":"Moose Hill Wildlife Sanctuary",
+      "hike_id":16
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A tree house with a ladder made up of rope and wooden planks stands high atop a bare deciduous tree. A forest with naked deciduous trees surrounds it.",
+      "title":"I never discovered any explanation for this tree house.",
+      "hike_id":16
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A close up of a garter snake slithering across the ground which is covered in dead leaves, pine needles, and twigs.",
+      "title":"Garter snake",
+      "hike_id":16
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"As seen through a bare forest in early spring from a high hill, there is a vernal pool in a valley.",
+      "title":"Vernal pool",
+      "hike_id":16
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A mossy log extends diagonally across a wetland area, with green algae floating in the water. There is dense bare vegetation.",
+      "title":"Wetland area",
+      "hike_id":16
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"A uniform forest of tall pine trees",
+      "title":"Hobs Hill",
+      "hike_id":16
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"On a sunny day with thick snow on the ground, a deep valley surrounded by trees and brush. A rock structure on the left is mostly covered in snow.",
+      "title":"The Dell at Mt Auburn Cemetery in winter",
+      "hike_id":17
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Two snow angels, one adult-sized and one child-sized, are carved into the side of a snowy hill. Gravestones and a large evergreen shrub are above the angels.",
+      "title":"Snow angels",
+      "hike_id":17
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"On the right, the trunk of a tree at close range. At mid-range, there are three gravestones in the center with three wild turkeys standing among them. To their right, there is a tree with intricate branches. To the left and behind, there are three more gravestones with three more turkeys, one partially cut off. In the background, a path in front of two sarcophagi and more gravestones and trees.",
+      "title":"A rafter of turkeys calls Mt Auburn Cemetery home.",
+      "hike_id":17
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"White wild snowdrops and common violets grow interspersed with dry leaves in patches on a slight hill. Several gravestones lie on the hill, and a thick tree grows on the left. In the background, the cemetery extends far with various trees and more graves.",
+      "title":"Wild snowdrops and common violets",
+      "hike_id":17
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"In the front from left to right: three regular gravestones, then a worn gravestone shaped like a book, then another regular gravestone. Behind the third gravestone stands a pillar. Behind, a path paves through the grass descending from right to left. Detailed stone stairs ascend the hill behind with detailed urn statues and shrubbery on either side. Towards the right, patches of vines, then a low shrub bearing pink flowers. Behind, further up the hill, from left to right, there are budding shrubs, then more graves and a statue like a tower. In the very background, from left to right, there is a tree budding red leaves, then a tree budding green leaves, then a dark naked tree standing in front of green budding trees and a tall narrow evergreen tree.",
+      "title":"Mt Auburn Cemetery in spring",
+      "hike_id":17
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"From the front center-right, a paved path cuts a lane through a cultivated cemetery scene. Graves and sarcophagi lie mostly on the left side of the path. Trees interspersed with these graves bud pink, white, and green. In the distance, the path curves around a bend behind a hill, into which is carved a sarcophagus. A grave stands before the sarcophagus and another stands on the hill. Behind that, a willow tree not yet in bloom.",
+      "title":"Mt Auburn Cemetery in spring",
+      "hike_id":17
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"In the upper-left, a vernal pool. Then, towards the right, grass and a large shrub. Left center, nascent green buds of flowers, and a rock wall before a mulch surface. In the center on the rock wall, a chipmunk sits with his cheeks full. ",
+      "title":"Chipmunk with his cheeks full by the vernal pool in the Dell",
+      "hike_id":17
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"In a vernal pool, a male mallard duck swims on the right going left, and a female swims on the left, also going left. The pond reflects the trees above. On the other side of the pond, an evergreen shrub on the left, followed by bare vegetation. Ripples spread on the pond from the ducks' movement.",
+      "title":"Ducks in the vernal pool",
+      "hike_id":17
+   },
+   {
+      "file":"00009.jpg",
+      "alt":"Willow-like branches dangle down with round green leaves. On the curve of a branch sits a red-winged black bird in mid-center, contrasted with the white overcast sky behind.",
+      "title":"Red-winged black bird",
+      "hike_id":17
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"On a hill sloping upwards left to right stands a dense forest of leafy deciduous and evergreen trees. The forest floor is brown orange with pine needles with patches of green ferns.",
+      "title":"Prospect Hill Park",
+      "hike_id":20
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"In the foreground, the rocky tops of a cliff with leafy deciduous trees growing directly below. In the distance, a sprawl of urban green, with the Boston skyline on the horizon.",
+      "title":"The skyline as seen from the Little Prospect",
+      "hike_id":20
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A brown dirt path slopes forwards towards the left down a hill. Dense, dark forest lies in the background, but a forest clearing with illuminated bright green grass and ferns occupies most of the image. The shadow of a tree looms in the front right.",
+      "title":"The Ridge Trail",
+      "hike_id":20
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Flowering weeds grow in the foreground amongst a gravel path. Then, the tops of leafy deciduous trees growing below. A tree looms in the front left. In the distance, green urban sprawl extending towards the horizon where a blue tinged hill is discernible. Power lines extend diagonally from the top right and top left.",
+      "title":"Blue Hills on the horizon seen from the end of the Whitney Trail",
+      "hike_id":20
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"At left-center sits a large boulder surrounded by dense forest, framed between two tall trees in the foreground. The boulder is partially illuminated by sunlight breaking through the leaves. Ferns grow on the forest floor in the foreground.",
+      "title":"Prospect Hill Park",
+      "hike_id":20
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Under a bright white overcast sky, dense greens shrubbery grows on the top of a hill with a large rock exposed front-left. On the left stands dense leafy deciduous trees. In the distance, on lower ground, the forest extends.",
+      "title":"Stony Brook State Reservation",
+      "hike_id":21
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Outcroppings of jagged rock are exposed in a dense green forest, partially obscured by saplings and ferns and shrubs. The forest floor is covered in dead reddish brown leaves that contrast with the green growing above. ",
+      "title":"Stony Brook State Reservation",
+      "hike_id":21
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A dark pond extends forward towards dense green forest in the distance and towards the right. Green lily pads with white flowers float towards the right. The sky is overcast.",
+      "title":"Turtle Pond",
+      "hike_id":21
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Close towards the water, lily pads and their white flowers float on a dark pond. Dense vegetation grows on the left, while a forest stands on the far side of the pond, reflected in the water.",
+      "title":"Turtle Pond",
+      "hike_id":21
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"Close towards the water, green and yellow lily pads and their white flowers float on a dark pond. Dense vegetation grows directly ahead on the shore. Dark trees are reflected in the water.",
+      "title":"Turtle Pond",
+      "hike_id":21
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"Through the dark silhouette of branches and leaves, a bright green forest grows, contrasted against bright white light in the background. A barely perceptible brown road lies below.",
+      "title":"Stony Brook State Reservation",
+      "hike_id":21
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"A close up of thick lily pads and their flowers.",
+      "title":"Stony Brook State Reservation",
+      "hike_id":21
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A thin dirt path extends forwards into the distance, immediately surrounded by thick grass. Dense vegetation grows on either side, surrounded by thick forests.",
+      "title":"Stony Brook State Reservation",
+      "hike_id":21
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A large sign with wood posts standing in dry grass reads ",
+      "title":"Wompatuck State Park offers camping. Please see the DCR website for fee information.",
+      "hike_id":23
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"Underneath an overcast sky, a reservoir with low water levels. Some lily pads float, while others lie in the mud in the foreground. Rocks are scattered in the foreground. In the middle distance, shores with dense trees on either side. Further in the center, a small island with trees. In the far background, shores with more dense trees. Power lines extend across the middle distance center.",
+      "title":"The Aaron River Reservoir (with the 2016 drought apparent)",
+      "hike_id":23
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"Tall dense woods stand on either side of a paved path extending forward curving left around a bend. Dead leaves and ferns are scattered on either side of the path.",
+      "title":"Whitney Spur Rail Trail",
+      "hike_id":23
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"In the foreground, large rocks precede a fallen log extending left to right. A slim tree trunk stands in the front right. Behind the log is a large rock on the left and then a pond swirled with green algae. A leafy branch pushes in the mid left. Large rocks lie in the pond, and a short field lies behind the shores of the pond, with dense trees growing on a hill in the background.",
+      "title":"Wildcat Pond",
+      "hike_id":23
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"Wetlands fields extends towards the right distance with a pond in the left foreground. A log and twigs and rocks are in the center and right foreground. Dense forests grow behind the bright green field.",
+      "title":"Wildcat Pond",
+      "hike_id":23
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"From the center, a paved bike path extends straight towards the horizon. Pine needles and twigs line the path on either side. Thick tall pine trees, their branches growing overhead on the path, surround it.",
+      "title":"Healthy Heart Trail",
+      "hike_id":23
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"An inlet of blue-green bay water has a peninsular hill with dry dead trees growing along the shore. Further up on the hill, some leafy deciduous trees grow. The sky is bright blue. In the far left background, there is a harbor with boats and more green trees on the shore.",
+      "title":"Hingham Harbor in the background",
+      "hike_id":24
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"From the top of a dry grassy hill, green deciduous trees grow below, with a bay inlet following. A single boat is visible in the inlet.  After the inlet, a small penisula stands on the right, connected by a thin line to a peninsula on the left. Behind the peninsulas, the blue waters of Massachusetts Bay extend to the horizon. The sky is clear.",
+      "title":"Weir River Area, Nantasket and Massachusetts Bay.",
+      "hike_id":24
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"From the top of a dry grassy hill, green deciduous trees grow below, with a narrow glimpse of a bay inlet following. The Boston skyline lies on the horizon. A green peninsula juts out into the inlet from the right. The sky is clear.",
+      "title":"Hingham Bay and the Boston Skyline",
+      "hike_id":24
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"A wide dirt road starting from the lower right extends away towards the left and curves right again along a peninsula that extends right. A bay inlet lies in the middle right. The grass on either side of the path is dry and patchy yellow and green. A sign stands mid center. On the peninsula in the background, there is a hill, and many deciduous trees grow. The sky is clear.",
+      "title":"Weir River Area",
+      "hike_id":24
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"Three orange deer stand in a bright green field. In the foreground, the shadow of a tree looms, with the tree visible in the upper right. A dense forest grows behind the deer. The sky is clear.",
+      "title":"Some deer grazing",
+      "hike_id":24
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"From a dry grassy hill, there is one large tree to the right and two large trees to the left. At the base of the hill, a bay, and on the horizon to the right there is a green peninsula. On the center horizon, there is the Boston skyline.",
+      "title":"Hingham Bay and the Boston Skyline",
+      "hike_id":24
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"There is a large tree on the left on top of a dry grassy hill. In the middle distance below, there are evergreen and leafy deciduous trees. Towards the left behind those trees, there is another dry grassy hill with trees around the far edge. In the foreground, towards the right and going down the hill, it is dense with trees. A sliver of water is visible beyond the furthest hill. Trees lie across the horizon at the end of the bay.",
+      "title":"World's End",
+      "hike_id":24
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"From the front left, a boardwalk extends forwards towards a clearing in the distance. On the right, dense ferns grow. On the left, there is shadowy grass. All around the path and behind the ferns, leafy dedicuous trees grow thickly.",
+      "title":"Boardwalk paths cross wetlands at Boston Nature Center",
+      "hike_id":3
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A grassy path goes straight from the center foreground through a tunnel of dense green. Trees and dense vegetation grow alongside the path. In the distance inside the green tunnel, an invisible clearing illuminates the path with bright sunlight.",
+      "title":"The Fox trail",
+      "hike_id":3
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"In a field of wetlands with tall grasses and cattails, two deciduous trees grow mid-right. In the background, there are thick woods. The sky is blue with scattered clouds.",
+      "title":"Wetland fields",
+      "hike_id":3
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"Tall yellow and green grasses grow in a field. In the mid-background, there are thick bushes and some bare deciduous trees. In the background, there are densely leafy deciduous trees. The sky is blue with some light clouds on the horizon.",
+      "title":"Wetland fields (with 2016 drought apparent)",
+      "hike_id":3
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"In a garden, red and yellow flowers grow in the center foreground. Two planting pots are on the left. Beyond, there are several pink, orange, red, and yellow flowers. Dense green vegetation grows in the mid-background. In the background, there are tall leafy deciduous trees. Tall sticks are interspersed throughout the garden. The sky is blue with some light clouds on the horizon.",
+      "title":"Community gardens",
+      "hike_id":3
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"Yellow wildflowers and various green vegetation grows thickly in the foreground. Beyond a field, in the center background, there is a yellow building. On the right side, there is a tall blue fir tree. On its left, there is a tall evergreen, with the bottom three quarters of its branches bare. In the far background, various tall trees of many species line the horizon. The sky is blue.",
+      "title":"The George Robert White Environmental Conservation Center",
+      "hike_id":3
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A pond reflects bare trees and blue sky. On the shore ahead, fallen logs and bare branches and leafless woods lie behind. In mid-center, a male mallard duck swims.",
+      "title":"A lonely duck at Middlesex Fells",
+      "hike_id":15
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"Half a dozen ducks stand in the shade on the banks of a nearly dried up small pond. There are rocks embedded throughout the muddy banks. Lily pads float in the shallow water or lie on the mud. At the far end of the scene, there is much shrubbery.",
+      "title":"A pond (with the 2016 drought evident)",
+      "hike_id":19
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A rock outcropping protrudes on the top of a thickly wooded hill, seen from below. The woods are dense with green leaves, contrasting with the reddish brown earth covered in leaves. Shrubs and ferns grow in patches.",
+      "title":"Pine Banks Park",
+      "hike_id":19
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A wooded hill descends into a sheer rock wall which extends from right to left downwards. The trees on the hill are dense and leafy. The rock wall is dark but scattered with the shadows of leaves.",
+      "title":"Pine Banks Park",
+      "hike_id":19
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"From a height, with the rocky top of the hill visible, there are the tops of tall trees with a glimpse of the horizon in the mid center. The sky is clear blue.",
+      "title":"In the fall through early spring, there would by a skyline view here.",
+      "hike_id":19
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"At the top of a rocky hill, on the right there are small shrubs and trees. Below, there are the tops of a densely wooded forest. The horizon is not visible. In the right background, there is one single bare pine tree.",
+      "title":"Pine Banks Park",
+      "hike_id":19
+   },
+   {
+      "file":"00010.jpg",
+      "alt":"An obelisk tower with a window stands on a cemetery hill, seen between two large leafy deciduous trees. A sign for ",
+      "title":"The Tower",
+      "hike_id":17
+   },
+   {
+      "file":"00011.jpg",
+      "alt":"Boston is visible on the near horizon, with many thick and leafy trees of various species and hues growing below.",
+      "title":"Boston from the Mt Auburn Cemetery Tower",
+      "hike_id":17
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A rocky trail ascends a steep, densely wooded hill. The trees' foliage is mostly green but has started to turn orangey brown from the drought. In the left foreground, blueberry bushes grow. The face of the hill is in shadow from the trees, but the sunlight ahead shines through the leaves.",
+      "title":"The climb to Breakheart Hill",
+      "hike_id":4
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"As seen from a height, dense woods extend towards the horizon. In the middle foreground on the right, some of the trees' leaves have turned orangey brown. Some rocky terrain is visible through the trees below. On the center horizon, skyscrapers and tall buildings are visible. The sky is blue with some small clouds.",
+      "title":"The Boston skyline from Breakheart Hill",
+      "hike_id":4
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"In a small clearing in a dense forest, in the center a young doe still with her spots stands and regards the photographer keenly. The ground is dense with vegetation and dried leaves and branches.",
+      "title":"A young deer on Breakheart Trail",
+      "hike_id":4
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"In the middle foreground, some rocks jut out on the left shore of a pond with low water levels. Tall dark trees stand in shadow on the left. In the foreground, the pond floor is exposed and muddy. On the far end of the pond, there are dense green woods with an occasional dry brown-leafed tree. ",
+      "title":"Silver Lake (with 2016 drought apparent)",
+      "hike_id":4
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"From the right, a dirt path extends forwards into a dense green forest. Green vegetation grow in the left foreground, in front of a large boulder with a great crack in the middle.",
+      "title":"Ridge Trail",
+      "hike_id":4
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"Dense woods extend as far as the eye can see towards the horizon under blue skies. In the foreground, the trees and vegetation are dry and browning. The skyscrapers and tall buildings of Boston are barely visible on the edge of the horizon in the center.",
+      "title":"The Boston skyline from Castle Rock",
+      "hike_id":4
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"A river flows through the woods with dense vegetation illuminated in a sunny clearing on its left shore. On the right shore lies the camera's point of view, under the shadow of the trees. Ferns and vegetation grow on this shore with several trees on the right. The river continues on towards the invisible horizon, deeper into the thick forest. Some sky is visible in the center top. In the middle center, the river reflects some blue sky.",
+      "title":"Saugus River trail",
+      "hike_id":4
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"From the right, a paved road with an intermitted white line in its center paves over a hill disappearing around a bend towards the left. The road lies in a dense forest with patches of sunlight filtering through the trees throughout the image. A hill lies on the right. Some blue sky is visible through the tree tops above.",
+      "title":"Paved, accessible Hemlock Road",
+      "hike_id":4
+   }
+]
