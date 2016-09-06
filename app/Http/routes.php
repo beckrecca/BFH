@@ -15,20 +15,37 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/** TESTING ROUTES **/
+
 Route::get('hike/{id}', function($id) {
-    return $hike = \App\Hike::find($id);
+    return App\Hike::find($id);
+});
+Route::get('allhikes', function() {
+    return \App\Hike::all();
 });
 Route::get('marker/{id}', function($id) {
-    return $hike = \App\Marker::find($id);
+    return \App\Marker::find($id);
+});
+Route::get('allmarkers', function() {
+    return \App\Marker::all();
 });
 Route::get('line/{id}', function($id) {
-    return $hike = \App\Line::find($id);
+    return \App\Line::find($id);
+});
+Route::get('alllines', function() {
+    return \App\Line::all();
 });
 Route::get('tag/{id}', function($id) {
-    return $hike = \App\Tag::find($id);
+    return \App\Tag::find($id);
+});
+Route::get('alltags', function() {
+    return \App\Tag::all();
 });
 Route::get('image/{id}', function($id) {
-    return $hike = \App\Image::find($id);
+    return \App\Image::find($id);
+});
+Route::get('allimages', function() {
+    return \App\Image::all();
 });
 
 Route::get('/debug', function() {
