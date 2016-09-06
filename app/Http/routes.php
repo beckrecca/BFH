@@ -23,11 +23,21 @@ Route::get('hike/{id}', function($id) {
 Route::get('allhikes', function() {
     return \App\Hike::all();
 });
+Route::get('hike-markers/{id}', function($id) {
+    $hike = App\Hike::find($id);
+    $markers = (string) $hike->markers;
+    var_dump($markers);
+});
 Route::get('marker/{id}', function($id) {
     return \App\Marker::find($id);
 });
 Route::get('allmarkers', function() {
     return \App\Marker::all();
+});
+Route::get('marker-lines/{id}', function($id) {
+    $marker = App\Marker::find($id);
+    $lines = (string) $marker->lines;
+    var_dump($lines);
 });
 Route::get('line/{id}', function($id) {
     return \App\Line::find($id);
@@ -35,11 +45,21 @@ Route::get('line/{id}', function($id) {
 Route::get('alllines', function() {
     return \App\Line::all();
 });
+Route::get('line-markers/{id}', function($id) {
+    $line = App\Line::find($id);
+    $markers = (string) $line->markers;
+    var_dump($markers);
+});
 Route::get('tag/{id}', function($id) {
     return \App\Tag::find($id);
 });
 Route::get('alltags', function() {
     return \App\Tag::all();
+});
+Route::get('hike-tags/{id}', function($id) {
+    $hike = App\Hike::find($id);
+    $tags = (string) $hike->tags;
+    var_dump($tags);
 });
 Route::get('image/{id}', function($id) {
     return \App\Image::find($id);

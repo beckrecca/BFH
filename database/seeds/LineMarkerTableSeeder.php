@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MarkerLineTableSeeder extends Seeder
+class LineMarkerTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,14 +17,14 @@ class MarkerLineTableSeeder extends Seeder
         $data = json_decode($json); 
         // for each marker line pair, insert into table
         foreach ($data as $obj) {
-        	// Get the marker of this row
-            $marker_id = $obj->marker_id;
-            $marker = \App\Marker::find($marker_id);
-            // Get the line
-            $line_id = $obj->line_id;
-            $line = \App\Line::find($line_id);
-            // Connect this marker to this line
-            $marker->lines()->save($marker);
+            /**
+            * Adapted from Sam Deering's article
+            * http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/
+            **/
+             DB::table('line_marker')->insert([
+                'line_id' => $obj->line_id,
+                'marker_id' => $obj->marker_id
+            ]);
    		 }
     }
 }

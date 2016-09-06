@@ -21,8 +21,8 @@ class CreateLineMarkerTable extends Migration
             $table->integer('line_id')->unsigned();
 
             # create the associations between the two tables
-            $table->foreign('marker_id')->references('id')->on('lines');
-            $table->foreign('line_id')->references('id')->on('markers');
+            $table->foreign('marker_id')->references('id')->on('markers');
+            $table->foreign('line_id')->references('id')->on('lines');
         });
     }
 
