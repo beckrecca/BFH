@@ -1,0 +1,128 @@
+html, body {
+  height: 100%;
+  padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+h1 {
+  margin: 0.125em;
+}
+nav {
+  padding: 0.125em;
+}
+nav, .navbar, #navbar  {
+    background-color: #07755C;
+    margin: 0em;
+}
+.navbar-default, .navbar-default .navbar-brand {
+    color: #fff;
+    border: 1px dotted #07755C;
+    border-bottom: 1px dotted #71B300;
+}
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+.navbar-preheader .navbar-toggle:hover {
+    background-color: #71B300;
+}
+.navbar-preheader .navbar-toggle:active {
+    background-color: #71B300;
+}
+.navbar a, #navbar a {
+    font-weight: normal;
+    color: #fff;
+    font-size: 1.3em;
+}
+.navbar a:hover, #navbar a:hover {
+    font-weight: normal;
+    color: #71B300;
+}
+a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+}
+#logo {
+    padding: 0.125em;
+}
+form {
+  margin: 0.5em;
+}
+footer {
+  color: #fff;
+  width: 100%;
+  padding: 1em;
+  background-color: #71B300;
+  border-top: 1px dotted #07755C;
+}
+
+ul#footermenu {
+  list-style-type: none;
+}
+ul#footermenu li {
+  display:inline;
+}
+ul#footermenu li a{
+  color: #fff;
+  padding: 1em;
+  text-decoration: none;
+}
+ul#footermenu li a:hover{
+  background-color: #07755C;
+}
+
+/** custom bootstrap button from http://blog.koalite.com/bbg/ **/
+.btn-primary { 
+  color: #fff; 
+  background-color: #71B300; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-primary:hover, 
+.btn-primary:focus, 
+.btn-primary:active, 
+.btn-primary.active, 
+.open .dropdown-toggle.btn-primary { 
+  color: #fff; 
+  background-color: #07755C; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-primary:active, 
+.btn-primary.active, 
+.open .dropdown-toggle.btn-primary { 
+  background-image: none; 
+} 
+ 
+.btn-primary.disabled, 
+.btn-primary[disabled], 
+fieldset[disabled] .btn-primary, 
+.btn-primary.disabled:hover, 
+.btn-primary[disabled]:hover, 
+fieldset[disabled] .btn-primary:hover, 
+.btn-primary.disabled:focus, 
+.btn-primary[disabled]:focus, 
+fieldset[disabled] .btn-primary:focus, 
+.btn-primary.disabled:active, 
+.btn-primary[disabled]:active, 
+fieldset[disabled] .btn-primary:active, 
+.btn-primary.disabled.active, 
+.btn-primary[disabled].active, 
+fieldset[disabled] .btn-primary.active { 
+  background-color: #71B300; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-primary .badge { 
+  color: #07755C; 
+  background-color: #fff; 
+}

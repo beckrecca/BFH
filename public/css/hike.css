@@ -1,0 +1,25 @@
+#hike-map {
+  height: 100%;
+  width: 100%;
+}
+#timing {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 0.125em;
+}
+@media only screen and (min-width: 961px) {
+  #hike-map {
+    float: left;
+    width: 70%;
+  }
+  #directionsPanelContainer {
+    height: 100%;
+    width: 30%;
+    float: right;
+    overflow: scroll;
+  }
+  #timing {
+    font-size: 1.1em;
+    margin-top: 0em;
+  }
+}

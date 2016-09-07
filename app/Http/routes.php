@@ -14,9 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('hike/{path_name}', 'HikeController@hike');
 
 /** TESTING ROUTES **/
-
+Route::get('blue-hills', function() {
+    $hike = \App\Hike::where('path_name', '=', 'blue-hills')->get();
+    return $hike;
+});
 Route::get('hike/{id}', function($id) {
     return App\Hike::find($id);
 });
