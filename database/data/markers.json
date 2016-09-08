@@ -59,7 +59,7 @@
       "name":"Main Entrance",
       "address":"Brookline Reservoir Park Brookline, MA 02445",
       "lat":42.3263381,
-      "lng":71.1357048,
+      "lng":-71.1357048,
       "hike_id":5,
       "distance_to_mbta":0.7
    },
