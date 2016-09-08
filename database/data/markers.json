@@ -50,8 +50,8 @@
    {
       "name":"Main Entrance",
       "address":"177 Forest St, Saugus, MA 01906",
-      "lat":42.4799002,
-      "lng":-71.0259151,
+      "lat":42.48355009999999,
+      "lng":-71.03152510000001,
       "hike_id":4,
       "distance_to_mbta":1.1
    },
