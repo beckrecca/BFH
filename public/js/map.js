@@ -1,21 +1,28 @@
 var map;
+var bounds;
 var geocoder;
-var previousMarker;
 var oldMarkers = [];
+var previousMarker;
 function initMap() {
-	map = new google.maps.Map(document.getElementById('map'));
+  map = new google.maps.Map(document.getElementById('map'));
   createMultipleMarkers(markers);
-	$('form').submit(function(e) {
-	    e.preventDefault();
-	    $('#results').html(" ");
-	    if (previousMarker != null) {
-	    	previousMarker.setMap(null);
-	    }
-	    createUserMarker();
-	});
+  $('form').submit(function(e) {
+      e.preventDefault();
+      $('#results').html(" ");
+      if (previousMarker != null) {
+        previousMarker.setMap(null);
+      }
+      createUserMarker();
+  });
+  // responsive map
+  google.maps.event.addDomListener(window, "resize", function() {
+    google.maps.event.trigger(map, "resize");
+    map.fitBounds(bounds);
+    map.panToBounds(bounds);
+  });
 }
 function createMultipleMarkers(markers, userPosition) {
-  var bounds =  new google.maps.LatLngBounds();
+  bounds =  new google.maps.LatLngBounds();
   for (var i = 0; i < markers.length; i++) {
     var newMarker = new google.maps.Marker({
       position: {lat: parseFloat(markers[i].lat), lng: parseFloat(markers[i].lng)},
@@ -38,9 +45,9 @@ function createMultipleMarkers(markers, userPosition) {
   map.panToBounds(bounds);
 }
 function createUserMarker() {
-	geocoder = new google.maps.Geocoder();
-	var userAddress = $('#user').val();
-	geocoder.geocode( { 'address': userAddress}, function(results, status) {
+  geocoder = new google.maps.Geocoder();
+  var userAddress = $('#user').val();
+  geocoder.geocode( { 'address': userAddress}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         var marker = new google.maps.Marker({
             map: map,
@@ -50,14 +57,14 @@ function createUserMarker() {
         });
         previousMarker = marker;
         var userLat = parseFloat(results[0].geometry.location.lat());
-      	var userLng = parseFloat(results[0].geometry.location.lng());
-      	var userPoint = {
-        	lat: userLat,
-        	lng: userLng
-      	}
-      	var radius = parseFloat($('#radius').val());
-      	// find and list the markers all within specified radius
-      	var closest = findClosest(userPoint, radius);
+        var userLng = parseFloat(results[0].geometry.location.lng());
+        var userPoint = {
+          lat: userLat,
+          lng: userLng
+        }
+        var radius = parseFloat($('#radius').val());
+        // find and list the markers all within specified radius
+        var closest = findClosest(userPoint, radius);
         // clear the map of all the old markers
         for (var i = 0; i < oldMarkers.length; i++) {
           oldMarkers[i].setMap(null);

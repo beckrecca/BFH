@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Hike</title>
+      <title>{{ $hike->name }}</title>
       <meta charset="utf-8"/>
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,11 @@
       <!-- Google Fonts -->
       <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     
-      <link rel="stylesheet" href="css/template.css" />
+      <link rel="stylesheet" href="/css/template.css" />
       <!-- CUSTOMIZATION -->
-      <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css"/ >
-      <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-      <link rel="stylesheet" href="css/hike.css" />
+      <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
+      <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/hike.css" />
       <!-- END CUSTOMIZATION -->
 
    </head>
@@ -32,21 +32,49 @@
       <h1>{{ $hike->name }}</h1>
       <p>{{ $hike->description }}</p>
 
+      <form class="form-inline">
+        <label class="sr-only" for="start">User address</label>
+        <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
+        <label class="sr-only" for="end">Select destination</label>
+        <select class="form-control" name="end" id="end">
+          @foreach ($markers as $marker)
+            <option value='lat: {{ $marker->lat }}, lng: {{ $marker->lng }}'>{{ $marker->name }}</option>
+          @endforeach
+        </select>
+        <label class="sr-only" for="transitOptions">Select leaving/arriving</label>
+        <select class="form-control" name="transitOptions" id="transitOptions">
+            <option value="departureTime">Leaving at</option>
+            <option value="arrivalTime">Arriving by</option>
+        </select>
+        <label class="sr-only" for="datetimepicker">Select time and date leaving/arriving</label>
+        <input class="form-control" id="datetimepicker" name="datetimepicker" type="text" >
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      </form>
     </div>
+
+    <div id="directionsPanelContainer">
+      <div id="timing"></div>
+      <div id="directionsPanel"></div>
+    </div>
+    <div id="hike-map"></div>
     
     <!-- CONTENT -->
     
     <!-- FOOTER -->
 
    <!-- JQuery -->
-   <script type="text/javascript" src="js/jquery-1.12.2.min.js"> </script>
+   <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
    <!-- Google Maps API -->
    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
    <!-- CUSTOMIZATION -->
-   <script src="js/directions.js"></script>
-   <script src="js/jquery.datetimepicker.full.min.js"></script>
+
+   <script>
+    var markers = <?php echo json_encode($markers) ?>;
+   </script>
+   <script src="/js/directions.js"></script>
+   <script src="/js/jquery.datetimepicker.full.min.js"></script>
    <script>
       $('#datetimepicker').datetimepicker({
         minDate: 0,
@@ -62,13 +90,13 @@
         formatTime: 'g:iA'
       });
     </script>
-    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $(".fancybox").fancybox();
       });
     </script>
-    <link rel="stylesheet" type="text/css" href="css/directionspanel.css"/ >
+    <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
     <!-- END CUSTOMIZATION -->
    </body>
 </html>

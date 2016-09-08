@@ -12,6 +12,8 @@ class HikeController extends Controller
     public function hike($path_name) 
     {
     	$hike = \App\Hike::where('path_name', '=', $path_name)->first();
-    	return view ('hike')->with('hike', $hike);
+    	$markers = $hike->markers;
+    	return view ('hikes.detail')->with('hike', $hike)
+    								->with('markers', $markers);
     }
 }
