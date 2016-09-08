@@ -31,6 +31,7 @@
       
       <h1>{{ $hike->name }}</h1>
       <p>{{ $hike->description }}</p>
+      <p><a href="/hikes">Back</a>
 
       <form class="form-inline">
         <label class="sr-only" for="start">User address</label>
@@ -64,10 +65,12 @@
 
    <!-- JQuery -->
    <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
-   <!-- Google Maps API -->
+   <!-- BOOTSTRAP JS -->
    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   <!-- GOOGLE MAPS API -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
+
    <!-- CUSTOMIZATION -->
 
    <script>

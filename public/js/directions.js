@@ -7,6 +7,8 @@ var directionsService;
 // finds GPS coordinates for the user's address
 var geocoder;
 var map;
+// create a dummy marker so we can add multiple information windows
+var previousMarker;
 
 /*
 * initMap() is called by the Google Maps API key script.
@@ -36,10 +38,18 @@ function initMap() {
     var marker = new google.maps.Marker({
       position: {lat: parseFloat(markers[i].lat), lng: parseFloat(markers[i].lng)},
       map: map,
-      title: markers[i].name
+      title: markers[i].name,
+      content: panelContent(markers[i].name, markers[i].address)
     });
-    // add this marker to our bounds
+    // add this marker to the map's bounds
     bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));
+    // create an information window for this marker
+    var infoWindow = new google.maps.InfoWindow();
+    // add a listener to the marker to open the info window on click
+    google.maps.event.addListener(marker, 'click', function () {
+      infoWindow.setContent(this.content);
+      infoWindow.open(this.getMap(), this);
+    });
   }
 
   // if we have more than one marker, set the bounds around them
@@ -47,10 +57,10 @@ function initMap() {
     map.fitBounds(bounds);
     map.panToBounds(bounds);
   }
-  // otherwise, center and zoom appropriately around the single marker
-  else if (markers.length == 1) {
+  // otherwise, if only one or two, center and zoom appropriately
+  else if (markers.length <= 2) {
     map.setCenter(bounds.getCenter());
-    map.setZoom(14);
+    map.setZoom(13);
   }
   /** 
   
@@ -114,6 +124,15 @@ function calcRoute() {
   });
 }
 */
+
+/*
+* panelContent() is called by initMap()
+* It generates content for each marker's information window.
+*/
+function panelContent(name, address) {
+  return "<span style='font-weight: bold'>" + name + "</span><br/>" + address;
+}
+
 function convertDateTime(d) {
   var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
