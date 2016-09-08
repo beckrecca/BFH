@@ -7,8 +7,6 @@ var directionsService;
 // finds GPS coordinates for the user's address
 var geocoder;
 var map;
-// create a dummy marker so we can add multiple information windows
-var previousMarker;
 
 /*
 * initMap() is called by the Google Maps API key script.
@@ -16,19 +14,19 @@ var previousMarker;
 */
 function initMap() {
   // create a new directions panel
-  //directionsDisplay = new google.maps.DirectionsRenderer();
+  directionsDisplay = new google.maps.DirectionsRenderer();
 
   // create a directions service to obtain the directions
-  //directionsService = new google.maps.DirectionsService();
+  directionsService = new google.maps.DirectionsService();
 
   // set the map to the designated div
   map = new google.maps.Map(document.getElementById('hike-map'));
 
   // associate the directions display with our map
-  //directionsDisplay.setMap(map);
+  directionsDisplay.setMap(map);
 
   // set the directions panel to the designated div
-  //directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+  directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
   // initialize bounds for our map
   bounds =  new google.maps.LatLngBounds();
@@ -62,46 +60,55 @@ function initMap() {
     map.setCenter(bounds.getCenter());
     map.setZoom(13);
   }
-  /** 
-  
-  var infoContent = '<p>' + $('#title').val() + '<br/>' + $('#address').val(); + '</p>';
-  var infowindow = new google.maps.InfoWindow({
-    content: infoContent
-  });
-  marker.addListener('click', function() {
-    infowindow.open(map, marker);
-  });
   
   $('form').submit(function(e) {
     e.preventDefault();
     // marker.setMap(null);
-    // calcRoute();
+    calcRoute();
   });
-  // responsive map
+
+  // listen for window resize to create a responsive map
   google.maps.event.addDomListener(window, "resize", function() {
+    // get the center
     var center = map.getCenter();
+    // when the window is resized, recenter the map
     google.maps.event.trigger(map, "resize");
     map.setCenter(center); 
   });
-    **/
 }
 
-/* 
+/*
+* calcRoute() is called by initMap()
+* It find the directions for the selected start and end points,
+* and it delivers them in a directions panel.
+*/
 function calcRoute() {
+  // Start is the user's address
   var start = $('#start').val();
-  var end = $('#address').val();
+  // End is the selected destination
+  var end = markers[$('#end').val()].address;
+
+  // Create a new Date to indicate time leaving/arriving
   var dateTime = new Date();
+
+  // Initialize a timeOptions variable for the directions request
   var timeOptions = {};
+  // Update date and time Leaving at or Arriving by according to user input
   var going = "Leaving at "
+  // If the user selected a date and time leaving
   if ($("#datetimepicker").val() != null && $("#datetimepicker").val() != "") {
+    // set the dateTime to the selected date and time
     dateTime = new Date($("#datetimepicker").val());
+    // if the user selected Arriving by
     if ($('#transitOptions').val() == "arrivalTime") {
+      // update the timeOptions var to set the arrival time to the selected date and time
       timeOptions = {
         arrivalTime: dateTime
       };
       going = "Arriving by ";
     }
-    else {
+    // if the user selected Leaving by, do the same with departure time
+    else if ($('#transitOptions').val() == "depatureTime") {
       timeOptions = {
         departureTime: dateTime
       };
@@ -112,7 +119,9 @@ function calcRoute() {
   var request = {
     origin:start,
     destination:end,
+    // set travel mode to public transit
     travelMode: google.maps.TravelMode.TRANSIT,
+    // set transit options specified above
     transitOptions: timeOptions
   };
   // draw the directions & create directions panel display
@@ -123,7 +132,6 @@ function calcRoute() {
     }
   });
 }
-*/
 
 /*
 * panelContent() is called by initMap()

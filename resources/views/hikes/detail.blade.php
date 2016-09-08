@@ -38,8 +38,12 @@
         <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
         <label class="sr-only" for="end">Select destination</label>
         <select class="form-control" name="end" id="end">
+          <?php 
+            // index the markers
+            $index = 0;
+            ?>
           @foreach ($markers as $marker)
-            <option value='lat: {{ $marker->lat }}, lng: {{ $marker->lng }}'>{{ $marker->name }}</option>
+            <option value='{{ $index++ }}'>{{ $marker->name }}</option>
           @endforeach
         </select>
         <label class="sr-only" for="transitOptions">Select leaving/arriving</label>
