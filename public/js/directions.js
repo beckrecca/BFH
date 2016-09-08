@@ -44,7 +44,7 @@ function initMap() {
 
   // if we have more than one marker, set the bounds around them
   if (markers.length > 1) {
-    map.fitBounds(mapBounds);
+    map.fitBounds(bounds);
     map.panToBounds(bounds);
   }
   // otherwise, center and zoom appropriately around the single marker
