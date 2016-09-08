@@ -18,8 +18,8 @@ class CreateMarkersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('address');
-            $table->double('lat');
-            $table->double('lng');
+            $table->decimal('lat', 10, 7);
+            $table->decimal('lng', 10, 7);
             $table->float('distance_to_mbta');
             # foreign key field to connect markers to hikes
             $table->integer('hike_id')->unsigned();
