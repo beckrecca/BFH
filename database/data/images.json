@@ -928,5 +928,35 @@
       "alt":"From the right, a paved road with an intermitted white line in its center paves over a hill disappearing around a bend towards the left. The road lies in a dense forest with patches of sunlight filtering through the trees throughout the image. A hill lies on the right. Some blue sky is visible through the tree tops above.",
       "title":"Paved, accessible Hemlock Road",
       "hike_id":4
+   },
+   {
+      "file":"00001.jpg",
+      "alt":"A fenced in path cuts through a densely wooded, grassy area. Sunlight shines throughout the thick and green leaves.",
+      "title":"Kingsley Park at Fresh Pond",
+      "hike_id":10
+   },
+   {
+      "file":"00002.jpg",
+      "alt":"A red brick building with arched windows and a short triangular tower stands in a park in mid center. A flagpole bearing the American flag is to the left of the building. A grassy area and a paved path are in the foreground. There are leafy deciduous trees on the left and right.",
+      "title":"The Sullivan Water Treatment Facility",
+      "hike_id":10
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"Sunlight sparkles on Fresh Pond. Its rocky banks are visible in the foreground, with some leaves partially obsuring the pond on the left. In the middle background, the pond curves around a densely wooded area. The far shores of the pond are densely forested as well. The sky is partially cloudy.",
+      "title":"Fresh Pond",
+      "hike_id":10
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"In the distance, two children walk together on a hilly grassy meadow. On the far end of the meadow, there are dense trees on the left, but a short clearing in the middle reveals the water of Fresh Pond. The sky is partially cloudy.",
+      "title":"Weir Meadow",
+      "hike_id":10
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"A shallow pond with lilies floating on the left reflects a partially cloudy sky and the dense vegetation and thick deciduous trees on the far shore.",
+      "title":"Little Fresh Pond",
+      "hike_id":10
    }
 ]

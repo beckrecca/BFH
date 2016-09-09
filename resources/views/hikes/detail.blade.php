@@ -30,6 +30,11 @@
     <div class="container">
       
       <h1>{{ $hike->name }}</h1>
+      <div id="gallery">
+        @foreach ($images as $image)
+          <a class="fancybox" rel="group" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
+        @endforeach
+      </div>
       <p>{{ $hike->description }}</p>
       <p><a href="/hikes">Back</a>
 

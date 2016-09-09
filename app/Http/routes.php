@@ -20,6 +20,13 @@ Route::get('hikes/{path_name}', 'HikeController@detail');
 Route::get('hikes', 'HikeController@all');
 
 /** TESTING ROUTES **/
+
+Route::get('images', function () {
+    return \App\Image::all();
+});
+Route::get('markers', function () {
+    return \App\Marker::all();
+});
 Route::get('/debug', function() {
 
     echo '<pre>';

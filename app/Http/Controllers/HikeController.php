@@ -14,10 +14,15 @@ class HikeController extends Controller
     */
     public function detail($path_name) 
     {
+        // obtain the first (and only) hike by this path name
     	$hike = \App\Hike::where('path_name', '=', $path_name)->first();
+        // get this hike's entrance markers
     	$markers = $hike->markers;
+        // get this hike's photos
+        $images = $hike->images;
     	return view ('hikes.detail')->with('hike', $hike)
-    								->with('markers', $markers);
+    								->with('markers', $markers)
+                                    ->with('images', $images);
     }
 
     /**
