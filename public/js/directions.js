@@ -7,6 +7,8 @@ var directionsService;
 // finds GPS coordinates for the user's address
 var geocoder;
 var map;
+// keep track of the previous marker clicked
+var previousClick;
 
 /*
 * initMap() is called by the Google Maps API key script.
@@ -37,16 +39,41 @@ function initMap() {
       position: {lat: parseFloat(markers[i].lat), lng: parseFloat(markers[i].lng)},
       map: map,
       title: markers[i].name,
-      content: panelContent(markers[i].name, markers[i].address)
+      // Infowindow content
+      content: panelContent(markers[i].name, markers[i].address),
+      // marker color
+      icon: '/img/markers/blue-dot.png',
+      // animates when dropped on the map
+      animation: google.maps.Animation.DROP
     });
     // add this marker to the map's bounds
     bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));
     // create an information window for this marker
     var infoWindow = new google.maps.InfoWindow();
-    // add a listener to the marker to open the info window on click
+    // add a listener to the marker for actions on click
     google.maps.event.addListener(marker, 'click', function () {
+      // set the info window content
       infoWindow.setContent(this.content);
+      // set the info window to open on click
       infoWindow.open(this.getMap(), this);
+      // if this marker is animated, stop animation on click
+      if (this.getAnimation() != null) {
+        this.setAnimation(null);
+      } else {
+        // if this marker is not animated, animate it on click
+        this.setAnimation(google.maps.Animation.BOUNCE);
+        // also change the marker to orange
+        this.setIcon('/img/markers/orange-dot.png');
+        // if another marker was previously clicked,
+        if (previousClick != null) {
+          // stop its animation
+          previousClick.setAnimation(null);
+          // and change it back to blue
+          previousClick.setIcon('/img/markers/blue-dot.png');
+        }
+        // remember this marker as having just been clicked
+        previousClick = this;
+      }
     });
   }
 
@@ -54,26 +81,30 @@ function initMap() {
   if (markers.length > 1) {
     map.fitBounds(bounds);
     map.panToBounds(bounds);
+    // add a window resize listener to create a responsive map
+    google.maps.event.addDomListener(window, "resize", function() {
+      google.maps.event.trigger(map, "resize");
+      // keep the markers within the map's bounds
+      map.fitBounds(bounds);
+      map.panToBounds(bounds);
+    });
   }
   // otherwise, if only one or two, center and zoom appropriately
-  else if (markers.length <= 2) {
+  else if (markers.length < 2) {
     map.setCenter(bounds.getCenter());
     map.setZoom(13);
+    var center = map.getCenter();
+    // add a window resize listener to create a responsive map
+    google.maps.event.addDomListener(window, "resize", function() {
+      // keep the map centered
+      map.setCenter(center);
+    });
   }
   
   $('form').submit(function(e) {
     e.preventDefault();
     // marker.setMap(null);
     calcRoute();
-  });
-
-  // listen for window resize to create a responsive map
-  google.maps.event.addDomListener(window, "resize", function() {
-    // get the center
-    var center = map.getCenter();
-    // when the window is resized, recenter the map
-    google.maps.event.trigger(map, "resize");
-    map.setCenter(center); 
   });
 }
 
