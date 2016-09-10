@@ -10,6 +10,9 @@ body {
 h1 {
   margin: 0.125em;
 }
+h3 {
+  margin: 0;
+}
 nav {
   padding: 0.125em;
 }
@@ -44,12 +47,13 @@ nav, .navbar, #navbar  {
     color: #71B300;
 }
 a {
-    color: #000;
+    color: #07755C;
     font-weight: bold;
     text-decoration: none;
 }
 a:hover {
-    color: #000;
+    color: #71B300;
+    text-decoration: none;
 }
 #logo {
     padding: 0.125em;
@@ -60,26 +64,42 @@ form {
 footer {
   color: #fff;
   width: 100%;
-  padding: 1em 1em 1.5em 1em;
+  padding: 0.5em;
   background-color: #71B300;
   border-top: 1px dotted #07755C;
 }
 
 ul#footermenu {
   list-style-type: none;
+  float: right;
+  margin: 0 0 0.5em 0;
 }
 ul#footermenu li {
+  font-size: 1.1em;
   display:inline;
 }
 ul#footermenu li a{
   color: #fff;
-  padding: 1em;
+  padding: 0.25em;
   text-decoration: none;
 }
 ul#footermenu li a:hover{
-  background-color: #07755C;
+  color: #07755C;
 }
-
+@media only screen and (min-width: 321px) {
+  ul#footermenu li a {
+    padding: 0.5em;
+  }
+}
+@media only screen and (min-width: 961px) {
+  ul#footermenu li a {
+    padding: 1em;
+  }
+  ul#footermenu li a:hover{
+    color: #fff;
+    background-color: #07755C;
+  }
+}
 /** custom bootstrap button from http://blog.koalite.com/bbg/ **/
 .btn-primary { 
   color: #fff; 

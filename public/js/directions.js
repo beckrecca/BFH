@@ -34,20 +34,22 @@ function initMap() {
   bounds =  new google.maps.LatLngBounds();
 
   // create a marker for each entrance
-  for (var i = 0; i < markers.length; i++) {
+  for (var i = 0; i < markerData.length; i++) {
     var marker = new google.maps.Marker({
-      position: {lat: parseFloat(markers[i].lat), lng: parseFloat(markers[i].lng)},
+      position: {lat: parseFloat(markerData[i].lat), lng: parseFloat(markerData[i].lng)},
       map: map,
-      title: markers[i].name,
+      title: markerData[i].name,
       // Infowindow content
-      content: panelContent(markers[i].name, markers[i].address),
+      content: panelContent(markerData[i].name, markerData[i].address),
       // marker color
       icon: '/img/markers/blue-dot.png',
       // animates when dropped on the map
-      animation: google.maps.Animation.DROP
+      animation: google.maps.Animation.DROP,
+      // keep the marker from overlaying the directions markers
+      zIndex: 1
     });
     // add this marker to the map's bounds
-    bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));
+    bounds.extend(new google.maps.LatLng(parseFloat(markerData[i].lat), parseFloat(markerData[i].lng)));
     // create an information window for this marker
     var infoWindow = new google.maps.InfoWindow();
     // add a listener to the marker for actions on click
@@ -78,19 +80,19 @@ function initMap() {
   }
 
   // if we have more than one marker, set the bounds around them
-  if (markers.length > 1) {
+  if (markerData.length > 1) {
     map.fitBounds(bounds);
     map.panToBounds(bounds);
     // add a window resize listener to create a responsive map
     google.maps.event.addDomListener(window, "resize", function() {
       google.maps.event.trigger(map, "resize");
-      // keep the markers within the map's bounds
+      // keep the markerData within the map's bounds
       map.fitBounds(bounds);
       map.panToBounds(bounds);
     });
   }
   // otherwise, if only one or two, center and zoom appropriately
-  else if (markers.length < 2) {
+  else if (markerData.length < 2) {
     map.setCenter(bounds.getCenter());
     map.setZoom(13);
     var center = map.getCenter();
@@ -117,7 +119,7 @@ function calcRoute() {
   // Start is the user's address
   var start = $('#start').val();
   // End is the selected destination
-  var end = markers[$('#end').val()].address;
+  var end = markerData[$('#end').val()].address;
 
   // Create a new Date to indicate time leaving/arriving
   var dateTime = new Date();
@@ -139,7 +141,7 @@ function calcRoute() {
       going = "Arriving by ";
     }
     // if the user selected Leaving by, do the same with departure time
-    else if ($('#transitOptions').val() == "depatureTime") {
+    else if ($('#transitOptions').val() == "departureTime") {
       timeOptions = {
         departureTime: dateTime
       };

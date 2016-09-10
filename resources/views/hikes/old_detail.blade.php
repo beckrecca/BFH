@@ -1,17 +1,33 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>{{ $hike->name }}</title>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="A navigation web exhibition of MBTA-accessible hiking locations.">
+      <meta name="keywords" content="Boston hiking, Massachusetts hiking, MBTA, public transit, public transportation">
+      <meta name="author" content="Rebecca Doris">
 
-@section('title')
-    {{ $hike->name }}
-@stop
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 
-@section('head')
-	<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
-    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/css/hike.css" />
-@stop
+      <!-- Google Fonts -->
+      <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    
+      <link rel="stylesheet" href="/css/template.css" />
+      <!-- CUSTOMIZATION -->
+      <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
+      <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/css/hike.css" />
+      <!-- END CUSTOMIZATION -->
 
-@section('content')
-	<div class="container">
+   </head>
+   <body>
+    <!-- NAVIGATION -->
+
+    <!-- CONTENT -->
+    <div class="container">
       
       <h1>{{ $hike->name }}</h1>
       <div id="gallery">
@@ -51,10 +67,19 @@
       <div id="directionsPanel"></div>
     </div>
     <div id="hike-map"></div>
-@stop
+    
+    <!-- CONTENT -->
+    
+    <!-- FOOTER -->
 
-@section('body')
-	<!-- GOOGLE MAPS API -->
+   <!-- JQuery -->
+   <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
+   <!-- BOOTSTRAP JS -->
+   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+
+   <!-- CUSTOMIZATION -->
+    <!-- GOOGLE MAPS API -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
    <script>
@@ -84,4 +109,6 @@
       });
     </script>
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
-@stop
+    <!-- END CUSTOMIZATION -->
+   </body>
+</html>
