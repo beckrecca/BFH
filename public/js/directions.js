@@ -9,30 +9,29 @@ var geocoder;
 var map;
 // keep track of the previous marker clicked
 var previousClick;
-
+// keep track of which entrance was just selected
+var previousSelected;
+// keep track of which entrance is selected (defaults 0)
+var selected = 0;
 /*
 * initMap() is called by the Google Maps API key script.
 * It initializes a map and a directions panel.
 */
 function initMap() {
+  // display lines for the selected entrance
+  displayLines(selected);
   // create a new directions panel
   directionsDisplay = new google.maps.DirectionsRenderer();
-
   // create a directions service to obtain the directions
   directionsService = new google.maps.DirectionsService();
-
   // set the map to the designated div
   map = new google.maps.Map(document.getElementById('hike-map'));
-
   // associate the directions display with our map
   directionsDisplay.setMap(map);
-
   // set the directions panel to the designated div
   directionsDisplay.setPanel(document.getElementById("directionsPanel"));
-
   // initialize bounds for our map
   bounds =  new google.maps.LatLngBounds();
-
   // create a marker for each entrance
   for (var i = 0; i < markerData.length; i++) {
     var marker = new google.maps.Marker({
@@ -78,7 +77,6 @@ function initMap() {
       }
     });
   }
-
   // if we have more than one marker, set the bounds around them
   if (markerData.length > 1) {
     map.fitBounds(bounds);
@@ -102,10 +100,14 @@ function initMap() {
       map.setCenter(center);
     });
   }
-  
+  // If the user selects a different entrance, display that marker's lines
+  $('#end').change(function () {
+    selected = $('#end').val();
+    displayLines(selected);
+  });
+  // When the form is submitted, calculate the route
   $('form').submit(function(e) {
     e.preventDefault();
-    // marker.setMap(null);
     calcRoute();
   });
 }
@@ -182,6 +184,20 @@ function calcRoute() {
 */
 function panelContent(name, address) {
   return "<span style='font-weight: bold'>" + name + "</span><br/>" + address;
+}
+/*
+* displayLines() is called by initMap() and calcRoute ()
+* It displays the lines for the selected entrance in HTML
+*/
+function displayLines(selected) {
+  // make current selection visible
+  $(".marker_" + selected).removeClass("hidden");
+  // if a previous selection has been made
+  if (previousSelected != null) {
+    // make the lines for the previous selection invisble
+    $(".marker_" + previousSelected).addClass("hidden");
+  }
+  previousSelected = selected;
 }
 function currentTime() {
   var time = new Date();

@@ -23,20 +23,20 @@
     margin-top: 0em;
   }
 }
-ul#features {
+ul#features, ul#lines {
   list-style-type: none;
   margin: 0;
 }
-ul#features li{
+ul#features li, ul#lines li{
   display: inline;
   padding: 0.25em;
 }
-ul#features li a{
+ul#features li a, ul#lines a{
   color: #777;
   font-weight: normal;
   border-bottom: 1px dotted;
 }
-ul#features li a:hover {
+ul#features li a:hover, ul#lines li a:hover {
   text-decoration: none;
   color: #71B300;
 }
