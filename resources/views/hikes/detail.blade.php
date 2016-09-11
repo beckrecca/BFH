@@ -35,26 +35,6 @@
       <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a></p>
     </div>
     <h2>Directions</h2> 
-    <div class="row">
-      <ul id="lines">
-        <li>MBTA Lines near selected entrance:</li>
-        <?php
-            // index each marker to coordinate with map
-            $class = 0; 
-          ?>
-        @foreach ($markers as $marker)
-          <?php 
-            // get the lines for this entrance marker
-            $lines = $marker->lines;
-            ?>
-          @foreach ($lines as $line)
-            <li class='hidden marker_{{ $class }}'><a href='#'>{{ $line->name }}</a></li>
-          @endforeach
-          <?php $class++; ?>
-        @endforeach
-      </ul>
-    </div>
-    
     <form class="form-inline">
       <label class="sr-only" for="start">User address</label>
       <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
@@ -79,6 +59,25 @@
     	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
+    <div class="row">
+      <ul id="lines">
+        <li>MBTA Lines nearby:</li>
+        <?php
+            // index each marker to coordinate with map
+            $class = 0; 
+          ?>
+        @foreach ($markers as $marker)
+          <?php 
+            // get the lines for this entrance marker
+            $lines = $marker->lines;
+            ?>
+          @foreach ($lines as $line)
+            <li class='hidden marker_{{ $class }}'><a href='#'>{{ $line->name }}</a></li>
+          @endforeach
+          <?php $class++; ?>
+        @endforeach
+      </ul>
+    </div>
   </div>
 
     <div id="directionsPanelContainer">

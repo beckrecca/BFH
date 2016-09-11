@@ -45,7 +45,9 @@ function initMap() {
       // animates when dropped on the map
       animation: google.maps.Animation.DROP,
       // keep the marker from overlaying the directions markers
-      zIndex: 1
+      zIndex: 1,
+      // set its id
+      id: i
     });
     // add this marker to the map's bounds
     bounds.extend(new google.maps.LatLng(parseFloat(markerData[i].lat), parseFloat(markerData[i].lng)));
@@ -75,6 +77,12 @@ function initMap() {
         // remember this marker as having just been clicked
         previousClick = this;
       }
+      // change the entrance selection to this marker
+      $('#end').val(this.id);
+      // update which entrance has been selected
+      selected = $('#end').val();
+      // show selected entrance's lines
+      displayLines(selected);
     });
   }
   // if we have more than one marker, set the bounds around them
@@ -192,8 +200,8 @@ function panelContent(name, address) {
 function displayLines(selected) {
   // make current selection visible
   $(".marker_" + selected).removeClass("hidden");
-  // if a previous selection has been made
-  if (previousSelected != null) {
+  // if a previous selection has been made and we have more than one marker
+  if ((previousSelected != null) && (markerData.length > 1)) {
     // make the lines for the previous selection invisble
     $(".marker_" + previousSelected).addClass("hidden");
   }
