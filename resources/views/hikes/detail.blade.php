@@ -19,10 +19,9 @@
     <div class="row">
       <ul id="features">
         <li>Features:</li>
-        <li><a href="#">Historic</a></li>
-        <li><a href="#">Theater</a></li>
-        <li><a href="#">Landmark</a></li>
-        <li><a href="#">Entertainment</a></li>
+        @foreach ($tags as $tag)
+          <li><a href='/tags/{{ $tag->id }}'>{{ $tag->name }}</a></li>
+        @endforeach
       </ul>
     </div>
     <div class="row" id="gallery">

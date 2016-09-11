@@ -15,9 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/** HIKES **/
 Route::get('hikes/{path_name}', 'HikeController@detail');
-
 Route::get('hikes', 'HikeController@all');
+
+/** TAGS **/
+Route::get('tags/{id}', 'TagController@view');
 
 /** TESTING ROUTES **/
 

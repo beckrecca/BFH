@@ -20,9 +20,12 @@ class HikeController extends Controller
     	$markers = $hike->markers;
         // get this hike's photos
         $images = $hike->images;
+        // get this hike's tags
+        $tags = $hike->tags;
     	return view ('hikes.detail')->with('hike', $hike)
     								->with('markers', $markers)
-                                    ->with('images', $images);
+                                    ->with('images', $images)
+                                    ->with('tags', $tags);
     }
 
     /**
