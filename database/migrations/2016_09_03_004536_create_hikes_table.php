@@ -20,7 +20,7 @@ class CreateHikesTable extends Migration
             # Path name for routing
             $table->string('path_name');
             # level of difficulty
-            $table->integer('level');
+            $table->string('climb');
             $table->text('description');
             # URL
             $table->string('web');

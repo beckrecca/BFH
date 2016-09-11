@@ -25,7 +25,7 @@ class HikesTableSeeder extends Seeder
 		        'name' => $obj->name,
 		        'path_name' => $obj->path_name,
 		        'description' => $obj->description,
-		        'level' => $obj->level,
+		        'climb' => $obj->climb,
 		        'web' => $obj->web
 	    	]);
    		 }

@@ -1,170 +1,170 @@
-[  
-   {  
+[
+   {
       "name":"The Arnold Arboretum of Harvard University",
       "path_name":"arnold-arboretum",
       "description":"A romantic haven, the Arnold Arboretum sustains gentle hills of varied gardens, vibrant trees, and scenic paths. It is suitable for all levels and abilities.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.arboretum.harvard.edu/"
    },
-   {  
+   {
       "name":"Blue Hills Reservation",
       "path_name":"blue-hills",
-      "description":"Popular for a reason, Blue Hills offers hundreds of miles of trails for various levels. Panoramic views surround the tops of its eponymous hills. The Trailside Museum has paved accessible trails, but many of the trails are unpaved and relatively intense.",
-      "level":3,
+      "description":"Popular for a reason, Blue Hills offers hundreds of miles of trails for various levels. Panoramic views surround the tops of its eponymous hills. The Trailside Museum has paved accessible trails, but many of the trials are unpaved and relatively intense.",
+      "climb":"intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/blue-hills-reservation.html"
    },
-   {  
+   {
       "name":"Mass Audubon Boston Nature Center & Wildlife Sanctuary",
       "path_name":"boston-nature-center",
       "description":"Mass Audubon Boston Nature Center's simple trails pass by wetlands, fields, and community gardens. Its facilities feature family-friendly activities. Its Sensory Trail is notably accessible. All of its trails maintain and easy level.",
-      "level":1,
+      "climb":"flat",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/boston-nature-center"
    },
-   {  
+   {
       "name":"Breakheart Reservation",
       "path_name":"breakheart",
       "description":"Frequented by families, Breakheart Reservation's trails extend over seven rocky scenic hills and surround two lakes with a designated swimming area. While some trails are challenging, there are paths for all levels, including a paved bike path.",
-      "level":3,
+      "climb":"intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-north/breakheart-reservation.html"
    },
-   {  
+   {
       "name":"Brookline Reservoir",
       "path_name":"brookline-reservoir",
       "description":"Historically Boston's drinking water supply, the Brookline Reservoir makes a short and sweet loop for walkers and joggers. Its path is easy and pleasant.",
-      "level":1,
+      "climb":"flat",
       "web":"http://www.brooklinema.gov/Facilities/Facility/Details/Brookline-Reservoir-Park-81"
    },
-   {  
+   {
       "name":"Charles River Park Reservation",
       "path_name":"charles-river",
       "description":"Twenty miles long, the Charles River Park Reservation maintains bike paths, pedestrian paths, playgrounds, athletic fields, and some of the best views of Boston and Cambridge. It is mostly flat, with extensively paved paths.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/charles-river-reservation.html"
    },
-   {  
+   {
       "name":"Chestnut Hill Reservoir",
       "path_name":"chestnut-hill-reservoir",
       "description":"On either side of the Chestnut Hill Reservoir, views of the city and Boston College stand on the horizon. Brief wooded trails augment the main path around the reservoir where waterfowl reside. The main path is flat.",
-      "level":1,
+      "climb":"flat",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/chestnut-hill-reservation.html"
    },
-   {  
+   {
       "name":"Emerald Necklace Conservancy",
       "path_name":"emerald-necklace",
       "description":"The Emerald Necklace lays a string of parks from Back Bay through Jamaica Plain, its jewels a wide variety of recreational activities. Its paths are mostly flat.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.emeraldnecklace.org/park-overview/"
    },
-   {  
+   {
       "name":"Forest Hills Cemetery",
       "path_name":"forest-hills",
       "description":"The sculptures and gardens of Forest Hills Cemetery create a restful yet visually stimulating escape from the city. Though some hills lie throughout the Cemetery, its paths are extensively paved and mostly flat.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.foresthillscemetery.com/"
    },
-   {  
+   {
       "name":"Fresh Pond",
       "path_name":"fresh-pond",
       "description":"A 2.5 mile wooded path popular with joggers and dog walkers surrounds Fresh Pond, Cambridge's source of drinking water. There are a few hills, but it is mostly flat.",
-      "level":2,
+      "climb":"moderate",
       "web":"https://www.cambridgema.gov/Water/freshpondreservation"
    },
-   {  
+   {
       "name":"Hammond Pond Park/Webster Conservation",
       "path_name":"hammond-webster",
       "description":"Sprinkled with lilies, Hammond Pond and its wooded trails lie adjacent to Webster Conservation Area with its fascinating geology. With few hills, its inclines are not particularly steep.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.newtonconservators.org/18webster.htm"
    },
-   {  
+   {
       "name":"Hemlock Gorge Reservation",
       "path_name":"hemlock-gorge",
       "description":"Tucked in between suburban Newton and Needham, tiny Hemlock Gorge Reservation features a few mild hills and waterfalls. Any slopes are extremely short.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/hemlock-gorge-reservation.html"
    },
-   {  
+   {
       "name":"Horn Pond Mountain",
       "path_name":"horn-pond",
       "description":"Skyline views and an interesting abandoned reservoir await discovery atop Horn Pond Mountain. Some paved flat paths surround Horn Pond, but there are dirt paths with some moderate inclines up the Mountain.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://woburnmaps.com/hornpond/index.htm"
    },
-   {  
+   {
       "name":"Lynn Woods Reservation",
       "path_name":"lynn-woods",
       "description":"Lynn Woods Reservation entices with scenic trails, multiple reservoirs, and tall tales behind sites like Dungeon Rock and the Wolf Pits. There are paths for all levels, some of which are fairly challenging.",
-      "level":3,
+      "climb":"intense",
       "web":"http://www.cityoflynn.net/citydepartments_lynnwoods.shtml"
    },
-   {  
+   {
       "name":"Middlesex Fells Reservation",
       "path_name":"middlesex-fells",
       "description":"Breathtaking waterfalls, rocky hills, and city views grace the many trails of ruggedly picturesque Middlesex Fells Reservation. With extensive trails for all levels, some are intense.",
-      "level":3,
+      "climb":"intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-north/middlesex-fells-reservation.html"
    },
-   {  
+   {
       "name":"Moose Hill Wildlife Sanctuary",
       "path_name":"moose-hill",
       "description":"With 25 miles of trails of varying levels, the Mass Audubon Moose Hill Wildlife Sanctuary harbors forests, fields, and wetlands. Its inclines are mostly moderate or short in duration.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/moose-hill"
    },
-   {  
+   {
       "name":"Mount Auburn Cemetery",
       "path_name":"mt-auburn-cemetery",
       "description":"A Boston naturalist's favorite, Mount Auburn Cemetery preserves a sanctuary of natural solace and urban wildlife. There are some hills but many paths are paved, and a challenge can be found if you ascend the Tower.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://mountauburn.org/"
    },
-   {  
+   {
       "name":"Drumlin Farm Wildlife Sanctuary",
       "path_name":"drumlin-farm",
       "description":"With only four miles of trails, the main attraction at Mass Audubon Drumlin Farm Wildlife Sanctuary is its animal exhibitions, both domestic and wild. Its paths are easy, and its Sensory Exploration Trail is universally accessible.",
-      "level":1,
+      "climb":"easy",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm"
    },
-   {  
+   {
       "name":"Pine Banks Park",
       "path_name":"pine-banks",
       "description":"Pine Banks Park provides multiple recreational fields and brief wooded trails that climb to a scenic outlook. Its few hills make a moderately challenging climb.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://www.pinebanks.org/"
    },
-   {  
+   {
       "name":"Prospect Hill Park",
       "path_name":"prospect-hill",
-      "description":"Prospect Hill Park's challenging hills, vernal pools, and dense woods open up to scenic outlooks east and west. There are trails for all levels, and paved roads throughout the park.",
-      "level":3,
+      "description":"Prospect Hill Park's challenging hills, vernal pools, and dense woods open up to scenic outlooks east and west. There are trail for all levels, and paved roads throughout the park.",
+      "climb":"intense",
       "web":"http://walthamlandtrust.org/open-space/guide-to-open-spaces/prospect-hill-park-trails"
    },
-   {  
+   {
       "name":"Stony Brook Reservation",
       "path_name":"stony-brook",
       "description":"The quiet woods of Stony Brook Reservation hide ponds, brooks, and rock-outcroppings. Paved paths give access to adventurers of all abilities, and its hills are brief and mild.",
-      "level":2,
+      "climb":"easy",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/stony-brook-reservation.html"
    },
-   {  
+   {
       "name":"Great Esker Park",
       "path_name":"great-esker",
       "description":"Named for the winding ridge of stratified sand and gravel left behind by a glacier 12,000 years ago, Great Esker Park lies along the Weymouth Back River with salt water marshes, reversing falls, and six miles of trails. Its paths can be moderately steep.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://www.south-shore-hiking-trails.com/hiking-trails-weymouth-great-esker-park.html"
    },
-   {  
+   {
       "name":"Wompatuck State Park",
       "path_name":"wompatuck",
-      "description":"Visitors to Wompatuck State Park enjoy 12 miles of bike trails, fishing at Cohasset Reservoir, fresh water from Mt. Blue Spring, and camping facilities. The park is mostly flat and ideal for bicycles. <a href='http://www.mass.gov/eea/agencies/dcr/massparks/recreational-activities/massparks-camping-info-generic.html' target='_blank'>MassParks Camping Information</a>.",
-      "level":1,
+      "description":"Visitors to Wompatuck State Park enjoy 12 miles of bike trails, fishing at Cohasset Reservoir, fresh water from Mt. Blue Spring, and camping facilities. The park is mostly flat and ideal for bicycles. Please see the website for camping information.",
+      "climb":"flat",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/wompatuck-state-park.html"
    },
-   {  
+   {
       "name":"World's End",
       "path_name":"worlds-end",
       "description":"At World's End, the bay views on the hilly peninsula merit the fee charged to non-members. Its hills are moderately steep.",
-      "level":2,
+      "climb":"moderate",
       "web":"http://www.thetrustees.org/places-to-visit/south-shore/worlds-end.html"
    }
 ]
