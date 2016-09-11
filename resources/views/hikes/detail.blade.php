@@ -7,6 +7,9 @@
 @section('head')
 	<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
     <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/lib/themes/default.css" id="theme_base">
+    <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">
+    <link rel="stylesheet" href="/lib/themes/default.time.css" id="theme_time">
     <link rel="stylesheet" href="/css/hike.css" />
 @stop
 
@@ -35,13 +38,15 @@
             <option value='{{ $index++ }}'>{{ $marker->name }}</option>
           @endforeach
         </select>
-        <label class="sr-only" for="transitOptions">Select leaving/arriving</label>
+        <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
         <select class="form-control" name="transitOptions" id="transitOptions">
-            <option value="departureTime">Leaving at</option>
-            <option value="arrivalTime">Arriving by</option>
+            <option value="departureTime">Leaving at (optional)</option>
+            <option value="arrivalTime">Arriving by (optional)</option>
         </select>
-        <label class="sr-only" for="datetimepicker">Select time and date leaving/arriving</label>
-        <input class="form-control" id="datetimepicker" name="datetimepicker" type="text" >
+        <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
+        <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
+        <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
+    	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
@@ -61,21 +66,20 @@
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
    <script src="/js/directions.js"></script>
-   <script src="/js/jquery.datetimepicker.full.min.js"></script>
+   <script src="/lib/picker.js"></script>
+   <script src="/lib/picker.date.js"></script>
+   <script src="/lib/picker.time.js"></script>
    <script>
-      $('#datetimepicker').datetimepicker({
-        minDate: 0,
-        allowTimes: [
-          '5:30', '6:00', '6:30', '7:00', '7:30', '8:00',
-          '8:30', '9:00', '9:30', '10:00', '10:30', '11:00',
-          '11:30', '12:00', '12:30', '13:00', '13:30', '14:00',
-          '14:30', '15:00', '15:30', '16:00', '16:30', '17:00',
-          '17:30', '18:00', '18:30', '19:00', '19:30', '20:00',
-          '20:30', '21:00', '21:30', '22:00', '22:30', '23:00',
-          '23:30', '0:00', '0:30'
-        ],
-        formatTime: 'g:iA'
+   	  var today = new Date();
+      $('.datepicker').pickadate({
+        min: today, // min date is today
+        format: 'd mmm yyyy'
       });
+      $('.timepicker').pickatime({
+        min: [6,00], // minimum time is 6am
+        max: [23,30] // maximum time is 11:30pm
+      });
+   </script>
     </script>
     <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js"></script>
     <script type="text/javascript">

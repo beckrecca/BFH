@@ -120,34 +120,44 @@ function calcRoute() {
   var start = $('#start').val();
   // End is the selected destination
   var end = markerData[$('#end').val()].address;
-
-  // Create a new Date to indicate time leaving/arriving
-  var dateTime = new Date();
-
+  // Get time from form
+  var time = $("#time").val();
+  // if no time chosen,
+  if (time == "") {
+    // use the current time
+    time = currentTime();
+  } else {
+    // otherwise format it to be parseable
+    time = formatSubmitTime(time);
+  }
+  // Get date from form
+  var date = $("#date").val();
+  // if no date chosen,
+  if (date == "") {
+    // use the current date
+    date = currentDate();
+  }
+  // set the dateTime of leaving/arriving
+  var dateTime = new Date(date + " " + time);
   // Initialize a timeOptions variable for the directions request
   var timeOptions = {};
   // Update date and time Leaving at or Arriving by according to user input
   var going = "Leaving at "
-  // If the user selected a date and time leaving
-  if ($("#datetimepicker").val() != null && $("#datetimepicker").val() != "") {
-    // set the dateTime to the selected date and time
-    dateTime = new Date($("#datetimepicker").val());
-    // if the user selected Arriving by
-    if ($('#transitOptions').val() == "arrivalTime") {
-      // update the timeOptions var to set the arrival time to the selected date and time
-      timeOptions = {
-        arrivalTime: dateTime
-      };
-      going = "Arriving by ";
-    }
-    // if the user selected Leaving by, do the same with departure time
-    else if ($('#transitOptions').val() == "departureTime") {
-      timeOptions = {
-        departureTime: dateTime
-      };
-    }
+  // get date from date input
+  // if the user selected Arriving by
+  if ($('#transitOptions').val() == "arrivalTime") {
+    // update the timeOptions var to set the arrival time to the selected date and time
+    timeOptions = {
+      arrivalTime: dateTime
+    };
+    going = "Arriving by ";
   }
-
+  // if the user selected Leaving by, do the same with departure time
+  else if ($('#transitOptions').val() == "departureTime") {
+    timeOptions = {
+      departureTime: dateTime
+    };
+  }
   // create directions request
   var request = {
     origin:start,
@@ -157,7 +167,7 @@ function calcRoute() {
     // set transit options specified above
     transitOptions: timeOptions
   };
-  // draw the directions & create directions panel display
+  // draw the directions per the request & create directions panel display
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
@@ -173,7 +183,30 @@ function calcRoute() {
 function panelContent(name, address) {
   return "<span style='font-weight: bold'>" + name + "</span><br/>" + address;
 }
-
+function currentTime() {
+  var time = new Date();
+  var min = time.getMinutes();
+  if (min < 10) {
+    min = "0" + min;
+  }
+  return time.getHours() + ":" + min;
+}
+function currentDate() {
+  var date = new Date();
+  return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
+}
+function formatSubmitTime(time) {
+  if ((time[time.length-2]) == "P") {
+    var hour = parseInt(time.substring(0,2));
+    if (hour < 12) {
+      hour = hour + 12;
+    }
+    return hour + ":" + time.substring(2,time.length-3);
+  }
+  else if ((time[time.length-2]) == "A") {
+    return time.substring(0, time.length-3);
+  }
+}
 function convertDateTime(d) {
   var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -181,10 +214,10 @@ function convertDateTime(d) {
 }
 function convertTime(d) {
   var h = d.getHours();
-  var mer = "am";
+  var mer = " AM";
   if (h > 12) {
     h = h - 12;
-    mer = "pm";
+    mer = " PM";
   }
   var min = d.getMinutes();
   if (min < 10) { min = "0" + min };
