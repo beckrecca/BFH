@@ -15,41 +15,53 @@
 
 @section('content')
 	<div class="container">
-      
-      <h1>{{ $hike->name }}</h1>
-      <div id="gallery">
-        @foreach ($images as $image)
-          <a class="fancybox" rel="group" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
-        @endforeach
-      </div>
-      <p>{{ $hike->description }}</p>
-      <p><a href="/hikes">Back</a>
-
-      <form class="form-inline">
-        <label class="sr-only" for="start">User address</label>
-        <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
-        <label class="sr-only" for="end">Select destination</label>
-        <select class="form-control" name="end" id="end">
-          <?php 
-            // index the markers
-            $index = 0;
-            ?>
-          @foreach ($markers as $marker)
-            <option value='{{ $index++ }}'>{{ $marker->name }}</option>
-          @endforeach
-        </select>
-        <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
-        <select class="form-control" name="transitOptions" id="transitOptions">
-            <option value="departureTime">Leaving at (optional)</option>
-            <option value="arrivalTime">Arriving by (optional)</option>
-        </select>
-        <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
-        <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
-        <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
-    	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
-        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-      </form>
+    <h1>{{ $hike->name }}</h1>
+    <div class="row">
+      <ul id="features">
+        <li>Features:</li>
+        <li><a href="#">Historic</a></li>
+        <li><a href="#">Theater</a></li>
+        <li><a href="#">Landmark</a></li>
+        <li><a href="#">Entertainment</a></li>
+      </ul>
     </div>
+    <div class="row" id="gallery">
+      <p><span class="glyphicon glyphicon-camera" aria-hidden="true" id="camera"></span> {{ $images->count() }} photos</p>
+      @foreach ($images as $image)
+        <a class="fancybox" rel="group" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
+      @endforeach
+    </div>
+    <div class="row" id="description">
+      <p>{{ $hike->description }}<br />
+      <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a></p>
+      
+    </div>
+    <h2>Directions</h2> 
+    <form class="form-inline">
+      <label class="sr-only" for="start">User address</label>
+      <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
+      <label class="sr-only" for="end">Select destination</label>
+      <select class="form-control" name="end" id="end">
+        <?php 
+          // index the markers
+          $index = 0;
+          ?>
+        @foreach ($markers as $marker)
+          <option value='{{ $index++ }}'>{{ $marker->name }}</option>
+        @endforeach
+      </select>
+      <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
+      <select class="form-control" name="transitOptions" id="transitOptions">
+          <option value="departureTime">Leaving at (optional)</option>
+          <option value="arrivalTime">Arriving by (optional)</option>
+      </select>
+      <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
+      <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
+      <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
+    	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
+      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
 
     <div id="directionsPanelContainer">
       <div id="timing"></div>
