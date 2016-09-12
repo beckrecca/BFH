@@ -6,7 +6,10 @@ var directionsDisplay;
 var directionsService;
 // The Geocoder finds GPS coordinates for the user's address
 var geocoder;
+var defaultIcon = '/img/markers/blue-dot.png';
 var map;
+var markers = []; 
+var markedIcon = '/img/markers/orange-dot.png';
 // keeps track of the previous marker clicked
 var previousClick;
 // keep track of which entrance was just selected
@@ -18,8 +21,6 @@ var selected = 0;
 * It initializes a map and a directions panel.
 */
 function initMap() {
-  // display lines for the selected entrance
-  displayLines(selected);
   // create a new directions panel
   directionsDisplay = new google.maps.DirectionsRenderer();
   // create a directions service to obtain the directions
@@ -41,7 +42,7 @@ function initMap() {
       // Infowindow content
       content: panelContent(markerData[i].name, markerData[i].address, markerData[i].distance_to_mbta),
       // marker color
-      icon: '/img/markers/blue-dot.png',
+      icon: defaultIcon,
       // animates when dropped on the map
       animation: google.maps.Animation.DROP,
       // keep the marker from overlaying the directions markers
@@ -49,6 +50,8 @@ function initMap() {
       // set its id
       id: i
     });
+    // remember this marker
+    markers[i] = marker;
     // add this marker to the map's bounds
     bounds.extend(new google.maps.LatLng(parseFloat(markerData[i].lat), parseFloat(markerData[i].lng)));
     // create an information window for this marker
@@ -66,13 +69,13 @@ function initMap() {
         // if this marker is not animated, animate it on click
         this.setAnimation(google.maps.Animation.BOUNCE);
         // also change the marker to orange
-        this.setIcon('/img/markers/orange-dot.png');
+        this.setIcon(markedIcon);
         // if another marker was previously clicked,
         if ((previousClick != null) && (previousClick != this)) {
           // stop its animation
           previousClick.setAnimation(null);
           // and change it back to blue
-          previousClick.setIcon('/img/markers/blue-dot.png');
+          previousClick.setIcon(defaultIcon);
         }
         // remember this marker as having just been clicked
         previousClick = this;
@@ -109,17 +112,19 @@ function initMap() {
   // If the user selects a different entrance,
   $('#end').change(function () {
     // display that marker's lines
-    selected = $('#end').val();
-    displayLines(selected);
-    // stop previous marker's animation and reset its color
-    previousClick.setAnimation(null);
-    previousClick.setIcon('/img/markers/blue-dot.png');
+    displayLines($('#end').val());
+    // stop previous marker's animation
+    if (previousClick != null){
+      previousClick.setAnimation(null);
+    }
   });
   // When the form is submitted, calculate the route
   $('form').submit(function(e) {
     e.preventDefault();
     calcRoute();
   });
+  // display lines & distance for default marker
+  displayLines(selected);
 }
 
 /*
@@ -199,21 +204,31 @@ function panelContent(name, address, distance) {
 * displayLines() is called by initMap() and calcRoute ()
 * It displays the lines for the selected entrance in HTML
 */
-function displayLines(selected) {
+function displayLines(id) {
   // make current selection and distance visible
-  $(".marker_" + selected).removeClass("hidden");
-  $(".distance_" + selected).removeClass("hidden");
+  $(".marker_" + id).removeClass("hidden");
+  $(".distance_" + id).removeClass("hidden");
+  // highlight marker for selected entrance
+  highlightMarker(id);
   // if a previous selection has been made and we have more than one marker
   if ((previousSelected != null) && (markerData.length > 1)) {
-    if (previousSelected != selected) {
+    if (previousSelected != id) {
+      // hide the previous lines and distance info
       $(".marker_" + previousSelected).addClass("hidden");
       $(".distance_" + previousSelected).addClass("hidden");
     }
-    // make the lines and distance for the previous selection invisible
-    
   }
   // remember previous selection
-  previousSelected = selected;
+  previousSelected = id;
+}
+function highlightMarker(id){
+  // change the current entrance marker's icon to orange and reset the rest to blue
+  for (var i = 0; i < markers.length; i++) {
+    if (i == id) markers[i].setIcon(markedIcon);
+    else markers[i].setIcon(defaultIcon);
+  }
+  // recenter map
+  map.setCenter(markers[id].position);
 }
 function currentTime() {
   var time = new Date();
