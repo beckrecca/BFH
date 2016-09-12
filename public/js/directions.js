@@ -1,17 +1,17 @@
-// sets the bounds for our map
+// bounds sets the bounds for our map
 var bounds;
-// generates the directions panel
+// The Directions Display generates the directions panel
 var directionsDisplay;
-// retrieves the directions
+// The Directions Service retrieves the directions
 var directionsService;
-// finds GPS coordinates for the user's address
+// The Geocoder finds GPS coordinates for the user's address
 var geocoder;
 var map;
-// keep track of the previous marker clicked
+// keeps track of the previous marker clicked
 var previousClick;
 // keep track of which entrance was just selected
 var previousSelected;
-// keep track of which entrance is selected (defaults 0)
+// the selected entrance defaults to 0
 var selected = 0;
 /*
 * initMap() is called by the Google Maps API key script.
@@ -39,7 +39,7 @@ function initMap() {
       map: map,
       title: markerData[i].name,
       // Infowindow content
-      content: panelContent(markerData[i].name, markerData[i].address),
+      content: panelContent(markerData[i].name, markerData[i].address, markerData[i].distance_to_mbta),
       // marker color
       icon: '/img/markers/blue-dot.png',
       // animates when dropped on the map
@@ -68,7 +68,7 @@ function initMap() {
         // also change the marker to orange
         this.setIcon('/img/markers/orange-dot.png');
         // if another marker was previously clicked,
-        if (previousClick != null) {
+        if ((previousClick != null) && (previousClick != this)) {
           // stop its animation
           previousClick.setAnimation(null);
           // and change it back to blue
@@ -79,10 +79,8 @@ function initMap() {
       }
       // change the entrance selection to this marker
       $('#end').val(this.id);
-      // update which entrance has been selected
-      selected = $('#end').val();
       // show selected entrance's lines
-      displayLines(selected);
+      displayLines($('#end').val());
     });
   }
   // if we have more than one marker, set the bounds around them
@@ -108,10 +106,14 @@ function initMap() {
       map.setCenter(center);
     });
   }
-  // If the user selects a different entrance, display that marker's lines
+  // If the user selects a different entrance,
   $('#end').change(function () {
+    // display that marker's lines
     selected = $('#end').val();
     displayLines(selected);
+    // stop previous marker's animation and reset its color
+    previousClick.setAnimation(null);
+    previousClick.setIcon('/img/markers/blue-dot.png');
   });
   // When the form is submitted, calculate the route
   $('form').submit(function(e) {
@@ -190,21 +192,27 @@ function calcRoute() {
 * panelContent() is called by initMap()
 * It generates content for each marker's information window.
 */
-function panelContent(name, address) {
-  return "<span style='font-weight: bold'>" + name + "</span><br/>" + address;
+function panelContent(name, address, distance) {
+  return "<span style='font-weight: bold'>" + name + "</span><br/>" + distance + " mi from MBTA<br/>" + address;
 }
 /*
 * displayLines() is called by initMap() and calcRoute ()
 * It displays the lines for the selected entrance in HTML
 */
 function displayLines(selected) {
-  // make current selection visible
+  // make current selection and distance visible
   $(".marker_" + selected).removeClass("hidden");
+  $(".distance_" + selected).removeClass("hidden");
   // if a previous selection has been made and we have more than one marker
   if ((previousSelected != null) && (markerData.length > 1)) {
-    // make the lines for the previous selection invisble
-    $(".marker_" + previousSelected).addClass("hidden");
+    if (previousSelected != selected) {
+      $(".marker_" + previousSelected).addClass("hidden");
+      $(".distance_" + previousSelected).addClass("hidden");
+    }
+    // make the lines and distance for the previous selection invisible
+    
   }
+  // remember previous selection
   previousSelected = selected;
 }
 function currentTime() {

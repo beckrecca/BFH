@@ -74,6 +74,7 @@
           @foreach ($lines as $line)
             <li class='hidden marker_{{ $class }}'><a href='#'>{{ $line->name }}</a></li>
           @endforeach
+          <li class='hidden distance_{{ $class }}'>{{ $marker->distance_to_mbta }} mi from closest station/stop</li>
           <?php $class++; ?>
         @endforeach
       </ul>
