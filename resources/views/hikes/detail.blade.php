@@ -34,7 +34,8 @@
       <p>{{ $hike->description }}<br />
       <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a></p>
     </div>
-    <h2>Directions</h2> 
+    <h2>Transit Directions</h2> 
+    <p>This directions service will only work for addresses in Greater Boston with access to public transportation.</p>
     <form class="form-inline">
       <label class="sr-only" for="start">User address</label>
       <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
