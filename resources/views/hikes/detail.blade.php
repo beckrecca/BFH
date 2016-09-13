@@ -6,11 +6,11 @@
 
 @section('head')
 	<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
-    <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/lib/themes/default.css" id="theme_base">
-    <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">
-    <link rel="stylesheet" href="/lib/themes/default.time.css" id="theme_time">
-    <link rel="stylesheet" href="/css/hike.css" />
+  <link rel="stylesheet" href="/src/css/swipebox.css">
+  <link rel="stylesheet" href="/lib/themes/default.css" id="theme_base">
+  <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">
+  <link rel="stylesheet" href="/lib/themes/default.time.css" id="theme_time">
+  <link rel="stylesheet" href="/css/hike.css" />
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
     <div class="row" id="gallery">
       <p><span class="glyphicon glyphicon-camera" aria-hidden="true" id="camera"></span> {{ $images->count() }} photos</p>
       @foreach ($images as $image)
-        <a class="fancybox" rel="group" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
+        <a rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
       @endforeach
     </div>
     <div class="row" id="description">
@@ -132,13 +132,15 @@
         max: [23,30] // maximum time is 11:30pm
       });
    </script>
-    </script>
-    <!-- fancybox -->
-    <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js"></script>
+    <!-- Swipebox -->
+    <script src="/lib/jquery-2.1.0.min.js"></script>
+    <script src="/src/js/jquery.swipebox.js"></script>
     <script type="text/javascript">
-      $(document).ready(function() {
-        $(".fancybox").fancybox();
-      });
+    ;( function( $ ) {
+
+      $( '.swipebox' ).swipebox();
+
+    } )( jQuery );
     </script>
     <!-- directions panel styling -->
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
