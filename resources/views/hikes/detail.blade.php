@@ -53,10 +53,27 @@
           <option value="departureTime">Leaving at (optional)</option>
           <option value="arrivalTime">Arriving by (optional)</option>
       </select>
-      <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
-      <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
-      <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
-    	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
+      <div id="more-options">
+        <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
+        <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
+        <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
+      	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
+        <label class="sr-only" for="transitMode">Optionally select transit mode</label>
+        <select class="form-control" name="transitMode" id="transitMode">
+          <option value="0">Mode (optional)</option>
+          <option value="BUS">Bus</option>
+          <option value="RAIL">Rail</option>
+          <option value="SUBWAY">Subway</option>
+          <option value="TRAIN">Train</option>
+          <option value="TRAM">Trolley</option>
+        </select>
+        <label class="sr-only" for="transitRoutePreference">Optionally select route preference</label>
+        <select class="form-control" name="transitRoutePreference" id="transitRoutePreference">
+          <option value="0">Route preference (optional)</option>
+          <option value="FEWER_TRANSFERS">Fewer transfers</option>
+          <option value="LESS_WALKING">Less walking</option>
+        </select>
+      </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
     <div class="row">
@@ -106,7 +123,7 @@
    	  var today = new Date();
       $('.datepicker').pickadate({
         min: today, // min date is today
-        format: 'd mmm yyyy'
+        format: 'd mmm yyyy' // Day Shortmonth Fullyear
       });
       $('.timepicker').pickatime({
         min: [6,00], // minimum time is 6am

@@ -19,8 +19,16 @@ Route::get('/', function () {
 Route::get('hikes/{path_name}', 'HikeController@detail');
 Route::get('hikes', 'HikeController@all');
 
+/** IMAGES **/
+//Route::get('hikes/{path_name}/images', 'ImageController@View');
+
+/** LINES **/
+//Route::get('lines/{id}', 'LineController@view');
+//Route::get('lines', 'LineController@all');
+
 /** TAGS **/
 Route::get('tags/{id}', 'TagController@view');
+//Route::get('tags', 'TagController@all');
 
 /** TESTING ROUTES **/
 

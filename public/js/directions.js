@@ -156,24 +156,34 @@ function calcRoute() {
   }
   // set the dateTime of leaving/arriving
   var dateTime = new Date(date + " " + time);
-  // Initialize a timeOptions variable for the directions request
-  var timeOptions = {};
+  // Initialize variables for time leaving or arriving
+  var arriving = null;
+  var leaving = null;
   // Update date and time Leaving at or Arriving by according to user input
   var going = "Leaving at "
   // get date from date input
   // if the user selected Arriving by
   if ($('#transitOptions').val() == "arrivalTime") {
-    // update the timeOptions var to set the arrival time to the selected date and time
-    timeOptions = {
-      arrivalTime: dateTime
-    };
+    // update the time arriving variable
+    arriving = dateTime;
     going = "Arriving by ";
   }
   // if the user selected Leaving by, do the same with departure time
   else if ($('#transitOptions').val() == "departureTime") {
-    timeOptions = {
-      departureTime: dateTime
-    };
+    leaving = dateTime;
+  }
+  // transit mode defaults to all
+  var mode = ["BUS", "RAIL", "SUBWAY", "TRAIN", "TRAM"]
+  // if the user selected a mode
+  if ($("#transitMode").val() != 0) {
+    // set the mode
+    mode = [$("#transitMode").val()];
+  }
+  // initialize route preference object
+  var routePreference = null;
+  // if the user selected a route preference
+  if ($("#transitRoutePreference").val() != 0) {
+    routePreference = $("#transitRoutePreference").val();
   }
   // create directions request
   var request = {
@@ -182,7 +192,12 @@ function calcRoute() {
     // set travel mode to public transit
     travelMode: google.maps.TravelMode.TRANSIT,
     // set transit options specified above
-    transitOptions: timeOptions
+    transitOptions: {
+      arrivalTime: arriving,
+      departureTime: leaving,
+      modes: mode,
+      routingPreference: routePreference
+    }
   };
   // draw the directions per the request & create directions panel display
   directionsService.route(request, function(response, status) {
