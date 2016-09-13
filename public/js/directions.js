@@ -120,7 +120,15 @@ function initMap() {
   });
   // When the form is submitted, calculate the route
   $('form').submit(function(e) {
+    // prevent form submission
     e.preventDefault();
+    // clear the directions panel in case it is already displayed
+    $("#directionsPanel").html(" ");
+    // clear the timing display
+    $("#timing").html(" ");
+    // clear any errors that might be displayed
+    $("#errors").html(" ");
+    // calculate the route and display directions
     calcRoute();
   });
   // display lines & distance for default marker
@@ -203,8 +211,17 @@ function calcRoute() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
+      // make the timing clear at the top of the directions panel,
       $("#timing").html(going + convertDateTime(dateTime));
     }
+      // if the directions service fails
+      else if ($("#start").val() == "") {
+        $("#errors").html("Please provide a starting address.");
+      }
+      // if directions service fails even with an address, show error
+      else {
+        $("#errors").html("No directions available. Please note that the starting address must be MBTA-accessible.");
+      }
   });
 }
 

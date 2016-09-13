@@ -100,6 +100,7 @@
   </div>
 
     <div id="directionsPanelContainer">
+      <div id="errors"></div>
       <div id="timing"></div>
       <div id="directionsPanel"></div>
     </div>
