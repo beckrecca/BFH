@@ -163,32 +163,32 @@
    },
    {
       "file":"00001.jpg",
-      "alt":"Under mostly clear skies, the Chestnut Hill Reservoir occupies most of the photo, with its path visible to the left and middle background. Trees are behind the path, and in the background the trees partially obscure buildings. In the middle left of the photo, there is a gatehouse.",
-      "title":"Part of the Chestnut Hill Reservoir and its gatehouse",
+      "alt":"Deciduous and evergreen trees stand on a shady brown hill. Behind the trees lies the Chestnut Hill Reservoir.",
+      "title":"There are very short trails in the woods around the Reservoir.",
       "hike_id":7
    },
    {
       "file":"00002.jpg",
-      "alt":"Some ducks sit on the rocky shore of the Chestnut Hill Reservoir, with vines growing in the foreground.",
-      "title":"Very important duck business meeting",
+      "alt":"Behind a dirt path, a chipmunk eats something. Behind the chipmunk, there are vines.",
+      "title":"A chipmunk has a little snack.",
       "hike_id":7
    },
    {
       "file":"00003.jpg",
+      "alt":"Some ducks sit on the rocky shore of the Chestnut Hill Reservoir, with vines growing in the foreground.",
+      "title":"A very important duck business meeting.",
+      "hike_id":7
+   },
+   {
+      "file":"00004.jpg",
       "alt":"In the background behind the Chestnut Hill Reservoir, from left to right, there are the Hancock Tower and the Prudential Tower, the Waterworks Museum, and other buildings.",
       "title":"The Hancock Tower, the Prudential Tower, and the Waterworks Museum",
       "hike_id":7
    },
    {
-      "file":"00004.jpg",
-      "alt":"Deciduous and evergreen trees stand on a shady brown hill. Behind the trees lies the Chestnut Hill Reservoir.",
-      "title":"There are short trail in the woods around the reservoir.",
-      "hike_id":7
-   },
-   {
       "file":"00005.jpg",
-      "alt":"Behind a dirt path, a chipmunk eats something. Behind the chipmunk, there are vines.",
-      "title":"A chipmunk has a little snack.",
+      "alt":"Under mostly clear skies, the Chestnut Hill Reservoir occupies most of the photo, with its path visible to the left and middle background. Trees are behind the path, and in the background the trees partially obscure buildings. In the middle left of the photo, there is a gatehouse.",
+      "title":"Part of the Chestnut Hill Reservoir and its Gatehouse",
       "hike_id":7
    },
    {
