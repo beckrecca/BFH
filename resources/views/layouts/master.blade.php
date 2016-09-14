@@ -52,6 +52,7 @@
         </footer>
        <!-- JQuery -->
        <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
+       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         @yield('body')
     </body>
 </html>
