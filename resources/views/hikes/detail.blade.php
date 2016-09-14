@@ -138,7 +138,9 @@
     <script type="text/javascript">
     ;( function( $ ) {
 
-      $( '.swipebox' ).swipebox();
+      $( '.swipebox' ).swipebox({
+        removeBarsOnMobile : false
+      });
 
     } )( jQuery );
     </script>
