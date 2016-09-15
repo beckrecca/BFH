@@ -24,15 +24,16 @@
         @endforeach
       </ul>
     </div>
-    <div class="row" id="gallery">
-      <p><span class="glyphicon glyphicon-camera" aria-hidden="true" id="camera"></span> {{ $images->count() }} photos</p>
+    <div class="row hidden-xs visible-sm visible-md visible-lg" id="gallery">
       @foreach ($images as $image)
         <a rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" width="128px" alt="{{ $hike->alt}}"/></a>
       @endforeach
     </div>
     <div class="row" id="description">
-      <p>{{ $hike->description }}<br />
-      <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a></p>
+      <p><span>Description:</span> {{ $hike->description }}</p>
+      <p><span>Climb</span>: {{ $hike->climb }}<br/>
+      <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
+      <span class="visible-xs hidden-sm hidden-md hidden-lg pull-right" id="camera"><a href="#" id="open-gallery"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{ $images->count() }} photos</a></span></p>
     </div>
     <h2>Transit Directions</h2> 
     <p>This directions service will only work for addresses in Greater Boston with access to public transportation.</p>
@@ -49,12 +50,13 @@
           <option value='{{ $index++ }}'>{{ $marker->name }}</option>
         @endforeach
       </select>
+      <a href="#" id="toggle-options" class="pull-right">More options</a>
+      <div id="more-options">
       <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
       <select class="form-control" name="transitOptions" id="transitOptions">
           <option value="departureTime">Leaving at (optional)</option>
           <option value="arrivalTime">Arriving by (optional)</option>
       </select>
-      <div id="more-options">
         <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
         <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
         <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
@@ -143,6 +145,16 @@
       });
 
     } )( jQuery );
+    </script>
+    <script>
+    $( '#open-gallery' ).click( function( e ) {
+      e.preventDefault();
+      $.swipebox( [
+        @foreach ($images as $image)
+        { href:'/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}', title:'{{ $image->title }}' },
+        @endforeach
+      ] );
+    } );
     </script>
     <!-- directions panel styling -->
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >

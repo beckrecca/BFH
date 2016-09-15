@@ -18,7 +18,7 @@ var previousSelected;
 var selected = 0;
 /*
 * initMap() is called by the Google Maps API key script.
-* It initializes a map and a directions panel.
+* It initializes the map and directions panel.
 */
 function initMap() {
   // create a new directions panel
@@ -133,11 +133,15 @@ function initMap() {
   });
   // display lines & distance for default marker
   displayLines(selected);
+  // toggle more options for directions form
+  $("#toggle-options").click(function() {
+    $("#more-options").toggle();
+  });
 }
 
 /*
 * calcRoute() is called by initMap()
-* It find the directions for the selected start and end points,
+* It calculates the directions for the selected start and end points,
 * and it delivers them in a directions panel.
 */
 function calcRoute() {
@@ -227,7 +231,8 @@ function calcRoute() {
 
 /*
 * panelContent() is called by initMap()
-* It generates content for each marker's information window.
+* It generates content for each marker's information window
+* based on the passed parameters 'name', 'address', and 'distance'
 */
 function panelContent(name, address, distance) {
   return "<span style='font-weight: bold'>" + name + "</span><br/>" + distance + " mi from MBTA<br/>" + address;
@@ -235,6 +240,7 @@ function panelContent(name, address, distance) {
 /*
 * displayLines() is called by initMap() and calcRoute ()
 * It displays the lines for the selected entrance in HTML
+* based on the parameter 'id'
 */
 function displayLines(id) {
   // make current selection and distance visible
@@ -253,6 +259,11 @@ function displayLines(id) {
   // remember previous selection
   previousSelected = id;
 }
+/*
+* highlightMarker() is called by displayLines()
+* Given the parameter 'id', it changes that marker's color
+* to orange and sets the rest to blue.
+*/
 function highlightMarker(id){
   // change the current entrance marker's icon to orange and reset the rest to blue
   for (var i = 0; i < markers.length; i++) {
@@ -262,6 +273,10 @@ function highlightMarker(id){
   // recenter map
   map.setCenter(markers[id].position);
 }
+/*
+* currentTime() is called by calcRoute()
+* It returns the current time in 24-format hours and minutes
+*/
 function currentTime() {
   var time = new Date();
   var min = time.getMinutes();
@@ -270,10 +285,19 @@ function currentTime() {
   }
   return time.getHours() + ":" + min;
 }
+/*
+* currentDate() is called by calcRoute()
+* It returns a Date object parsable date without the time
+*/
 function currentDate() {
   var date = new Date();
   return (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
 }
+/*
+* formatSubmitTime() is called by calcRoute()
+* It takes the time string from the pickadate.js picker
+* and formats it into something parsable in a Date object
+*/
 function formatSubmitTime(time) {
   if ((time[time.length-2]) == "P") {
     var hour = parseInt(time.substring(0,2));
@@ -286,11 +310,21 @@ function formatSubmitTime(time) {
     return time.substring(0, time.length-3);
   }
 }
+/*
+* convertDateTime() is called by calcRoute()
+* It converts the full date-time Date object used to calculate the route
+* and prints it back into something more pretty for the user.
+*/
 function convertDateTime(d) {
   var month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return convertTime(d) + " on " + week[d.getDay()] + " " + month[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
 }
+/*
+* convertTime() is called by convertDateTime()
+* It converts the full date-time Date object used to calculate the route
+* and prints it back into something more pretty for the user.
+*/
 function convertTime(d) {
   var h = d.getHours();
   var mer = " AM";

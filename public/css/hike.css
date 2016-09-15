@@ -27,6 +27,9 @@
     margin-top: 0em;
   }
 }
+#features {
+  padding: 0.5em;
+}
 ul#features, ul#lines {
   list-style-type: none;
   margin: 0;
@@ -45,19 +48,34 @@ ul#features li a:hover, ul#lines li a:hover {
   color: #71B300;
 }
 #camera {
-  color: #000;
-  font-size: 2em;
+  font-size: 1.1em;
+  padding: 0;
+  margin: 0;
 }
 #gallery {
   color: #555;
-  padding: 0em 0.25em 1em 0.25em;
-  border-bottom: 1px dotted #aaa;
-  height: 120px;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+@media only screen and (min-width: 769px) {
+  #gallery {
+    padding: 0em 0.25em 1em 0.25em;
+    border-bottom: 1px dotted #aaa;
+    height: 96px;
+    overflow: scroll;
+  }
 }
 #description {
   padding: 1em 0.5em 0em 0.5em;
 }
 #description > p {
   text-indent: 1em;
+  padding: 0;
+  margin: 0;
+}
+#description > p > span {
+  font-weight: bold;
+}
+#more-options {
+  display: none;
 }

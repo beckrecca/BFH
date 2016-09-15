@@ -20,8 +20,8 @@ class HikeController extends Controller
     	$markers = $hike->markers;
         // get this hike's photos
         $images = $hike->images;
-        // get this hike's tags
-        $tags = $hike->tags;
+        // get this hike's tags in alphabetical order
+        $tags = $hike->tags->sortBy('name');
     	return view ('hikes.detail')->with('hike', $hike)
                                     ->with('images', $images)
     								->with('markers', $markers)

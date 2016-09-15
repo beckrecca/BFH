@@ -16,8 +16,9 @@ class TagController extends Controller
     {
         // obtain the tag by this ID
     	$tag = \App\Tag::find($id);
-    	// find all hikes with this ID
-    	$hikes = $tag->hikes;
-    	return $hikes;
+    	// find all hikes with this ID, sorted alphabetically
+    	$hikes = $tag->hikes->sortBy('name');
+    	return view ('tags.view')->with('tag', $tag)
+                                 ->with('hikes', $hikes);
     }
 }
