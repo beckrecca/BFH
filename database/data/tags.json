@@ -1,38 +1,89 @@
-[  
-   {  
+[
+   {
       "name":"accessible"
    },
-   {  
+   {
+      "name":"athletic fields"
+   },
+   {
+      "name":"bay"
+   },
+   {
       "name":"bicycle-friendly"
    },
-   {  
+   {
       "name":"bird-watching"
    },
-   {  
+   {
+      "name":"camping"
+   },
+   {
       "name":"cross-country skiiing"
    },
-   {  
+   {
       "name":"dog-friendly"
    },
-   {  
+   {
+      "name":"farm"
+   },
+   {
       "name":"fishing"
    },
-   {  
+   {
+      "name":"foliage"
+   },
+   {
       "name":"free"
    },
-   {  
-      "name":"large"
+   {
+      "name":"gardens"
    },
-   {  
-      "name":"medium"
+   {
+      "name":"ice skating"
    },
-   {  
+   {
+      "name":"large (>1000 acres)"
+   },
+   {
+      "name":"medium (151-1000 acres)"
+   },
+   {
+      "name":"panoramic views"
+   },
+   {
+      "name":"pond"
+   },
+   {
+      "name":"remote"
+   },
+   {
+      "name":"reservoir"
+   },
+   {
+      "name":"river"
+   },
+   {
       "name":"rock-climbing"
    },
-   {  
+   {
       "name":"skiing"
    },
-   {  
-      "name":"small"
+   {
+      "name":"skyline views"
+   },
+   {
+      "name":"small (<150 acres)"
+   },
+   {
+      "name":"swimming"
+   },
+   {
+      "name":"tidal river"
+   },
+   {
+      "name":"urban"
+   },
+   {
+      "name":"waterfalls"
    }
 ]

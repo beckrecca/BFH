@@ -5,7 +5,11 @@
    },
    {
       "hike_id":1,
-      "tag_id":2
+      "tag_id":4
+   },
+   {
+      "hike_id":1,
+      "tag_id":8
    },
    {
       "hike_id":1,
@@ -13,27 +17,59 @@
    },
    {
       "hike_id":1,
-      "tag_id":3
+      "tag_id":12
    },
    {
       "hike_id":1,
+      "tag_id":16
+   },
+   {
+      "hike_id":1,
+      "tag_id":24
+   },
+   {
+      "hike_id":1,
+      "tag_id":11
+   },
+   {
+      "hike_id":1,
+      "tag_id":13
+   },
+   {
+      "hike_id":2,
+      "tag_id":4
+   },
+   {
+      "hike_id":2,
+      "tag_id":8
+   },
+   {
+      "hike_id":2,
+      "tag_id":10
+   },
+   {
+      "hike_id":2,
+      "tag_id":23
+   },
+   {
+      "hike_id":2,
       "tag_id":7
    },
    {
-      "hike_id":1,
-      "tag_id":9
-   },
-   {
-      "hike_id":2,
-      "tag_id":2
-   },
-   {
       "hike_id":2,
       "tag_id":5
    },
    {
       "hike_id":2,
-      "tag_id":6
+      "tag_id":15
+   },
+   {
+      "hike_id":2,
+      "tag_id":12
+   },
+   {
+      "hike_id":2,
+      "tag_id":20
    },
    {
       "hike_id":2,
@@ -41,121 +77,193 @@
    },
    {
       "hike_id":2,
+      "tag_id":17
+   },
+   {
+      "hike_id":2,
+      "tag_id":24
+   },
+   {
+      "hike_id":2,
+      "tag_id":18
+   },
+   {
+      "hike_id":2,
+      "tag_id":14
+   },
+   {
+      "hike_id":3,
+      "tag_id":1
+   },
+   {
+      "hike_id":3,
+      "tag_id":5
+   },
+   {
+      "hike_id":3,
+      "tag_id":12
+   },
+   {
+      "hike_id":3,
+      "tag_id":25
+   },
+   {
+      "hike_id":3,
+      "tag_id":13
+   },
+   {
+      "hike_id":4,
       "tag_id":4
    },
    {
-      "hike_id":2,
-      "tag_id":3
+      "hike_id":4,
+      "tag_id":7
    },
    {
-      "hike_id":2,
+      "hike_id":4,
       "tag_id":8
    },
    {
-      "hike_id":2,
-      "tag_id":7
-   },
-   {
-      "hike_id":3,
-      "tag_id":1
-   },
-   {
-      "hike_id":3,
-      "tag_id":3
-   },
-   {
-      "hike_id":3,
-      "tag_id":7
-   },
-   {
-      "hike_id":3,
+      "hike_id":4,
       "tag_id":12
    },
    {
       "hike_id":4,
-      "tag_id":2
+      "tag_id":16
    },
    {
       "hike_id":4,
+      "tag_id":21
+   },
+   {
+      "hike_id":4,
+      "tag_id":1
+   },
+   {
+      "hike_id":4,
+      "tag_id":26
+   },
+   {
+      "hike_id":4,
+      "tag_id":11
+   },
+   {
+      "hike_id":4,
+      "tag_id":18
+   },
+   {
+      "hike_id":4,
+      "tag_id":19
+   },
+   {
+      "hike_id":4,
+      "tag_id":24
+   },
+   {
+      "hike_id":4,
+      "tag_id":17
+   },
+   {
+      "hike_id":4,
+      "tag_id":5
+   },
+   {
+      "hike_id":5,
+      "tag_id":8
+   },
+   {
+      "hike_id":5,
+      "tag_id":10
+   },
+   {
+      "hike_id":5,
+      "tag_id":12
+   },
+   {
+      "hike_id":5,
+      "tag_id":24
+   },
+   {
+      "hike_id":5,
+      "tag_id":20
+   },
+   {
+      "hike_id":5,
+      "tag_id":28
+   },
+   {
+      "hike_id":5,
+      "tag_id":25
+   },
+   {
+      "hike_id":6,
+      "tag_id":1
+   },
+   {
+      "hike_id":6,
       "tag_id":4
    },
    {
-      "hike_id":4,
-      "tag_id":5
-   },
-   {
-      "hike_id":4,
-      "tag_id":7
-   },
-   {
-      "hike_id":4,
-      "tag_id":9
-   },
-   {
-      "hike_id":4,
-      "tag_id":1
-   },
-   {
-      "hike_id":4,
-      "tag_id":3
-   },
-   {
-      "hike_id":5,
-      "tag_id":5
-   },
-   {
-      "hike_id":5,
-      "tag_id":6
-   },
-   {
-      "hike_id":5,
-      "tag_id":7
-   },
-   {
-      "hike_id":5,
-      "tag_id":12
-   },
-   {
-      "hike_id":6,
-      "tag_id":1
-   },
-   {
-      "hike_id":6,
-      "tag_id":2
-   },
-   {
-      "hike_id":6,
-      "tag_id":5
-   },
-   {
-      "hike_id":6,
-      "tag_id":3
-   },
-   {
-      "hike_id":6,
-      "tag_id":7
-   },
-   {
       "hike_id":6,
       "tag_id":8
    },
    {
-      "hike_id":7,
+      "hike_id":6,
       "tag_id":5
    },
    {
-      "hike_id":7,
-      "tag_id":7
+      "hike_id":6,
+      "tag_id":21
+   },
+   {
+      "hike_id":6,
+      "tag_id":2
+   },
+   {
+      "hike_id":6,
+      "tag_id":28
+   },
+   {
+      "hike_id":6,
+      "tag_id":12
+   },
+   {
+      "hike_id":6,
+      "tag_id":13
+   },
+   {
+      "hike_id":6,
+      "tag_id":11
+   },
+   {
+      "hike_id":6,
+      "tag_id":15
    },
    {
       "hike_id":7,
-      "tag_id":3
+      "tag_id":8
    },
    {
       "hike_id":7,
       "tag_id":12
    },
    {
+      "hike_id":7,
+      "tag_id":20
+   },
+   {
+      "hike_id":7,
+      "tag_id":5
+   },
+   {
+      "hike_id":7,
+      "tag_id":24
+   },
+   {
+      "hike_id":7,
+      "tag_id":25
+   },
+   {
       "hike_id":8,
       "tag_id":1
    },
@@ -165,19 +273,31 @@
    },
    {
       "hike_id":8,
-      "tag_id":5
+      "tag_id":4
    },
    {
       "hike_id":8,
-      "tag_id":6
+      "tag_id":8
    },
    {
       "hike_id":8,
-      "tag_id":7
+      "tag_id":10
    },
    {
       "hike_id":8,
-      "tag_id":9
+      "tag_id":12
+   },
+   {
+      "hike_id":8,
+      "tag_id":18
+   },
+   {
+      "hike_id":8,
+      "tag_id":13
+   },
+   {
+      "hike_id":8,
+      "tag_id":16
    },
    {
       "hike_id":9,
@@ -185,11 +305,15 @@
    },
    {
       "hike_id":9,
-      "tag_id":7
+      "tag_id":12
    },
    {
       "hike_id":9,
-      "tag_id":9
+      "tag_id":13
+   },
+   {
+      "hike_id":9,
+      "tag_id":16
    },
    {
       "hike_id":10,
@@ -197,19 +321,31 @@
    },
    {
       "hike_id":10,
-      "tag_id":2
+      "tag_id":4
    },
    {
       "hike_id":10,
-      "tag_id":5
+      "tag_id":20
    },
    {
       "hike_id":10,
-      "tag_id":7
+      "tag_id":8
    },
    {
       "hike_id":10,
-      "tag_id":9
+      "tag_id":18
+   },
+   {
+      "hike_id":10,
+      "tag_id":12
+   },
+   {
+      "hike_id":10,
+      "tag_id":16
+   },
+   {
+      "hike_id":11,
+      "tag_id":22
    },
    {
       "hike_id":11,
@@ -217,19 +353,39 @@
    },
    {
       "hike_id":11,
-      "tag_id":6
+      "tag_id":12
    },
    {
       "hike_id":11,
-      "tag_id":7
+      "tag_id":13
    },
    {
       "hike_id":11,
-      "tag_id":9
+      "tag_id":18
+   },
+   {
+      "hike_id":11,
+      "tag_id":16
    },
    {
       "hike_id":12,
-      "tag_id":7
+      "tag_id":12
+   },
+   {
+      "hike_id":12,
+      "tag_id":21
+   },
+   {
+      "hike_id":12,
+      "tag_id":29
+   },
+   {
+      "hike_id":13,
+      "tag_id":8
+   },
+   {
+      "hike_id":13,
+      "tag_id":10
    },
    {
       "hike_id":13,
@@ -237,27 +393,23 @@
    },
    {
       "hike_id":13,
-      "tag_id":6
+      "tag_id":18
    },
    {
       "hike_id":13,
-      "tag_id":3
+      "tag_id":11
    },
    {
       "hike_id":13,
-      "tag_id":7
+      "tag_id":24
    },
    {
       "hike_id":13,
-      "tag_id":9
+      "tag_id":12
    },
    {
-      "hike_id":14,
-      "tag_id":2
-   },
-   {
-      "hike_id":14,
-      "tag_id":5
+      "hike_id":13,
+      "tag_id":16
    },
    {
       "hike_id":14,
@@ -265,7 +417,7 @@
    },
    {
       "hike_id":14,
-      "tag_id":10
+      "tag_id":8
    },
    {
       "hike_id":14,
@@ -273,15 +425,31 @@
    },
    {
       "hike_id":14,
-      "tag_id":8
+      "tag_id":11
    },
    {
-      "hike_id":15,
-      "tag_id":2
+      "hike_id":14,
+      "tag_id":13
    },
    {
-      "hike_id":15,
-      "tag_id":5
+      "hike_id":14,
+      "tag_id":20
+   },
+   {
+      "hike_id":14,
+      "tag_id":18
+   },
+   {
+      "hike_id":14,
+      "tag_id":22
+   },
+   {
+      "hike_id":14,
+      "tag_id":12
+   },
+   {
+      "hike_id":14,
+      "tag_id":15
    },
    {
       "hike_id":15,
@@ -289,7 +457,11 @@
    },
    {
       "hike_id":15,
-      "tag_id":6
+      "tag_id":8
+   },
+   {
+      "hike_id":15,
+      "tag_id":7
    },
    {
       "hike_id":15,
@@ -297,50 +469,130 @@
    },
    {
       "hike_id":15,
-      "tag_id":3
+      "tag_id":11
    },
    {
       "hike_id":15,
-      "tag_id":7
+      "tag_id":24
    },
    {
       "hike_id":15,
+      "tag_id":20
+   },
+   {
+      "hike_id":15,
+      "tag_id":18
+   },
+   {
+      "hike_id":15,
+      "tag_id":29
+   },
+   {
+      "hike_id":15,
+      "tag_id":17
+   },
+   {
+      "hike_id":15,
+      "tag_id":22
+   },
+   {
+      "hike_id":15,
+      "tag_id":18
+   },
+   {
+      "hike_id":15,
+      "tag_id":5
+   },
+   {
+      "hike_id":15,
+      "tag_id":12
+   },
+   {
+      "hike_id":15,
+      "tag_id":15
+   },
+   {
+      "hike_id":16,
+      "tag_id":5
+   },
+   {
+      "hike_id":16,
+      "tag_id":19
+   },
+   {
+      "hike_id":16,
+      "tag_id":11
+   },
+   {
+      "hike_id":16,
+      "tag_id":16
+   },
+   {
+      "hike_id":17,
+      "tag_id":1
+   },
+   {
+      "hike_id":17,
+      "tag_id":5
+   },
+   {
+      "hike_id":17,
+      "tag_id":11
+   },
+   {
+      "hike_id":17,
+      "tag_id":24
+   },
+   {
+      "hike_id":17,
+      "tag_id":17
+   },
+   {
+      "hike_id":17,
+      "tag_id":13
+   },
+   {
+      "hike_id":17,
+      "tag_id":12
+   },
+   {
+      "hike_id":17,
+      "tag_id":16
+   },
+   {
+      "hike_id":18,
+      "tag_id":1
+   },
+   {
+      "hike_id":18,
+      "tag_id":5
+   },
+   {
+      "hike_id":18,
+      "tag_id":9
+   },
+   {
+      "hike_id":18,
+      "tag_id":11
+   },
+   {
+      "hike_id":18,
+      "tag_id":19
+   },
+   {
+      "hike_id":18,
+      "tag_id":25
+   },
+   {
+      "hike_id":19,
+      "tag_id":4
+   },
+   {
+      "hike_id":19,
       "tag_id":8
    },
    {
-      "hike_id":16,
-      "tag_id":3
-   },
-   {
-      "hike_id":16,
-      "tag_id":9
-   },
-   {
-      "hike_id":17,
-      "tag_id":1
-   },
-   {
-      "hike_id":17,
-      "tag_id":3
-   },
-   {
-      "hike_id":17,
-      "tag_id":7
-   },
-   {
-      "hike_id":17,
-      "tag_id":9
-   },
-   {
-      "hike_id":18,
-      "tag_id":1
-   },
-   {
-      "hike_id":18,
-      "tag_id":3
-   },
-   {
-      "hike_id":18,
+      "hike_id":19,
       "tag_id":12
    },
    {
@@ -349,39 +601,43 @@
    },
    {
       "hike_id":19,
-      "tag_id":5
+      "tag_id":22
    },
    {
       "hike_id":19,
-      "tag_id":7
+      "tag_id":25
    },
    {
-      "hike_id":19,
-      "tag_id":10
+      "hike_id":20,
+      "tag_id":1
    },
    {
-      "hike_id":19,
+      "hike_id":20,
+      "tag_id":4
+   },
+   {
+      "hike_id":20,
+      "tag_id":17
+   },
+   {
+      "hike_id":20,
+      "tag_id":24
+   },
+   {
+      "hike_id":20,
+      "tag_id":11
+   },
+   {
+      "hike_id":20,
+      "tag_id":8
+   },
+   {
+      "hike_id":20,
       "tag_id":12
    },
    {
       "hike_id":20,
-      "tag_id":1
-   },
-   {
-      "hike_id":20,
-      "tag_id":2
-   },
-   {
-      "hike_id":20,
-      "tag_id":5
-   },
-   {
-      "hike_id":20,
-      "tag_id":7
-   },
-   {
-      "hike_id":20,
-      "tag_id":9
+      "tag_id":16
    },
    {
       "hike_id":21,
@@ -389,51 +645,63 @@
    },
    {
       "hike_id":21,
-      "tag_id":2
+      "tag_id":4
    },
    {
       "hike_id":21,
+      "tag_id":8
+   },
+   {
+      "hike_id":21,
+      "tag_id":18
+   },
+   {
+      "hike_id":21,
+      "tag_id":11
+   },
+   {
+      "hike_id":21,
+      "tag_id":12
+   },
+   {
+      "hike_id":21,
+      "tag_id":16
+   },
+   {
+      "hike_id":22,
+      "tag_id":10
+   },
+   {
+      "hike_id":22,
+      "tag_id":8
+   },
+   {
+      "hike_id":22,
+      "tag_id":12
+   },
+   {
+      "hike_id":22,
+      "tag_id":27
+   },
+   {
+      "hike_id":22,
+      "tag_id":11
+   },
+   {
+      "hike_id":22,
+      "tag_id":19
+   },
+   {
+      "hike_id":22,
       "tag_id":5
    },
    {
-      "hike_id":21,
-      "tag_id":7
-   },
-   {
-      "hike_id":21,
-      "tag_id":9
-   },
-   {
       "hike_id":22,
-      "tag_id":6
-   },
-   {
-      "hike_id":22,
-      "tag_id":5
-   },
-   {
-      "hike_id":22,
-      "tag_id":7
-   },
-   {
-      "hike_id":22,
-      "tag_id":3
-   },
-   {
-      "hike_id":22,
-      "tag_id":9
+      "tag_id":16
    },
    {
       "hike_id":23,
       "tag_id":1
-   },
-   {
-      "hike_id":23,
-      "tag_id":2
-   },
-   {
-      "hike_id":23,
-      "tag_id":6
    },
    {
       "hike_id":23,
@@ -441,11 +709,39 @@
    },
    {
       "hike_id":23,
+      "tag_id":10
+   },
+   {
+      "hike_id":23,
+      "tag_id":20
+   },
+   {
+      "hike_id":23,
+      "tag_id":18
+   },
+   {
+      "hike_id":23,
       "tag_id":7
    },
    {
       "hike_id":23,
+      "tag_id":12
+   },
+   {
+      "hike_id":23,
+      "tag_id":15
+   },
+   {
+      "hike_id":23,
+      "tag_id":6
+   },
+   {
+      "hike_id":24,
       "tag_id":8
+   },
+   {
+      "hike_id":24,
+      "tag_id":4
    },
    {
       "hike_id":24,
@@ -453,7 +749,15 @@
    },
    {
       "hike_id":24,
-      "tag_id":2
+      "tag_id":16
+   },
+   {
+      "hike_id":24,
+      "tag_id":24
+   },
+   {
+      "hike_id":24,
+      "tag_id":17
    },
    {
       "hike_id":24,
@@ -461,6 +765,10 @@
    },
    {
       "hike_id":24,
-      "tag_id":9
+      "tag_id":11
+   },
+   {
+      "hike_id":24,
+      "tag_id":27
    }
 ]
