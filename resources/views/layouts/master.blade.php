@@ -42,10 +42,9 @@
         <div class="clearfix"></div>
         <footer>
           <ul class="pull-left" id="footermenu">
-            <li><a href="#">About</a></li>
             <li><a href="http://bostonfarehikes.tumblr.com">Blog</a></li>
             <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="http://www.mbta.com">MBTA</a></li>
           </ul>
           <span class="pull-right">&copy; 2016 Rebecca Doris</span>
           <div class="clearfix">
