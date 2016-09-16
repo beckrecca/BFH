@@ -101,7 +101,7 @@
       <div id="timing"></div>
       <div id="directionsPanel"></div>
     </div>
-    <h3>Map of {{ $hike->name }} Entrances</h3>
+    <h3>Map of {{ $hike->name }} MBTA-friendly Entrance<?php if($markers->count() > 1)echo('s');?></h3>
     <div id="hike-map"></div>
 @stop
 

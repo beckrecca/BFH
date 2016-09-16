@@ -1,6 +1,6 @@
 [
    {
-      "name":"The Arnold Arboretum of Harvard University",
+      "name":"Arnold Arboretum of Harvard University",
       "path_name":"arnold-arboretum",
       "description":"A romantic haven, the Arnold Arboretum sustains gentle hills of varied gardens, vibrant trees, and scenic paths. It is suitable for all levels and abilities.",
       "climb":"easy",
@@ -9,7 +9,7 @@
    {
       "name":"Blue Hills Reservation",
       "path_name":"blue-hills",
-      "description":"Popular for a reason, Blue Hills offers hundreds of miles of trails for various levels. Panoramic views surround the tops of its eponymous hills. The Trailside Museum has paved accessible trails, but many of the trials are unpaved and relatively intense.",
+      "description":"Popular for a reason, Blue Hills offers hundreds of miles of trails for various levels. Panoramic views surround the tops of its eponymous hills. The Trailside Museum has paved accessible trails, but many of the trails are unpaved and relatively intense.",
       "climb":"intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/blue-hills-reservation.html"
    },
@@ -72,7 +72,7 @@
    {
       "name":"Hammond Pond Park/Webster Conservation",
       "path_name":"hammond-webster",
-      "description":"Sprinkled with lilies, Hammond Pond and its wooded trails lie adjacent to Webster Conservation Area with its fascinating geology. With few hills, its inclines are not particularly steep.",
+      "description":"Sprinkled with lilies, Hammond Pond and its wooded trails lie adjacent to Webster Conservation Area with its fascinating geology and wild Houghton Garden. With few hills, its inclines are not particularly steep.",
       "climb":"easy",
       "web":"http://www.newtonconservators.org/18webster.htm"
    },
@@ -93,7 +93,7 @@
    {
       "name":"Lynn Woods Reservation",
       "path_name":"lynn-woods",
-      "description":"Lynn Woods Reservation entices with scenic trails, multiple reservoirs, and tall tales behind sites like Dungeon Rock and the Wolf Pits. There are paths for all levels, some of which are fairly challenging.",
+      "description":"Lynn Woods Reservation entices with scenic trails, multiple reservoirs, rose gardens, and tall tales behind sites like Dungeon Rock and the Wolf Pits. There are paths for all levels, some of which are fairly challenging.",
       "climb":"intense",
       "web":"http://www.cityoflynn.net/citydepartments_lynnwoods.shtml"
    },
