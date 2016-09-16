@@ -235,7 +235,7 @@ function calcRoute() {
 * based on the passed parameters 'name', 'address', and 'distance'
 */
 function panelContent(name, address, distance) {
-  return "<span style='font-weight: bold'>" + name + "</span><br/>" + distance + " mi from MBTA<br/>" + address;
+  return "<span style='font-weight: bold'>" + name + "</span><br/>" + distance + " mi from closest station/stop<br/>" + address;
 }
 /*
 * displayLines() is called by initMap() and calcRoute ()
@@ -243,9 +243,10 @@ function panelContent(name, address, distance) {
 * based on the parameter 'id'
 */
 function displayLines(id) {
-  // make current selection and distance visible
+  // make current selection's lines visible
   $(".marker_" + id).removeClass("hidden");
-  $(".distance_" + id).removeClass("hidden");
+  // show the name of the current entrance
+  $('#entrance-name').html(markerData[id].name)
   // highlight marker for selected entrance
   highlightMarker(id);
   // if a previous selection has been made and we have more than one marker
@@ -253,7 +254,6 @@ function displayLines(id) {
     if (previousSelected != id) {
       // hide the previous lines and distance info
       $(".marker_" + previousSelected).addClass("hidden");
-      $(".distance_" + previousSelected).addClass("hidden");
     }
   }
   // remember previous selection

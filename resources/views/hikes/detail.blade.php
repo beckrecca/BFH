@@ -30,14 +30,14 @@
       @endforeach
     </div>
     <div class="row" id="description">
-      <p><span>Description:</span> {{ $hike->description }}</p>
-      <p><span>Climb</span>: {{ $hike->climb }}<br/>
-      <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
-      <span class="visible-xs hidden-sm hidden-md hidden-lg pull-right" id="camera"><a href="#" id="open-gallery"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{ $images->count() }} photos</a></span></p>
+      <p><a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
+      <span class="visible-xs hidden-sm hidden-md hidden-lg pull-right" id="camera"><a href="#" id="open-gallery"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{ $images->count() }} photos</a></span>
+      <br/><span>Description:</span> {{ $hike->description }}</p>
+      <p><span>Climb</span>: {{ $hike->climb }}</p>
     </div>
     <h2>Transit Directions</h2> 
-    <p>This directions service will only work for addresses in Greater Boston with access to public transportation.</p>
-    <form class="form-inline">
+    <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>
+    <form class="form-inline" id="directionsForm">
       <label class="sr-only" for="start">User address</label>
       <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
       <label class="sr-only" for="end">Select destination</label>
@@ -50,7 +50,6 @@
           <option value='{{ $index++ }}'>{{ $marker->name }}</option>
         @endforeach
       </select>
-      <a href="#" id="toggle-options" class="pull-right">More options</a>
       <div id="more-options">
       <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
       <select class="form-control" name="transitOptions" id="transitOptions">
@@ -65,10 +64,8 @@
         <select class="form-control" name="transitMode" id="transitMode">
           <option value="0">Mode (optional)</option>
           <option value="BUS">Bus</option>
-          <option value="RAIL">Rail</option>
-          <option value="SUBWAY">Subway</option>
-          <option value="TRAIN">Train</option>
-          <option value="TRAM">Trolley</option>
+          <option value="RAIL">Commuter Rail</option>
+          <option value="TRAM">T</option>
         </select>
         <label class="sr-only" for="transitRoutePreference">Optionally select route preference</label>
         <select class="form-control" name="transitRoutePreference" id="transitRoutePreference">
@@ -77,11 +74,13 @@
           <option value="LESS_WALKING">Less walking</option>
         </select>
       </div>
+      <a href="#directionsForm" id="toggle-options" class="btn btn-danger">More options</a>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
-    <div class="row">
+  </div>
+    <div id="directionsPanelContainer">
       <ul id="lines">
-        <li>MBTA Lines nearby:</li>
+        <li>MBTA Lines near <span id="entrance-name"></span>:</li>
         <?php
             // index each marker to coordinate with map
             $class = 0; 
@@ -94,18 +93,15 @@
           @foreach ($lines as $line)
             <li class='hidden marker_{{ $class }}'><a href='#'>{{ $line->name }}</a></li>
           @endforeach
-          <li class='hidden distance_{{ $class }}'>{{ $marker->distance_to_mbta }} mi from closest station/stop</li>
           <?php $class++; ?>
         @endforeach
       </ul>
-    </div>
-  </div>
-
-    <div id="directionsPanelContainer">
+      <h4 class="hidden-xs hidden-sm visible-md visible-lg" id="directionsHeader">Directions</h4>
       <div id="errors"></div>
       <div id="timing"></div>
       <div id="directionsPanel"></div>
     </div>
+    <h3>Map of {{ $hike->name }} Entrances</h3>
     <div id="hike-map"></div>
 @stop
 
@@ -153,7 +149,10 @@
         @foreach ($images as $image)
         { href:'/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}', title:'{{ $image->title }}' },
         @endforeach
-      ] );
+      ],
+      {
+        removeBarsOnMobile: false
+      } );
     } );
     </script>
     <!-- directions panel styling -->
