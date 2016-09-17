@@ -143,3 +143,49 @@ fieldset[disabled] .btn-primary.active {
   color: #07755C; 
   background-color: #fff; 
 }
+
+.btn-notice { 
+  color: #FFFFFF; 
+  background-color: #27B87C; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-notice:hover, 
+.btn-notice:focus, 
+.btn-notice:active, 
+.btn-notice.active, 
+.open .dropdown-toggle.btn-notice { 
+  color: #FFFFFF; 
+  background-color: #005047; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-notice:active, 
+.btn-notice.active, 
+.open .dropdown-toggle.btn-notice { 
+  background-image: none; 
+} 
+ 
+.btn-notice.disabled, 
+.btn-notice[disabled], 
+fieldset[disabled] .btn-notice, 
+.btn-notice.disabled:hover, 
+.btn-notice[disabled]:hover, 
+fieldset[disabled] .btn-notice:hover, 
+.btn-notice.disabled:focus, 
+.btn-notice[disabled]:focus, 
+fieldset[disabled] .btn-notice:focus, 
+.btn-notice.disabled:active, 
+.btn-notice[disabled]:active, 
+fieldset[disabled] .btn-notice:active, 
+.btn-notice.disabled.active, 
+.btn-notice[disabled].active, 
+fieldset[disabled] .btn-notice.active { 
+  background-color: #27B87C; 
+  border-color: #EEEEEE; 
+} 
+ 
+.btn-notice .badge { 
+  color: #27B87C; 
+  background-color: #FFFFFF; 
+}

@@ -15,4 +15,13 @@ class Tag extends Model
         # define a many-to-many relationship
         return $this->belongsToMany('\App\Hike');
     }
+
+    /**
+    * Some tags have special messages with important information.
+    * This function determines if the passed tag has a message.
+    **/
+    public function special()
+    {
+    	//
+    }
 }

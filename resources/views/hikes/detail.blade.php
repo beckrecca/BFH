@@ -37,7 +37,7 @@
     </div>
     <h2>Transit Directions</h2> 
     <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>
-    <form class="form-inline" id="directionsForm">
+    <form class="form-inline" id="directions-form">
       <label class="sr-only" for="start">User address</label>
       <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
       <label class="sr-only" for="end">Select destination</label>
@@ -74,7 +74,7 @@
           <option value="LESS_WALKING">Less walking</option>
         </select>
       </div>
-      <a href="#directionsForm" id="toggle-options" class="btn btn-danger">More options</a>
+      <a href="#directions-form" id="toggle-options" class="btn btn-notice">More options</a>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
@@ -101,7 +101,7 @@
       <div id="timing"></div>
       <div id="directionsPanel"></div>
     </div>
-    <h3>Map of {{ $hike->name }} MBTA-friendly Entrance<?php if($markers->count() > 1)echo('s');?></h3>
+    <h3>Map of MBTA-friendly Entrance<?php if($markers->count() > 1)echo('s');?> for {{ $hike->name }}</h3>
     <div id="hike-map"></div>
 @stop
 
