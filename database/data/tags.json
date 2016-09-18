@@ -1,89 +1,147 @@
 [
    {
-      "name":"accessible"
+      "name":"accessible",
+      "message":"For information regarding accessible service, please see the MBTA website.",
+      "link":"http://www.mbta.com/riding_the_t/accessible_services/"
    },
    {
-      "name":"athletic fields"
+      "name":"athletic fields",
+      "message":"",
+      "link":""
    },
    {
-      "name":"bay"
+      "name":"bay",
+      "message":"",
+      "link":""
    },
    {
-      "name":"bicycle-friendly"
+      "name":"bicycle-friendly",
+      "message":"There are some restrictions in bringing a bicycle on the T. ",
+      "link":"http://www.mbta.com/riding_the_t/bikes/"
    },
    {
-      "name":"bird-watching"
+      "name":"bird-watching",
+      "message":"",
+      "link":""
    },
    {
-      "name":"camping"
+      "name":"camping",
+      "message":"",
+      "link":""
    },
    {
-      "name":"cross-country skiiing"
+      "name":"cross-country skiiing",
+      "message":"",
+      "link":""
    },
    {
-      "name":"dog-friendly"
+      "name":"dog-friendly",
+      "message":"Service dogs are permitted on the MBTA at all times. Otherwise, dogs are not permitted during peak hours. Peak hours run from 7-10am and 4-7pm on weekdays.",
+      "link":"http://www.mbta.com/riding_the_t/pets/"
    },
    {
-      "name":"farm"
+      "name":"farm",
+      "message":"",
+      "link":""
    },
    {
-      "name":"fishing"
+      "name":"fishing",
+      "message":"",
+      "link":""
    },
    {
-      "name":"foliage"
+      "name":"foliage",
+      "message":"",
+      "link":""
    },
    {
-      "name":"free"
+      "name":"free",
+      "message":"",
+      "link":""
    },
    {
-      "name":"gardens"
+      "name":"gardens",
+      "message":"",
+      "link":""
    },
    {
-      "name":"ice skating"
+      "name":"ice skating",
+      "message":"",
+      "link":""
    },
    {
-      "name":"large (>1000 acres)"
+      "name":"large (>1000 acres)",
+      "message":"",
+      "link":""
    },
    {
-      "name":"medium (151-1000 acres)"
+      "name":"medium (151-1000 acres)",
+      "message":"",
+      "link":""
    },
    {
-      "name":"panoramic views"
+      "name":"panoramic views",
+      "message":"",
+      "link":""
    },
    {
-      "name":"pond"
+      "name":"pond",
+      "message":"",
+      "link":""
    },
    {
-      "name":"remote"
+      "name":"remote",
+      "message":"",
+      "link":""
    },
    {
-      "name":"reservoir"
+      "name":"reservoir",
+      "message":"",
+      "link":""
    },
    {
-      "name":"river"
+      "name":"river",
+      "message":"",
+      "link":""
    },
    {
-      "name":"rock-climbing"
+      "name":"rock-climbing",
+      "message":"",
+      "link":""
    },
    {
-      "name":"skiing"
+      "name":"skiing",
+      "message":"",
+      "link":""
    },
    {
-      "name":"skyline views"
+      "name":"skyline views",
+      "message":"",
+      "link":""
    },
    {
-      "name":"small (<150 acres)"
+      "name":"small (<150 acres)",
+      "message":"",
+      "link":""
    },
    {
-      "name":"swimming"
+      "name":"swimming",
+      "message":"",
+      "link":""
    },
    {
-      "name":"tidal river"
+      "name":"tidal river",
+      "message":"",
+      "link":""
    },
    {
-      "name":"urban"
+      "name":"urban",
+      "message":"",
+      "link":""
    },
    {
-      "name":"waterfalls"
+      "name":"waterfalls",
+      "message":"",
+      "link":""
    }
 ]

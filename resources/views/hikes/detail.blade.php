@@ -29,10 +29,15 @@
       @endforeach
     </div>
     <div class="row" id="description">
-      <p><a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
+      <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
       <span class="visible-xs hidden-sm hidden-md hidden-lg pull-right" id="camera"><a href="#" id="open-gallery"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{ $images->count() }} photos</a></span>
-      <br/><span>Description:</span> {{ $hike->description }}</p>
-      <p><span>Climb</span>: {{ $hike->climb }}</p>
+      <p><span>Description:</span> {{ $hike->description }}</p>
+      <p><span>Climb:</span> {{ $hike->climb }}</p>
+      @foreach ($tags as $tag)
+          @if ($tag->message != '')
+          <p><span>{{ ucfirst($tag->name) }} Notice:</span> {{ $tag-> message }} <a href="{{ $tag->link }}" target="_blank">More Information</a>
+          @endif
+      @endforeach
     </div>
     <h2>Transit Directions</h2> 
     <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>

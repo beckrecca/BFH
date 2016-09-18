@@ -65,7 +65,9 @@ footer {
   background-color: #71B300;
   border-top: 1px dotted #07755C;
 }
-
+ul {
+  list-style-type: none;
+}
 ul#footermenu {
   list-style-type: none;
   float: right;

@@ -16,6 +16,8 @@ class CreateTagsTable extends Migration
             # ID is primary key, auto-incrementing
             $table->increments('id');
             $table->string('name');
+            $table->string('message');
+            $table->string('link');
         });
     }
 

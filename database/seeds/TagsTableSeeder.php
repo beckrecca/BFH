@@ -22,7 +22,9 @@ class TagsTableSeeder extends Seeder
         	* http://www.fullstack4u.com/laravel/laravel-5-load-seed-data-from-json/
         	**/
 	         DB::table('tags')->insert([
-		        'name' => $obj->name
+		        'name' => $obj->name,
+                'message' => $obj->message,
+                'link' => $obj->link
 	    	]);
    		 }
     }
