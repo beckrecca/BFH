@@ -469,56 +469,62 @@
    },
    {
       "file":"00001.jpg",
+      "alt":"A mostly bare garden in early fall shines in the sunlight in a clearing in the woods. In the foreground on the left, there is shrubbery in shade. From the front middle, a short stone wall extends forwards towards a pretty arch and a stone bench. A stone bird bath stands on the green grass in the middle of the garden. Next to the arch is a thick bare rose bush. Flowerless bulbs grow along the left side of the stone wall. ",
+      "title":"The Rose Garden (in early fall)",
+      "hike_id":14
+   },
+   {
+      "file":"00003.jpg",
+      "alt":"A rusty door lies open leading into a dark space with a wooden staircase visible. The door frame is completely surrounded by stone.",
+      "title":"The door to the cellar at Dungeon Rock",
+      "hike_id":14
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"On a fair bright day with some swirly clouds in the sky, there is a stone tower five stories tall in clearing with woods surrounding. In the front of the tower are two steps upon which a young woman wearing a backpack is resting. There is a dark door behind her. An external stair case climbs up the left side of the tower one story. The tower appears hexagonal in shape with three windows on each visible wall. A dirt road extends behind the tower.",
+      "title":"Stone Tower",
+      "hike_id":14
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"Under a blue sky with faint strands of clouds, the skyline of Boston is visible on the horizon. Everything below the horizon is trees, some turning brown, but mostly leafy and green.",
+      "title":"The Boston skyline from the Stone Tower",
+      "hike_id":14
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"A man rectangular pit lined with stone lies some four or five feet below the ground. The bottom of the pit is dark and there are sticks. Surrounding the pit is dirt, pine needles, some sparse green grass, and various green vegetation on the left side.",
+      "title":"One of the Wolf Pits",
+      "hike_id":14
+   },
+   {
+      "file":"00011.jpg",
       "alt":"A large pond lies with its shore visible on the left. The shore has a large rock outcropping and several large rocks all along it, with dense trees behind. In the distance, the shores are densely wooded.",
       "title":"Breed's Pond",
       "hike_id":14
    },
    {
-      "file":"00002.jpg",
-      "alt":"Through the silhouette of tall pine trees, a pond lies ahead.",
-      "title":"Breed's Pond",
-      "hike_id":14
-   },
-   {
-      "file":"00003.jpg",
+      "file":"00012.jpg",
       "alt":"A stone staircase climbs uphill, with rocks and fallen branches on the right. Towards the top, trees grow on either side.",
       "title":"The staircase to Dungeon Rock",
       "hike_id":14
    },
    {
-      "file":"00004.jpg",
-      "alt":"A close up of the bark on a pine tree front-left, in front of a forest of tall pines and deciduous trees.",
-      "title":"Lynn Woods Reservation",
-      "hike_id":14
-   },
-   {
-      "file":"00005.jpg",
+      "file":"00013.jpg",
       "alt":"A pond extends with dense trees on the far shore. On the hither shore, green grass grows interspersed with large rocks and boulders. A large boulder stands in the pond on the middle-right.",
       "title":"Walden Pond from the Overlook Trail",
       "hike_id":14
    },
    {
-      "file":"00006.jpg",
+      "file":"00014.jpg",
       "alt":"A path climbs up a hill interspersed with trees and puddingstone boulders.",
       "title":"A steady climb on Overlook Trail",
       "hike_id":14
    },
    {
-      "file":"00007.jpg",
+      "file":"00015.jpg",
       "alt":"The far and hither shores of a pond can be seen from a height. Only the tops of the trees on the hither shore can be seen, but the far shore has some grass and rocks before the dense forest continues.",
       "title":"Walden Pond from Overlook Crag",
-      "hike_id":14
-   },
-   {
-      "file":"00008.jpg",
-      "alt":"A huge boulder is partially obscured by trees and vegetation in a dense forest. Some smaller boulders in the foreground are textured, puddingstone.",
-      "title":"Great Frog Boulder",
-      "hike_id":14
-   },
-   {
-      "file":"00009.jpg",
-      "alt":"A single pine sapling grows out of a massive pink-hued boulder. In the background, dense woods.",
-      "title":"Lynn Woods Reservation",
       "hike_id":14
    },
    {

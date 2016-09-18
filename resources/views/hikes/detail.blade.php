@@ -5,7 +5,6 @@
 @stop
 
 @section('head')
-	<link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css"/ >
   <link rel="stylesheet" href="/src/css/swipebox.css">
   <link rel="stylesheet" href="/lib/themes/default.css" id="theme_base">
   <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">

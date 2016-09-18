@@ -297,6 +297,10 @@
    },
    {
       "hike_id":8,
+      "tag_id":28
+   },
+   {
+      "hike_id":8,
       "tag_id":16
    },
    {
@@ -362,6 +366,10 @@
    {
       "hike_id":11,
       "tag_id":18
+   },
+   {
+      "hike_id":11,
+      "tag_id":5
    },
    {
       "hike_id":11,
@@ -450,6 +458,18 @@
    {
       "hike_id":14,
       "tag_id":15
+   },
+   {
+      "hike_id":14,
+      "tag_id":17
+   },
+   {
+      "hike_id":14,
+      "tag_id":24
+   },
+   {
+      "hike_id":14,
+      "tag_id":19
    },
    {
       "hike_id":15,
@@ -770,5 +790,9 @@
    {
       "hike_id":24,
       "tag_id":27
+   },
+   {
+      "hike_id":24,
+      "tag_id":19
    }
 ]
