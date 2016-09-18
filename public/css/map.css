@@ -24,10 +24,14 @@ ul#hike-list {
 	margin: 0;
 	padding: 1em;
 }
-ul#hike-list {
+ul#hike-list li{
 	width: 100%;
+	height: auto;
 }
-@media only screen and (min-width: 600px) {
+ul#hike-list li > .thumbnail {
+	padding: 1.25em;
+}
+@media only screen and (min-width: 496px) {
 	ul#hike-list li{
 		display: inline;
 		width: 50%;
@@ -35,7 +39,14 @@ ul#hike-list {
 		padding: 0.5em;
 	}
 	ul#hike-list li > .thumbnail {
-		height: 30em;
+		height: 28em;
+		overflow: scroll;
+		padding: 1.1em;
+	}
+}
+@media only screen and (min-width: 600px) {
+	ul#hike-list li > .thumbnail {
+		height: 25em;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -59,6 +70,11 @@ ul#hike-list {
 		float: left;
 		clear: left;
 		display: block;
+		padding: 0;
+	}
+	ul#hike-list li > .thumbnail {
+		height: auto;
+		padding: 0;
 	}
 }
 @media only screen and (min-width: 992px) {

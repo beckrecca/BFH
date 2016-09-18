@@ -31,7 +31,7 @@
         <div class="thumbnail">
           <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
           <?php $img = $hike->images->random() ?>
-          <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" alt="{{ $img->alt }}" width="170px"/></a>
+          <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" alt="{{ $img->alt }}" width="170px" /></a>
           <p>
             <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
             <span>Climb:</span> {{ $hike->climb }} <br />

@@ -24,6 +24,11 @@ function initMap() {
     // rezoom the map to the bounds
     map.panToBounds(bounds);
   });
+  // handle the form submission
+  $('form').submit(function (e) {
+    // prevent form from posting
+    e.preventDefault();
+  });
 }
 /*
 * createMultipleMarkers() is called initMap()
