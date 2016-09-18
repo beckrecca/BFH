@@ -1,0 +1,37 @@
+h1 {
+	font-size: 1.5em;
+}
+h2 {
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+span {
+	font-weight: bold;
+}
+#find-nearest {
+	width: 25%;
+	height: 100%;
+	float: right;
+	overflow: scroll;
+}
+#list {
+	overflow: scroll;
+	height: 100%;
+}
+#map {
+	height: 100%;
+	width: 75%;
+	float: left;
+}
+#errors {
+	font-weight: bold;
+	color: #ff0000;
+}
+ul#hike-list {
+	margin: 0;
+	padding: 0.5em;
+}
+ul#hike-list li{
+	margin: 0.5em;
+}

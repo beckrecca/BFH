@@ -31,8 +31,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav pull-right">
-                <li><a href="#">Map</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="/map">Map</a></li>
+                <li><a href="/hikes">Explore</a></li>
                 <li><a href="#">Suggest</a></li>
               </ul>
             </div><!--/.nav-collapse -->
@@ -42,6 +42,7 @@
         <div class="clearfix"></div>
         <footer>
           <ul class="pull-left" id="footermenu">
+            <li><a href="#">About</a><li>
             <li><a href="http://bostonfarehikes.tumblr.com">Blog</a></li>
             <li><a href="#">Disclaimer</a></li>
             <li><a href="http://www.mbta.com">MBTA</a></li>
@@ -51,6 +52,7 @@
         </footer>
        <!-- JQuery -->
        <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
+       <!-- Bootstrap -->
        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         @yield('body')
     </body>

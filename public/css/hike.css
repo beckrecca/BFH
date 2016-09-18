@@ -2,6 +2,10 @@
   height: 100%;
   width: 100%;
 }
+#directionsPanelContainer {
+  width: 100%;
+  padding: 1em;
+}
 #timing {
   font-weight: bold;
   font-size: 1.2em;
@@ -14,15 +18,34 @@
 #directionsTitle {
   display: hidden;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   #hike-map {
-    float: left;
+    float: right;
     width: 70%;
-    border-right: 1px dotted #777;
+    border-left: 1px dotted #ddd;
   }
   #directionsPanelContainer {
     height: 100%;
     width: 30%;
+    float: left;
+    overflow: scroll;
+  }
+  #timing {
+    font-size: 1.1em;
+    margin-top: 0em;
+  }
+  #directionsHeader {
+    text-align: center;
+    border-bottom: 1px dotted #71B300;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hike-map {
+    float: left;
+    border-right: 1px dotted #ddd;
+  }
+  #directionsPanelContainer {
+    height: 100%;
     float: right;
     overflow: scroll;
   }
@@ -40,8 +63,12 @@
 }
 ul#features, ul#lines {
   list-style-type: none;
-  font-weight: bold;
   margin: 0 1em 0 0;
+  color: #005047;
+}
+ul#lines {
+  padding: 0.5em;
+  font-size: 1.05em;
 }
 ul#features li, ul#lines li{
   display: inline;
@@ -71,7 +98,7 @@ ul#features li a:hover, ul#lines li a:hover {
   margin: 0;
   padding: 0;
 }
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 768px) {
   #gallery {
     padding: 0em 0.25em 1em 0.25em;
     border-bottom: 1px dotted #aaa;

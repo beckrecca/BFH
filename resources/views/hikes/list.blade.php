@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @section('title')
-    List of All Hikes
+  @if (isset($climb)) {{ ucfirst($climb) }} @endif
+  Hikes
 @stop
 
 @section('head')
@@ -11,7 +12,7 @@
 @section('content')
     <div class="container">
       
-      <h1>All Hikes</h1>
+      <h1>All @if (isset($climb)) {{ ucfirst($climb) }} @endif Hikes</h1>
       
       <ul id="explore">
         @foreach ($hikes as $hike)

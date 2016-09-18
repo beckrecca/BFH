@@ -32,7 +32,7 @@
       <a href='{{ $hike->web }}' id='website' target="_blank"><span class="glyphicon glyphicon-share" aria-hidden="true"></span> Website</a>
       <span class="visible-xs hidden-sm hidden-md hidden-lg pull-right" id="camera"><a href="#" id="open-gallery"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> {{ $images->count() }} photos</a></span>
       <p><span>Description:</span> {{ $hike->description }}</p>
-      <p><span>Climb:</span> {{ $hike->climb }}</p>
+      <p><span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}" id="climb">{{ $hike->climb }}</a></p>
       @foreach ($tags as $tag)
           @if ($tag->message != '')
           <p><span>{{ ucfirst($tag->name) }} Notice:</span> {{ $tag-> message }} <a href="{{ $tag->link }}" target="_blank">More Information</a>
@@ -44,7 +44,7 @@
     <form class="form-inline" id="directions-form">
       <label class="sr-only" for="start">User address</label>
       <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
-      <label class="sr-only" for="end">Select destination</label>
+      <label for="end">Destination:</label>
       <select class="form-control" name="end" id="end">
         <?php 
           // index the markers
@@ -95,12 +95,12 @@
             $lines = $marker->lines;
             ?>
           @foreach ($lines as $line)
-            <li class='hidden marker_{{ $class }}'><a href='#'>{{ $line->name }}</a></li>
+            <li class='hidden marker_{{ $class }}'><a href='/lines/{{ $line->id }}'>{{ $line->name }}</a></li>
           @endforeach
           <?php $class++; ?>
         @endforeach
       </ul>
-      <h4 class="hidden-xs hidden-sm visible-md visible-lg" id="directionsHeader">Directions</h4>
+      <h4 class="hidden-xs visible-sm visible-md visible-lg" id="directionsHeader">Directions</h4>
       <div id="errors"></div>
       <div id="timing"></div>
       <div id="directionsPanel"></div>

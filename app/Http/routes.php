@@ -15,15 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/** MAIN MAP **/
+Route::get('map', 'HikeController@map');
+
 /** HIKES **/
-Route::get('hikes/{path_name}', 'HikeController@detail');
 Route::get('hikes', 'HikeController@all');
+Route::get('hikes/climb/{climb}', 'HikeController@climb');
+Route::get('hikes/{path_name}', 'HikeController@detail');
 
 /** IMAGES **/
 //Route::get('hikes/{path_name}/images', 'ImageController@View');
 
 /** LINES **/
-//Route::get('lines/{id}', 'LineController@view');
+Route::get('lines/{id}', 'LineController@view');
 //Route::get('lines', 'LineController@all');
 
 /** TAGS **/
