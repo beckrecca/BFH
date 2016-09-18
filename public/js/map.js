@@ -5,7 +5,7 @@ var geocoder;
 // for remembering the markers before form submission results
 var oldMarkers = [];
 // for remembering the most recently clicked marker
-var previousMarker;
+var previousClick;
 /*
 * initMap() is called by the Google Maps Javascript API callback function.
 * It initiales the Google Map on the page.
@@ -51,7 +51,9 @@ function createMultipleMarkers(markers, userPosition) {
       // set a drop animation when the map loads
       animation: google.maps.Animation.DROP,
       // set the icon to blue
-      icon: '/img/markers/blue-dot.png'
+      icon: '/img/markers/blue-dot.png',
+      // set URL to view accompanying thumbnail
+      url: '#hike_' + (hike_id + 1)
     });
     // create a new info window
     var infoWindow = new google.maps.InfoWindow();
@@ -59,15 +61,34 @@ function createMultipleMarkers(markers, userPosition) {
     google.maps.event.addListener(marker, 'click', function () {
       // set the content of the info window
       infoWindow.setContent(this.content);
+      // if the screen size is larger than 767px
+      if (window.innerWidth > 767) {
+        // go to hike thumbnail anchor on click
+        window.location.href = this.url;
+      }
       // set the info window to open on click
       infoWindow.open(this.getMap(), this);
+      // highlight icon to be orange
+      this.setIcon('/img/markers/orange-dot.png');
+      // if a marker was previously clicked
+      if (previousClick != null) {
+      // reset that marker to blue
+        previousClick.setIcon('img/markers/blue-dot.png');
+      }
+      // remember this marker as having just been clicked
+      previousClick = this;
     });
+    // extend the boundaries of the map around this marker
     bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));
   }
+  // if a user position is provided
   if (userPosition!= null) {
+    // extend the boundaries of the map around the user
     bounds.extend(new google.maps.LatLng(userPosition));
   }
+  // fit the map to the boundaries
   map.fitBounds(bounds);
+  // zoom the map appropriately around the boundaries
   map.panToBounds(bounds);
 }
 /*

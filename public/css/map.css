@@ -9,20 +9,12 @@ h2 {
 span {
 	font-weight: bold;
 }
-#find-nearest {
-	width: 25%;
-	height: 100%;
-	float: right;
-	overflow: scroll;
-}
-#list {
-	overflow: scroll;
-	height: 100%;
-}
 #map {
 	height: 100%;
-	width: 75%;
-	float: left;
+	width: 100%;
+}
+#find-nearest {
+	width: 100%;
 }
 #errors {
 	font-weight: bold;
@@ -30,8 +22,50 @@ span {
 }
 ul#hike-list {
 	margin: 0;
-	padding: 0.5em;
+	padding: 1em;
 }
-ul#hike-list li{
-	margin: 0.5em;
+ul#hike-list {
+	width: 100%;
+}
+@media only screen and (min-width: 600px) {
+	ul#hike-list li{
+		display: inline;
+		width: 50%;
+		float: left;
+		padding: 0.5em;
+	}
+	ul#hike-list li > .thumbnail {
+		height: 30em;
+	}
+}
+@media only screen and (min-width: 768px) {
+	#find-nearest {
+		width: 30%;
+		height: 100%;
+		float: right;
+		overflow: scroll;
+	}
+	#map {
+		height: 100%;
+		width: 70%;
+		float: left;
+	}
+	ul#hike-list {
+		margin: 0;
+		padding: 0.5em;
+	}
+	ul#hike-list li {
+		width: 100%;
+		float: left;
+		clear: left;
+		display: block;
+	}
+}
+@media only screen and (min-width: 992px) {
+	#find-nearest {
+		width: 25%;
+	}
+	#map {
+		width: 75%;
+	}
 }

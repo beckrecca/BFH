@@ -9,6 +9,7 @@
 @stop
 
 @section('content')
+  <div id="map"></div>
   <div id="find-nearest">
     <h1>Find a Hike Near You</h1>
     <form class="form-inline">
@@ -26,7 +27,7 @@
     <ul id="hike-list">
     @foreach ($hikes as $hike)
     <?php $tags = $hike->tags; ?>
-      <li class="hike_{{ $hike->id }}">
+      <li class="visible" id="hike_{{ $hike->id }}">
         <div class="thumbnail">
           <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
           <?php $img = $hike->images->random() ?>
@@ -36,7 +37,7 @@
             <span>Climb:</span> {{ $hike->climb }} <br />
             <span>Features:</span> 
               @foreach ($tags as $tag)
-              <a href="/tags/{{ $tag->id }}">{{ $tag->name }}</a> / 
+              <a href="/tags/{{ $tag->id }}">{{ $tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
               @endforeach
           </p>
         </div>
@@ -44,7 +45,6 @@
     @endforeach
     </ul>
   </div>
-  <div id="map"></div>
 @stop
 
 @section('body')
