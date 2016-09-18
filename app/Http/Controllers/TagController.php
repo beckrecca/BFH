@@ -14,8 +14,14 @@ class TagController extends Controller
     */
     public function view($id) 
     {
-        // obtain the tag by this ID
-    	$tag = \App\Tag::find($id);
+        // try to obtain the tag by this ID
+        try {
+            $tag = \App\Tag::find($id);
+        }
+        catch(exception $e) {
+            return Redirect::to('errors.404');
+        }
+    	
     	// find all hikes with this ID, sorted alphabetically
     	$hikes = $tag->hikes->sortBy('name');
     	return view ('tags.view')->with('tag', $tag)

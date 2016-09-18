@@ -108,7 +108,7 @@
 	<!-- GOOGLE MAPS API -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
-  <!-- convert PHP to JSON for maps data -->
+  <!-- convert PHP to JSON for map data -->
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
@@ -156,4 +156,10 @@
     </script>
     <!-- directions panel styling -->
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
+    <!-- handle Google Maps error -->
+    <script>
+      if (typeof initMap != 'function') {
+        $('#errors').html("Something went wrong. Please refresh the page!");
+      }
+    </script>
 @stop

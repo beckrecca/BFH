@@ -10,8 +10,6 @@ var defaultIcon = '/img/markers/blue-dot.png';
 var map;
 var markers = []; 
 var markedIcon = '/img/markers/orange-dot.png';
-// keeps track of the previous marker clicked
-var previousClick;
 // keep track of which entrance was just selected
 var previousSelected;
 // the selected entrance defaults to 0
@@ -62,24 +60,6 @@ function initMap() {
       infoWindow.setContent(this.content);
       // set the info window to open on click
       infoWindow.open(this.getMap(), this);
-      // if this marker is animated, stop animation on click
-      if (this.getAnimation() != null) {
-        this.setAnimation(null);
-      } else {
-        // if this marker is not animated, animate it on click
-        this.setAnimation(google.maps.Animation.BOUNCE);
-        // also change the marker to orange
-        this.setIcon(markedIcon);
-        // if another marker was previously clicked,
-        if ((previousClick != null) && (previousClick != this)) {
-          // stop its animation
-          previousClick.setAnimation(null);
-          // and change it back to blue
-          previousClick.setIcon(defaultIcon);
-        }
-        // remember this marker as having just been clicked
-        previousClick = this;
-      }
       // change the entrance selection to this marker
       $('#end').val(this.id);
       // show selected entrance's lines
