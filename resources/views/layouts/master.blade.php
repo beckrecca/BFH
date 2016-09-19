@@ -15,41 +15,48 @@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/css/template.css" />
+    <style>
+      body {
+        background: url('/img/backgrounds/bg{{ rand(1,10) }}.png');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+    </style>
     @yield('head')
 </head>
     <body>
-        <nav class="navbar navbar-preheader navbar-default">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <img src="/img/logo/sm_logo.png" id="logo" class="img pull-left" alt="Boston Fare Hikes logo depicting the T symbol with a green hill behind the T and a green map marker on the hill."/>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav pull-right">
-                <li><a href="/map">Map</a></li>
-                <li><a href="/hikes">Explore</a></li>
-                <li><a href="#">Suggest</a></li>
-              </ul>
-            </div><!--/.nav-collapse -->
+      <nav class="navbar navbar-preheader navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <img src="/img/logo/sm_logo.png" id="logo" class="img pull-left" alt="Boston Fare Hikes logo depicting the T symbol with a green hill behind the T and a green map marker on the hill."/>
           </div>
-        </nav>
-        @yield('content')
-        <div class="clearfix"></div>
-        <footer>
-          <ul class="pull-left" id="footermenu">
-            <li><a href="#">About</a><li>
-            <li><a href="http://bostonfarehikes.tumblr.com">Blog</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="http://www.mbta.com">MBTA</a></li>
-          </ul>
-          <span class="pull-right">&copy; 2016 Rebecca Doris</span>
-          <div class="clearfix">
-        </footer>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav pull-right">
+              <li><a href="/map">Map</a></li>
+              <li><a href="/hikes">Explore</a></li>
+              <li><a href="#">Suggest</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+      @yield('content')
+      <div class="clearfix"></div>
+      <footer>
+        <ul class="pull-left" id="footermenu">
+          <li><a href="#">About</a><li>
+          <li><a href="http://bostonfarehikes.tumblr.com">Blog</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="http://www.mbta.com">MBTA</a></li>
+        </ul>
+        <span class="pull-right">&copy; 2016 Rebecca Doris</span>
+        <div class="clearfix">
+      </footer>
        <!-- JQuery -->
        <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
        <!-- Bootstrap -->

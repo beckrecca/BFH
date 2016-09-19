@@ -1,3 +1,8 @@
+#hike-info, #directions-form {
+  padding: 1em 1.5em 1em 1.5em;
+  margin: 0em 1em 2em 1em;
+  background-color: #fff;
+}
 #hike-map {
   height: 100%;
   width: 100%;
@@ -5,6 +10,9 @@
 #directionsPanelContainer {
   width: 100%;
   padding: 1em;
+}
+#directionsPanel {
+  background-color: #fff;
 }
 #timing {
   font-weight: bold;
@@ -36,7 +44,7 @@
   }
   #directionsHeader {
     text-align: center;
-    border-bottom: 1px dotted #71B300;
+    border-bottom: 1px dotted #555;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -45,17 +53,7 @@
     border-right: 1px dotted #ddd;
   }
   #directionsPanelContainer {
-    height: 100%;
     float: right;
-    overflow: scroll;
-  }
-  #timing {
-    font-size: 1.1em;
-    margin-top: 0em;
-  }
-  #directionsHeader {
-    text-align: center;
-    border-bottom: 1px dotted #71B300;
   }
 }
 #features {
@@ -75,7 +73,7 @@ ul#features li, ul#lines li{
   padding: 0.25em;
 }
 ul#features li a, ul#lines a{
-  color: #777;
+  color: #555;
   font-weight: normal;
   border-bottom: 1px dotted;
 }
@@ -84,7 +82,7 @@ ul#features li a:hover, ul#lines li a:hover {
   color: #71B300;
 }
 #camera, #website {
-  font-size: 1.2em;
+  font-size: 1.05em;
   padding: 0;
   margin: 0;
 }
@@ -94,7 +92,6 @@ ul#features li a:hover, ul#lines li a:hover {
   }
 }
 #gallery {
-  color: #555;
   margin: 0;
   padding: 0;
 }

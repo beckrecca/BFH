@@ -11,7 +11,7 @@
 @section('content')
   <div id="map"></div>
   <div id="find-nearest">
-    <h1>Find a Hike Near You</h1>
+    <h1>Find a T-Accessible Hike Near You</h1>
     <form class="form-inline">
       <label class="sr-only" for="user">User address</label>
       <input type="text" class="form-control" id="user" name="user" placeholder="Enter your address"/>

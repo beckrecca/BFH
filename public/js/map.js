@@ -12,7 +12,10 @@ var previousClick;
 */
 function initMap() {
   // initialize the map
-  map = new google.maps.Map(document.getElementById('map'));
+  map = new google.maps.Map(document.getElementById('map'), {
+    // disable scroll zoom
+    scrollwheel: false
+  });
   // set all the markers on the map
   createMultipleMarkers(markerData);
   // add a window resize listener to the map to make it responsive

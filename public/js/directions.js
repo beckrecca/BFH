@@ -24,7 +24,10 @@ function initMap() {
   // create a directions service to obtain the directions
   directionsService = new google.maps.DirectionsService();
   // set the map to the designated div
-  map = new google.maps.Map(document.getElementById('hike-map'));
+  map = new google.maps.Map(document.getElementById('hike-map'), {
+    // disable scroll zoom
+    scrollwheel: false
+  });
   // associate the directions display with our map
   directionsDisplay.setMap(map);
   // set the directions panel to the designated div
