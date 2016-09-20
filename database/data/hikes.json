@@ -124,5 +124,47 @@
       "description":"With only four miles of trails, the main attraction at Mass Audubon Drumlin Farm Wildlife Sanctuary is its animal exhibitions, both domestic and wild. Its paths are easy, and its Sensory Exploration Trail is universally accessible.",
       "climb":"easy",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm"
+   },
+   {
+      "name":"Pine Banks Park",
+      "path_name":"pine-banks",
+      "description":"Pine Banks Park provides multiple recreational fields and brief wooded trails that climb to a scenic outlook. Its few hills make a moderately challenging climb.",
+      "climb":"moderate",
+      "web":"http://www.pinebanks.org/"
+   },
+   {
+      "name":"Prospect Hill Park",
+      "path_name":"prospect-hill",
+      "description":"Prospect Hill Park's challenging hills, vernal pools, and dense woods open up to scenic outlooks east and west. There are trail for all levels, and paved roads throughout the park.",
+      "climb":"intense",
+      "web":"http://walthamlandtrust.org/open-space/guide-to-open-spaces/prospect-hill-park-trails"
+   },
+   {
+      "name":"Stony Brook Reservation",
+      "path_name":"stony-brook",
+      "description":"The quiet woods of Stony Brook Reservation hide ponds, brooks, and rock-outcroppings. Paved paths give access to adventurers of all abilities, and its hills are brief and mild.",
+      "climb":"easy",
+      "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/stony-brook-reservation.html"
+   },
+   {
+      "name":"Great Esker Park",
+      "path_name":"great-esker",
+      "description":"Named for the winding ridge of stratified sand and gravel left behind by a glacier 12,000 years ago, Great Esker Park lies along the Weymouth Back River with salt water marshes, reversing falls, and six miles of trails. Its paths can be moderately steep.",
+      "climb":"moderate",
+      "web":"http://www.south-shore-hiking-trails.com/hiking-trails-weymouth-great-esker-park.html"
+   },
+   {
+      "name":"Wompatuck State Park",
+      "path_name":"wompatuck",
+      "description":"Visitors to Wompatuck State Park enjoy 12 miles of bike trails, fishing at Cohasset Reservoir, fresh water from Mt Blue Spring, and camping facilities. The park is mostly flat and ideal for bicycles. Please see the website for camping information.",
+      "climb":"flat",
+      "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/wompatuck-state-park.html"
+   },
+   {
+      "name":"World's End",
+      "path_name":"worlds-end",
+      "description":"At World's End, the bay views on the hilly peninsula merit the fee charged to non-members. Its hills are moderately steep.",
+      "climb":"moderate",
+      "web":"http://www.thetrustees.org/places-to-visit/south-shore/worlds-end.html"
    }
 ]
