@@ -2,9 +2,9 @@
 	font-size: 1.2em;
 	background-color: #a8f7d6;
 }
-span {
-	font-weight: bold;
-}
 #notice a:hover {
 	color: #fff;
+}
+span {
+	font-weight: bold;
 }

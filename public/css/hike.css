@@ -1,107 +1,7 @@
-#hike-info, #directions-form {
-  padding: 1em 1.5em 1em 1.5em;
-  margin: 0em 1em 2em 1em;
-  background-color: #fff;
-}
-#hike-map {
-  height: 100%;
-  width: 100%;
-}
-#directionsPanelContainer {
-  width: 100%;
-  padding: 1em;
-}
-#directionsPanel {
-  background-color: #fff;
-}
-#timing {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-top: 0.125em;
-}
-#errors {
-  font-weight: bold;
-  color: #ff0000;
-}
-#directionsTitle {
-  display: hidden;
-}
-@media only screen and (min-width: 768px) {
-  #hike-map {
-    float: right;
-    width: 70%;
-    border-left: 1px dotted #ddd;
-  }
-  #directionsPanelContainer {
-    height: 100%;
-    width: 30%;
-    float: left;
-    overflow: scroll;
-  }
-  #timing {
-    font-size: 1.1em;
-    margin-top: 0em;
-  }
-  #directionsHeader {
-    text-align: center;
-    border-bottom: 1px dotted #555;
-  }
-}
-@media only screen and (min-width: 992px) {
-  #hike-map {
-    float: left;
-    border-right: 1px dotted #ddd;
-  }
-  #directionsPanelContainer {
-    float: right;
-  }
-}
-#features {
-  padding: 0.5em;
-}
-ul#features, ul#lines {
-  list-style-type: none;
-  margin: 0 1em 0 0;
-  color: #005047;
-}
-ul#lines {
-  padding: 0.5em;
-  font-size: 1.05em;
-}
-ul#features li, ul#lines li{
-  display: inline;
-  padding: 0.25em;
-}
-ul#features li a, ul#lines a{
-  color: #555;
-  font-weight: normal;
-  border-bottom: 1px dotted;
-}
-ul#features li a:hover, ul#lines li a:hover {
-  text-decoration: none;
-  color: #71B300;
-}
 #camera, #website {
   font-size: 1.05em;
   padding: 0;
   margin: 0;
-}
-@media only screen and (min-width: 768px) {
-  #website {
-    font-size: 1.1em;
-  }
-}
-#gallery {
-  margin: 0;
-  padding: 0;
-}
-@media only screen and (min-width: 768px) {
-  #gallery {
-    padding: 0em 0.25em 1em 0.25em;
-    border-bottom: 1px dotted #aaa;
-    height: 96px;
-    overflow: hidden;
-  }
 }
 #description {
   padding: 1em 0.5em 0em 0.5em;
@@ -114,6 +14,106 @@ ul#features li a:hover, ul#lines li a:hover {
 #description > p > span {
   font-weight: bold;
 }
+#directionsPanel {
+  background-color: #fff;
+}
+#directionsPanelContainer {
+  padding: 1em;
+  width: 100%;
+}
+#directionsTitle {
+  display: hidden;
+}
+#directions-form, #hike-info {
+  background-color: #fff;
+  margin: 0em 0.5em 1em 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+#errors {
+  color: #ff0000;
+  font-weight: bold;
+}
+#features {
+  padding: 0.5em;
+}
+#gallery {
+  margin: 0;
+  padding: 0;
+}
+#hike-map {
+  height: 100%;
+  width: 100%;
+}
 #more-options {
   display: none;
+}
+#timing {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 0.125em;
+}
+ul#features, ul#lines {
+  color: #005047;
+  list-style-type: none;
+  margin: 0 1em 0 0;
+}
+ul#lines {
+  font-size: 1.05em;
+  padding: 0.5em;
+}
+ul#features li, ul#lines li{
+  display: inline;
+  padding: 0.25em;
+}
+ul#features li a, ul#lines a{
+  color: #555;
+  border-bottom: 1px dotted;
+  font-weight: normal;
+}
+ul#features li a:hover, ul#lines li a:hover {
+  color: #71B300;
+  text-decoration: none;
+}
+@media only screen and (min-width: 768px) {
+  #directions-form, #hike-info {
+    margin: 0em 1em 2em 1em;
+    padding: 1em 1.5em 1em 1.5em;
+  }
+  #directionsHeader {
+    border-bottom: 1px dotted #555;
+    text-align: center;
+  }
+  #directionsPanelContainer {
+    float: left;
+    height: 100%;
+    overflow: scroll;
+    width: 30%;
+  }
+  #gallery {
+    border-bottom: 1px dotted #aaa;
+    overflow: hidden;
+    height: 96px;
+    padding: 0em 0.25em 1em 0.25em;
+  }
+  #hike-map {
+    border-left: 1px dotted #ddd;
+    float: right;
+    width: 70%;
+  }
+  #timing {
+    font-size: 1.1em;
+    margin-top: 0em;
+  }
+  #website {
+    font-size: 1.1em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #directionsPanelContainer {
+    float: right;
+  }
+  #hike-map {
+    border-right: 1px dotted #ddd;
+    float: left;
+  }
 }

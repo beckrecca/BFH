@@ -2,9 +2,9 @@
   height: 100%;
   width: 100%;
 }
-#results {
-  margin: 1em;
-}
 #listResults ol {
   padding: 0.25em;
+}
+#results {
+  margin: 1em;
 }
