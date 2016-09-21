@@ -3,20 +3,21 @@ html, body {
   margin: 0;
   padding: 0;
 }
-a {
+a, a:visited {
     color: #07755C;
     font-weight: bold;
     text-decoration: none;
 }
-a:hover {
+a:hover, a:active, a.active {
     color: #71B300;
     text-decoration: none;
 }
 body {
+  background-color: #efefef;
     font-family: 'Lato', sans-serif;
 }
 h1 {
-  font-size: 1.65em;
+  font-size: 1.7em;
   font-weight: bold;
   margin: 0.125em;
 }
@@ -80,13 +81,13 @@ ul {
   list-style-type: none;
 }
 ul#footermenu {
-  float: right;
   list-style-type: none;
   margin: 0 0 0.5em 0;
 }
 ul#footermenu li {
   display:inline;
   font-size: 1.1em;
+  font-weight: normal;
 }
 ul#footermenu li a{
   color: #fff;

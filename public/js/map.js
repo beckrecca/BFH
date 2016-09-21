@@ -1,4 +1,5 @@
 var map;
+// for maintaining the map's focus
 var bounds;
 // for geocoding the user's address
 var geocoder;
@@ -6,6 +7,8 @@ var geocoder;
 var oldMarkers = [];
 // for remembering the most recently clicked marker
 var previousClick;
+// for remembering the previous user marker(s)
+var previousUserMarker
 /*
 * initMap() is called by the Google Maps Javascript API callback function.
 * It initiales the Google Map on the page.
@@ -31,6 +34,64 @@ function initMap() {
   $('form').submit(function (e) {
     // prevent form from posting
     e.preventDefault();
+    // if a user position was previously set,
+    if (previousUserMarker != null) {
+      // clear it from the map
+      previousUserMarker.setMap(null);
+    }
+    // set the user's position
+    nearestHikes();
+  });
+}
+/*
+* nearestHikes() is called by initMap()
+* It gets the user's submitted address values and geocodes them
+* into GPS coordinates in order to create a marker. If it
+* successfully geocodes, the relevant markers per the form parameters
+* are displayed on the map and listed. If it does not successfully geocode,
+* the page displays an error.
+*/
+function nearestHikes() {
+  // initialize a new Geocoder object
+  geocoder = new google.maps.Geocoder();
+  // get the user address input
+  var userAddress = $('#user').val();
+  // geocode the address
+  geocoder.geocode( { 'address': userAddress}, function(results, status) {
+    // if it successfully geocodes
+    if (status == google.maps.GeocoderStatus.OK) {
+      // create a new marker on the map for the user
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location,
+          icon: '/img/markers/green-dot.png',
+          title: 'You'
+      });
+      // remember this marker so we can clear it on future form submissions
+      previousUserMarker = marker;
+      // get the user's GPS coordinates
+      var userLat = parseFloat(results[0].geometry.location.lat());
+      var userLng = parseFloat(results[0].geometry.location.lng());
+      var userPoint = {
+        lat: userLat,
+        lng: userLng
+      }
+      // get the form's radius selection
+      var radius = parseFloat($('#radius').val());
+      // find and all the markers within the selected radius
+      var markersWithinRadius = findRadius(userPoint, radius);
+      for (var i = 0; i < markersWithinRadius; i++) {
+      }
+      // clear the map of all the old markers
+      clearMarkers();
+      // repopulate map with results
+      createMultipleMarkers(markersWithinRadius, userPoint);
+    } else if (userAddress == "") {
+      $("#errors").html("Please provide an address.");
+    }
+    else {
+      $("#errors").html("Geocode was not successful for the following reason: " + status);
+    }
   });
 }
 /*
@@ -88,6 +149,8 @@ function createMultipleMarkers(markers, userPosition) {
     });
     // extend the boundaries of the map around this marker
     bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));
+    // remember this marker as having been previously submitted
+    oldMarkers[i] = marker;
   }
   // if a user position is provided
   if (userPosition!= null) {
@@ -98,6 +161,18 @@ function createMultipleMarkers(markers, userPosition) {
   map.fitBounds(bounds);
   // zoom the map appropriately around the boundaries
   map.panToBounds(bounds);
+}
+/*
+* clearMarkers()
+* It loops through the oldMarkers array, that were previously
+* displayed on the map before form submission, and it clears them
+* from the map. 9
+*/
+function clearMarkers() {
+  // clear the old hike markers
+  for (var i = 0; i < oldMarkers.length; i++) {
+    oldMarkers[i].setMap(null);
+  }
 }
 /*
 * setContent() is called by createMultipleMarkers()

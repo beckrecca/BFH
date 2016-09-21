@@ -26,7 +26,7 @@
 }
 #directions-form, #hike-info {
   background-color: #fff;
-  margin: 0em 0.5em 1em 0.5em;
+  margin: 0em 0.5em 0.5em 0.5em;
   padding: 0.5em 1em 0.5em 1em;
 }
 #errors {
@@ -59,7 +59,8 @@ ul#features, ul#lines {
 }
 ul#lines {
   font-size: 1.05em;
-  padding: 0.5em;
+  padding: 0;
+  margin: 0;
 }
 ul#features li, ul#lines li{
   display: inline;

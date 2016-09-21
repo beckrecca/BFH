@@ -5,7 +5,7 @@
 *
 **/
 
-// convert numeric degress to radians
+// convert numeric degrees to radians
 toRad = function(value) {
   return value * Math.PI / 180;
 }
@@ -24,13 +24,20 @@ Haversine = function(point1, point2) {
   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return (R * c).toFixed(2);
 };
-
+/*
+* findDistances() is called by findClosest()
+* It accepts an array of the user's latitude and longitude
+* and compares it with the latitude and longitude of each 
+* marker on the map. It finds the distance between each and
+* stores it in an array. It returns this array.
+*/
 function findDistances(userPoint) {
+  // initialize the array of distances
   var distances = [];
-  // loop through places finding the GPS points for each
-  for (i = 0; i < markers.length; i++) {
-    var pointLat = parseFloat(markers[i].lat);
-    var pointLng = parseFloat(markers[i].lng);
+  // loop through the markers finding the GPS points for each
+  for (i = 0; i < markerData.length; i++) {
+    var pointLat = parseFloat(markerData[i].lat);
+    var pointLng = parseFloat(markerData[i].lng);
     var markerPoint = {
       lat: pointLat,
       lng: pointLng
@@ -40,21 +47,30 @@ function findDistances(userPoint) {
   }
   return distances;
 }
-
-function findClosest(userPoint, radius) {
+/*
+* findRadius()
+* Given the radius selected by the user and the user's
+* GPS coordinates, it calls findDistances() to find only
+* the markers within that radius. It returns those markers
+* as an array.
+*/
+function findRadius(userPoint, radius) {
+  // find the distances between the user and each marker
   var distances = findDistances(userPoint);
+  // initialize the array of closest markers
   var closest = [];
-  var items = "";
-  // find all places within range
+  // count the indexes of the closest array
   var j = 0;
-  for (i = 0; i < distances.length; i++) {
+  // loop through the array of distances
+  for (var i = 0; i < distances.length; i++) {
+    // if the distance is within the radius
     if (distances[i] <= radius) {
-      items = items + "<li>" + markers[i].title + "</li>";
-      closest[j] = markers[i];
+      // add its corresponding marker to the closest array
+      closest[j] = markerData[i];
+      // increment the closest array counter
       j++;
     }
   }
-  var list = "<ol id='listResults'>" + items + "</ol>";
-  $('#results').append(list);
+  // return all the closest markers
   return closest;
 }
