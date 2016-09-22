@@ -22,6 +22,8 @@
         background-repeat: no-repeat;
       }
     </style>
+     <!-- JQuery -->
+     <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
     @yield('head')
 </head>
     <body>
@@ -57,8 +59,6 @@
         </ul>
         <div class="clearfix">
       </footer>
-       <!-- JQuery -->
-       <script type="text/javascript" src="/js/jquery-1.12.2.min.js"> </script>
        <!-- Bootstrap -->
        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         @yield('body')

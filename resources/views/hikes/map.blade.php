@@ -6,6 +6,7 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/map.css" />
+  <!-- handle Google Maps error -->
   <script>
     if (typeof initMap != 'function') {
       $('#errors').html("Something went wrong. Please refresh the page!");

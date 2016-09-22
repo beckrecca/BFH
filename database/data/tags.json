@@ -1,7 +1,7 @@
 [
    {
       "name":"accessible",
-      "message":"For information regarding accessible service, please see the MBTA website.",
+      "message":"For information regarding accessible service, please see the MBTA website. ",
       "link":"http://www.mbta.com/riding_the_t/accessible_services/"
    },
    {
@@ -36,8 +36,13 @@
    },
    {
       "name":"dog-friendly",
-      "message":"Service dogs are permitted on the MBTA at all times. Otherwise, dogs are not permitted during peak hours. Peak hours run from 7-10am and 4-7pm on weekdays.",
+      "message":"Service dogs are permitted on the MBTA at all times. Otherwise, dogs are not permitted during peak hours. Peak hours run from 7-10am and 4-7pm on weekdays. ",
       "link":"http://www.mbta.com/riding_the_t/pets/"
+   },
+   {
+      "name":"esker",
+      "message":"",
+      "link":""
    },
    {
       "name":"farm",
@@ -90,6 +95,11 @@
       "link":""
    },
    {
+      "name":"pool",
+      "message":"",
+      "link":""
+   },
+   {
       "name":"remote",
       "message":"",
       "link":""
@@ -106,6 +116,11 @@
    },
    {
       "name":"rock-climbing",
+      "message":"",
+      "link":""
+   },
+   {
+      "name":"skating rink",
       "message":"",
       "link":""
    },

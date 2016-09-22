@@ -50,8 +50,8 @@
    {
       "name":"Main Entrance",
       "address":"177 Forest St, Saugus, MA 01906",
-      "lat":42.48355009999999,
-      "lng":-71.03152510000001,
+      "lat":42.4835501,
+      "lng":-71.0315251,
       "hike_id":4,
       "distance_to_mbta":1.1
    },
@@ -211,7 +211,7 @@
       "name":"Goodyear Ave Entrance",
       "address":"Cross Fells Trail, Melrose, MA 02176",
       "lat":42.4423469,
-      "lng":-71.0763001999999,
+      "lng":-71.0763002,
       "hike_id":15,
       "distance_to_mbta":0.6
    },
@@ -317,6 +317,14 @@
       "lat":42.3171611,
       "lng":-71.1203423,
       "hike_id":8,
+      "distance_to_mbta":0.2
+   },
+   {
+      "name":"South Border Road Lot",
+      "address":"South Border Road Parking Lot, S Border Rd, Medford, MA 02155",
+      "lat":42.4308997,
+      "lng":-71.1077389,
+      "hike_id":15,
       "distance_to_mbta":0.2
    }
 ]

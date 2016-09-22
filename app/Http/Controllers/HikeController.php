@@ -25,6 +25,7 @@ class HikeController extends Controller
     public function climb($climb) {
         // find all hikes with this climb rating
         $hikes = \App\Hike::where('climb', '=', $climb)->get();
+        
         return view ('hikes.list')->with('hikes', $hikes)
                                   ->with('climb', $climb);
     }
