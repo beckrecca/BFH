@@ -87,7 +87,8 @@ ul#features li a:hover, ul#lines li a:hover {
   #directionsPanelContainer {
     float: left;
     height: 100%;
-    overflow: scroll;
+    overflow: hidden;
+    overflow-y: scroll;
     width: 30%;
   }
   #gallery {

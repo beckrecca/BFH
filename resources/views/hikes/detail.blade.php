@@ -117,12 +117,12 @@
 	<!-- GOOGLE MAPS API -->
    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
+   <!-- directions panel code -->
+   <script src="/js/directions.js"></script>
   <!-- convert PHP to JSON for map data -->
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
-   <!-- directions panel code -->
-   <script src="/js/directions.js"></script>
    <!-- pickadate.js code below -->
    <script src="/lib/picker.js"></script>
    <script src="/lib/picker.date.js"></script>

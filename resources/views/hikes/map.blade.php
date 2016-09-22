@@ -51,12 +51,13 @@
   <!-- Google Maps Javascript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
+  <!-- Google Map find nearest hike code -->
+  <script src="js/map.js"></script>
+  <script src="js/haversine.js"></script>
   <!-- convert PHP to JSON for map data -->
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
     var hikeData = <?php echo json_encode($hikes) ?>;
    </script>
-  <script src="js/map.js"></script>
-  <script src="js/haversine.js"></script>
   <link rel="stylesheet" href="/css/infowindow.css" />
 @stop
