@@ -116,7 +116,7 @@ function createMultipleMarkers(markers, userPosition) {
       // set the title to this marker's hike's name
       title: hikeData[hike_id].name,
       // set the marker's info window content
-      content: setContent(hike_id, i),
+      content: setContent(markers[i], hike_id),
       // set a drop animation when the map loads
       animation: google.maps.Animation.DROP,
       // set the icon to blue
@@ -139,8 +139,8 @@ function createMultipleMarkers(markers, userPosition) {
       infoWindow.open(this.getMap(), this);
       // highlight icon to be orange
       this.setIcon('/img/markers/orange-dot.png');
-      // if a marker was previously clicked
-      if (previousClick != null) {
+      // if a different  marker was previously clicked
+      if (previousClick != null && previousClick != this) {
       // reset that marker to blue
         previousClick.setIcon('img/markers/blue-dot.png');
       }
@@ -181,12 +181,11 @@ function clearMarkers() {
 * It produces the HTML content of the marker's info window and
 * returns it as a string.
 */
-function setContent(hike_id, i) {
+function setContent(marker, hike_id) {
   var link = "<a href='/hikes/" + hikeData[hike_id].path_name + "'>" + hikeData[hike_id].name + "</a>";
-  var entranceName = markerData[i].name;
-  var address = markerData[i].address;
-  var climb = "<span class='climb'>Climb:</span> " + hikeData[hike_id].climb;
-  var dist = "<span class='distance'>Distance to MBTA:</span> " + markerData[i].distance_to_mbta + " mi";
+  var entranceName = marker.name;
+  var address = "<span>" + marker.address + "</span>";
+  var dist = "<span class='distance'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
   var br = "<br />";
-  return link + br + entranceName + br + address + br + climb + br + dist;
+  return link + br + entranceName + br + address + br + dist;
 }
