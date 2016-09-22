@@ -186,6 +186,19 @@ function setContent(marker, hike_id) {
   var entranceName = marker.name;
   var address = "<span>" + marker.address + "</span>";
   var dist = "<span class='distance'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
+  var lines = "<span>Lines Nearby:</span> " + setLines(marker.id);
   var br = "<br />";
-  return link + br + entranceName + br + address + br + dist;
+  return link + br + entranceName + br + address + br + dist + br + lines;
+}
+function setLines(id) {
+  var linesList = "";
+  // we are looking at the lines for given marker id
+  var list = lines[id - 1];
+  // loop through all the lines at this id
+  for (var i = 0; i < list.length; i++) {
+    linesList = linesList + list[i].name + ", ";
+  }
+  // remove final comma
+  linesList = linesList.substring(0, (linesList.length - 2));
+  return linesList;
 }

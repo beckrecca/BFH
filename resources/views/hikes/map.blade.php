@@ -58,6 +58,19 @@
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
     var hikeData = <?php echo json_encode($hikes) ?>;
+    var lines = [];
+    // keep count of each marker
+    <?php $i = 0; ?>
+    // loop through all the markers to get their closest MBTA lines
+    @foreach ($markers as $marker)
+      <?php 
+        // get the lines for this entrance marker
+        $lines = $marker->lines;
+        ?>
+        // add this data to the lines array
+        lines[<?php echo $i ?>] = <?php echo json_encode($lines) ?>;
+        <?php $i++; ?>
+    @endforeach
    </script>
   <link rel="stylesheet" href="/css/infowindow.css" />
 @stop
