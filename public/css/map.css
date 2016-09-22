@@ -33,12 +33,12 @@ ul#hike-list li > .thumbnail {
 	.thumbnail:after {
 		position: absolute;
 		bottom: 0;  
-		height: 45%;
+		height: 35%;
 		width: 100%;
 		content: "";
 		background: linear-gradient(to top,
-			rgba(255,255,255, 1) 25%, 
-			rgba(255,255,255, 0) 75%
+			rgba(255,255,255, 1) 10%, 
+			rgba(255,255,255, 0) 90%
 		);
 		pointer-events: none; 
 	}

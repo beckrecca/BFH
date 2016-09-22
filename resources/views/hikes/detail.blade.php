@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">
   <link rel="stylesheet" href="/lib/themes/default.time.css" id="theme_time">
   <link rel="stylesheet" href="/css/hike.css" />
+  <!-- handle Google Maps error -->
+  <script>
+    if (typeof initMap != 'function') {
+      $('#errors').html("Something went wrong. Please refresh the page!");
+    }
+  </script>
 @stop
 
 @section('content')
@@ -165,10 +171,4 @@
     </script>
     <!-- directions panel styling -->
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
-    <!-- handle Google Maps error -->
-    <script>
-      if (typeof initMap != 'function') {
-        $('#errors').html("Something went wrong. Please refresh the page!");
-      }
-    </script>
 @stop

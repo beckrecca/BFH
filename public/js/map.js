@@ -40,18 +40,18 @@ function initMap() {
       previousUserMarker.setMap(null);
     }
     // set the user's position
-    nearestHikes();
+    findResults();
   });
 }
 /*
-* nearestHikes() is called by initMap()
+* findResults() is called by initMap()
 * It gets the user's submitted address values and geocodes them
 * into GPS coordinates in order to create a marker. If it
 * successfully geocodes, the relevant markers per the form parameters
 * are displayed on the map and listed. If it does not successfully geocode,
 * the page displays an error.
 */
-function nearestHikes() {
+function findResults() {
   // initialize a new Geocoder object
   geocoder = new google.maps.Geocoder();
   // get the user address input
@@ -80,12 +80,12 @@ function nearestHikes() {
       var radius = parseFloat($('#radius').val());
       // find and all the markers within the selected radius
       var markersWithinRadius = findRadius(userPoint, radius);
-      for (var i = 0; i < markersWithinRadius; i++) {
-      }
       // clear the map of all the old markers
       clearMarkers();
       // repopulate map with results
       createMultipleMarkers(markersWithinRadius, userPoint);
+      // display the results
+      updateThumbnails(markersWithinRadius);
     } else if (userAddress == "") {
       $("#errors").html("Please provide an address.");
     }
@@ -163,10 +163,23 @@ function createMultipleMarkers(markers, userPosition) {
   map.panToBounds(bounds);
 }
 /*
+* updateThumbnails() is called by  sdfjlsdfsdfsdfsdfdf
+*/
+function updateThumbnails(results) {
+  // hide all the hikes
+  for (var i = 0; i < markerData.length; i++) {
+    $('#hike_' + markerData[i].hike_id).removeClass("visible").addClass("hidden");
+  }
+  // show only the resulting hikes
+  for (var j = 0; j < results.length; j++) {
+    $('#hike_' + results[j].hike_id).removeClass("hidden").addClass("visible");
+  }
+}
+/*
 * clearMarkers()
 * It loops through the oldMarkers array, that were previously
 * displayed on the map before form submission, and it clears them
-* from the map. 9
+* from the map. 
 */
 function clearMarkers() {
   // clear the old hike markers
@@ -182,14 +195,20 @@ function clearMarkers() {
 * returns it as a string.
 */
 function setContent(marker, hike_id) {
-  var link = "<a href='/hikes/" + hikeData[hike_id].path_name + "'>" + hikeData[hike_id].name + "</a>";
+  var link = "<a href='/hikes/" + hikeData[hike_id].path_name + "' class='info'>" + hikeData[hike_id].name + "</a>";
   var entranceName = marker.name;
-  var address = "<span>" + marker.address + "</span>";
-  var dist = "<span class='distance'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
-  var lines = "<span>Lines Nearby:</span> " + setLines(marker.id);
+  var address = "<span class='info'>" + marker.address + "</span>";
+  var dist = "<span class='info'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
+  var lines = "<span class='info'>Lines Nearby:</span> " + setLines(marker.id);
   var br = "<br />";
   return link + br + entranceName + br + address + br + dist + br + lines;
 }
+/*
+* setLines() is called by setContent()
+* It accepts a marker's ID and gets its lines from the
+* corresponding index of the line array, and it returns a string
+* of the line names separated by commas.
+*/
 function setLines(id) {
   var linesList = "";
   // we are looking at the lines for given marker id

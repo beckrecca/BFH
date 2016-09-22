@@ -6,6 +6,11 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/map.css" />
+  <script>
+    if (typeof initMap != 'function') {
+      $('#errors').html("Something went wrong. Please refresh the page!");
+    }
+  </script>
 @stop
 
 @section('content')
