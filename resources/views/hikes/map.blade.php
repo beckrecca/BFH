@@ -6,12 +6,6 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/map.css" />
-  <!-- handle Google Maps error -->
-  <script>
-    if (typeof initMap != 'function') {
-      $('#errors').html("Something went wrong. Please refresh the page!");
-    }
-  </script>
 @stop
 
 @section('content')
@@ -27,6 +21,13 @@
         <option value="5">Within 5 miles</option>
         <option value="10">Within 10 miles</option>
       </select>
+      <div id="climb">
+        <label for="climb">Climb:</label> 
+        <input type="checkbox" name="climb" value="flat" /> Flat
+        <input type="checkbox" name="climb" value="easy" /> Easy
+        <input type="checkbox" name="climb" value="moderate" /> Moderate
+        <input type="checkbox" name="climb" value="intense" /> Intense
+      </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
     <div id="errors"></div>
@@ -79,4 +80,10 @@
     @endforeach
    </script>
   <link rel="stylesheet" href="/css/infowindow.css" />
+  <!-- handle Google Maps error -->
+  <script>
+    if (typeof initMap != 'function') {
+      $('#errors').html("Something went wrong. Please refresh the page!");
+    }
+  </script>
 @stop

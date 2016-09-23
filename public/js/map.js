@@ -34,12 +34,14 @@ function initMap() {
   $('form').submit(function (e) {
     // prevent form from posting
     e.preventDefault();
+    // clear any error messages
+    $("#errors").html("");
     // if a user position was previously set,
     if (previousUserMarker != null) {
       // clear it from the map
       previousUserMarker.setMap(null);
     }
-    // set the user's position
+    // find the results given the form submission
     findResults();
   });
 }
@@ -80,12 +82,22 @@ function findResults() {
       var radius = parseFloat($('#radius').val());
       // find and all the markers within the selected radius
       var markersWithinRadius = findRadius(userPoint, radius);
-      // clear the map of all the old markers
-      clearMarkers();
-      // repopulate map with results
-      createMultipleMarkers(markersWithinRadius, userPoint);
-      // display the results
-      updateThumbnails(markersWithinRadius);
+      // find all the markers with any selected climb
+      var results = findClimb(markersWithinRadius);
+      for (var i = 0; i < results.length; i++) {
+        console.log(results[i]);
+      }
+      // if the results are not empty
+      if (typeof results !== 'undefined' && results.length > 0) {
+        // clear the map of all the old markers
+        clearMarkers();
+        // repopulate map with results
+        createMultipleMarkers(results, userPoint);
+        // display the results
+        updateThumbnails(markersWithinRadius);
+      }
+      // otherwise, let the user know
+      else $("#errors").html("Sorry, no results found.");
     } else if (userAddress == "") {
       $("#errors").html("Please provide an address.");
     }
@@ -220,4 +232,51 @@ function setLines(id) {
   // remove final comma
   linesList = linesList.substring(0, (linesList.length - 2));
   return linesList;
+}
+/*
+* findClimb() is called by findResults()
+* It accepts an array of markers as its parameters. It returns 
+* an array of markers that match the checked climb fields.
+*/
+function findClimb(markers) {
+  // to check if the checkboxes are all empty
+  var unchecked = 1;
+  // initialize the results we will be returning
+  var results = []; 
+  // initialize the index of our results array
+  var j = 0;
+  $('#climb :checked').each(function() { 
+    // if any box is checked,
+     if ($(this).val() != "")  {
+      // mark this input as not unchecked
+      unchecked = 0;
+      // loop through the hikes of each marker
+      for (var i = 0; i < markers.length; i++) {
+        // get the hike id
+        var hike_id = markers[i].hike_id - 1;
+        // get the climb value of this hike
+        var hikeClimb = hikeData[hike_id].climb;
+        // if the climb is a hyphenate e.g. "easy-to-moderate",
+        if (hikeClimb.includes("-")) {
+          // reduce it to just "moderate"
+          hikeClimb = hikeClimb.substring(hikeClimb.indexOf("-")+4, hikeClimb.length);
+        }
+        // if it matches our value,
+        if (hikeClimb == $(this).val()) {
+          // add this marker to our results
+          results[j] = markers[i];
+          // increment results array
+          j++;
+        }
+      }
+    }
+   });
+  // if the user did not check any boxes, return the markers unchanged
+  if (unchecked) {
+    return markers;
+  }
+  // otherwise, return the results
+  else {
+    return results;
+  }
 }
