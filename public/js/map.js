@@ -94,7 +94,7 @@ function findResults() {
         // repopulate map with results
         createMultipleMarkers(results, userPoint);
         // display the results
-        updateThumbnails(markersWithinRadius);
+        updateThumbnails(results);
       }
       // otherwise, let the user know
       else $("#errors").html("Sorry, no results found.");

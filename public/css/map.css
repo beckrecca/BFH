@@ -1,17 +1,20 @@
-span {
+#errors {
 	font-weight: bold;
-}
-#map {
-	height: 100%;
-	width: 100%;
+	color: #ff0000;
 }
 #find-nearest {
 	padding: 1em;
 	width: 100%;
 }
-#errors {
+#climb {
+	font-size: 1.15em;
+}
+#map {
+	height: 100%;
+	width: 100%;
+}
+span {
 	font-weight: bold;
-	color: #ff0000;
 }
 ul#hike-list {
 	margin: 0;
@@ -24,6 +27,15 @@ ul#hike-list li{
 ul#hike-list li > .thumbnail {
 	padding: 1.4em;
 	background: #fff;
+}
+.thumbnail > p > a, .thumbnail > p > a:visited{
+  color: #555;
+  border-bottom: 1px dotted;
+  font-weight: normal;
+}
+.thumbnail > p > a:hover {
+  color: #71B300;
+  text-decoration: none;
 }
 @media only screen and (min-width: 496px) {
 	.thumbnail {

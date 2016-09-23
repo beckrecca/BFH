@@ -23,10 +23,10 @@
       </select>
       <div id="climb">
         <label for="climb">Climb:</label> 
-        <input type="checkbox" name="climb" value="flat" /> Flat
-        <input type="checkbox" name="climb" value="easy" /> Easy
-        <input type="checkbox" name="climb" value="moderate" /> Moderate
-        <input type="checkbox" name="climb" value="intense" /> Intense
+        <label for="flat">Flat <input type="checkbox" name="climb" id="flat" value="flat" /></label>
+        <label for="easy">Easy <input type="checkbox" name="climb" id="easy" value="easy" /></label>
+        <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
+        <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -55,12 +55,6 @@
 @stop
 
 @section('body')
-  <!-- Google Maps Javascript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
-    async defer></script>
-  <!-- Google Map find nearest hike code -->
-  <script src="js/map.js"></script>
-  <script src="js/haversine.js"></script>
   <!-- convert PHP to JSON for map data -->
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
@@ -79,6 +73,12 @@
         <?php $i++; ?>
     @endforeach
    </script>
+  <!-- Google Map find nearest hike code -->
+  <script src="js/map.js"></script>
+  <script src="js/haversine.js"></script>
+  <!-- Google Maps Javascript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
+    async defer></script>
   <link rel="stylesheet" href="/css/infowindow.css" />
   <!-- handle Google Maps error -->
   <script>

@@ -10,12 +10,6 @@
   <link rel="stylesheet" href="/lib/themes/default.date.css" id="theme_date">
   <link rel="stylesheet" href="/lib/themes/default.time.css" id="theme_time">
   <link rel="stylesheet" href="/css/hike.css" />
-  <!-- handle Google Maps error -->
-  <script>
-    if (typeof initMap != 'function') {
-      $('#errors').html("Something went wrong. Please refresh the page!");
-    }
-  </script>
 @stop
 
 @section('content')
@@ -120,15 +114,12 @@
 @stop
 
 @section('body')
-	<!-- GOOGLE MAPS API -->
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
-    async defer></script>
-   <!-- directions panel code -->
-   <script src="/js/directions.js"></script>
   <!-- convert PHP to JSON for map data -->
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
+   <!-- directions panel code -->
+   <script src="/js/directions.js"></script>
    <!-- pickadate.js code below -->
    <script src="/lib/picker.js"></script>
    <script src="/lib/picker.date.js"></script>
@@ -169,6 +160,15 @@
       } );
     } );
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
+      async defer></script>
     <!-- directions panel styling -->
     <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
+    <!-- GOOGLE MAPS API -->
+    <!-- handle Google Maps error -->
+    <script>
+      if (typeof initMap != 'function') {
+        $('#errors').html("Something went wrong. Please refresh the page!");
+      }
+    </script>
 @stop
