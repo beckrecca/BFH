@@ -207,7 +207,7 @@ function clearMarkers() {
 */
 function setContent(marker, hike_id) {
   var link = "<a href='/hikes/" + hikeData[hike_id].path_name + "' class='info'>" + hikeData[hike_id].name + "</a>";
-  var entranceName = marker.name;
+  var entranceName = "<span class='info'>Entrance:</span> " + marker.name;
   var address = "<span class='info'>" + marker.address + "</span>";
   var dist = "<span class='info'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
   var lines = "<span class='info'>Lines Nearby:</span> " + setLines(marker.id);

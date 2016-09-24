@@ -47,7 +47,7 @@
       <form class="form-inline" id="directions-form">
         <label class="sr-only" for="start">User address</label>
         <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
-        <label for="end">Destination:</label>
+        <br/><label for="end">Destination:</label>
         <select class="form-control" name="end" id="end">
           <?php 
             // index the markers

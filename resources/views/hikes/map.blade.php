@@ -47,7 +47,7 @@
           <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" alt="{{ $img->alt }}" width="170px" /></a>
           <p>
             <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
-            <span>Climb:</span> {{ $hike->climb }} <br />
+            <span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}">{{ $hike->climb }}</a><br />
             <span>Features:</span> 
               @foreach ($tags as $tag)
               <a href="/tags/{{ $tag->id }}">{{ $tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
