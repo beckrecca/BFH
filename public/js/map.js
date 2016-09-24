@@ -81,12 +81,11 @@ function findResults() {
       // get the form's radius selection
       var radius = parseFloat($('#radius').val());
       // find and all the markers within the selected radius
-      var markersWithinRadius = findRadius(userPoint, radius);
+      var results = findRadius(userPoint, radius);
       // find all the markers with any selected climb
-      var results = findClimb(markersWithinRadius);
-      for (var i = 0; i < results.length; i++) {
-        console.log(results[i]);
-      }
+      results = findClimb(results);
+      // find all the markers with any selected distance from MBTA
+      results = findDistance(results);
       // if the results are not empty
       if (typeof results !== 'undefined' && results.length > 0) {
         // clear the map of all the old markers
@@ -279,4 +278,31 @@ function findClimb(markers) {
   else {
     return results;
   }
+}
+/*
+* findDistance() is called by findResults()
+* It accepts an array of markers as its parameters. It returns 
+* an array of markers that match the selected distance field.
+*/
+function findDistance(markers) {
+  // verify that a distance was selected
+  if ($('#distance input:radio:checked').val() != null) {
+    // get the value
+    var distance = $('#distance input:radio:checked').val();
+    // initialize the results we will return
+    var results = [];
+    // loop through all the markers
+    for (var i = 0; i < markers.length; i++) {
+      // compare this marker's distance to the user selection
+      if (markers[i].distance_to_mbta < distance) {
+        // if the marker's dist to MBTA is less than user selection,
+        // add it to the results
+        results.push(markers[i]);
+      }
+    }
+    // return the results
+    return results;
+  }
+  // if no selections made, return markers unaltered
+  else return markers;
 }
