@@ -20,6 +20,7 @@
         <option value="3">Within 3 miles</option>
         <option value="5">Within 5 miles</option>
         <option value="10">Within 10 miles</option>
+        <option value="15">Within 15 miles</option>
       </select>
       <div id="climb">
         <label for="climb">Climb:</label> 
@@ -28,6 +29,12 @@
         <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
         <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
+      <select id="features" height="5" multiple>
+        <option> -- Select Features -- </option>
+        @foreach ($tags as $tag)
+          <option value='{{ $tag->name }}'>{{ ucfirst($tag->name) }}</option>
+        @endforeach
+      </select>
       <div id="distance">
         <label for="distance">Distance to MBTA:</label>
         <label for="0.25">&lt; .25 mi <input type="radio" name="distance" id="0.25" value="0.25" /></label>
@@ -39,7 +46,7 @@
     <div id="errors"></div>
     <ul id="hike-list">
     @foreach ($hikes as $hike)
-    <?php $tags = $hike->tags; ?>
+    <?php $single_hikes_tags = $hike->tags->sortBy('name'); ?>
       <li class="visible" id="hike_{{ $hike->id }}">
         <div class="thumbnail">
           <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
@@ -49,8 +56,8 @@
             <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
             <span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}">{{ $hike->climb }}</a><br />
             <span>Features:</span> 
-              @foreach ($tags as $tag)
-              <a href="/tags/{{ $tag->id }}">{{ $tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
+              @foreach ($single_hikes_tags as $list_tag)
+              <a href="/tags/{{ $list_tag->id }}">{{ $list_tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
               @endforeach
           </p>
         </div>

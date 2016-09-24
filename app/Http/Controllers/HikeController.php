@@ -66,7 +66,11 @@ class HikeController extends Controller
         // get all the markers
         $markers = \App\Marker::all();
 
+        // get all the tags
+        $tags = \App\Tag::all()->sortBy('name');
+
         return view('hikes.map')->with('hikes', $hikes)
-                                ->with('markers', $markers);
+                                ->with('markers', $markers)
+                                ->with('tags', $tags);
     }
 }
