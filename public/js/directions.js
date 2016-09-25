@@ -23,10 +23,21 @@ function initMap() {
   directionsDisplay = new google.maps.DirectionsRenderer();
   // create a directions service to obtain the directions
   directionsService = new google.maps.DirectionsService();
+  // on mobile, map is not draggable
+  var dragOption = false;
+  // if the screen size is larger than 767px
+  if (window.innerWidth > 767) {
+    // the map is draggable
+    dragOption = true;
+    // set panning
+    draggable: dragOption
+  }
   // set the map to the designated div
   map = new google.maps.Map(document.getElementById('hike-map'), {
     // disable scroll zoom
-    scrollwheel: false
+    scrollwheel: false,
+    // set panning
+    draggable: dragOption
   });
   // associate the directions display with our map
   directionsDisplay.setMap(map);
@@ -79,6 +90,11 @@ function initMap() {
       // keep the markerData within the map's bounds
       map.fitBounds(bounds);
       map.panToBounds(bounds);
+      // if the window is enlarged to greater than mobile size,
+      if (window.innerWidth > 767) {
+        // set map to draggable
+        map.setOptions({ draggable: true });
+      }
     });
   }
   // otherwise, if only one or two, center and zoom appropriately
@@ -90,16 +106,17 @@ function initMap() {
     google.maps.event.addDomListener(window, "resize", function() {
       // keep the map centered
       map.setCenter(center);
+      // if the window is enlarged to greater than mobile size,
+      if (window.innerWidth > 767) {
+        // set map to draggable
+        map.setOptions({ draggable: true });
+      }
     });
   }
   // If the user selects a different entrance,
   $('#end').change(function () {
     // display that marker's lines
     displayLines($('#end').val());
-    // stop previous marker's animation
-    if (previousClick != null){
-      previousClick.setAnimation(null);
-    }
   });
   // When the form is submitted, calculate the route
   $('form').submit(function(e) {

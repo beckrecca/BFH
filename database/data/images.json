@@ -193,8 +193,8 @@
    },
    {
       "file":"00001.jpg",
-      "alt":"The creator of Boston Fare Hikes, Rebecca Doris, stands in a heavy coat, blue hat, and red duck boots, center right, in front of a small naked tree. She stands on patchy hill, and in the background there are fields of different crops. Behind the fields, there are bare trees and evergreen trees.",
-      "title":"The trails at Drumlin Farm offer views of the fields",
+      "alt":"In the background, there is the wall of a stone building with a white-framed window. In front there is a dense green garden in bright sunlight. In the center, there is a butterfly perched on a magenta lilac-like flower. The butterfly is brown with a checkered pattern.",
+      "title":"A fritillary butterfly in the garden outside the gift shop",
       "hike_id":18
    },
    {
@@ -207,6 +207,42 @@
       "file":"00003.jpg",
       "alt":"A grey barn cat sleeps on a pile of hay",
       "title":"Peace & contentment",
+      "hike_id":18
+   },
+   {
+      "file":"00004.jpg",
+      "alt":"In the background, there are dense green trees lined behind a space of grass. Most of the photo is taken up by a field lined with various plants. From left to right, there are three rows of green plants, then a row of various red, pink, and yellow flowers, then a row of red, yellow, and purple flowers, then a dirt path, and then the edge of a tomato plant.",
+      "title":"Boyce field",
+      "hike_id":18
+   },
+   {
+      "file":"00005.jpg",
+      "alt":"Under the shade of two large trees, one in the mid-center, and one in the mid-left, a dozen sheep graze. The closest sheep, in the front left, has a black face and limbs and light wool, and it faces the photographer. In the background, a field reflects the bright sunlight, and trees line the field.",
+      "title":"Sheep",
+      "hike_id":18
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"At the top of a hil, dense vegetation and ferns grow. Sparse bright red and yellow foliage shows. Beyond, towards the horizon, the hill slopes down, and leafy trees just beginning to turn color extend as far as the eye can see. Some trees are evergreen. The sky is clear blue.",
+      "title":"The top of the Drumlin",
+      "hike_id":18
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"On the right and left, two trees stand at the top of a great hill. The grass on the hill is patchy and somewhat brown. Between the trees, a clearing shows blue sky and dense leafy trees extending to the horizon. Just on a horizon, the blue shadow of a mountain is visible.",
+      "title":"Mt Wachusett from the top of the Drumlin",
+      "hike_id":18
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A wooden bridge crosses a dry brook in a shady, thick wooded area. Dense vegetation grows in the base of the dry brook. The wooded bridge connects with a dirt path which heads left into obscurity. Patches of sunlight shine down between the trees.",
+      "title":"Drumlin Trail",
+      "hike_id":18
+   },
+   {
+      "file":"00009.jpg",
+      "alt":"A green field takes up most of the photo, with patterns of crops growing in blocks in the background. ",
+      "title":"Bird Conservation Area and Boyce Field",
       "hike_id":18
    },
    {

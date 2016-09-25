@@ -14,10 +14,19 @@ var previousUserMarker
 * It initiales the Google Map on the page.
 */
 function initMap() {
+  // on mobile, map is not draggable
+  var dragOption = false;
+  // if the screen size is larger than 767px
+  if (window.innerWidth > 767) {
+    // the map is draggable
+    dragOption = true;
+  }
   // initialize the map
   map = new google.maps.Map(document.getElementById('map'), {
     // disable scroll zoom
-    scrollwheel: false
+    scrollwheel: false,
+    // set panning
+    draggable: dragOption
   });
   // set all the markers on the map
   createMultipleMarkers(markerData);
@@ -29,6 +38,11 @@ function initMap() {
     map.fitBounds(bounds);
     // rezoom the map to the bounds
     map.panToBounds(bounds);
+    // if the window is enlarged to greater than mobile size,
+    if (window.innerWidth > 767) {
+      // set map to draggable
+      map.setOptions({ draggable: true });
+    }
   });
   // handle the form submission
   $('form').submit(function (e) {

@@ -7,9 +7,8 @@
   padding: 1em 0.5em 0em 0.5em;
 }
 #description > p {
-  text-indent: 1em;
   padding: 0;
-  margin: 0;
+  margin: 0.5em;
 }
 #description > p > span {
   font-weight: bold;
