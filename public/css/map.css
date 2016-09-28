@@ -2,6 +2,10 @@
 	font-weight: bold;
 	color: #ff0000;
 }
+#features {
+	height: 5.5em;
+	padding: 0.25em;
+}
 #find-nearest {
 	padding: 1em;
 	width: 100%;

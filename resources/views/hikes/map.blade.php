@@ -29,17 +29,14 @@
         <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
         <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
-      <select id="features" height="5" multiple>
-        <option> -- Select Features -- </option>
-        @foreach ($tags as $tag)
-          <option value='{{ $tag->name }}'>{{ ucfirst($tag->name) }}</option>
-        @endforeach
-      </select>
-      <div id="distance">
-        <label for="distance">Distance to MBTA:</label>
-        <label for="0.25">&lt; .25 mi <input type="radio" name="distance" id="0.25" value="0.25" /></label>
-        <label for="0.5">&lt; .5 mi <input type="radio" name="distance" id="0.5" value="0.5" /></label>
-        <label for="1">&lt; 1 mi <input type="radio" name="distance" id="1" value="1" /></label>
+      <div>
+        <label class="sr-only" for="distance">Distance to closest MBTA station/stop</label>
+        <select id="distance" class="form-control" name="distance">
+          <option>Distance to MBTA:</option>
+          <option value="0.25">&lt; .25 mi </option>
+          <option value="0.5">&lt; .5 mi </option>
+          <option value="1">&lt; 1 mi </option>
+        </select>
       </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>

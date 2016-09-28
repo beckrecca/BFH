@@ -100,17 +100,20 @@ function findResults() {
       results = findClimb(results);
       // find all the markers with any selected distance from MBTA
       results = findDistance(results);
+      // display the results
+      updateThumbnails(results);
       // if the results are not empty
       if (typeof results !== 'undefined' && results.length > 0) {
         // clear the map of all the old markers
         clearMarkers();
         // repopulate map with results
         createMultipleMarkers(results, userPoint);
-        // display the results
-        updateThumbnails(results);
       }
       // otherwise, let the user know
-      else $("#errors").html("Sorry, no results found.");
+      else {
+        // error message
+        $("#errors").html("Sorry, no results found.");
+      }
     } else if (userAddress == "") {
       $("#errors").html("Please provide an address.");
     }
@@ -258,6 +261,7 @@ function findClimb(markers) {
   var results = []; 
   // initialize the index of our results array
   var j = 0;
+  // get the value of each checked box
   $('#climb :checked').each(function() { 
     // if any box is checked,
      if ($(this).val() != "")  {
@@ -300,9 +304,9 @@ function findClimb(markers) {
 */
 function findDistance(markers) {
   // verify that a distance was selected
-  if ($('#distance input:radio:checked').val() != null) {
+  if ($('#distance').val() != null) {
     // get the value
-    var distance = $('#distance input:radio:checked').val();
+    var distance = $('#distance').val();
     // initialize the results we will return
     var results = [];
     // loop through all the markers
