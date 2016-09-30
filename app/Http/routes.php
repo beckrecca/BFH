@@ -36,6 +36,11 @@ Route::get('lines/{id}', 'LineController@view');
 Route::get('tags/{id}', 'TagController@view');
 //Route::get('tags', 'TagController@all');
 
+/** EXTRAS **/
+Route::get('disclaimer', function() {
+    return view('disclaimer');
+});
+
 /** TESTING ROUTES **/
 
 Route::get('images', function () {

@@ -54,7 +54,7 @@
           <li>&copy; 2016 Rebecca Doris</li>
           <li><a href="#">About</a><li>
           <li><a href="http://bostonfarehikes.tumblr.com">Blog</a></li>
-          <li><a href="#">Disclaimer</a></li>
+          <li><a href="disclaimer">Disclaimer</a></li>
           <li><a href="http://www.mbta.com">MBTA</a></li>
         </ul>
         <div class="clearfix">
