@@ -9,6 +9,8 @@
   <style>
   	#disclaimer {
   		background-color: #fff;
+      padding: 0.25em 1em 1em 1em;
+      margin: 0.25em 0.5em;
   	}
   	span {
   		font-weight: bold;
@@ -18,8 +20,9 @@
 
 @section('content')
 <div class="wrapper">
-    <div class="container" id="disclaimer">
+    <div class="container">
       <h1>Disclaimer</h1>
+      <div  id="disclaimer">
       <h2>The Potential Dangers of Hiking</h2>
       <p>
       	I am not an expert survivalist, medical doctor, or professional <em>anything</em>. 
@@ -48,6 +51,7 @@
       	  I do find that Google's transit directions are accurate most of the time. Please 
       	  check the MBTA website for any service interruption information.
       </p>
+      </div>
     </div>
     <div class="push"></div>
   </div>
