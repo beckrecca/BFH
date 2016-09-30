@@ -17,6 +17,10 @@ body {
   font-family: 'Lato', sans-serif;
   font-size: 1.12;
 }
+button > a, button > a:visited, button > a:hover {
+  color: #fff;
+  text-decoration: none;
+}
 h1 {
   font-size: 1.8em;
   font-weight: bold;
@@ -160,7 +164,8 @@ fieldset[disabled] .btn-primary.active {
   background-color: #fff; 
 }
 
-.btn-notice { 
+.btn-notice,
+.btn-notice:visited { 
   color: #FFFFFF; 
   background-color: #27B87C; 
   border-color: #EEEEEE; 

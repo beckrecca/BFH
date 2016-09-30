@@ -44,10 +44,10 @@
     <div id="directions-form">
       <h2>Transit Directions</h2> 
       <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>
-      <form class="form-inline" id="directions-form">
+      <form class="form-inline" id="form">
         <label class="sr-only" for="start">User address</label>
         <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
-        <br/><label for="end">Destination:</label>
+        <br/><label for="end" id="entrance">Destination:</label>
         <select class="form-control" name="end" id="end">
           <?php 
             // index the markers
@@ -83,6 +83,8 @@
         </div>
         <a href="#directions-form" id="toggle-options" class="btn btn-notice">More options</a>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        <a href="#directions-form" id="reverse" class="btn btn-notice hidden">Reverse Directions</a>
+        <button class="btn btn-primary hidden" id="newWindow"></button>
       </form>
     </div>
   </div>

@@ -128,8 +128,10 @@ function initMap() {
     $("#timing").html(" ");
     // clear any errors that might be displayed
     $("#errors").html(" ");
+    // reset the entrance label to destination
+    $("#entrance").html("Destination: ");
     // calculate the route and display directions
-    calcRoute();
+    calcRoute($('#start').val(), markerData[$('#end').val()].address);
   });
   // display lines & distance for default marker
   displayLines(selected);
@@ -137,18 +139,21 @@ function initMap() {
   $("#toggle-options").click(function() {
     $("#more-options").toggle();
   });
+  // if the user selects to reverse directions
+  $('#reverse').click(function () {
+    // set the entrance label to origin
+    $("#entrance").html("Origin: ");
+    // calculate the reverse route
+    calcRoute(markerData[$('#end').val()].address, $('#start').val());
+  });
 }
 
 /*
 * calcRoute() is called by initMap()
-* It calculates the directions for the selected start and end points,
+* It calculates the directions for the passed start and end parameters,
 * and it delivers them in a directions panel.
 */
-function calcRoute() {
-  // Start is the user's address
-  var start = $('#start').val();
-  // End is the selected destination
-  var end = markerData[$('#end').val()].address;
+function calcRoute(start, end) {
   // Get time from form
   var time = $("#time").val();
   // if no time chosen,
@@ -218,7 +223,9 @@ function calcRoute() {
       // make the timing clear at the top of the directions panel,
       $("#timing").html(going + convertDateTime(dateTime));
       // add link to open in new window
-      $("#directions-form").append("<a href='https://www.google.com/maps/?saddr=" + start + "&daddr=" + end + "&dirflg=r' id='newWindow' target='_blank'>Open Directions in New Window</a>");
+      $("#newWindow").removeClass('hidden').html("<a href='https://www.google.com/maps/?saddr=" + start + "&daddr=" + end + "&dirflg=r' id='newWindow' target='_blank'>Open Directions in New Window</a>");
+      // show button to reverse the directions
+      $('#reverse').removeClass('hidden').addClass('visible');
     }
       // if the directions service fails
       else if ($("#start").val() == "") {
