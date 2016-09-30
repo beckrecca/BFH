@@ -41,7 +41,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
               <li><a href="/map">Map</a></li>
-              <li><a href="/hikes">Explore</a></li>
+              <li><a href="/explore">Explore</a></li>
               <li><a href="#">Suggest</a></li>
             </ul>
           </div><!--/.nav-collapse -->

@@ -14,8 +14,10 @@ class HikeController extends Controller
     */
     public function all() 
     {
-        $hikes = \App\Hike::all();
-        return view ('hikes.list')->with('hikes', $hikes);
+        // grab all of the hikes
+        $hikes = \App\Hike::simplePaginate(10);
+
+        return view ('hikes.explore')->with('hikes', $hikes);
     }
 
     /**

@@ -1,0 +1,8 @@
+label {
+	font-size: 1.2em;
+}
+ul#explore > li {
+	background-color: #fff;
+	margin: 1em;
+	padding: 0.5em 1em 1em 1em;
+}

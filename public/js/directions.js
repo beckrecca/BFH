@@ -217,6 +217,8 @@ function calcRoute() {
       directionsDisplay.setDirections(response);
       // make the timing clear at the top of the directions panel,
       $("#timing").html(going + convertDateTime(dateTime));
+      // add link to open in new window
+      $("#directions-form").append("<a href='https://www.google.com/maps/?saddr=" + start + "&daddr=" + end + "&dirflg=r' id='newWindow' target='_blank'>Open Directions in New Window</a>");
     }
       // if the directions service fails
       else if ($("#start").val() == "") {

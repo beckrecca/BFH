@@ -46,6 +46,10 @@
 #more-options {
   display: none;
 }
+#newWindow {
+  font-color: #71B300;
+  font-size: 1.2em;
+}
 #timing {
   font-size: 1.2em;
   font-weight: bold;

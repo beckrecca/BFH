@@ -18,8 +18,10 @@ Route::get('/', function () {
 /** MAIN MAP **/
 Route::get('map', 'HikeController@map');
 
+/** EXPLORE **/
+Route::get('explore', 'HikeController@all');
+
 /** HIKES **/
-Route::get('hikes', 'HikeController@all');
 Route::get('hikes/climb/{climb}', 'HikeController@climb');
 Route::get('hikes/{path_name}', 'HikeController@detail');
 
