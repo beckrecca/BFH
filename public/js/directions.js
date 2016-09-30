@@ -14,6 +14,9 @@ var markedIcon = '/img/markers/orange-dot.png';
 var previousSelected;
 // the selected entrance defaults to 0
 var selected = 0;
+// remember whether we're finding directions to or from
+// 0 is to, 1 is from
+var from = 0;
 /*
 * initMap() is called by the Google Maps API key script.
 * It initializes the map and directions panel.
@@ -141,10 +144,25 @@ function initMap() {
   });
   // if the user selects to reverse directions
   $('#reverse').click(function () {
-    // set the entrance label to origin
-    $("#entrance").html("Origin: ");
-    // calculate the reverse route
-    calcRoute(markerData[$('#end').val()].address, $('#start').val());
+    // if the directions displayed right now are home FROM the hike
+    if (from) {
+      // set the entrance label to destination
+      $("#entrance").html("Destination: ");
+      // calculate the route
+      calcRoute($('#start').val(), markerData[$('#end').val()].address);
+      // direction is now to
+      from = 0;
+    }
+    // if the directions displayed right now are are TO the hike
+    else {
+      // set the entrance label to origin
+      $("#entrance").html("Origin: ");
+      // calculate the reverse route
+      calcRoute(markerData[$('#end').val()].address, $('#start').val());
+      // direction is now from
+      from = 1;
+    }
+    
   });
 }
 

@@ -83,7 +83,7 @@
         </div>
         <a href="#directions-form" id="toggle-options" class="btn btn-notice">More options</a>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
-        <a href="#directions-form" id="reverse" class="btn btn-notice hidden">Reverse Directions</a>
+        <a href="#directions-form" id="reverse" class="btn btn-notice hidden">Reverse Directions <span class="glyphicon glyphicon-refresh"></span></a>
         <button class="btn btn-primary hidden" id="newWindow"></button>
       </form>
     </div>
