@@ -244,6 +244,8 @@ function calcRoute(start, end) {
       $("#newWindow").removeClass('hidden').html("<a href='https://www.google.com/maps/?saddr=" + start + "&daddr=" + end + "&dirflg=r' id='newWindow' target='_blank'>Open Directions in New Window</a>");
       // show button to reverse the directions
       $('#reverse').removeClass('hidden').addClass('visible');
+      // remember the user's address as our cookie
+      setAddress($("#start").val());
     }
       // if the directions service fails
       else if ($("#start").val() == "") {
