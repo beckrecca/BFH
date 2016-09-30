@@ -121,7 +121,18 @@
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
    <!-- directions panel code -->
+   <script src="/js/usercookie.js"></script>
    <script src="/js/directions.js"></script>
+   <!-- user address cookie -->
+   <script>
+      // get the address
+      var address = readAddress();
+      // if there is an address cookie
+      if (address != null) {
+        // pre-fill it in the directions form
+        $('#start').val(address);
+      }
+   </script>
    <!-- pickadate.js code below -->
    <script src="/lib/picker.js"></script>
    <script src="/lib/picker.date.js"></script>

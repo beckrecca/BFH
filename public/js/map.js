@@ -108,6 +108,8 @@ function findResults() {
         clearMarkers();
         // repopulate map with results
         createMultipleMarkers(results, userPoint);
+        // remember the user's address as our cookie
+        setAddress(userAddress);
       }
       // otherwise, let the user know
       else {
@@ -228,8 +230,9 @@ function setContent(marker, hike_id) {
   var address = "<span class='info'>" + marker.address + "</span>";
   var dist = "<span class='info'>Distance to MBTA:</span> " + marker.distance_to_mbta + " mi";
   var lines = "<span class='info'>Lines Nearby:</span> " + setLines(marker.id);
+  var directions = "<a href='/hikes/" + hikeData[hike_id].path_name + "#directions-form'>Get Directions</a>"
   var br = "<br />";
-  return link + br + entranceName + br + address + br + dist + br + lines;
+  return link + br + entranceName + br + address + br + dist + br + lines + br + directions;
 }
 /*
 * setLines() is called by setContent()

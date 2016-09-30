@@ -84,8 +84,9 @@
     @endforeach
    </script>
   <!-- Google Map find nearest hike code -->
-  <script src="js/map.js"></script>
-  <script src="js/haversine.js"></script>
+  <script src="/js/map.js"></script>
+  <script src="/js/haversine.js"></script>
+  <script src="/js/usercookie.js"></script>
   <!-- Google Maps Javascript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
