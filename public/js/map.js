@@ -304,7 +304,7 @@ function findClimb(markers) {
 */
 function findDistance(markers) {
   // verify that a distance was selected
-  if ($('#distance').val() != null) {
+  if ($('#distance').val() != "") {
     // get the value
     var distance = $('#distance').val();
     // initialize the results we will return

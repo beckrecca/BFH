@@ -30,13 +30,23 @@
           <option value="1">&lt; 1 mi </option>
         </select>
       </div>
+      <div>
+        <label for="features">Features: </label><br />
+        @if (isset($tags))
+        <select id="features" name="features" multiple>
+          @foreach ($tags as $tag)
+            <option value="{{ $tag->name }}">{{ ucfirst($tag->name)}}</option>
+          @endforeach
+        </select>
+        @endif
+      </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
       @if (isset($hikes))
         <ul id="explore">
           @foreach ($hikes as $hike)
           <?php $single_hikes_tags = $hike->tags->sortBy('name'); ?>
-            <li>
+            <li class="thumbnail">
               <div class="row">
                 <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
               </div>

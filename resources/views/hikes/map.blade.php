@@ -30,9 +30,9 @@
         <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
       <div>
-        <label class="sr-only" for="distance">Distance to closest MBTA station/stop</label>
+        <label for="distance">Distance to MBTA: </label>
         <select id="distance" class="form-control" name="distance">
-          <option>Distance to MBTA:</option>
+          <option></option>
           <option value="0.25">&lt; .25 mi </option>
           <option value="0.5">&lt; .5 mi </option>
           <option value="1">&lt; 1 mi </option>
