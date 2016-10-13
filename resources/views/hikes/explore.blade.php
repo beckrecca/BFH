@@ -31,6 +31,12 @@
         </select>
       </div>
       <div>
+        <label for="service">Service(s) Nearby:</label>
+        <label for="bus">Bus <input type="checkbox" name="service" id="bus" value="bus" /></label>
+        <label for="commuter rail">Commuter Rail <input type="checkbox" name="service" id="commuter rail" value="commuter rail" /></label>
+        <label for="subway">Subway <input type="checkbox" name="service" id="subway" value="subway" /></label>
+      </div>
+      <div>
         <label for="features">Features: </label><br />
         @if (isset($tags))
         <select id="features" name="features" multiple>
