@@ -24,17 +24,17 @@ button > a, button > a:visited, button > a:hover {
 h1 {
   font-size: 1.8em;
   font-weight: bold;
-  margin: 0.125em;
 }
 h2 {
   font-size: 1.5em;
   font-weight: bold;
-  margin: 0.25em;
-  padding: 0.125em;
 }
 h3 {
   font-size: 1.3em;
   font-weight: bold;
+}
+h1, h2, h3 {
+  margin-top: 0.1em;
 }
 nav {
   padding: 0.125em;

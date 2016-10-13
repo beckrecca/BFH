@@ -1,7 +1,6 @@
 #camera, #website {
   font-size: 1.05em;
-  padding: 0;
-  margin: 0;
+  padding: 0em 0.5em 0.5em 0.5em;
 }
 #description {
   padding: 1em 0.5em 0em 0.5em;
@@ -33,7 +32,8 @@
   font-weight: bold;
 }
 #features {
-  padding: 0.5em;
+  padding: 0.5em 1em 0em 1em;
+  margin: 1em;
 }
 #gallery {
   margin: 0;
@@ -89,6 +89,9 @@ ul#features li a:hover, ul#lines li a:hover {
     overflow: hidden;
     overflow-y: scroll;
     width: 30%;
+  }
+  #features {
+    padding: 0.5em 1em 1em 1em;;
   }
   #gallery {
     border-bottom: 1px dotted #aaa;
