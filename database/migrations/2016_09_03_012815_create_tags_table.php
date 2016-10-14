@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->string('name');
             $table->string('message');
             $table->string('link');
+            $table->string('category');
         });
     }
 

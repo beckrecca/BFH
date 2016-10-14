@@ -2,161 +2,193 @@
    {
       "name":"accessible",
       "message":"For information regarding accessible service, please see the MBTA website. ",
-      "link":"http://www.mbta.com/riding_the_t/accessible_services/"
+      "link":"http://www.mbta.com/riding_the_t/accessible_services/",
+      "category": "features"
    },
    {
       "name":"athletic fields",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "facilities"
    },
    {
       "name":"bay",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"bicycle-friendly",
       "message":"There are some restrictions in bringing a bicycle on the T. ",
-      "link":"http://www.mbta.com/riding_the_t/bikes/"
+      "link":"http://www.mbta.com/riding_the_t/bikes/",
+      "category": "features"
    },
    {
       "name":"bird-watching",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
-      "name":"camping",
+      "name":"campgrounds",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"cross-country skiiing",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"dog-friendly",
       "message":"Service dogs are permitted on the MBTA at all times. Otherwise, dogs are not permitted during peak hours. Peak hours run from 7-10am and 4-7pm on weekdays. ",
-      "link":"http://www.mbta.com/riding_the_t/pets/"
+      "link":"http://www.mbta.com/riding_the_t/pets/",
+      "category": "features"
    },
    {
       "name":"esker",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"farm",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "facilities"
    },
    {
       "name":"fishing",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"foliage",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"free",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "features"
    },
    {
       "name":"gardens",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"ice skating",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"large (>1000 acres)",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "size"
    },
    {
       "name":"medium (151-1000 acres)",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "size"
    },
    {
       "name":"panoramic views",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"pond",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"pool",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "facilities"
    },
    {
       "name":"remote",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "features"
    },
    {
       "name":"reservoir",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"river",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"rock-climbing",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"skating rink",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "facilities"
    },
    {
       "name":"skiing",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"skyline views",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"small (<150 acres)",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "size"
    },
    {
       "name":"swimming",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "activities"
    },
    {
       "name":"tidal river",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    },
    {
       "name":"urban",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "features"
    },
    {
       "name":"waterfalls",
       "message":"",
-      "link":""
+      "link":"",
+      "category": "scenery"
    }
 ]

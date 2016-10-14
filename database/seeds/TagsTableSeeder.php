@@ -24,7 +24,8 @@ class TagsTableSeeder extends Seeder
 	         DB::table('tags')->insert([
 		        'name' => $obj->name,
                 'message' => $obj->message,
-                'link' => $obj->link
+                'link' => $obj->link,
+                'category' => $obj->category
 	    	]);
    		 }
     }
