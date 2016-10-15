@@ -14,6 +14,7 @@
 }
 #directionsPanel {
   background-color: #fff;
+  border-radius: 0.5em;
 }
 #directionsPanelContainer {
   padding: 1em;
@@ -24,6 +25,7 @@
 }
 #directions-form, #hike-info {
   background-color: #fff;
+  border-radius: 0.5em;
   margin: 0em 0.5em 0.5em 0.5em;
   padding: 0.5em 1em 0.5em 1em;
 }
@@ -34,6 +36,9 @@
 #features {
   padding: 0.5em 1em 0em 1em;
   margin: 1em;
+}
+form {
+  margin: 0em 1em 0em 1em;
 }
 #gallery {
   margin: 0;

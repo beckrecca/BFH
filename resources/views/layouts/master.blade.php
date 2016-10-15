@@ -37,6 +37,7 @@
               <span class="icon-bar"></span>
             </button>
             <img src="/img/logo/sm_logo.png" id="logo" class="img pull-left" alt="Boston Fare Hikes logo depicting the T symbol with a green hill behind the T and a green map marker on the hill."/>
+            <div id="brand">Boston Fare Hikes</div>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">

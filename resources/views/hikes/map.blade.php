@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-  Boston Fare Hikes
+  Boston Fare Hikes: Find An MBTA-Accessible Hike Near You
 @stop
 
 @section('head')
@@ -30,7 +30,7 @@
         <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
       <div>
-        <label for="distance">Distance to MBTA: </label>
+        <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible through the public transportation system for Greater Boston, including subway, bus, and commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="focus">MBTA</a>: </label>
         <select id="distance" class="form-control" name="distance">
           <option></option>
           <option value="0.25">&lt; .25 mi </option>
@@ -83,6 +83,12 @@
         <?php $i++; ?>
     @endforeach
    </script>
+  <!-- MBTA popover -->
+  <script>
+    $(function () {
+      $('#popover').popover();
+  });
+  </script>
   <!-- Google Map find nearest hike code -->
   <script src="/js/map.js"></script>
   <script src="/js/haversine.js"></script>

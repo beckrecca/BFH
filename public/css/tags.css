@@ -1,6 +1,7 @@
 #notice {
 	font-size: 1.3em;
 	background-color: #a8f7d6;
+	border: 0.5em;
 }
 #notice a:hover {
 	color: #fff;

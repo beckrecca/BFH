@@ -44,11 +44,14 @@
     <div id="directions-form">
       <h2>Transit Directions</h2> 
       <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>
-      <form class="form-inline" id="form">
-        <label class="sr-only" for="start">User address</label>
-        <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
-        <br/><label for="end" id="entrance">Destination:</label>
-        <select class="form-control" name="end" id="end">
+      <form class="form-horizontal" id="form">
+        <div class="form-group">
+          <label for="start" class="control-label">User address: </label>
+          <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
+        </div>
+        <div class="form-group">
+          <label for="end" class="control-label">Hike Entrance:</label>
+          <select class="form-control" name="end" id="end">
           <?php 
             // index the markers
             $index = 0;
@@ -56,30 +59,41 @@
           @foreach ($markers as $marker)
             <option value='{{ $index++ }}'>{{ $marker->name }}</option>
           @endforeach
-        </select>
+          </select>
+        </div>
         <div id="more-options">
-        <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
-        <select class="form-control" name="transitOptions" id="transitOptions">
-            <option value="departureTime">Leaving at (optional)</option>
-            <option value="arrivalTime">Arriving by (optional)</option>
-        </select>
-          <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
-          <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
-          <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
-        	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
-          <label class="sr-only" for="transitMode">Optionally select transit mode</label>
-          <select class="form-control" name="transitMode" id="transitMode">
-            <option value="0">Mode (optional)</option>
-            <option value="BUS">Bus</option>
-            <option value="RAIL">Commuter Rail</option>
-            <option value="TRAM">T</option>
-          </select>
-          <label class="sr-only" for="transitRoutePreference">Optionally select route preference</label>
-          <select class="form-control" name="transitRoutePreference" id="transitRoutePreference">
-            <option value="0">Route preference (optional)</option>
-            <option value="FEWER_TRANSFERS">Fewer transfers</option>
-            <option value="LESS_WALKING">Less walking</option>
-          </select>
+          <div class="form-group">
+            <label class="sr-only" for="transitOptions">Optionally select leaving or arriving</label>
+            <select class="form-control" name="transitOptions" id="transitOptions">
+                <option value="departureTime">Leaving at (optional)</option>
+                <option value="arrivalTime">Arriving by (optional)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="date">Optionally select date leaving or arriving</label>
+            <input class="datepicker form-control" id="date" name="date" type="text" placeholder="Date (optional)">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="time">Optionally select date leaving or arriving</label>
+          	<input class="timepicker form-control" id="time" name="time" type="text" placeholder="Time (optional)">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="transitMode">Optionally select transit mode</label>
+            <select class="form-control" name="transitMode" id="transitMode">
+              <option value="0">Mode (optional)</option>
+              <option value="BUS">Bus</option>
+              <option value="RAIL">Commuter Rail</option>
+              <option value="TRAM">T</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="transitRoutePreference">Optionally select route preference</label>
+            <select class="form-control" name="transitRoutePreference" id="transitRoutePreference">
+              <option value="0">Route preference (optional)</option>
+              <option value="FEWER_TRANSFERS">Fewer transfers</option>
+              <option value="LESS_WALKING">Less walking</option>
+            </select>
+          </div>
         </div>
         <a href="#directions-form" id="toggle-options" class="btn btn-notice">More options</a>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
