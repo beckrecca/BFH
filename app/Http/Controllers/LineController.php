@@ -25,20 +25,8 @@ class LineController extends Controller
     	// find all markers with this ID
     	$markers = $line->markers;
 
-    	// find the hike_id for each marker
-    	$ids = [];
-    	foreach ($markers as $marker) {
-    		array_push($ids, $marker->hike_id);
-    	}
-    	// remove duplicate hike ids
-    	$ids = array_unique($ids);
-
-    	// form an array of hikes
-    	$hikes = [];
-    	foreach ($ids as $id) {
-    		$hike = \App\Hike::find($id);
-    		array_push($hikes, $hike);
-    	}
+    	// find all the hikes that own these markers
+        $hikes = \App\Hike::byMarkers($markers);
 
     	return view ('lines.view')->with('line', $line)
     						      ->with('hikes', $hikes);
@@ -52,24 +40,8 @@ class LineController extends Controller
         // find all the lines belonging to this service
         $lines = \App\Line::where('service', '=', $name)->get();
 
-        // find all the hike ids for these lines
-        $ids = [];
-        foreach ($lines as $line) {
-            $markers = $line->markers;
-            foreach ($markers as $marker) {
-                array_push($ids, $marker->hike_id);
-            }
-        }
-        // remove duplicate hike ids
-        $ids = array_unique($ids);
-
-        // form an array of hikes
-        $hikes = [];
-        foreach ($ids as $id) {
-            $hike = \App\Hike::find($id);
-            array_push($hikes, $hike);
-        }
-        sort($hikes);
+        // find all of the hikes adjacent to these lines
+        $hikes = \App\Hike::byLines($lines);
 
         return view ('lines.list')->with('service', $name)
                                   ->with('hikes', $hikes);

@@ -24,6 +24,7 @@ Route::get('explore', 'HikeController@all');
 /** HIKES **/
 Route::get('hikes/climb/{climb}', 'HikeController@climb');
 Route::get('hikes/{path_name}', 'HikeController@detail');
+Route::get('hikes/distance/{n}', 'HikeController@distance');
 
 /** IMAGES **/
 //Route::get('hikes/{path_name}/images', 'ImageController@View');
@@ -42,13 +43,6 @@ Route::get('disclaimer', function() {
 });
 
 /** TESTING ROUTES **/
-
-Route::get('images', function () {
-    return \App\Image::all();
-});
-Route::get('markers', function () {
-    return \App\Marker::all();
-});
 Route::get('/debug', function() {
 
     echo '<pre>';

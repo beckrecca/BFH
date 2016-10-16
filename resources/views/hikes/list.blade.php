@@ -3,6 +3,7 @@
 @section('title')
   @if (isset($climb)) {{ ucfirst($climb) }} @endif
   Hikes
+  @if (isset($distance)) within {{ $distance}} miles from MBTA @endif
 @stop
 
 @section('head')
@@ -13,7 +14,7 @@
   <div class="container">
     
     @if (isset($hikes) && !empty($hikes))
-      <h1>All @if (isset($climb)) {{ ucfirst($climb) }} @endif Hikes</h1>
+      <h1>All @if (isset($climb)) {{ ucfirst($climb) }} @endif Hikes @if (isset($distance)) within {{ $distance }} mile<?php if ($distance != 1) echo('s'); ?> from the MBTA @endif</h1>
       
       <ul id="explore">
         @foreach ($hikes as $hike)

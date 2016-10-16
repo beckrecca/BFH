@@ -75,6 +75,21 @@ class HikeController extends Controller
     								->with('markers', $markers)
                                     ->with('tags', $tags);
     }
+    /**
+    * Responds to requests to GET /hikes/distance/{n}
+    * Lists all the hikes that within $n miles from the MBTA
+    */
+    public function distance($n) 
+    {
+        // obtain the markers with this distance_to_MBTA
+        $markers = \App\Marker::where('distance_to_mbta', '<=', $n)->get();
+
+        // find all the hikes that own these markers
+        $hikes = \App\Hike::byMarkers($markers);
+
+        return view ('hikes.list')->with('hikes', $hikes)
+                                  ->with('distance', $n);
+    }
 
     /**
     * Responds to requests to GET /
