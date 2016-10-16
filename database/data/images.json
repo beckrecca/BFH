@@ -994,5 +994,23 @@
       "alt":"A shallow pond with lilies floating on the left reflects a partially cloudy sky and the dense vegetation and thick deciduous trees on the far shore.",
       "title":"Little Fresh Pond",
       "hike_id":10
+   },
+   {
+      "file":"00006.jpg",
+      "alt":"On a partly cloudy day, the Boston skyline extends on the horizon. From a height, colorful autumn trees in brillaint red and orange grow in the foreground. Towards the horizon, the foliage is increasingly green. From the lower right of the photo towards the city, a major highway lies.",
+      "title":"Boston and 1-93 from the Wright Tower",
+      "hike_id":15
+   },
+   {
+      "file":"00007.jpg",
+      "alt":"Brilliant foliage reflects on a shallow pond beneath a partially cloudy day. Leafy deciduous trees grow thickly on the far shore, and in shadow in the foreground, a large boulder lies.",
+      "title":"Quarter Mile Pond",
+      "hike_id":15
+   },
+   {
+      "file":"00008.jpg",
+      "alt":"A path heads straight and curves right in a forest. The forest floor is covered in leaves. The trees on either side of the path are mixed deciduous trees, with some leaves having turned yellow. Sun light speckles through the trees.",
+      "title":"The Cross Fells Trail",
+      "hike_id":15
    }
 ]

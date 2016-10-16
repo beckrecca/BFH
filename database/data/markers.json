@@ -326,5 +326,21 @@
       "lng":-71.1077389,
       "hike_id":15,
       "distance_to_mbta":0.2
+   },
+   {
+      "name":"Hall Memorial Pool",
+      "address":"4 N Border Rd, Stoneham, MA 02180",
+      "lat":42.465548,
+      "lng":-71.101959,
+      "hike_id":15,
+      "distance_to_mbta":0.1
+   },
+   {
+      "name":"Flynn Rink",
+      "address":"300 Elm St, Medford, MA 02155",
+      "lat":42.443109,
+      "lng":-71.094582,
+      "hike_id":15,
+      "distance_to_mbta":0.1
    }
 ]

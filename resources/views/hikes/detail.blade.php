@@ -50,7 +50,7 @@
           <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
         </div>
         <div class="form-group">
-          <label for="end" class="control-label">Hike Entrance:</label>
+          <label for="end" class="control-label">Select Hike Entrance:</label>
           <select class="form-control" name="end" id="end">
           <?php 
             // index the markers

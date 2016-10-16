@@ -545,6 +545,14 @@
    },
    {
       "hike_id":15,
+      "tag_id":25
+   },
+   {
+      "hike_id":15,
+      "tag_id":20
+   },
+   {
+      "hike_id":15,
       "tag_id":13
    },
    {
@@ -714,6 +722,10 @@
    {
       "hike_id":21,
       "tag_id":19
+   },
+   {
+      "hike_id":21,
+      "tag_id":11
    },
    {
       "hike_id":21,

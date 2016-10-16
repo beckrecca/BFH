@@ -55,6 +55,7 @@ h1, h2, h3 {
 }
 nav {
   padding: 0.125em;
+  z-index: 2;
 }
 nav, .navbar, #navbar  {
     background-color: #07755C;
