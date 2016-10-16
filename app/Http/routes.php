@@ -30,7 +30,7 @@ Route::get('hikes/{path_name}', 'HikeController@detail');
 
 /** LINES **/
 Route::get('lines/{id}', 'LineController@view');
-//Route::get('lines', 'LineController@all');
+Route::get('service/{name}', 'LineController@service');
 
 /** TAGS **/
 Route::get('tags/{id}', 'TagController@view');

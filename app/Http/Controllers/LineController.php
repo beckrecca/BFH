@@ -14,7 +14,7 @@ class LineController extends Controller
     */
     public function view($id) 
     {
-        // try to obtain the tag by this ID
+        // try to obtain the line by this ID
         try {
             $line = \App\Line::findOrFail($id);
         }
@@ -42,5 +42,36 @@ class LineController extends Controller
 
     	return view ('lines.view')->with('line', $line)
     						      ->with('hikes', $hikes);
+    }
+    /**
+    * Responds to requests to GET /service/{name}
+    * Renders the page showing all hikes accessible by that service
+    */
+    public function service($name) 
+    {
+        // find all the lines belonging to this service
+        $lines = \App\Line::where('service', '=', $name)->get();
+
+        // find all the hike ids for these lines
+        $ids = [];
+        foreach ($lines as $line) {
+            $markers = $line->markers;
+            foreach ($markers as $marker) {
+                array_push($ids, $marker->hike_id);
+            }
+        }
+        // remove duplicate hike ids
+        $ids = array_unique($ids);
+
+        // form an array of hikes
+        $hikes = [];
+        foreach ($ids as $id) {
+            $hike = \App\Hike::find($id);
+            array_push($hikes, $hike);
+        }
+        sort($hikes);
+
+        return view ('lines.list')->with('service', $name)
+                                  ->with('hikes', $hikes);
     }
 }

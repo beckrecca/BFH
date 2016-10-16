@@ -12,7 +12,7 @@
 @section('content')
   <div class="container">
     
-    @if (isset($hikes))
+    @if (isset($hikes) && !empty($hikes))
       <h1>All @if (isset($climb)) {{ ucfirst($climb) }} @endif Hikes</h1>
       
       <ul id="explore">
