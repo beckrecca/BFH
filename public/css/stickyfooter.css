@@ -1,22 +1,5 @@
-* {
-    margin: 0;
+footer {
+	 position:fixed;
+	 left:0px;
+	 bottom:0px;
 }
-html, body {
-    height: 100%;
-}
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
-    height: 80%;
-    margin: 0 auto -65px; /* the bottom margin is the negative value of the footer's height */
-}
-footer, .push {
-    height: 65px; /* .push must be the same height as .footer */
-}
-
-/*
-
-Sticky Footer by Ryan Fait
-http://ryanfait.com/
-
-*/

@@ -5,7 +5,6 @@
 @stop
 
 @section('head')
-  <link rel="stylesheet" href="/css/stickyfooter.css" />
   <link rel="stylesheet" href="/css/explore.css" />
 @stop
 
