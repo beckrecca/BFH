@@ -8,7 +8,7 @@ form {
 	margin: 1em;
 }
 label {
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 select[multiple] {
 	height: 7.5em;
@@ -18,7 +18,6 @@ select[multiple] {
 }
 .tags-label, #distance-label {
 	float: left;
-	font-size: 1.1em;
 }
 ul#explore {
 	margin: 2em 1em;

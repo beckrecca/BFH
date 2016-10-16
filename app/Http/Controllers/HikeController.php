@@ -29,11 +29,15 @@ class HikeController extends Controller
         // get all the tags by activity
         $activities = \App\Tag::where('category', '=', 'activities')->get()->sortBy('name');
 
+        // get all the tags by size
+        $sizes = \App\Tag::where('category', '=', 'size')->get()->sortBy('name');
+        
         return view ('hikes.explore')->with('hikes', $hikes)
                                      ->with('features', $features)
                                      ->with('facilities', $facilities)
                                      ->with('sceneries', $sceneries)
-                                     ->with('activities', $activities);
+                                     ->with('activities', $activities)
+                                     ->with('sizes', $sizes);
     }
 
     /**

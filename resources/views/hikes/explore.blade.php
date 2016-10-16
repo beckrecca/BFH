@@ -11,10 +11,10 @@
 @section('content')
   <div class="wrapper">
     <div class="container">
-      <h1>Explore Boston Fare Hikes</h1>
+      <h2>Explore Hikes</h2>
       <form class="form-horizontal">
         <div class="form-group" id="climb">
-          <label for="climb" class="control-label">Climb:</label> 
+          <label for="climb" class="control-label">Climb: </label> 
           <label for="flat">Flat <input type="checkbox" name="climb" id="flat" value="flat" /></label>
           <label for="easy">Easy <input type="checkbox" name="climb" id="easy" value="easy" /></label>
           <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
@@ -30,10 +30,18 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="service">Service(s) Nearby:</label>
+          <label for="service">Service(s) Nearby: </label>
           <label for="bus">Bus <input type="checkbox" name="service" id="bus" value="bus" /></label>
           <label for="commuter rail">Commuter Rail <input type="checkbox" name="service" id="commuter rail" value="commuter rail" /></label>
           <label for="subway">Subway <input type="checkbox" name="service" id="subway" value="subway" /></label>
+        </div>
+        <div class="form-group">
+          @if (isset($sizes))
+            <label for="size" class="control-label">Size: </label>
+            @foreach ($sizes as $size)
+              <label for="{{ $size->name }}">{{ ucfirst($size->name)}} <input type="checkbox" name="size" id="{{ $size->name }}" value="{{ $size->name }}" /></label>
+            @endforeach
+          @endif
         </div>
         <div class="form-group">
           <div class="col-sm-3 col-xs-6">
