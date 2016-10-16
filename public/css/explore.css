@@ -1,10 +1,31 @@
+.col-sm-3, .col-xs-6 {
+	padding: 0;
+}
+#distance {
+	width: 6em;
+}
+form {
+	margin: 1em;
+}
 label {
 	font-size: 1.2em;
+}
+select[multiple] {
+	height: 7.5em;
+}
+#submit {
+	margin: -15px;
+}
+.tags-label, #distance-label {
+	float: left;
+	font-size: 1.1em;
+}
+ul#explore {
+	margin: 2em 1em;
+	padding: 0;
 }
 ul#explore > li {
 	background-color: #fff;
 	border-radius: 0.5em;
-	margin: 1em 2em 1em 2em;
-	padding: 0.5em 1em 1em 1em;
-	width: 75%;
+	padding: 1em 0em 1em 0em;
 }

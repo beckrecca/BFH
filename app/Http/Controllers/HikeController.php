@@ -17,11 +17,23 @@ class HikeController extends Controller
         // grab all of the hikes
         $hikes = \App\Hike::simplePaginate(10);
 
-        // get all the tags
-        $tags = \App\Tag::all()->sortBy('name');
+        // get all the tags by feature
+        $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
+
+        // get all the tags by facilities
+        $facilities = \App\Tag::where('category', '=', 'facilities')->get()->sortBy('name');
+
+        // get all the tags by scenery
+        $sceneries = \App\Tag::where('category', '=', 'scenery')->get()->sortBy('name');
+
+        // get all the tags by activity
+        $activities = \App\Tag::where('category', '=', 'activities')->get()->sortBy('name');
 
         return view ('hikes.explore')->with('hikes', $hikes)
-                                     ->with('tags', $tags);
+                                     ->with('features', $features)
+                                     ->with('facilities', $facilities)
+                                     ->with('sceneries', $sceneries)
+                                     ->with('activities', $activities);
     }
 
     /**
