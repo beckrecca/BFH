@@ -160,22 +160,22 @@ function createMultipleMarkers(markers, userPosition) {
     google.maps.event.addListener(marker, 'click', function () {
       // set the content of the info window
       infoWindow.setContent(this.content);
+      // set the info window to open on click
+      infoWindow.open(this.getMap(), this);
       // if the screen size is larger than 767px
       if (window.innerWidth > 767) {
         // go to hike thumbnail anchor on click
         window.location.href = this.url;
+        // highlight icon to be orange
+        this.setIcon('/img/markers/orange-dot.png');
+        // if a different  marker was previously clicked
+        if (previousClick != null && previousClick != this) {
+        // reset that marker to blue
+          previousClick.setIcon('img/markers/blue-dot.png');
+        }
+        // remember this marker as having just been clicked
+        previousClick = this;
       }
-      // set the info window to open on click
-      infoWindow.open(this.getMap(), this);
-      // highlight icon to be orange
-      this.setIcon('/img/markers/orange-dot.png');
-      // if a different  marker was previously clicked
-      if (previousClick != null && previousClick != this) {
-      // reset that marker to blue
-        previousClick.setIcon('img/markers/blue-dot.png');
-      }
-      // remember this marker as having just been clicked
-      previousClick = this;
     });
     // extend the boundaries of the map around this marker
     bounds.extend(new google.maps.LatLng(parseFloat(markers[i].lat), parseFloat(markers[i].lng)));

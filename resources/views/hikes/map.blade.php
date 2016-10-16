@@ -9,9 +9,12 @@
 @stop
 
 @section('content')
+  <div id="mobile-message" class="visible-xs hidden-sm hidden-md hidden-lg">
+    <h2><a href="#find-nearest">Find a T-Accessible Hike Near You</a></h2>
+  </div>
   <div id="map"></div>
   <div id="find-nearest">
-    <h1>Find a T-Accessible Hike Near You</h1>
+    <h2 class="hidden-xs visible-sm visible-md visible-lg">Find a T-Accessible Hike Near You</h2>
     <form class="form-inline">
       <label class="sr-only" for="user">User address</label>
       <input type="text" class="form-control" id="user" name="user" placeholder="Enter your address"/>
@@ -30,7 +33,7 @@
         <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
       </div>
       <div>
-        <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible through the public transportation system for Greater Boston, including subway, bus, and commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="focus">MBTA</a>: </label>
+        <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible by subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
         <select id="distance" class="form-control" name="distance">
           <option></option>
           <option value="0.25">&lt; .25 mi </option>
