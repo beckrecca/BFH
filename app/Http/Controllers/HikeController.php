@@ -106,4 +106,17 @@ class HikeController extends Controller
         return view('hikes.map')->with('hikes', $hikes)
                                 ->with('markers', $markers);
     }
+
+    /**
+    * Responds to requests to POST /explore
+    * Validates form submission and finds hikes matching the
+    * user's selection.
+    */
+    public function postExplore(Request $request)
+    {
+        // ALL THE DATA
+        $data = $request->all();
+        // dump all data
+        return $data;
+    }
 }

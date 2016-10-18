@@ -20,6 +20,8 @@ Route::get('map', 'HikeController@map');
 
 /** EXPLORE **/
 Route::get('explore', 'HikeController@all');
+Route::post('explore', 'HikeController@postExplore');
+
 
 /** HIKES **/
 Route::get('hikes/climb/{climb}', 'HikeController@climb');

@@ -16,7 +16,7 @@ select[multiple] {
 #submit {
 	margin: -15px;
 }
-.tags-label, #distance-label {
+#distance-label {
 	float: left;
 }
 ul#explore {

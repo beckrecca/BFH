@@ -12,7 +12,8 @@
   <div class="wrapper">
     <div class="container">
       <h2>Explore Hikes</h2>
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="POST" action="/explore">
+        {{ csrf_field() }}
         <div class="form-group" id="climb">
           <label for="climb" class="control-label">Climb: </label> 
           <label for="flat">Flat <input type="checkbox" name="climb" id="flat" value="flat" /></label>
@@ -45,43 +46,43 @@
         </div>
         <div class="form-group">
           <div class="col-sm-3 col-xs-6">
-            <label class="tags-label" for="features">Features: </label>
             @if (isset($features))
-            <select class="form-control" name="features" multiple>
+            <label for="features">Features </label>
+            <ul>
               @foreach ($features as $feature)
-                <option value="{{ $feature->name }}">{{ ucfirst($feature->name)}}</option>
+              <li><label for="{{ $feature->name }}">{{ ucfirst($feature->name)}} <input type="checkbox" name="features" id="{{ $feature->name }}" value="{{ $feature->name }}" /></label></li>
               @endforeach
-            </select>
+            </ul>
           @endif
           </div>
           <div class="col-sm-3 col-xs-6">
-            <label class="tags-label" for="activities">Activities: </label>
             @if (isset($activities))
-            <select class="form-control" name="activities" multiple>
+            <label for="activities">Activities </label>
+            <ul>
               @foreach ($activities as $activity)
-                <option value="{{ $activity->name }}">{{ ucfirst($activity->name)}}</option>
+              <li><label for="{{ $activity->name }}">{{ ucfirst($activity->name)}} <input type="checkbox" name="activities" id="{{ $activity->name }}" value="{{ $activity->name }}" /></label></li>
               @endforeach
-            </select>
+            </ul>
           @endif
           </div>
           <div class="col-sm-3 col-xs-6">
-            <label class="tags-label" for="facilities">Facilities: </label>
             @if (isset($facilities))
-            <select class="form-control" name="facilities" multiple>
+            <label for="facilities">Facilities </label>
+            <ul>
               @foreach ($facilities as $facility)
-                <option value="{{ $facility->name }}">{{ ucfirst($facility->name)}}</option>
+              <li><label for="{{ $facility->name }}">{{ ucfirst($facility->name)}} <input type="checkbox" name="facilities" id="{{ $facility->name }}" value="{{ $facility->name }}" /></label></li>
               @endforeach
-            </select>
+            </ul>
           @endif
           </div>
           <div class="col-sm-3 col-xs-6">
-            <label class="tags-label" for="scenery">Scenery: </label>
             @if (isset($sceneries))
-            <select class="form-control" name="scenery" multiple>
+            <label for="scenery">Scenery </label>
+            <ul>
               @foreach ($sceneries as $scenery)
-                <option value="{{ $scenery->name }}">{{ ucfirst($scenery->name)}}</option>
+              <li><label for="{{ $scenery->name }}">{{ ucfirst($scenery->name)}} <input type="checkbox" name="scenery" id="{{ $scenery->name }}" value="{{ $scenery->name }}" /></label></li>
               @endforeach
-            </select>
+            </ul>
           @endif
           </div>
         </div>
