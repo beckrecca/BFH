@@ -16,10 +16,10 @@
         {{ csrf_field() }}
         <div class="form-group" id="climb">
           <label for="climb" class="control-label">Climb: </label> 
-          <label for="flat">Flat <input type="checkbox" name="climb" id="flat" value="flat" /></label>
-          <label for="easy">Easy <input type="checkbox" name="climb" id="easy" value="easy" /></label>
-          <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
-          <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
+          <label for="flat">Flat <input type="checkbox" name="climbs[]" id="flat" value="flat" /></label>
+          <label for="easy">Easy <input type="checkbox" name="climbs[]" id="easy" value="easy" /></label>
+          <label for="moderate">Moderate <input type="checkbox" name="climbs[]" id="moderate" value="moderate" /></label>
+          <label for="intense">Intense <input type="checkbox" name="climbs[]" id="intense" value="intense" /></label> 
         </div>
         <div class="form-group">
           <label id="distance-label" for="distance" class="control-label">Distance to closest MBTA station/stop: </label>
@@ -32,15 +32,19 @@
         </div>
         <div class="form-group">
           <label for="service">Service(s) Nearby: </label>
-          <label for="bus">Bus <input type="checkbox" name="service" id="bus" value="bus" /></label>
-          <label for="commuter rail">Commuter Rail <input type="checkbox" name="service" id="commuter rail" value="commuter rail" /></label>
-          <label for="subway">Subway <input type="checkbox" name="service" id="subway" value="subway" /></label>
+          <label for="bus">Bus <input type="checkbox" name="services[]" id="bus" value="bus" /></label>
+          <label for="commuter rail">Commuter Rail <input type="checkbox" name="services[]" id="commuter rail" value="commuter rail" /></label>
+          <label for="subway">Subway <input type="checkbox" name="services[]" id="subway" value="subway" /></label>
         </div>
+        <?php
+          # create tags array counter
+          $i = 0;
+        ?>
         <div class="form-group">
           @if (isset($sizes))
             <label for="size" class="control-label">Size: </label>
             @foreach ($sizes as $size)
-              <label for="{{ $size->name }}">{{ ucfirst($size->name)}} <input type="checkbox" name="size" id="{{ $size->name }}" value="{{ $size->name }}" /></label>
+              <label for="{{ $size->name }}">{{ ucfirst($size->name)}} <input type="checkbox" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" /></label>
             @endforeach
           @endif
         </div>
@@ -50,7 +54,7 @@
             <label for="features">Features </label>
             <ul>
               @foreach ($features as $feature)
-              <li><label for="{{ $feature->name }}">{{ ucfirst($feature->name)}} <input type="checkbox" name="features" id="{{ $feature->name }}" value="{{ $feature->name }}" /></label></li>
+              <li><label for="{{ $feature->name }}">{{ ucfirst($feature->name)}} <input type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" /></label></li>
               @endforeach
             </ul>
           @endif
@@ -60,7 +64,7 @@
             <label for="activities">Activities </label>
             <ul>
               @foreach ($activities as $activity)
-              <li><label for="{{ $activity->name }}">{{ ucfirst($activity->name)}} <input type="checkbox" name="activities" id="{{ $activity->name }}" value="{{ $activity->name }}" /></label></li>
+              <li><label for="{{ $activity->name }}">{{ ucfirst($activity->name)}} <input type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" /></label></li>
               @endforeach
             </ul>
           @endif
@@ -70,7 +74,7 @@
             <label for="facilities">Facilities </label>
             <ul>
               @foreach ($facilities as $facility)
-              <li><label for="{{ $facility->name }}">{{ ucfirst($facility->name)}} <input type="checkbox" name="facilities" id="{{ $facility->name }}" value="{{ $facility->name }}" /></label></li>
+              <li><label for="{{ $facility->name }}">{{ ucfirst($facility->name)}} <input type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" /></label></li>
               @endforeach
             </ul>
           @endif
@@ -80,7 +84,7 @@
             <label for="scenery">Scenery </label>
             <ul>
               @foreach ($sceneries as $scenery)
-              <li><label for="{{ $scenery->name }}">{{ ucfirst($scenery->name)}} <input type="checkbox" name="scenery" id="{{ $scenery->name }}" value="{{ $scenery->name }}" /></label></li>
+              <li><label for="{{ $scenery->name }}">{{ ucfirst($scenery->name)}} <input type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" /></label></li>
               @endforeach
             </ul>
           @endif
