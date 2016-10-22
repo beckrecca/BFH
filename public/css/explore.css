@@ -19,6 +19,9 @@ select[multiple] {
 #distance-label {
 	float: left;
 }
+.tags-input-list {
+	display: none;
+}
 ul#explore {
 	margin: 2em 1em;
 	padding: 0;

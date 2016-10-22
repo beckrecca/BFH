@@ -27,10 +27,10 @@
       </select>
       <div id="climb">
         <label for="climb">Climb:</label> 
-        <label for="flat">Flat <input type="checkbox" name="climb" id="flat" value="flat" /></label>
-        <label for="easy">Easy <input type="checkbox" name="climb" id="easy" value="easy" /></label>
-        <label for="moderate">Moderate <input type="checkbox" name="climb" id="moderate" value="moderate" /></label>
-        <label for="intense">Intense <input type="checkbox" name="climb" id="intense" value="intense" /></label> 
+        <label for="flat"><input type="checkbox" name="climb" id="flat" value="flat" /> Flat</label>
+        <label for="easy"><input type="checkbox" name="climb" id="easy" value="easy" /> Easy</label>
+        <label for="moderate"><input type="checkbox" name="climb" id="moderate" value="moderate" /> Moderate</label>
+        <label for="intense"><input type="checkbox" name="climb" id="intense" value="intense" /> Intense</label> 
       </div>
       <div>
         <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible by subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
