@@ -150,7 +150,7 @@ class HikeController extends Controller
         $checked = [];
 
         // Remember which values have been selected
-        $selected = [];
+        $selected = $distance;
 
         // For each climb rating, filter the hikes
         if (isset($climbs)) {
@@ -165,13 +165,14 @@ class HikeController extends Controller
             }
         }
 
-        # FORMAT HIKE COLLECTION
-        // Set our results to be the hikes we pass to the view
-        $hikes = $results;
+        // For the distance selection, filter the hikes
+            
+
+        # FORMAT RESULTS
         // Make the collection unique
-        $hikes = $hikes->unique();
+        $results = $results->unique();
         // Alphabetize the hikes
-        $hikes = $hikes->sortBy('name');
+        $results = $results->sortBy('name');
 
         # FORM INPUT
         // get all the tags by feature
@@ -189,12 +190,13 @@ class HikeController extends Controller
         // get all the tags by size
         $sizes = \App\Tag::where('category', '=', 'size')->get()->sortBy('name');
 
-        return view('hikes.explore')->with('hikes', $hikes)
+        return view('hikes.explore')->with('hikes', $results)
                                     ->with('features', $features)
                                     ->with('facilities', $facilities)
                                     ->with('sceneries', $sceneries)
                                     ->with('activities', $activities)
                                     ->with('sizes', $sizes)
-                                    ->with('checked', $checked);
+                                    ->with('checked', $checked)
+                                    ->with('selected', $selected);
     }
 }

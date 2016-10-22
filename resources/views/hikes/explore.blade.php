@@ -37,9 +37,9 @@
         <label id="distance-label" for="distance" class="control-label">Distance to closest MBTA station/stop: </label>
         <select id="distance" class="form-control" name="distance">
           <option value="2"></option>
-          <option value="0.25">&lt; .25 mi </option>
-          <option value="0.5">&lt; .5 mi </option>
-          <option value="1">&lt; 1 mi </option>
+          <option value="0.25" @if (isset($selected)) @if ($selected == 0.25) selected @endif @endif) >within .25 mi </option>
+          <option value="0.5" @if (isset($selected)) @if ($selected == 0.5) selected @endif @endif>within .5 mi </option>
+          <option value="1" @if (isset($selected)) @if ($selected == 1) selected @endif @endif>within 1 mi </option>
         </select>
       </div>
       <div class="form-group">
