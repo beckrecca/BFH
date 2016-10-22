@@ -11,6 +11,17 @@
 @section('content')
   <div class="container">
     <h2>Explore Hikes</h2>
+    <div id="errors">
+    @if (isset($errors))
+      @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      @endif
+    @endif
+    </div>
     <form class="form-horizontal" method="POST" action="/explore">
       {{ csrf_field() }}
       <div class="form-group" id="climb">
@@ -110,7 +121,9 @@
           </li>
         @endforeach
       </ul>
+      @if (method_exists($hikes,'links'))
       {{ $hikes->links() }}
+      @endif
     @else
       <p>Whoops! Nothing here.</p>
     @endif

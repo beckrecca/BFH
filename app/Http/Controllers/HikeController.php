@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Validator;
+
 class HikeController extends Controller
 {
     /**
@@ -77,7 +79,7 @@ class HikeController extends Controller
     }
     /**
     * Responds to requests to GET /hikes/distance/{n}
-    * Lists all the hikes that within $n miles from the MBTA
+    * Lists all the hikes within $n miles from the MBTA
     */
     public function distance($n) 
     {
@@ -114,9 +116,57 @@ class HikeController extends Controller
     */
     public function postExplore(Request $request)
     {
-        // ALL THE DATA
-        $data = $request->all();
-        // dump all data
-        return $data;
+        // Validate the data
+        $validator = Validator::make($request->all(), [
+            'climbs' => 'array',
+            'distance' => 'numeric',
+            'services' => 'array',
+            'tags' => 'array',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/explore')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
+        // Initialize the hikes array
+        $hikes = [];
+
+        // Get the climb rating(s) selected
+        $climbs = $request->climbs;
+
+        // For each climb rating, find the hikes
+        if (isset($climbs)) {
+            foreach ($climbs as $climb) {
+                $results = \App\Hike::where('climb', '=', $climb)->simplePaginate(10);
+                foreach ($results as $result) {
+                    // add each result to the hike array
+                    array_push($hikes, $result);
+                }
+            }
+        }
+
+        // get all the tags by feature
+        $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
+
+        // get all the tags by facilities
+        $facilities = \App\Tag::where('category', '=', 'facilities')->get()->sortBy('name');
+
+        // get all the tags by scenery
+        $sceneries = \App\Tag::where('category', '=', 'scenery')->get()->sortBy('name');
+
+        // get all the tags by activity
+        $activities = \App\Tag::where('category', '=', 'activities')->get()->sortBy('name');
+
+        // get all the tags by size
+        $sizes = \App\Tag::where('category', '=', 'size')->get()->sortBy('name');
+
+        return view('hikes.explore')->with('hikes', $hikes)
+                                    ->with('features', $features)
+                                    ->with('facilities', $facilities)
+                                    ->with('sceneries', $sceneries)
+                                    ->with('activities', $activities)
+                                    ->with('sizes', $sizes);
     }
 }

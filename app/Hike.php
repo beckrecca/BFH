@@ -23,29 +23,24 @@ class Hike extends Model
         # Define a one-to-many relationship.
         return $this->hasMany('\App\Image');
     }
-
     /**
-    * Each Hike has one or multiple Tags and vice versa.
-    * This function defines that relationship.
+    * Given an array of hike_ids, return a collection
+    * of unique alphabetized hikes.
     **/
-    public function tags()
-    {
-        # define a many-to-many relationship
-        return $this->belongsToMany('\App\Tag');
-    }
-    /**
-    * Given an instance of markers, iterate through them and 
-    * note the hike_ids to which they belong. Return an array of
-    * unique hikes.
-    */
-    public static function byMarkers($markers) {
-        // find the hike_id for each marker
-        $ids = [];
-        foreach ($markers as $marker) {
-            array_push($ids, $marker->hike_id);
+    public static function byIds($ids) {
+        // remove duplicate hike ids
+        $ids = array_unique($ids);
+
+        // form an array of hikes
+        $hikes = [];
+        foreach ($ids as $id) {
+            $hike = \App\Hike::find($id);
+            array_push($hikes, $hike);
         }
-        // get the hikes by these IDs
-        $hikes = \App\Hike::byIds($ids);
+        // convert to a collection
+        $hikes = collect($hikes);
+        // alphabetize the hikes
+        $hikes = $hikes->sortBy('name');
 
         return $hikes;
     }
@@ -71,23 +66,27 @@ class Hike extends Model
         return $hikes;
     }
     /**
-    * Given an array of hike_ids, return a collection
-    * of unique alphabetized hikes.
+    * Each Hike has one or multiple Tags and vice versa.
+    * This function defines that relationship.
     **/
-    public static function byIds($ids) {
-        // remove duplicate hike ids
-        $ids = array_unique($ids);
-
-        // form an array of hikes
-        $hikes = [];
-        foreach ($ids as $id) {
-            $hike = \App\Hike::find($id);
-            array_push($hikes, $hike);
+    public function tags()
+    {
+        # define a many-to-many relationship
+        return $this->belongsToMany('\App\Tag');
+    }
+    /**
+    * Given an instance of markers, iterate through them and 
+    * note the hike_ids to which they belong. Return an array of
+    * unique hikes.
+    */
+    public static function byMarkers($markers) {
+        // find the hike_id for each marker
+        $ids = [];
+        foreach ($markers as $marker) {
+            array_push($ids, $marker->hike_id);
         }
-        // convert to a collection
-        $hikes = collect($hikes);
-        // alphabetize the hikes
-        $hikes = $hikes->sortBy('name');
+        // get the hikes by these IDs
+        $hikes = \App\Hike::byIds($ids);
 
         return $hikes;
     }
