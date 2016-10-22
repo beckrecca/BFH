@@ -26,10 +26,12 @@
       {{ csrf_field() }}
       <div class="form-group" id="climb">
         <label for="climb" class="control-label">Climb: </label> 
-        <label for="flat"><input type="checkbox" name="climbs[]" id="flat" value="flat" /> Flat</label>
-        <label for="easy"><input type="checkbox" name="climbs[]" id="easy" value="easy" /> Easy</label>
-        <label for="moderate"><input type="checkbox" name="climbs[]" id="moderate" value="moderate" /> Moderate</label>
-        <label for="intense"><input type="checkbox" name="climbs[]" id="intense" value="intense" /> Intense</label> 
+        <label for="flat"><input type="checkbox" name="climbs[]" id="flat" value="flat" @if (isset($checked)) @if (in_array("flat", $checked)) checked @endif @endif /> Flat</label>
+        <label for="easy"><input type="checkbox" name="climbs[]" id="easy" value="easy" @if (isset($checked)) @if (in_array("easy", $checked)) checked @endif @endif /> Easy</label>
+        <label for="easy-to-moderate"><input type="checkbox" name="climbs[]" id="easy-to-moderate" value="easy-to-moderate" @if (isset($checked)) @if (in_array("easy-to-moderate", $checked)) checked @endif @endif /> Easy-to-moderate</label>
+        <label for="moderate"><input type="checkbox" name="climbs[]" id="moderate" value="moderate" @if (isset($checked)) @if (in_array("moderate", $checked)) checked @endif @endif/> Moderate</label>
+        <label for="moderate-to-intense"><input type="checkbox" name="climbs[]" id="moderate-to-intense" value="moderate-to-intense" @if (isset($checked)) @if (in_array("moderate-to-intense", $checked)) checked @endif @endif /> Moderate-to-intense</label>
+        <label for="intense"><input type="checkbox" name="climbs[]" id="intense" value="intense" @if (isset($checked)) @if (in_array("intense", $checked)) checked @endif @endif/> Intense</label> 
       </div>
       <div class="form-group">
         <label id="distance-label" for="distance" class="control-label">Distance to closest MBTA station/stop: </label>
@@ -121,8 +123,8 @@
           </li>
         @endforeach
       </ul>
-      @if (method_exists($hikes,'links'))
-      {{ $hikes->links() }}
+      @if (method_exists($hikes,'render'))
+      {{ $hikes->render() }}
       @endif
     @else
       <p>Whoops! Nothing here.</p>

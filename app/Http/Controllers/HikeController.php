@@ -16,9 +16,10 @@ class HikeController extends Controller
     */
     public function all() 
     {
-        // grab all of the hikes
+        // Grab all of the hikes
         $hikes = \App\Hike::simplePaginate(10);
 
+        # FORM INPUT
         // get all the tags by feature
         $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
 
@@ -116,6 +117,7 @@ class HikeController extends Controller
     */
     public function postExplore(Request $request)
     {
+        # VALIDATION
         // Validate the data
         $validator = Validator::make($request->all(), [
             'climbs' => 'array',
@@ -124,29 +126,54 @@ class HikeController extends Controller
             'tags' => 'array',
         ]);
 
+        // Handle validation failure
         if ($validator->fails()) {
             return redirect('/explore')
                         ->withErrors($validator)
                         ->withInput();
         }
 
-        // Initialize the hikes array
-        $hikes = [];
+        # SEARCH RESULTS
+        // Grab all of the hikes
+        $hikes = \App\Hike::all();
+
+        // Initialize results collection
+        $results = collect();
 
         // Get the climb rating(s) selected
         $climbs = $request->climbs;
 
-        // For each climb rating, find the hikes
+        // Get the distance selected
+        $distance = $request->distance;
+
+        // Remember which values have been checked
+        $checked = [];
+
+        // Remember which values have been selected
+        $selected = [];
+
+        // For each climb rating, filter the hikes
         if (isset($climbs)) {
             foreach ($climbs as $climb) {
-                $results = \App\Hike::where('climb', '=', $climb)->simplePaginate(10);
-                foreach ($results as $result) {
-                    // add each result to the hike array
-                    array_push($hikes, $result);
-                }
+                $filtered = $hikes->filter(function ($hike) use ($climb) {
+                    return $hike->climb == $climb;
+                });
+                // remember this this value was checked
+                array_push($checked, $climb);
+                // Merge this with our results
+                $results = $results->merge($filtered);
             }
         }
 
+        # FORMAT HIKE COLLECTION
+        // Set our results to be the hikes we pass to the view
+        $hikes = $results;
+        // Make the collection unique
+        $hikes = $hikes->unique();
+        // Alphabetize the hikes
+        $hikes = $hikes->sortBy('name');
+
+        # FORM INPUT
         // get all the tags by feature
         $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
 
@@ -167,6 +194,7 @@ class HikeController extends Controller
                                     ->with('facilities', $facilities)
                                     ->with('sceneries', $sceneries)
                                     ->with('activities', $activities)
-                                    ->with('sizes', $sizes);
+                                    ->with('sizes', $sizes)
+                                    ->with('checked', $checked);
     }
 }
