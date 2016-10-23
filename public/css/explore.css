@@ -19,6 +19,9 @@ select[multiple] {
 #distance-label {
 	float: left;
 }
+span {
+	font-weight: bold;
+}
 .tags-input-list {
 	display: none;
 }

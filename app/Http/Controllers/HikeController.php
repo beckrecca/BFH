@@ -134,39 +134,44 @@ class HikeController extends Controller
         }
 
         # SEARCH RESULTS
-        // Grab all of the hikes
-        $hikes = \App\Hike::all();
-
-        // Initialize results collection
+        // Inititalize results collection
         $results = collect();
-
-        // Get the climb rating(s) selected
-        $climbs = $request->climbs;
 
         // Get the distance selected
         $distance = $request->distance;
 
-        // Remember which values have been checked
-        $checked = [];
-
         // Remember which values have been selected
         $selected = $distance;
 
+        // Get the climb rating(s) selected
+        $climbs = $request->climbs;
+
+        // Remember which values have been checked
+        $checked = [];
+
+        # DISTANCE FILTER
+        // For the distance selection, find all the markers within that distance
+        $markers = \App\Marker::where('distance_to_mbta', '<=', $distance)->get();
+
+        // Retrieve all of the hikes for those markers
+        $hikes = \App\Hike::byMarkers($markers);
+
+        #CLIMB FILTER
         // For each climb rating, filter the hikes
         if (isset($climbs)) {
-            foreach ($climbs as $climb) {
-                $filtered = $hikes->filter(function ($hike) use ($climb) {
-                    return $hike->climb == $climb;
-                });
-                // remember this this value was checked
-                array_push($checked, $climb);
-                // Merge this with our results
-                $results = $results->merge($filtered);
+            if (!empty($climbs)) {
+                foreach ($climbs as $climb) {
+                    $filtered = $hikes->filter(function ($hike) use ($climb) {
+                        return $hike->climb == $climb;
+                    });
+                    // remember this this value was checked
+                    array_push($checked, $climb);
+                    // Merge this with our results
+                    $results = $results->merge($filtered);
+                }
             }
         }
-
-        // For the distance selection, filter the hikes
-            
+        else $results = $hikes;
 
         # FORMAT RESULTS
         // Make the collection unique
