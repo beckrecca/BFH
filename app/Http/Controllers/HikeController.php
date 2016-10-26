@@ -198,36 +198,7 @@ class HikeController extends Controller
         # TAG FILTER
         if (isset($tags)) {
             if (!empty($tags)) {
-                // initialize hikes by tags collection
-                $hikesByTag = collect();
-                // Keep an array of the collections of hike IDs
-                $collectionArray = [];
-                // find the hikes associated with each tag
-                foreach ($tags as $tag) {
-                    // initialize a Tag object by the tag name selected by the user
-                    $newTag = \App\Tag::where('name', '=', $tag)->first();
-                    // obtain the hikes with this tag
-                    $hikes = $newTag->hikes;
-                    // Identify the hikes by IDs
-                    $hikeIDs = collect();
-                    // get the IDs for all the hikes of this tag
-                    foreach ($hikes as $hike) $hikeIDs = $hikeIDs->merge($hike->id);
-                    // remember those IDs as a collection in one row per tag
-                    array_push($collectionArray, $hikeIDs);
-                }
-                // Initialize intersected IDs collection
-                $ids = collect();
-                // Intersect each row in the collection array until there is only one
-                for ($i = 0; $i < count($collectionArray); $i++) {
-                    // if this is the first index, instantiate ids array
-                    if ($i == 0) $ids = $collectionArray[0];
-                    // if this is the second index, intersect
-                    else if ($i == 1) $ids = $collectionArray[0]->intersect($collectionArray[$i]);
-                    // if this is any index beyond, intersect with ids
-                    else $ids = $ids->intersect($collectionArray[$i]);
-                    return $ids;
-                }
-                return $ids;
+                // START OVER
             }
         }
 
