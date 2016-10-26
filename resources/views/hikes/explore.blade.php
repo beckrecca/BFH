@@ -10,7 +10,7 @@
 @stop
 
 @section('content')
-  <div class="container">
+  <div class="container" id="wrapper">
     <h2>Explore Hikes</h2>
     <div id="errors">
     @if (isset($errors))
@@ -45,15 +45,15 @@
       </div>
       <div class="form-group">
         <label for="service">Service(s) Nearby: </label>
-        <label for="bus"><input type="checkbox" name="services[]" id="bus" value="bus" /> Bus</label>
-        <label for="commuter rail"><input type="checkbox" name="services[]" id="commuter rail" value="commuter rail" /> Commuter Rail</label>
-        <label for="subway"><input type="checkbox" name="services[]" id="subway" value="subway" /> Subway</label>
+        <label for="bus"><input type="checkbox" name="services[]" id="bus" value="bus" @if (isset($checked)) @if (in_array("bus", $checked)) checked @endif @endif /> Bus</label>
+        <label for="commuter rail"><input type="checkbox" name="services[]" id="commuter rail" value="commuter rail" @if (isset($checked)) @if (in_array("commuter rail", $checked)) checked @endif @endif /> Commuter Rail</label>
+        <label for="subway"><input type="checkbox" name="services[]" id="subway" value="subway" @if (isset($checked)) @if (in_array("subway", $checked)) checked @endif @endif /> Subway</label>
       </div>
       <div class="form-group">
         @if (isset($sizes))
           <label for="size" class="control-label">Size: </label>
           @foreach ($sizes as $size)
-            <label for="{{ $size->name }}"><input type="checkbox" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" /> {{ ucfirst($size->name)}}</label>
+            <label for="{{ $size->name }}"><input type="radio" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" /> {{ ucfirst($size->name)}}</label>
           @endforeach
         @endif
       </div>
@@ -103,6 +103,7 @@
     </form>
     @if (isset($hikes))
       <ul id="explore">
+        @if (method_exists($hikes, 'total')) <h2> {{ $hikes->total() }} Results </h2> @endif
         @foreach ($hikes as $hike)
         <?php $single_hikes_tags = $hike->tags->sortBy('name'); ?>
           <li class="thumbnail row">
@@ -124,8 +125,8 @@
           </li>
         @endforeach
       </ul>
-      @if (method_exists($hikes,'render'))
-      {{ $hikes->render() }}
+      @if (method_exists($hikes,'links'))
+      {{ $hikes->links() }}
       @endif
     @else
       <p>Whoops! Nothing here.</p>

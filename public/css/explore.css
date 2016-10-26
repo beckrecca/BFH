@@ -1,6 +1,9 @@
 .col-sm-3, .col-xs-6 {
 	padding: 0;
 }
+#wrapper {
+	margin-bottom: 70px;
+}
 #distance {
 	width: 6em;
 }
@@ -18,6 +21,16 @@ select[multiple] {
 }
 #distance-label {
 	float: left;
+}
+.pagination>li>a{
+	color: #07755C;
+}
+.pagination>li>a:hover{
+	color: #000;
+}
+.pagination>.active>span, .pagination>.active>span:hover {
+	background-color: #71B300;
+	border-color: #eee;
 }
 span {
 	font-weight: bold;

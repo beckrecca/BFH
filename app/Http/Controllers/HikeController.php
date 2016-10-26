@@ -17,7 +17,7 @@ class HikeController extends Controller
     public function all() 
     {
         // Grab all of the hikes
-        $hikes = \App\Hike::simplePaginate(10);
+        $hikes = \App\Hike::paginate(10);
 
         # FORM INPUT
         // get all the tags by feature
@@ -146,6 +146,12 @@ class HikeController extends Controller
         // Get the climb rating(s) selected
         $climbs = $request->climbs;
 
+        // Get the service(s) selected
+        $services = $request->services;
+
+        // Get the tag(s) selected
+        $tags = $request->tags;
+
         // Remember which values have been checked
         $checked = [];
 
@@ -154,29 +160,81 @@ class HikeController extends Controller
         $markers = \App\Marker::where('distance_to_mbta', '<=', $distance)->get();
 
         // Retrieve all of the hikes for those markers
-        $hikes = \App\Hike::byMarkers($markers);
+        $hikesByDistance = \App\Hike::byMarkers($markers);
 
         #CLIMB FILTER
         // For each climb rating, filter the hikes
         if (isset($climbs)) {
             if (!empty($climbs)) {
                 foreach ($climbs as $climb) {
-                    $filtered = $hikes->filter(function ($hike) use ($climb) {
+                    $filteredByClimb = $hikesByDistance->filter(function ($hike) use ($climb) {
                         return $hike->climb == $climb;
                     });
-                    // remember this this value was checked
+                    // remember this climb value was checked
                     array_push($checked, $climb);
                     // Merge this with our results
-                    $results = $results->merge($filtered);
+                    $results = $results->merge($filteredByClimb);
                 }
             }
         }
-        else $results = $hikes;
+        else $results = $hikesByDistance;
+
+        # SERVICE FILTER
+        // For each service selected, filter the hikes
+        if (isset($services)) {
+            if (!empty($services)) {
+                // find all the lines belonging to these services
+                $lines = \App\Line::whereIn('service', $services)->get();
+                // find all of the hikes adjacent to these lines
+                $hikesByService = \App\Hike::byLines($lines);
+                // mark each selected service as checked
+                foreach ($services as $service) {
+                    array_push($checked, $service);
+                }
+                // intersect these hikes with the current results
+                $results = $results->intersect($hikesByService);
+            }
+        }
+        # TAG FILTER
+        if (isset($tags)) {
+            if (!empty($tags)) {
+                // initialize hikes by tags collection
+                $hikesByTag = collect();
+                // Keep an array of the collections of hike IDs
+                $collectionArray = [];
+                // find the hikes associated with each tag
+                foreach ($tags as $tag) {
+                    // initialize a Tag object by the tag name selected by the user
+                    $newTag = \App\Tag::where('name', '=', $tag)->first();
+                    // obtain the hikes with this tag
+                    $hikes = $newTag->hikes;
+                    // Identify the hikes by IDs
+                    $hikeIDs = collect();
+                    // get the IDs for all the hikes of this tag
+                    foreach ($hikes as $hike) $hikeIDs = $hikeIDs->merge($hike->id);
+                    // remember those IDs as a collection in one row per tag
+                    array_push($collectionArray, $hikeIDs);
+                }
+                // Initialize intersected IDs collection
+                $ids = collect();
+                // Intersect each row in the collection array until there is only one
+                for ($i = 0; $i < count($collectionArray); $i++) {
+                    // if this is the first index, instantiate ids array
+                    if ($i == 0) $ids = $collectionArray[0];
+                    // if this is the second index, intersect
+                    else if ($i == 1) $ids = $collectionArray[0]->intersect($collectionArray[$i]);
+                    // if this is any index beyond, intersect with ids
+                    else $ids = $ids->intersect($collectionArray[$i]);
+                    return $ids;
+                }
+                return $ids;
+            }
+        }
 
         # FORMAT RESULTS
-        // Make the collection unique
+        // Make sure there are no duplicates in the collection
         $results = $results->unique();
-        // Alphabetize the hikes
+        // Alphabetize the results by hike name
         $results = $results->sortBy('name');
 
         # FORM INPUT

@@ -31,14 +31,9 @@ class Hike extends Model
         // remove duplicate hike ids
         $ids = array_unique($ids);
 
-        // form an array of hikes
-        $hikes = [];
-        foreach ($ids as $id) {
-            $hike = \App\Hike::find($id);
-            array_push($hikes, $hike);
-        }
-        // convert to a collection
-        $hikes = collect($hikes);
+        // find the hikes with these IDs
+        $hikes = \App\Hike::whereIn('id', $ids)->get();
+
         // alphabetize the hikes
         $hikes = $hikes->sortBy('name');
 
