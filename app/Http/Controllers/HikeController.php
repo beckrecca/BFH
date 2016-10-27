@@ -155,6 +155,9 @@ class HikeController extends Controller
         // Remember which values have been checked
         $checked = [];
 
+        // Remember whether tags hidden below the buttons were checked
+        $tagsChecked = false;
+
         # DISTANCE FILTER
         // For the distance selection, find all the markers within that distance
         $markers = \App\Marker::where('distance_to_mbta', '<=', $distance)->get();
@@ -177,7 +180,7 @@ class HikeController extends Controller
                 }
             }
         }
-        else $results = $hikesByDistance;
+        else $results = collect($hikesByDistance);
 
         # SERVICE FILTER
         // For each service selected, filter the hikes
@@ -198,7 +201,56 @@ class HikeController extends Controller
         # TAG FILTER
         if (isset($tags)) {
             if (!empty($tags)) {
-                // START OVER
+                // Initialize tags intersection and previous results
+                $tagIntersectResults;
+                $prevResults = collect();
+                // initialize counter for hike comparison
+                $i = 0;
+                // For each tag name selected, create a new Tag object
+                foreach ($tags as $tag_name) {
+                    $tag = \App\Tag::where('name', '=', $tag_name)->first();
+                    // If the category of this tag is any hidden below a button, remember that
+                    if ($tag->category != "size") $tagsChecked = true;
+                    // mark each checked tag as checked
+                    array_push($checked, $tag_name);
+                    // Get the hikes for this tag
+                    $hikesByTag = $tag->hikes;
+                    // Clear tags intersection results
+                    $tagIntersectResults = collect();
+                    // Remember previous results as comparative results
+                    $compResults = $prevResults;
+                    // Initialize and clear previous results
+                    $prevResults = collect();
+                    // for each hikes by tag,
+                    foreach ($hikesByTag as $hike) {
+                        // if this is the first tag
+                        if ($i == 0) {
+                            // compare its hikes with the current results
+                            if ($results->contains('name', $hike->name)) {
+                                // save those results
+                                $tagIntersectResults[] = $hike;
+                                // also remember them for future comparison
+                                $prevResults[] = $hike;
+                            }
+                        }
+                        // if second or later
+                        else if ($i > 0) {
+                            // compare to previous results
+                            if ($compResults->contains('name', $hike->name)) {
+                                // save those results
+                                $tagIntersectResults[] = $hike;
+                                // remember them for future comparison
+                                $prevResults[] = $hike;
+                            }
+                        }
+                    }
+                    // clear comparative results
+                    $compResults = collect();
+                    // increment counter
+                    $i++;
+                }
+                // Update results
+                $results = $tagIntersectResults;                
             }
         }
 
@@ -231,6 +283,7 @@ class HikeController extends Controller
                                     ->with('activities', $activities)
                                     ->with('sizes', $sizes)
                                     ->with('checked', $checked)
-                                    ->with('selected', $selected);
+                                    ->with('selected', $selected)
+                                    ->with('tagsChecked', $tagsChecked);
     }
 }

@@ -7,11 +7,20 @@
 @section('head')
   <link rel="stylesheet" href="/css/explore.css" />
   <link rel="stylesheet" href="/css/stickyfooter.css" />
+  @if (isset($tagsChecked)) 
+    @if ($tagsChecked)
+    <style>
+      .tags-input-list {
+        display: block;
+      }
+    </style>
+    @endif
+  @endif
 @stop
 
 @section('content')
   <div class="container" id="wrapper">
-    <h2>Explore Hikes</h2>
+    <h2>Search MBTA-Accessible Hikes</h2>
     <div id="errors">
     @if (isset($errors))
       @if (count($errors) > 0)
@@ -63,7 +72,7 @@
           <label for="features"><a href="#" id="features" class="btn btn-notice toggle">Features</a> </label>
           <ul class="tags-input-list" id="features-input">
             @foreach ($features as $feature)
-            <li><label for="{{ $feature->name }}"><input type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" /> {{ ucfirst($feature->name)}}</label></li>
+            <li><label for="{{ $feature->name }}"><input type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" @if (isset($checked)) @if (in_array($feature->name, $checked)) checked @endif @endif /> {{ ucfirst($feature->name)}}</label></li>
             @endforeach
           </ul>
         @endif
@@ -73,7 +82,7 @@
           <label for="activities"><a href="#" id="activities" class="btn btn-notice toggle">Activities</a> </label>
           <ul class="tags-input-list" id="activities-input">
             @foreach ($activities as $activity)
-            <li><label for="{{ $activity->name }}"><input type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" /> {{ ucfirst($activity->name)}}</label></li>
+            <li><label for="{{ $activity->name }}"><input type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" @if (isset($checked)) @if (in_array($activity->name, $checked)) checked @endif @endif /> {{ ucfirst($activity->name)}}</label></li>
             @endforeach
           </ul>
         @endif
@@ -83,7 +92,7 @@
           <label for="facilities"><a href="#" id="facilities" class="btn btn-notice toggle">Facilities</a> </label>
           <ul class="tags-input-list" id="facilities-input">
             @foreach ($facilities as $facility)
-            <li><label for="{{ $facility->name }}"><input type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" /> {{ ucfirst($facility->name)}}</label></li>
+            <li><label for="{{ $facility->name }}"><input type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" @if (isset($checked)) @if (in_array($facility->name, $checked)) checked @endif @endif /> {{ ucfirst($facility->name)}}</label></li>
             @endforeach
           </ul>
         @endif
@@ -93,7 +102,7 @@
           <label for="scenery"><a href="#" id="scenery" class="btn btn-notice toggle">Scenery</a> </label>
           <ul class="tags-input-list" id="scenery-input">
             @foreach ($sceneries as $scenery)
-            <li><label for="{{ $scenery->name }}"><input type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" /> {{ ucfirst($scenery->name)}}</label></li>
+            <li><label for="{{ $scenery->name }}"><input type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" @if (isset($checked)) @if (in_array($scenery->name, $checked)) checked @endif @endif /> {{ ucfirst($scenery->name)}}</label></li>
             @endforeach
           </ul>
         @endif
