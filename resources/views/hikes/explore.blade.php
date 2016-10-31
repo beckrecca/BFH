@@ -110,11 +110,17 @@
       </div>
       <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
+    <!-- RESULTS LIST -->
     @if (isset($hikes))
       <ul id="explore">
-        @if (method_exists($hikes, 'total')) <h2> {{ $hikes->total() }} Results </h2> @endif
+        @if (isset($count)) <h2> {{ $count }} Results </h2> @endif
         @foreach ($hikes as $hike)
-        <?php $single_hikes_tags = $hike->tags->sortBy('name'); ?>
+        <?php 
+          # grab the tags for this hike
+          $single_hikes_tags = $hike->tags->sortBy('name');
+          # grab the lines for this hike
+          $lines = \App\Line::byHikes($hike->id)->sortBy('name');
+        ?>
           <li class="thumbnail row">
             <div class="col-sm-12">
               <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
@@ -130,6 +136,11 @@
                 @foreach ($single_hikes_tags as $list_tag)
                 <a href="/tags/{{ $list_tag->id }}">{{ $list_tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
                 @endforeach
+                <br/>
+              <span>Closest MBTA Lines:</span>
+              @foreach ($lines as $line)
+                <a href="lines/{{ $line->id }}">@if ($line->service == "bus") Bus @endif {{ $line->name }} @if ($line->service == "subway") Line @elseif ($line->service == "commuter rail") Commuter Rail Line @endif </a> <span class="glyphicon glyphicon-tree-conifer"></span>
+              @endforeach
             </div>
           </li>
         @endforeach

@@ -45,6 +45,10 @@ Route::get('disclaimer', function() {
 });
 
 /** TESTING ROUTES **/
+Route::get('/lines/hike/{id}', function ($id) {
+    $lines = \App\Line::byHikes($id);
+    return $lines;
+});
 Route::get('/debug', function() {
 
     echo '<pre>';
