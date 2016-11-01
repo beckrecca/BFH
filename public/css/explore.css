@@ -28,9 +28,12 @@ select[multiple] {
 .pagination>li>a:hover{
 	color: #000;
 }
-.pagination>.active>span, .pagination>.active>span:hover {
+.pagination>.active>span, .pagination>.active>span:hover, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
 	background-color: #71B300;
 	border-color: #eee;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	z-index: 0;
 }
 span {
 	font-weight: bold;
@@ -46,4 +49,7 @@ ul#explore > li {
 	background-color: #fff;
 	border-radius: 0.5em;
 	padding: 1em 0em 1em 0em;
+}
+.secondPage, .thirdPage {
+	display: none;
 }

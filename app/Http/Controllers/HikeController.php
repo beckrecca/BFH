@@ -259,6 +259,8 @@ class HikeController extends Controller
         $results = $results->unique();
         // Alphabetize the results by hike name
         $results = $results->sortBy('name');
+        // Count the results
+        $count = $results->count();
 
         # FORM INPUT
         // get all the tags by feature
@@ -284,6 +286,7 @@ class HikeController extends Controller
                                     ->with('sizes', $sizes)
                                     ->with('checked', $checked)
                                     ->with('selected', $selected)
-                                    ->with('tagsChecked', $tagsChecked);
+                                    ->with('tagsChecked', $tagsChecked)
+                                    ->with('count', $count);
     }
 }
