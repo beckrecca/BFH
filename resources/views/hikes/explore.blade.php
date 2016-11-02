@@ -113,7 +113,8 @@
     <!-- RESULTS LIST -->
     @if (isset($hikes))
       <ul id="explore">
-        <h2> @if (isset($count)) {{ $count }} Results @else All Hikes @endif </h2> 
+        <h2> @if (isset($count)) {{ $count }} Results @endif </h2>
+        @if (isset($count)) @if ($count > 0) <h3 class="firstPage">Showing 1-{{ count($hikes->forPage(1,10))}} @else Please try your search again. @endif</h3> @endif
         <!-- FIRST TEN RESULTS -->
         @foreach ($hikes->forPage(1,10) as $hike)
         <?php 
@@ -149,6 +150,7 @@
         <!-- PAGINATION OF POSTED RESULTS -->
         <!-- NEXT TEN RESULTS -->
           @if ($count > 10)
+          <h3 class="secondPage">Showing 11-{{ 10 + count($hikes->forPage(2,10))}}</h3> 
             @foreach ($hikes->forPage(2,10) as $hike)
             <?php 
               # grab the tags for this hike
@@ -182,6 +184,7 @@
           @endif
           <!-- NEXT TEN RESULTS -->
           @if ($count > 20)
+          <h3 class="thirdPage">Showing 21-{{ 20 + count($hikes->forPage(3,10))}}</h3> 
             @foreach ($hikes->forPage(3,10) as $hike)
             <?php 
               # grab the tags for this hike
@@ -215,9 +218,7 @@
           @endif
         @endif
       </ul>
-      @if (method_exists($hikes,'links'))
-      {{ $hikes->links() }}
-      @elseif (isset($count))
+      @if (isset($count))
       <!-- PAGINATION LINKS FOR POSTED COLLECTION RESULTS -->
       <ul class="pagination">
         <li id="prev" class="pageTurn disabled"><span>&laquo;</span></li> 
@@ -228,8 +229,6 @@
         @else <li id="next" class="pageTurn disabled"><span>&raquo;</span></li> @endif
       </ul>
       @endif
-    @else
-      <p>Whoops! Nothing here.</p>
     @endif
   </div>
   <!-- Toggle Tags Checkbox Inputs Visibility -->
@@ -323,7 +322,7 @@
         $("#prev").addClass("disabled").html('<span>&laquo;</span>');
       }
       // if the third page or second and last possible page is active
-      if ($(".active").attr("id") == "third" || ($(".active").attr("id") == "second") && <?php if ($count > 10) echo("true"); else echo("false"); ?> && <?php if ($count < 21) echo("true"); else echo("false"); ?> ) {
+      if ($(".active").attr("id") == "third" || ($(".active").attr("id") == "second") <?php if (isset($count)) {if ($count < 21) echo("&& true"); else echo("&& false");} ?> ) {
         // the next button is disabled
         $("#next").addClass("disabled").html('<span>&raquo;</span>');
       }

@@ -11,39 +11,6 @@ use Validator;
 class HikeController extends Controller
 {
     /**
-    * Responds to requests to GET /hikes
-    * Renders the explore page, listing all hikes
-    */
-    public function all() 
-    {
-        // Grab all of the hikes
-        $hikes = \App\Hike::paginate(10);
-
-        # FORM INPUT
-        // get all the tags by feature
-        $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
-
-        // get all the tags by facilities
-        $facilities = \App\Tag::where('category', '=', 'facilities')->get()->sortBy('name');
-
-        // get all the tags by scenery
-        $sceneries = \App\Tag::where('category', '=', 'scenery')->get()->sortBy('name');
-
-        // get all the tags by activity
-        $activities = \App\Tag::where('category', '=', 'activities')->get()->sortBy('name');
-
-        // get all the tags by size
-        $sizes = \App\Tag::where('category', '=', 'size')->get()->sortBy('name');
-        
-        return view ('hikes.explore')->with('hikes', $hikes)
-                                     ->with('features', $features)
-                                     ->with('facilities', $facilities)
-                                     ->with('sceneries', $sceneries)
-                                     ->with('activities', $activities)
-                                     ->with('sizes', $sizes);
-    }
-
-    /**
     * Responds to requests to GET /hikes/climb/{climb}
     * Shows a list of all the hikes with the given climb rating
     */
@@ -92,6 +59,35 @@ class HikeController extends Controller
 
         return view ('hikes.list')->with('hikes', $hikes)
                                   ->with('distance', $n);
+    }
+
+    /**
+    * Responds to requests to GET /explore
+    * Renders the explore page form
+    */
+    public function explore() 
+    {
+        # FORM INPUT
+        // get all the tags by feature
+        $features = \App\Tag::where('category', '=', 'features')->get()->sortBy('name');
+
+        // get all the tags by facilities
+        $facilities = \App\Tag::where('category', '=', 'facilities')->get()->sortBy('name');
+
+        // get all the tags by scenery
+        $sceneries = \App\Tag::where('category', '=', 'scenery')->get()->sortBy('name');
+
+        // get all the tags by activity
+        $activities = \App\Tag::where('category', '=', 'activities')->get()->sortBy('name');
+
+        // get all the tags by size
+        $sizes = \App\Tag::where('category', '=', 'size')->get()->sortBy('name');
+        
+        return view ('hikes.explore')->with('features', $features)
+                                     ->with('facilities', $facilities)
+                                     ->with('sceneries', $sceneries)
+                                     ->with('activities', $activities)
+                                     ->with('sizes', $sizes);
     }
 
     /**

@@ -19,14 +19,18 @@ Route::get('/', function () {
 Route::get('map', 'HikeController@map');
 
 /** EXPLORE **/
-Route::get('explore', 'HikeController@all');
+Route::get('explore', 'HikeController@explore');
 Route::post('explore', 'HikeController@postExplore');
-
 
 /** HIKES **/
 Route::get('hikes/climb/{climb}', 'HikeController@climb');
 Route::get('hikes/{path_name}', 'HikeController@detail');
 Route::get('hikes/distance/{n}', 'HikeController@distance');
+
+/** SUGGEST **/
+Route::get('suggest', function() {
+    return view('hikes.suggest');
+});
 
 /** IMAGES **/
 //Route::get('hikes/{path_name}/images', 'ImageController@View');
