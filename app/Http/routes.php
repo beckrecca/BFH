@@ -28,9 +28,8 @@ Route::get('hikes/{path_name}', 'HikeController@detail');
 Route::get('hikes/distance/{n}', 'HikeController@distance');
 
 /** SUGGEST **/
-Route::get('suggest', function() {
-    return view('hikes.suggest');
-});
+Route::get('suggest', 'HikeController@suggest');
+Route::post('suggest', 'HikeController@postSuggest');
 
 /** IMAGES **/
 //Route::get('hikes/{path_name}/images', 'ImageController@View');

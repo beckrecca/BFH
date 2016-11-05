@@ -285,4 +285,30 @@ class HikeController extends Controller
                                     ->with('tagsChecked', $tagsChecked)
                                     ->with('count', $count);
     }
+
+    /**
+    * Responds to requests to GET /suggest
+    * Renders the suggest page form
+    */
+    public function suggest()
+    {
+        return view('hikes.suggest');
+    }
+
+    /**
+    * Responds to requests to POST /suggest
+    * Renders the suggest page form
+    */
+    public function postSuggest(Request $request)
+    {
+        # VALIDATION
+        $this->validate($request, [
+            'name' => 'required|max:160',
+            'address' => 'required|alpha_num|max:160',
+            'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
+            'distance' => 'required|numeric',
+            'description' => 'alpha_num|max:250'
+        ]);
+        return $request->all();
+    }
 }
