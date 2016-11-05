@@ -304,11 +304,22 @@ class HikeController extends Controller
         # VALIDATION
         $this->validate($request, [
             'name' => 'required|max:160',
-            'address' => 'required|alpha_num|max:160',
+            'address' => 'required|max:160',
             'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
             'distance' => 'required|numeric',
-            'description' => 'alpha_num|max:250'
+            'description' => 'max:250',
+            'web' => 'url'
         ]);
-        return $request->all();
+
+        $data = array(
+            'request' => $request
+        );
+
+        \Mail::send('emails.suggest', $data, function ($message) {
+          $message->to('bostonfarehikes@gmail.com')
+            ->subject('New Suggestion');
+        });
+
+        return view('hikes.suggest')->with('message', 'Thank you! Your suggestion has been accepted.');
     }
 }

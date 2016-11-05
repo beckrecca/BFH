@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => array('address' => 'bostonfarehikes@gmail.com', 'name' => 'BFH Suggestions'),
 
     /*
     |--------------------------------------------------------------------------
