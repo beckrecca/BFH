@@ -47,6 +47,9 @@ Route::get('tags/{id}', 'TagController@view');
 Route::get('disclaimer', function() {
     return view('disclaimer');
 });
+Route::get('about', function() {
+    return view('about');
+});
 
 /** TESTING ROUTES **/
 Route::get('/lines/hike/{id}', function ($id) {

@@ -6,23 +6,13 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/stickyfooter.css" />
-  <style>
-  	#disclaimer {
-  		background-color: #fff;
-      border-radius: 0.5em;
-      padding: 0.25em 1em 1em 1em;
-      margin: 0.25em 0.5em;
-  	}
-  	span {
-  		font-weight: bold;
-  	}
-  </style>
+  <link rel="stylesheet" href="/css/plain.css" />
 @stop
 
 @section('content')
   <div class="container">
     <h1>Disclaimer</h1>
-    <div  id="disclaimer">
+    <div id="wrapper">
     <h2>The Potential Dangers of Hiking</h2>
     <p>
     	I am not an expert survivalist, medical doctor, or professional <em>anything</em>. 

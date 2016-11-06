@@ -1,0 +1,11 @@
+#wrapper {
+	background-color: #fff;
+	border-radius: 0.5em;
+	padding: 1em;
+}
+h1 {
+	margin-left: 0.5em;
+}
+span {
+	font-weight: bold;
+}
