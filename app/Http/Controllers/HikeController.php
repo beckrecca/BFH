@@ -292,12 +292,15 @@ class HikeController extends Controller
     */
     public function suggest()
     {
-        return view('hikes.suggest');
+        // Get all the hikes
+        $hikes = \App\Hike::all();
+        return view('hikes.suggest')->with('hikes', $hikes);
     }
 
     /**
     * Responds to requests to POST /suggest
-    * Renders the suggest page form
+    * Emails the user input for hike suggestions
+    * to bostonfarehikes@gmail.com
     */
     public function postSuggest(Request $request)
     {
@@ -321,5 +324,15 @@ class HikeController extends Controller
         });
 
         return view('hikes.suggest')->with('message', 'Thank you! Your suggestion has been accepted.');
+    }
+
+    /**
+    * Responds to requests to POST /correct
+    * Emails the user input for hike corrections
+    * to bostonfarehikes@gmail.com
+    */
+    public function postCorrect(Request $request)
+    {
+        return $request->all();
     }
 }
