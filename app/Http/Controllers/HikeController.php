@@ -333,6 +333,22 @@ class HikeController extends Controller
     */
     public function postCorrect(Request $request)
     {
-        return $request->all();
+
+        # VALIDATION
+        $this->validate($request, [
+            'correction' => 'required|max:250'
+        ]);
+
+        $data = array(
+            'request' => $request
+        );
+
+
+        \Mail::send('emails.correct', $data, function ($message) {
+          $message->to('bostonfarehikes@gmail.com')
+            ->subject('New Correction');
+        });
+
+        return view('hikes.suggest')->with('message', 'Thank you! Your correction has been accepted.');
     }
 }
