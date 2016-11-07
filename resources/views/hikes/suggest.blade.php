@@ -6,11 +6,7 @@
 
 @section('head')
   <link rel="stylesheet" href="/css/stickyfooter.css" />
-  <style>
-    #wrapper {
-      margin-bottom: 70px;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/suggest.css" />
 @stop
 
 @section('content')
@@ -111,7 +107,19 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="description" class="col-sm-2 control-label">Correction:</label>
+              <label for="wrong[]" class="col-sm-2 control-label">What's Wrong?</label>
+              <div class="col-sm-10">
+                <ul id="selectWrong">
+                  <li><input type="checkbox" name="wrong[]" id="Location Name" value="Location Name"> <label for="Location Name" class="control-label">Location Name</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="Entrance Marker Address" value="Location Name"> <label for="Entrance Marker Address" class="control-label">Entrance Marker Address</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="Climb" value="Climb"> <label for="Climb" class="control-label">Difficulty of Climb</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="Distance" value="Distance"> <label for="Distance" class="control-label">Distance to MBTA</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="Description" value="Description"> <label for="Description" class="control-label">Description</label></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description" class="col-sm-2 control-label">Correction Details:</label>
               <div class="col-sm-10">
                 <textarea class="form-control" id="correction" name="correction" placeholder="Correction"></textarea>
               </div>
