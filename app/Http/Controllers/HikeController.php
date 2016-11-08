@@ -310,7 +310,7 @@ class HikeController extends Controller
             'address' => 'required|max:160',
             'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
             'distance' => 'required|numeric',
-            'description' => 'max:250',
+            'description' => 'max:300',
             'web' => 'url'
         ]);
 
@@ -323,7 +323,11 @@ class HikeController extends Controller
             ->subject('New Suggestion');
         });
 
-        return view('hikes.suggest')->with('message', 'Thank you! Your suggestion has been accepted.');
+        // Get all the hikes again
+        $hikes = \App\Hike::all();
+
+        return view('hikes.suggest')->with('hikes', $hikes)
+                                    ->with('message', 'Thank you! Your suggestion has been accepted.');
     }
 
     /**
@@ -336,7 +340,8 @@ class HikeController extends Controller
 
         # VALIDATION
         $this->validate($request, [
-            'correction' => 'required|max:250'
+            'wrongs' => 'array',
+            'correction' => 'required|max:300'
         ]);
 
         $data = array(
@@ -349,6 +354,10 @@ class HikeController extends Controller
             ->subject('New Correction');
         });
 
-        return view('hikes.suggest')->with('message', 'Thank you! Your correction has been accepted.');
+        // Get all the hikes again
+        $hikes = \App\Hike::all();
+
+        return view('hikes.suggest')->with('hikes', $hikes)
+                                    ->with('message', 'Thank you! Your correction has been accepted.');
     }
 }

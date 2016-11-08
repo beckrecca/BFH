@@ -121,7 +121,7 @@
             <div class="form-group">
               <label for="description" class="col-sm-2 control-label">Correction Details:</label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="correction" name="correction" placeholder="Correction"></textarea>
+                <textarea class="form-control" id="correction" name="correction" placeholder="Correction Details"></textarea>
               </div>
             </div>
             <div class="form-group">
