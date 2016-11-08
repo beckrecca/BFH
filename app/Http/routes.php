@@ -11,12 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 /** MAIN MAP **/
-Route::get('map', 'HikeController@map');
+Route::get('/', 'HikeController@map');
 
 /** EXPLORE **/
 Route::get('explore', 'HikeController@explore');

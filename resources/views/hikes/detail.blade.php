@@ -122,10 +122,12 @@
         <?php $class++; ?>
       @endforeach
     </ul>
-    <h4 class="hidden-xs visible-sm visible-md visible-lg" id="directionsHeader">Directions</h4>
-    <div id="errors"></div>
-    <div id="timing"></div>
-    <div id="directionsPanel"></div>
+    <div id="directionsContainer">
+      <h4 class="hidden-xs visible-sm visible-md visible-lg" id="directionsHeader">Directions Panel</h4>
+      <div id="errors"></div>
+      <div id="timing"></div>
+      <div id="directionsPanel"></div>
+    </div>
   </div>
   <h3><span class="glyphicon glyphicon-map-marker"></span>Map of MBTA-friendly Entrance<?php if($markers->count() > 1)echo('s');?> for {{ $hike->name }}</h3>
   <div id="hike-map"></div>

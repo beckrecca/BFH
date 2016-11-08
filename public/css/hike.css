@@ -16,6 +16,10 @@
   background-color: #fff;
   border-radius: 0.5em;
 }
+#directionsContainer {
+  background-color: #fff;
+  height: 100%;
+}
 #directionsPanelContainer {
   padding: 1em;
   width: 100%;
