@@ -19,7 +19,7 @@
       <label class="sr-only" for="user">User address</label>
       <input type="text" class="form-control" id="user" name="user" placeholder="Enter your address"/>
       <label class="sr-only" for="radius">Desired radius</label>
-      <select id="radius" class="form-control" name="radius">
+      <select id="radius" class="form-control dropdownTrigger" name="radius">
         <option value="3">Within 3 miles</option>
         <option value="5">Within 5 miles</option>
         <option value="10">Within 10 miles</option>
@@ -27,14 +27,14 @@
       </select>
       <div id="climb">
         <label for="climb">Climb:</label> 
-        <label for="flat"><input type="checkbox" name="climb" id="flat" value="flat" /> Flat</label>
-        <label for="easy"><input type="checkbox" name="climb" id="easy" value="easy" /> Easy</label>
-        <label for="moderate"><input type="checkbox" name="climb" id="moderate" value="moderate" /> Moderate</label>
-        <label for="intense"><input type="checkbox" name="climb" id="intense" value="intense" /> Intense</label> 
+        <label for="flat"><input type="checkbox" name="climb" id="flat" value="flat" class="checkboxTrigger" /> Flat</label>
+        <label for="easy"><input type="checkbox" name="climb" id="easy" value="easy"  class="checkboxTrigger" /> Easy</label>
+        <label for="moderate"><input type="checkbox" name="climb" id="moderate" value="moderate"  class="checkboxTrigger" /> Moderate</label>
+        <label for="intense"><input type="checkbox" name="climb" id="intense" value="intense"  class="checkboxTrigger" /> Intense</label> 
       </div>
       <div>
         <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible by subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
-        <select id="distance" class="form-control" name="distance">
+        <select id="distance" class="form-control dropdownTrigger" name="distance">
           <option></option>
           <option value="0.25">&lt; .25 mi </option>
           <option value="0.5">&lt; .5 mi </option>
@@ -95,8 +95,8 @@
   <!-- Google Map find nearest hike code -->
   <script src="/js/map.js"></script>
   <script src="/js/haversine.js"></script>
-  <script src="/js/usercookie.js"></script>
   <!-- user address cookie -->
+  <script src="/js/usercookie.js"></script>
    <script>
       // get the address
       var address = readAddress();
@@ -109,6 +109,7 @@
   <!-- Google Maps Javascript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
+  <!-- info window styling -->
   <link rel="stylesheet" href="/css/infowindow.css" />
   <!-- handle Google Maps error -->
   <script>

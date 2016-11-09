@@ -114,7 +114,7 @@
     @if (isset($hikes))
       <ul id="explore">
         <h2> @if (isset($count)) {{ $count }} Results @endif </h2>
-        @if (isset($count)) @if ($count > 0) <h3 class="firstPage">Showing 1-{{ count($hikes->forPage(1,10))}} @else Please try your search again. @endif</h3> @endif
+        @if (isset($count)) @if ($count > 0) <h3 class="firstPage">Showing 1-{{ count($hikes->forPage(1,10))}} @else No results found. @endif</h3> @endif
         <!-- FIRST TEN RESULTS -->
         @foreach ($hikes->forPage(1,10) as $hike)
         <?php 

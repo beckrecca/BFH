@@ -44,6 +44,20 @@ function initMap() {
       map.setOptions({ draggable: true });
     }
   });
+    // If the user clicks a checkbox on the form
+  $('.checkboxTrigger').click(function() {
+    if ($("#user").val().length > 0) {
+      $('form').submit();
+    }
+  });
+  // If the user makes a form selection
+  $('.dropdownTrigger').change(function() {
+    // If the user has entered an address
+    if ($("#user").val().length > 0) {
+      // submit the form
+      $('form').submit();
+    }
+  });
   // handle the form submission
   $('form').submit(function (e) {
     // prevent form from posting
