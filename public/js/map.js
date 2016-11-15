@@ -46,7 +46,9 @@ function initMap() {
   });
     // If the user clicks a checkbox on the form
   $('.checkboxTrigger').click(function() {
+    // if the user has provided an address
     if ($("#user").val().length > 0) {
+      // submit the form
       $('form').submit();
     }
   });

@@ -10,6 +10,7 @@
     -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out;
 	padding: 1em;
+    padding-bottom: 70px;
 }
 h1 {
 	margin-left: 0.5em;

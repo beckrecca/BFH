@@ -35,17 +35,17 @@
     <form class="form-horizontal" method="POST" action="/explore">
       {{ csrf_field() }}
       <div class="form-group" id="climb">
-        <label for="climb" class="control-label">Climb: </label> 
-        <label for="flat"><input type="checkbox" name="climbs[]" id="flat" value="flat" @if (isset($checked)) @if (in_array("flat", $checked)) checked @endif @endif /> Flat</label>
-        <label for="easy"><input type="checkbox" name="climbs[]" id="easy" value="easy" @if (isset($checked)) @if (in_array("easy", $checked)) checked @endif @endif /> Easy</label>
-        <label for="easy-to-moderate"><input type="checkbox" name="climbs[]" id="easy-to-moderate" value="easy-to-moderate" @if (isset($checked)) @if (in_array("easy-to-moderate", $checked)) checked @endif @endif /> Easy-to-moderate</label>
-        <label for="moderate"><input type="checkbox" name="climbs[]" id="moderate" value="moderate" @if (isset($checked)) @if (in_array("moderate", $checked)) checked @endif @endif/> Moderate</label>
-        <label for="moderate-to-intense"><input type="checkbox" name="climbs[]" id="moderate-to-intense" value="moderate-to-intense" @if (isset($checked)) @if (in_array("moderate-to-intense", $checked)) checked @endif @endif /> Moderate-to-intense</label>
-        <label for="intense"><input type="checkbox" name="climbs[]" id="intense" value="intense" @if (isset($checked)) @if (in_array("intense", $checked)) checked @endif @endif/> Intense</label> 
+        <label for="climb" class="control-label"><a href="#" id="climbPopover" rel="popover" data-content="This rating refers to the incline of the terrain for each hike." data-original-title="Difficulty of Climb" data-trigger="hover">Climb</a>: </label> 
+        <label for="flat"><input class="trigger" type="checkbox" name="climbs[]" id="flat" value="flat" @if (isset($checked)) @if (in_array("flat", $checked)) checked @endif @endif /> Flat</label>
+        <label for="easy"><input class="trigger"  type="checkbox" name="climbs[]" id="easy" value="easy" @if (isset($checked)) @if (in_array("easy", $checked)) checked @endif @endif /> Easy</label>
+        <label for="easy-to-moderate"><input type="checkbox" class="trigger"  name="climbs[]" id="easy-to-moderate" value="easy-to-moderate" @if (isset($checked)) @if (in_array("easy-to-moderate", $checked)) checked @endif @endif /> Easy-to-moderate</label>
+        <label for="moderate"><input class="trigger"  type="checkbox" name="climbs[]" id="moderate" value="moderate" @if (isset($checked)) @if (in_array("moderate", $checked)) checked @endif @endif/> Moderate</label>
+        <label for="moderate-to-intense"><input class="trigger"  type="checkbox" name="climbs[]" id="moderate-to-intense" value="moderate-to-intense" @if (isset($checked)) @if (in_array("moderate-to-intense", $checked)) checked @endif @endif /> Moderate-to-intense</label>
+        <label for="intense"><input class="trigger"  type="checkbox" name="climbs[]" id="intense" value="intense" @if (isset($checked)) @if (in_array("intense", $checked)) checked @endif @endif/> Intense</label> 
       </div>
       <div class="form-group">
-        <label id="distance-label" for="distance" class="control-label">Distance to closest MBTA station/stop: </label>
-        <select id="distance" class="form-control" name="distance">
+        <label id="distance-label" for="distance">Distance to closest <a href="#" id="mbta" rel="popover" data-content="All of these hiking locations are accessible by public subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a> station/stop: </label> 
+        <select class="dropdownTrigger" id="distance" class="form-control" name="distance">
           <option value="2"></option>
           <option value="0.25" @if (isset($selected)) @if ($selected == 0.25) selected @endif @endif) >within .25 mi </option>
           <option value="0.5" @if (isset($selected)) @if ($selected == 0.5) selected @endif @endif>within .5 mi </option>
@@ -54,61 +54,63 @@
       </div>
       <div class="form-group">
         <label for="service">Service(s) Nearby: </label>
-        <label for="bus"><input type="checkbox" name="services[]" id="bus" value="bus" @if (isset($checked)) @if (in_array("bus", $checked)) checked @endif @endif /> Bus</label>
-        <label for="commuter rail"><input type="checkbox" name="services[]" id="commuter rail" value="commuter rail" @if (isset($checked)) @if (in_array("commuter rail", $checked)) checked @endif @endif /> Commuter Rail</label>
-        <label for="subway"><input type="checkbox" name="services[]" id="subway" value="subway" @if (isset($checked)) @if (in_array("subway", $checked)) checked @endif @endif /> Subway</label>
+        <label for="bus"><input class="trigger" type="checkbox" name="services[]" id="bus" value="bus" @if (isset($checked)) @if (in_array("bus", $checked)) checked @endif @endif /> Bus</label>
+        <label for="commuter rail"><input class="trigger" type="checkbox" name="services[]" id="commuter rail" value="commuter rail" @if (isset($checked)) @if (in_array("commuter rail", $checked)) checked @endif @endif /> Commuter Rail</label>
+        <label for="subway"><input class="trigger" type="checkbox" name="services[]" id="subway" value="subway" @if (isset($checked)) @if (in_array("subway", $checked)) checked @endif @endif /> Subway</label>
       </div>
       <div class="form-group">
         @if (isset($sizes))
           <label for="size" class="control-label">Size: </label>
           @foreach ($sizes as $size)
-            <label for="{{ $size->name }}"><input type="radio" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" /> {{ ucfirst($size->name)}}</label>
+            <label for="{{ $size->name }}"><input class="trigger" type="radio" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" />{{ ucfirst($size->name)}}</label>
           @endforeach
         @endif
       </div>
-      <div class="form-group">
+      <div class="form-group" id="tags-buttons">
         <div class="col-sm-3 col-xs-6">
           @if (isset($features))
-          <label for="features"><a href="#" id="features" class="btn btn-notice toggle">Features</a> </label>
+          <label for="features"><a href="#" id="features" class="btn btn-notice toggle"><span id="features-down" class="glyphicon glyphicon-chevron-down"></span><span id="features-up" class="glyphicon glyphicon-chevron-up"></span> Features</a> </label>
           <ul class="tags-input-list" id="features-input">
             @foreach ($features as $feature)
-            <li><label for="{{ $feature->name }}"><input type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" @if (isset($checked)) @if (in_array($feature->name, $checked)) checked @endif @endif /> {{ ucfirst($feature->name)}}</label></li>
+            <li><label for="{{ $feature->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" @if (isset($checked)) @if (in_array($feature->name, $checked)) checked @endif @endif /> {{ ucfirst($feature->name)}}</label></li>
             @endforeach
           </ul>
         @endif
         </div>
         <div class="col-sm-3 col-xs-6">
           @if (isset($activities))
-          <label for="activities"><a href="#" id="activities" class="btn btn-notice toggle">Activities</a> </label>
+          <label for="activities"><a href="#" id="activities" class="btn btn-notice toggle"><span id="activities-down" class="glyphicon glyphicon-chevron-down"></span><span id="activities-up" class="glyphicon glyphicon-chevron-up"></span> Activities</a> </label>
           <ul class="tags-input-list" id="activities-input">
             @foreach ($activities as $activity)
-            <li><label for="{{ $activity->name }}"><input type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" @if (isset($checked)) @if (in_array($activity->name, $checked)) checked @endif @endif /> {{ ucfirst($activity->name)}}</label></li>
+            <li><label for="{{ $activity->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" @if (isset($checked)) @if (in_array($activity->name, $checked)) checked @endif @endif /> {{ ucfirst($activity->name)}}</label></li>
             @endforeach
           </ul>
         @endif
         </div>
         <div class="col-sm-3 col-xs-6">
           @if (isset($facilities))
-          <label for="facilities"><a href="#" id="facilities" class="btn btn-notice toggle">Facilities</a> </label>
+          <label for="facilities"><a href="#" id="facilities" class="btn btn-notice toggle"><span id="facilities-down" class="glyphicon glyphicon-chevron-down"></span><span id="facilities-up" class="glyphicon glyphicon-chevron-up"></span> Facilities</a> </label>
           <ul class="tags-input-list" id="facilities-input">
             @foreach ($facilities as $facility)
-            <li><label for="{{ $facility->name }}"><input type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" @if (isset($checked)) @if (in_array($facility->name, $checked)) checked @endif @endif /> {{ ucfirst($facility->name)}}</label></li>
+            <li><label for="{{ $facility->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" @if (isset($checked)) @if (in_array($facility->name, $checked)) checked @endif @endif /> {{ ucfirst($facility->name)}}</label></li>
             @endforeach
           </ul>
         @endif
         </div>
         <div class="col-sm-3 col-xs-6">
           @if (isset($sceneries))
-          <label for="scenery"><a href="#" id="scenery" class="btn btn-notice toggle">Scenery</a> </label>
+          <label for="scenery"><a href="#" id="scenery" class="btn btn-notice toggle"><span id="scenery-down" class="glyphicon glyphicon-chevron-down"></span><span id="scenery-up" class="glyphicon glyphicon-chevron-up"></span> Scenery</a> </label>
           <ul class="tags-input-list" id="scenery-input">
             @foreach ($sceneries as $scenery)
-            <li><label for="{{ $scenery->name }}"><input type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" @if (isset($checked)) @if (in_array($scenery->name, $checked)) checked @endif @endif /> {{ ucfirst($scenery->name)}}</label></li>
+            <li><label for="{{ $scenery->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" @if (isset($checked)) @if (in_array($scenery->name, $checked)) checked @endif @endif /> {{ ucfirst($scenery->name)}}</label></li>
             @endforeach
           </ul>
         @endif
         </div>
       </div>
-      <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
     </form>
     <!-- RESULTS LIST -->
     @if (isset($hikes))
@@ -231,10 +233,34 @@
       @endif
     @endif
   </div>
+  <!-- Submit form with input changes -->
+  <script>
+    // If the user clicks a checkbox or radio button on the form
+    $('.trigger').click(function() {
+      // submit the form
+      $('form').submit();
+    });
+    // If the user makes a dropdown selection
+    $('.dropdownTrigger').change(function() {
+      // submit the form
+      $('form').submit();
+    });
+  </script>
   <!-- Toggle Tags Checkbox Inputs Visibility -->
   <script>
     $(".toggle").click(function (e) {
       $("#" + e.target.id + "-input").toggle();
+      $("#" + e.target.id + "-down").toggle();
+      $("#" + e.target.id + "-up").toggle();
+    });
+  </script>
+  <!-- popovers -->
+  <script>
+    $(function () {
+      $('#mbta').popover();
+    });
+    $(function () {
+      $('#climbPopover').popover();
     });
   </script>
   <!-- Toggle Pagination -->
