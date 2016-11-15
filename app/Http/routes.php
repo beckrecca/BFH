@@ -13,6 +13,7 @@
 
 /** MAIN MAP **/
 Route::get('/', 'HikeController@map');
+Route::get('/map', 'HikeController@map');
 
 /** EXPLORE **/
 Route::get('explore', 'HikeController@explore');

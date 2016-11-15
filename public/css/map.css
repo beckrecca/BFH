@@ -14,12 +14,12 @@ label {
 	width: 100%;
 }
 #mobile-message {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 0.85em;
 	padding: 0.5em;
 	position: absolute;
-	right: 1em;
-	top: 75px;
+	left: 10px;
+	top: 105px;
 	z-index: 1;
 }
 #mobile-message a:hover {

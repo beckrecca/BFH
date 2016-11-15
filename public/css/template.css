@@ -19,7 +19,7 @@ body {
 }
 #brand {
   float: left;
-  font-size: 1.75em;
+  font-size: 1.5em;
   height: 50px;
   line-height: 20px;
   padding: 15px 15px;
@@ -126,6 +126,11 @@ ul#footermenu li a:hover{
 @media only screen and (min-width: 321px) {
   ul#footermenu li a {
     padding: 0.5em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #brand {
+    font-size: 1.75em;
   }
 }
 @media only screen and (min-width: 961px) {
