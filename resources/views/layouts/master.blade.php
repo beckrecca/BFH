@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/template.css" />
     <style>
       body {
-        background: url('/img/backgrounds/bg{{ rand(1,10) }}.png');
+        background: url('/img/backgrounds/bg{{ rand(1,10) }}.gif');
         background-attachment: fixed;
         background-repeat: repeat-y;
       }
