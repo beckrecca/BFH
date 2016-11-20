@@ -42,44 +42,44 @@
             <div class="form-group">
               <label for="name" class="col-sm-2 control-label">Location Name</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Location Name" />
+                <input type="text" class="form-control" id="name" name="name" placeholder="Location Name" value="{{ old('name') }}" />
               </div>
             </div>
             <div class="form-group">
               <label for="address" class="col-sm-2 control-label">Location Address</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="address" name="address" placeholder="Location Address" />
+                <input type="text" class="form-control" id="address" name="address" placeholder="Location Address" value="{{ old('address') }}" />
               </div>
             </div>
             <div class="form-group">
               <label for="climb" class="col-sm-2 control-label" />Difficulty of Climb</label>
               <div class="col-sm-10">
                 <select id="difficulty" name="difficulty" class="form-control">
-                  <option value="flat">Flat</option>
-                  <option value="easy">Easy</option>
-                  <option value="easy-to-moderate">Easy-to-moderate</option>
-                  <option value="moderate">Moderate</option>
-                  <option value="moderate-to-intense">Moderate-to-intense</option>
-                  <option value="intense">Intense</option>
+                  <option value="flat" @if (old('difficulty') == "flat") selected @endif >Flat</option>
+                  <option value="easy" @if (old('difficulty') == "easy") selected @endif>Easy</option>
+                  <option value="easy-to-moderate" @if (old('difficulty') == "easy-to-moderate") selected @endif >Easy-to-moderate</option>
+                  <option value="moderate" @if (old('difficulty') == "moderate") selected @endif >Moderate</option>
+                  <option value="moderate-to-intense" @if (old('difficulty') == "moderate-to-intense") selected @endif >Moderate-to-intense</option>
+                  <option value="intense" @if (old('difficulty') == "intense") selected @endif >Intense</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
               <label for="distance" class="col-sm-2 control-label">Distance to MBTA (in miles)</label>
               <div class="col-sm-10">
-                <input type="number" step="any" class="form-control" id="distance" name="distance" placeholder="Distance in miles" />
+                <input type="number" step="any" class="form-control" id="distance" name="distance" placeholder="Distance in miles" value="{{ old('distance') }}" />
               </div>
             </div>
             <div class="form-group">
               <label for="description" class="col-sm-2 control-label">Description (optional)</label>
               <div class="col-sm-10">
-                <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+                <textarea class="form-control" id="description" name="description" placeholder="Description">{{ old('description') }}</textarea>
               </div>
             </div>
             <div class="form-group">
               <label for="web" class="col-sm-2 control-label">Website (optional)</label>
               <div class="col-sm-10">
-                <input type="url" class="form-control" id="web" name="web" placeholder="URL" />
+                <input class="form-control" id="web" name="web" placeholder="URL" value="@if (old('web') == "")http://@endif{{ old('web') }}" />
               </div>
             </div>
             <div class="form-group">

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
+
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-
-use Validator;
+use App\Http\Controllers\Controller;
 
 class HikeController extends Controller
 {
@@ -305,6 +305,22 @@ class HikeController extends Controller
     public function postSuggest(Request $request)
     {
         # VALIDATION
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:160',
+            'address' => 'required|max:160',
+            'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
+            'distance' => 'required|numeric',
+            'description' => 'max:300',
+            'web' => 'url'
+        ]);
+
+        // handle failure
+        if ($validator->fails()) {
+            return redirect('suggest')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+        /****
         $this->validate($request, [
             'name' => 'required|max:160',
             'address' => 'required|max:160',
@@ -313,6 +329,7 @@ class HikeController extends Controller
             'description' => 'max:300',
             'web' => 'url'
         ]);
+        ****/
 
         $data = array(
             'request' => $request
@@ -341,7 +358,7 @@ class HikeController extends Controller
         # VALIDATION
         $this->validate($request, [
             'wrongs' => 'array',
-            'correction' => 'required|max:300'
+            'correction' => 'required|max:500'
         ]);
 
         $data = array(
