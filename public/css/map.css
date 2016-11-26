@@ -50,6 +50,7 @@ ul#hike-list li > .thumbnail {
   text-decoration: none;
 }
 @media only screen and (min-width: 496px) {
+	/**
 	.thumbnail {
 		overflow:hidden;
 	  	position: relative;
@@ -65,18 +66,19 @@ ul#hike-list li > .thumbnail {
 			rgba(255,255,255, 0) 90%
 		);
 		pointer-events: none; 
-	}
+	} **/
 	ul#hike-list li{
 		display: inline;
 		width: 50%;
 		float: left;
 		padding: 0.5em;
 	}
+	/***
 	ul#hike-list li > .thumbnail {
 		height: 375px;
 		padding: 1.1em;
 		overflow: hidden;
-	}
+	} **/
 }
 @media only screen and (min-width: 768px) {
 	#find-nearest {

@@ -92,6 +92,8 @@
       $('#popover').popover();
   });
   </script>
+  <!-- equalize divs -->
+  <script src="/js/equalize.js"></script>
   <!-- Google Map find nearest hike code -->
   <script src="/js/map.js"></script>
   <script src="/js/haversine.js"></script>
