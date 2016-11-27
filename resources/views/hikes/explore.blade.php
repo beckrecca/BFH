@@ -153,8 +153,9 @@
                 @endforeach
                 <br/>
               <span>Closest MBTA Lines:</span>
+              <?php $linesCount = count($lines); $i = 0; ?>
               @foreach ($lines as $line)
-                <a href="lines/{{ $line->id }}">@if ($line->service == "bus") Bus @endif {{ $line->name }} @if ($line->service == "subway") Line @elseif ($line->service == "commuter rail") Commuter Rail Line @endif </a> <span class="glyphicon glyphicon-tree-conifer"></span>
+                <a href="lines/{{ $line->id }}">@if ($line->service == "bus") Bus @endif {{ $line->name }} @if ($line->service == "subway") Line @elseif ($line->service == "commuter rail") Commuter Rail Line @endif</a> @if (++$i !== $linesCount) <span class="glyphicon glyphicon-map-marker"></span> @endif
               @endforeach
             </div>
           </li>
