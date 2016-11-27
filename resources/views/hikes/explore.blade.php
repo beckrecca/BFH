@@ -228,59 +228,37 @@
       var activeId = $(".active").attr("id");
       // if user clicked "next"
       if ($(this).attr("id") == "next") {
-        // if the first page is active
-        if (activeId == "1" && $("#2").length) {
-          // deactivate first page button
-          $("#1").removeClass("active");
-          // toggle first page visibility
-          $(".page1").toggle();
-          // activate second page button
-          $("#2").addClass("active");
-          // toggle second page visibility
-          $(".page2").toggle();
-        }
-        // if the second page is active
-        if (activeId == "2" && $("#3").length) {
-          // deactivate second page button
-          $("#2").removeClass("active");
-          // toggle second page visibility
-          $(".page2").toggle();
-          // activate third page button
-          $("#3").addClass("active");
-          // toggle third page visibility
-          $(".page3").toggle();
+        // if there is a next page
+        if ($("#" + (parseInt(activeId) + 1)).length) {
+          // deactivate the current page button
+          $("#" + activeId).removeClass("active");
+          // make current page invisible
+          $(".page" + activeId).toggle();
+          // activate next page button
+          $("#" + (parseInt(activeId) + 1)).addClass("active");
+          // make next page hidden
+          $(".page" + (parseInt(activeId) + 1)).toggle();
         }
       }
       // if user clicked "previous"
       else if ($(this).attr("id") == "prev") {
-        // if the second page is active
-        if (activeId == "2") {
-          // deactivate second page button
-          $("#2").removeClass("active");
-          // toggle second page visibility
-          $(".page2").toggle();
-          // activate first page button
-          $("#1").addClass("active");
-          // toggle first page visibility
-          $(".page1").toggle();
-        }
-        // if the third page is active
-        if (activeId == "3") {
-          // deactivate third page button
-          $("#3").removeClass("active");
-          // toggle third page visibility
-          $(".page3").toggle();
-          // activate second page button
-          $("#2").addClass("active");
-          // toggle second page visibility
-          $(".page2").toggle();
+        // if the current page is not the first one
+        if (activeId > 1) {
+          // deactivate current page button
+          $("#" + activeId).removeClass("active");
+          // make current page invisible
+          $(".page" + activeId).toggle();
+          // activate previous page button
+          $("#" + (parseInt(activeId) - 1)).addClass("active");
+          // make previous page visible
+          $(".page" + (parseInt(activeId) - 1)).toggle();
         }
       }
       togglePageTurns();
     });
     function togglePageTurns() {
       // If the first page is not the active page,
-      if ($(".active").attr("id") != "first") {
+      if ($(".active").attr("id") != "1") {
         // the previous button is enabled
         $("#prev").removeClass("disabled").html('<a href="#prev" rel="prev">&laquo;</a>');
       }
@@ -288,8 +266,8 @@
         // otherwise, it is disabled
         $("#prev").addClass("disabled").html('<span>&laquo;</span>');
       }
-      // if the third page or second and last possible page is active
-      if ($(".active").attr("id") == "third" || ($(".active").attr("id") == "second") <?php if (isset($count)) {if ($count < 21) echo("&& true"); else echo("&& false");} ?> ) {
+      // if this is the last page
+      if ($(".active").attr("id") == <?php if (isset($count)) echo(floor($count/10) + 1); else echo("0"); ?> ) {
         // the next button is disabled
         $("#next").addClass("disabled").html('<span>&raquo;</span>');
       }
