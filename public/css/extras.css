@@ -15,6 +15,9 @@
 h1 {
 	margin-left: 0.5em;
 }
+.selfportrait {
+    margin: 1em;
+}
 span {
 	font-weight: bold;
 }
