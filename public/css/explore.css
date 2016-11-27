@@ -62,6 +62,6 @@ ul#explore > li {
 	border-radius: 0.5em;
 	padding: 1em 0em 1em 0em;
 }
-.secondPage, .thirdPage {
+.page2, .page3 {
 	display: none;
 }

@@ -116,16 +116,27 @@
     @if (isset($hikes))
       <ul id="explore">
         <h2> @if (isset($count)) {{ $count }} Results @endif </h2>
-        @if (isset($count)) @if ($count > 0) <h3 class="firstPage">Showing 1-{{ count($hikes->forPage(1,10))}} @else No results found. @endif</h3> @endif
-        <!-- FIRST TEN RESULTS -->
-        @foreach ($hikes->forPage(1,10) as $hike)
+        @if (isset($count)) 
+          @if ($count > 0) 
+           <?php 
+            $pages = ($count/10); 
+           ?>
+           @for ($i = 0; $i < $pages; $i++)
+          <h3 class="page{{$i + 1}}">Showing {{ 1 + (10*$i)}}-{{ (10*$i) + count($hikes->forPage(($i+1),10)) }} </h3>  
+           @endfor
+            @else <h3>No results found.</h3>
+          @endif
+        @endif
+        <!-- RESULTS -->
+        <?php $n = 0; ?>
+        @foreach ($hikes as $hike)
         <?php 
           # grab the tags for this hike
           $single_hikes_tags = $hike->tags->sortBy('name');
           # grab the lines for this hike
           $lines = \App\Line::byHikes($hike->id)->sortBy('name');
         ?>
-          <li class="firstPage thumbnail row">
+          <li class="page{{ floor($n/10) + 1 }} thumbnail row">
             <div class="col-sm-12">
               <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
             </div>
@@ -147,86 +158,16 @@
               @endforeach
             </div>
           </li>
+          <?php $n++; ?>
         @endforeach
-        @if (isset($count)) 
-        <!-- PAGINATION OF POSTED RESULTS -->
-        <!-- NEXT TEN RESULTS -->
-          @if ($count > 10)
-          <h3 class="secondPage">Showing 11-{{ 10 + count($hikes->forPage(2,10))}}</h3> 
-            @foreach ($hikes->forPage(2,10) as $hike)
-            <?php 
-              # grab the tags for this hike
-              $single_hikes_tags = $hike->tags->sortBy('name');
-              # grab the lines for this hike
-              $lines = \App\Line::byHikes($hike->id)->sortBy('name');
-            ?>
-              <li class="secondPage thumbnail row">
-                <div class="col-sm-12">
-                  <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
-                </div>
-                <div class="col-sm-4">
-                <?php $img = $hike->images->random() ?>
-                  <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" class="thumbnail" alt="{{ $img->alt }}" width="170px" /></a>
-                </div>
-                <div class="col-sm-8">
-                  <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
-                  <span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}">{{ $hike->climb }}</a><br />
-                  <span>Features:</span> 
-                    @foreach ($single_hikes_tags as $list_tag)
-                    <a href="/tags/{{ $list_tag->id }}">{{ $list_tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
-                    @endforeach
-                    <br/>
-                  <span>Closest MBTA Lines:</span>
-                  @foreach ($lines as $line)
-                    <a href="lines/{{ $line->id }}">@if ($line->service == "bus") Bus @endif {{ $line->name }} @if ($line->service == "subway") Line @elseif ($line->service == "commuter rail") Commuter Rail Line @endif </a> <span class="glyphicon glyphicon-tree-conifer"></span>
-                  @endforeach
-                </div>
-              </li>
-            @endforeach
-          @endif
-          <!-- NEXT TEN RESULTS -->
-          @if ($count > 20)
-          <h3 class="thirdPage">Showing 21-{{ 20 + count($hikes->forPage(3,10))}}</h3> 
-            @foreach ($hikes->forPage(3,10) as $hike)
-            <?php 
-              # grab the tags for this hike
-              $single_hikes_tags = $hike->tags->sortBy('name');
-              # grab the lines for this hike
-              $lines = \App\Line::byHikes($hike->id)->sortBy('name');
-            ?>
-              <li class="thirdPage thumbnail row">
-                <div class="col-sm-12">
-                  <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
-                </div>
-                <div class="col-sm-4">
-                <?php $img = $hike->images->random() ?>
-                  <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" class="thumbnail" alt="{{ $img->alt }}" width="170px" /></a>
-                </div>
-                <div class="col-sm-8">
-                  <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
-                  <span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}">{{ $hike->climb }}</a><br />
-                  <span>Features:</span> 
-                    @foreach ($single_hikes_tags as $list_tag)
-                    <a href="/tags/{{ $list_tag->id }}">{{ $list_tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
-                    @endforeach
-                    <br/>
-                  <span>Closest MBTA Lines:</span>
-                  @foreach ($lines as $line)
-                    <a href="lines/{{ $line->id }}">@if ($line->service == "bus") Bus @endif {{ $line->name }} @if ($line->service == "subway") Line @elseif ($line->service == "commuter rail") Commuter Rail Line @endif </a> <span class="glyphicon glyphicon-tree-conifer"></span>
-                  @endforeach
-                </div>
-              </li>
-            @endforeach
-          @endif
-        @endif
       </ul>
       @if (isset($count))
       <!-- PAGINATION LINKS FOR POSTED COLLECTION RESULTS -->
       <ul class="pagination">
         <li id="prev" class="pageTurn disabled"><span>&laquo;</span></li> 
-        <li id="first" class="pageNum active"><a href="#prev">1</a></li>
-        @if ($count > 10) <li id="second" class="pageNum"><a href="#prev">2</a></li> @endif
-        @if ($count > 20) <li id="third" class="pageNum"><a href="#prev">3</a></li> @endif
+        <li id="1" class="pageNum active"><a href="#prev">1</a></li>
+        @if ($count > 10) <li id="2" class="pageNum"><a href="#prev">2</a></li> @endif
+        @if ($count > 20) <li id="3" class="pageNum"><a href="#prev">3</a></li> @endif
         @if ($count > 10) <li id="next" class="pageTurn"><a href="#prev" rel="next">&raquo;</a></li>
         @else <li id="next" class="pageTurn disabled"><span>&raquo;</span></li> @endif
       </ul>
@@ -272,11 +213,11 @@
       // Get the ID of the active page
       var activeId = $(".active").attr("id");
       // Toggle the visibility of the active page
-      $("." + activeId + "Page").toggle();
+      $(".page" + activeId).toggle();
       // Remove active class from active page list item
       $("#" + activeId).removeClass("active");
       // Toggle the visibility of the selected page
-      $("." + selectedId + "Page").toggle();
+      $(".page" + selectedId).toggle();
       // Add active class to the selected list item
       $("#" + selectedId).addClass("active");
       togglePageTurns();
@@ -288,51 +229,51 @@
       // if user clicked "next"
       if ($(this).attr("id") == "next") {
         // if the first page is active
-        if (activeId == "first" && $("#second").length) {
+        if (activeId == "1" && $("#2").length) {
           // deactivate first page button
-          $("#first").removeClass("active");
+          $("#1").removeClass("active");
           // toggle first page visibility
-          $(".firstPage").toggle();
+          $(".page1").toggle();
           // activate second page button
-          $("#second").addClass("active");
+          $("#2").addClass("active");
           // toggle second page visibility
-          $(".secondPage").toggle();
+          $(".page2").toggle();
         }
         // if the second page is active
-        if (activeId == "second" && $("#third").length) {
+        if (activeId == "2" && $("#3").length) {
           // deactivate second page button
-          $("#second").removeClass("active");
+          $("#2").removeClass("active");
           // toggle second page visibility
-          $(".secondPage").toggle();
+          $(".page2").toggle();
           // activate third page button
-          $("#third").addClass("active");
+          $("#3").addClass("active");
           // toggle third page visibility
-          $(".thirdPage").toggle();
+          $(".page3").toggle();
         }
       }
       // if user clicked "previous"
       else if ($(this).attr("id") == "prev") {
         // if the second page is active
-        if (activeId == "second") {
+        if (activeId == "2") {
           // deactivate second page button
-          $("#second").removeClass("active");
+          $("#2").removeClass("active");
           // toggle second page visibility
-          $(".secondPage").toggle();
+          $(".page2").toggle();
           // activate first page button
-          $("#first").addClass("active");
+          $("#1").addClass("active");
           // toggle first page visibility
-          $(".firstPage").toggle();
+          $(".page1").toggle();
         }
         // if the third page is active
-        if (activeId == "third") {
+        if (activeId == "3") {
           // deactivate third page button
-          $("#third").removeClass("active");
+          $("#3").removeClass("active");
           // toggle third page visibility
-          $(".thirdPage").toggle();
+          $(".page3").toggle();
           // activate second page button
-          $("#second").addClass("active");
+          $("#2").addClass("active");
           // toggle second page visibility
-          $(".secondPage").toggle();
+          $(".page2").toggle();
         }
       }
       togglePageTurns();
