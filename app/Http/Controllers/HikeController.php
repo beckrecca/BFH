@@ -310,8 +310,7 @@ class HikeController extends Controller
             'address' => 'required|max:160',
             'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
             'distance' => 'required|numeric',
-            'description' => 'max:300',
-            'web' => 'url'
+            'description' => 'max:300'
         ]);
 
         // handle failure
@@ -320,16 +319,6 @@ class HikeController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         }
-        /****
-        $this->validate($request, [
-            'name' => 'required|max:160',
-            'address' => 'required|max:160',
-            'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
-            'distance' => 'required|numeric',
-            'description' => 'max:300',
-            'web' => 'url'
-        ]);
-        ****/
 
         $data = array(
             'request' => $request

@@ -98,7 +98,7 @@
               <div class="col-sm-10">
                 @if (isset($hikes))
                 <?php $hikes = $hikes->sortBy('name'); ?>
-                <select id="name" name="name" class="form-control">
+                <select id="correctName" name="correctName" class="form-control">
                   @foreach ($hikes as $hike)
                     <option value="{{ $hike->name }}">{{ $hike->name }}</option>
                   @endforeach
