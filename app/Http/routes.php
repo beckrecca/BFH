@@ -11,6 +11,11 @@
 |
 */
 
+/** GRADING **/
+Route::get('/rubric', function() {
+    return view('grading');
+});
+
 /** MAIN MAP **/
 Route::get('/', 'HikeController@map');
 Route::get('/map', 'HikeController@map');
@@ -29,16 +34,12 @@ Route::get('suggest', 'HikeController@suggest');
 Route::post('suggest', 'HikeController@postSuggest');
 Route::post('correct', 'HikeController@postCorrect');
 
-/** IMAGES **/
-//Route::get('hikes/{path_name}/images', 'ImageController@View');
-
 /** LINES **/
 Route::get('lines/{id}', 'LineController@view');
 Route::get('service/{name}', 'LineController@service');
 
 /** TAGS **/
 Route::get('tags/{id}', 'TagController@view');
-//Route::get('tags', 'TagController@all');
 
 /** EXTRAS **/
 Route::get('disclaimer', function() {
