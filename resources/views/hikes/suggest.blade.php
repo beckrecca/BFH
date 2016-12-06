@@ -106,7 +106,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="wrong[]" class="col-sm-2 control-label">What's Wrong?</label>
+              <label class="col-sm-2 control-label">What's Wrong?</label>
               <div class="col-sm-10">
                 <ul id="selectWrong">
                   <li><input type="checkbox" name="wrong[]" id="location-name" value="Location Name"> <label for="location-name" class="control-label">Location Name</label></li>
