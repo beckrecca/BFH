@@ -26,7 +26,7 @@
       </div>
       <div class="row hidden-xs visible-sm visible-md visible-lg" id="gallery">
         @foreach ($images as $image)
-          <a rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" height="96px" alt="{{ $hike->alt}}"/></a>
+          <a rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" height="96px" alt="{{ $image->alt}}"/></a>
         @endforeach
       </div>
       <div class="row" id="description">
