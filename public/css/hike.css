@@ -33,9 +33,6 @@
   padding: 1em;
   width: 100%;
 }
-#directionsTitle {
-  display: hidden;
-}
 #directions-form, #hike-info {
   background-color: #fff;
   border: 1px solid #ddd;
