@@ -11,11 +11,6 @@
 |
 */
 
-/** GRADING **/
-Route::get('/rubric', function() {
-    return view('grading');
-});
-
 /** MAIN MAP **/
 Route::get('/', 'HikeController@map');
 Route::get('/map', 'HikeController@map');
