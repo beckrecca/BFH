@@ -26,7 +26,7 @@
       </div>
       <div class="row hidden-xs visible-sm visible-md visible-lg" id="gallery">
         @foreach ($images as $image)
-          <a rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" height="96px" alt="{{ $image->alt}}"/></a>
+          <a data-rel="gallery" href="/img/hikes/{{ $hike->path_name }}/{{ $hike->path_name }}{{ $image->file }}" class="swipebox" title="{{ $image->title }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $image->file }}" height="96" alt="{{ $image->alt}}"/></a>
         @endforeach
       </div>
       <div class="row" id="description">
@@ -194,7 +194,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
       async defer></script>
     <!-- directions panel styling -->
-    <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/ >
+    <link rel="stylesheet" type="text/css" href="/css/directionspanel.css"/>
     <!-- GOOGLE MAPS API -->
     <!-- handle Google Maps error -->
     <script>

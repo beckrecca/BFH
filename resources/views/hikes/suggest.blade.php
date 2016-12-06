@@ -28,11 +28,10 @@
     @endif
     </div>
     <h1>Have We Missed Anything?</h1>
-    <div>
       <!-- Nav tabs -->
       <ul class="nav nav-tabs" role="tablist">
         <li role="presentation" class="active"><a href="#suggest" aria-controls="suggest" role="tab" data-toggle="tab">Suggest a Hike</a></li>
-        <li role="presentation"><a href="#correct" aria-controls="profile" role="tab" data-toggle="tab">Correct Our Mistake</a></li>
+        <li role="presentation"><a href="#correct" aria-controls="correct" role="tab" data-toggle="tab">Correct Our Mistake</a></li>
       </ul>
       <div class="tab-content">
         <!-- SUGGESTION FORM -->
@@ -52,7 +51,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="climb" class="col-sm-2 control-label" />Difficulty of Climb</label>
+              <label for="difficulty" class="col-sm-2 control-label">Difficulty of Climb</label>
               <div class="col-sm-10">
                 <select id="difficulty" name="difficulty" class="form-control">
                   <option value="flat" @if (old('difficulty') == "flat") selected @endif >Flat</option>
@@ -110,8 +109,8 @@
               <label for="wrong[]" class="col-sm-2 control-label">What's Wrong?</label>
               <div class="col-sm-10">
                 <ul id="selectWrong">
-                  <li><input type="checkbox" name="wrong[]" id="Location Name" value="Location Name"> <label for="Location Name" class="control-label">Location Name</label></li>
-                  <li><input type="checkbox" name="wrong[]" id="Entrance Marker Address" value="Location Name"> <label for="Entrance Marker Address" class="control-label">Entrance Marker Address</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="location-name" value="Location Name"> <label for="location-name" class="control-label">Location Name</label></li>
+                  <li><input type="checkbox" name="wrong[]" id="entrance-marker-address" value="Location Name"> <label for="entrance-marker-address" class="control-label">Entrance Marker Address</label></li>
                   <li><input type="checkbox" name="wrong[]" id="Climb" value="Climb"> <label for="Climb" class="control-label">Difficulty of Climb</label></li>
                   <li><input type="checkbox" name="wrong[]" id="Distance" value="Distance"> <label for="Distance" class="control-label">Distance to MBTA</label></li>
                   <li><input type="checkbox" name="wrong[]" id="Description" value="Description"> <label for="Description" class="control-label">Description</label></li>

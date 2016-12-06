@@ -26,7 +26,7 @@
         <option value="15">Within 15 miles</option>
       </select>
       <div id="climb">
-        <label for="climb">Climb:</label> 
+        <label>Climb:</label> 
         <label for="flat"><input type="checkbox" name="climb" id="flat" value="flat" class="checkboxTrigger" /> Flat</label>
         <label for="easy"><input type="checkbox" name="climb" id="easy" value="easy"  class="checkboxTrigger" /> Easy</label>
         <label for="moderate"><input type="checkbox" name="climb" id="moderate" value="moderate"  class="checkboxTrigger" /> Moderate</label>
@@ -51,7 +51,7 @@
         <div class="thumbnail">
           <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
           <?php $img = $hike->images->random() ?>
-          <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" alt="{{ $img->alt }}" width="170px" /></a>
+          <a href="/hikes/{{ $hike->path_name }}"><img src="/img/hikes/{{ $hike->path_name}}/thumbnails/{{ $hike->path_name}}{{ $img->file}}" alt="{{ $img->alt }}" width="170" /></a>
           <p>
             <span>Description:</span> {{ substr($hike->description, 0, strpos($hike->description, ".")) }}.... <br />
             <span>Climb:</span> <a href="/hikes/climb/{{ $hike->climb }}">{{ $hike->climb }}</a><br />
