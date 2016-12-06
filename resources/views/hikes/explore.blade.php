@@ -74,7 +74,7 @@
               <label for="features"><a href="#" id="features" class="btn btn-notice toggle"><span id="features-down" class="glyphicon glyphicon-chevron-down"></span><span id="features-up" class="glyphicon glyphicon-chevron-up"></span> Features</a> </label>
               <ul class="tags-input-list" id="features-input">
                 @foreach ($features as $feature)
-                <li><label for="{{ $feature->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $feature->name }}" value="{{ $feature->name }}" @if (isset($checked)) @if (in_array($feature->name, $checked)) checked @endif @endif /> {{ ucfirst($feature->name)}}</label></li>
+                <li><label for="{{ str_replace(' ', '', $feature->name) }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ str_replace(' ', '', $feature->name) }}" value="{{ $feature->name }}" @if (isset($checked)) @if (in_array($feature->name, $checked)) checked @endif @endif /> {{ ucfirst($feature->name)}}</label></li>
                 @endforeach
               </ul>
             @endif
@@ -84,7 +84,7 @@
               <label for="activities"><a href="#" id="activities" class="btn btn-notice toggle"><span id="activities-down" class="glyphicon glyphicon-chevron-down"></span><span id="activities-up" class="glyphicon glyphicon-chevron-up"></span> Activities</a> </label>
               <ul class="tags-input-list" id="activities-input">
                 @foreach ($activities as $activity)
-                <li><label for="{{ $activity->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $activity->name }}" value="{{ $activity->name }}" @if (isset($checked)) @if (in_array($activity->name, $checked)) checked @endif @endif /> {{ ucfirst($activity->name)}}</label></li>
+                <li><label for="{{ str_replace(' ', '', $activity->name) }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ str_replace(' ', '', $activity->name) }}" value="{{ $activity->name }}" @if (isset($checked)) @if (in_array($activity->name, $checked)) checked @endif @endif /> {{ ucfirst($activity->name)}}</label></li>
                 @endforeach
               </ul>
             @endif
@@ -94,7 +94,7 @@
               <label for="facilities"><a href="#" id="facilities" class="btn btn-notice toggle"><span id="facilities-down" class="glyphicon glyphicon-chevron-down"></span><span id="facilities-up" class="glyphicon glyphicon-chevron-up"></span> Facilities</a> </label>
               <ul class="tags-input-list" id="facilities-input">
                 @foreach ($facilities as $facility)
-                <li><label for="{{ $facility->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $facility->name }}" value="{{ $facility->name }}" @if (isset($checked)) @if (in_array($facility->name, $checked)) checked @endif @endif /> {{ ucfirst($facility->name)}}</label></li>
+                <li><label for="{{ str_replace(' ', '', $facility->name) }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ str_replace(' ', '', $facility->name) }}" value="{{ $facility->name }}" @if (isset($checked)) @if (in_array($facility->name, $checked)) checked @endif @endif /> {{ ucfirst($facility->name)}}</label></li>
                 @endforeach
               </ul>
             @endif
@@ -104,7 +104,7 @@
               <label for="scenery"><a href="#" id="scenery" class="btn btn-notice toggle"><span id="scenery-down" class="glyphicon glyphicon-chevron-down"></span><span id="scenery-up" class="glyphicon glyphicon-chevron-up"></span> Scenery</a> </label>
               <ul class="tags-input-list" id="scenery-input">
                 @foreach ($sceneries as $scenery)
-                <li><label for="{{ $scenery->name }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ $scenery->name }}" value="{{ $scenery->name }}" @if (isset($checked)) @if (in_array($scenery->name, $checked)) checked @endif @endif /> {{ ucfirst($scenery->name)}}</label></li>
+                <li><label for="{{ str_replace(' ', '', $scenery->name) }}"><input class="trigger" type="checkbox" name="tags[]" id="{{ str_replace(' ', '', $scenery->name) }}" value="{{ $scenery->name }}" @if (isset($checked)) @if (in_array($scenery->name, $checked)) checked @endif @endif /> {{ ucfirst($scenery->name)}}</label></li>
                 @endforeach
               </ul>
             @endif
