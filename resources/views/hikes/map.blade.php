@@ -35,7 +35,7 @@
       <div>
         <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible by public subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
         <select id="distance" class="form-control dropdownTrigger" name="distance">
-          <option></option>
+          <option label="distance">Distance</option>
           <option value="0.25">&lt; .25 mi </option>
           <option value="0.5">&lt; .5 mi </option>
           <option value="1">&lt; 1 mi </option>

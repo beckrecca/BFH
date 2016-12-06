@@ -48,8 +48,8 @@
           <div class="form-group">
             <label id="distance-label" for="distance">Distance to closest <a href="#" id="mbta" rel="popover" data-content="All of these hiking locations are accessible by public subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a> station/stop: </label> 
             <select class="dropdownTrigger" id="distance" class="form-control" name="distance">
-              <option value="2"></option>
-              <option value="0.25" @if (isset($selected)) @if ($selected == 0.25) selected @endif @endif) >within .25 mi </option>
+              <option value="2">Distance</option>
+              <option value="0.25" @if (isset($selected)) @if ($selected == 0.25) selected @endif @endif >within .25 mi </option>
               <option value="0.5" @if (isset($selected)) @if ($selected == 0.5) selected @endif @endif>within .5 mi </option>
               <option value="1" @if (isset($selected)) @if ($selected == 1) selected @endif @endif>within 1 mi </option>
             </select>
@@ -57,14 +57,14 @@
           <div class="form-group">
             <label for="service">Service(s) Nearby: </label>
             <label for="bus"><input class="trigger" type="checkbox" name="services[]" id="bus" value="bus" @if (isset($checked)) @if (in_array("bus", $checked)) checked @endif @endif /> Bus</label>
-            <label for="commuter rail"><input class="trigger" type="checkbox" name="services[]" id="commuter rail" value="commuter rail" @if (isset($checked)) @if (in_array("commuter rail", $checked)) checked @endif @endif /> Commuter Rail</label>
+            <label for="commuterrail"><input class="trigger" type="checkbox" name="services[]" id="commuterrail" value="commuter rail" @if (isset($checked)) @if (in_array("commuter rail", $checked)) checked @endif @endif /> Commuter Rail</label>
             <label for="subway"><input class="trigger" type="checkbox" name="services[]" id="subway" value="subway" @if (isset($checked)) @if (in_array("subway", $checked)) checked @endif @endif /> Subway</label>
           </div>
           <div class="form-group">
             @if (isset($sizes))
               <label for="size" class="control-label">Size: </label>
               @foreach ($sizes as $size)
-                <label for="{{ $size->name }}"><input class="trigger" type="radio" name="tags[]" id="{{ $size->name }}" value="{{ $size->name }}" />{{ ucfirst($size->name)}}</label>
+                <label for="{{ substr($size->name, 0, strpos($size->name, " ")) }}"><input class="trigger" type="radio" name="tags[]" id="{{ substr($size->name, 0, strpos($size->name, " ")) }}" value="{{ $size->name }}" />{{ ucfirst($size->name)}}</label>
               @endforeach
             @endif
           </div>
@@ -118,6 +118,7 @@
       <div class="col-lg-7">
         <!-- RESULTS LIST -->
         @if (isset($hikes))
+          <ul id="explore">
             <h2 id="results"> @if (isset($count)) {{ $count }} Results @endif </h2>
             @if (isset($count)) 
               @if ($count > 0) 
@@ -139,7 +140,6 @@
               # grab the lines for this hike
               $lines = \App\Line::byHikes($hike->id)->sortBy('name');
             ?>
-          <ul id="explore">
               <li class="page{{ floor($n/10) + 1 }} thumbnail row">
                 <div class="col-sm-12">
                   <h2><a href="/hikes/{{ $hike->path_name }}">{{ $hike->name }}</a></h2>
