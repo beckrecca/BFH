@@ -58,7 +58,7 @@
           <li><a href="/disclaimer">Disclaimer</a></li>
           <li><a href="http://www.mbta.com">MBTA</a></li>
         </ul>
-        <div class="clearfix">
+        <div class="clearfix"></div>
       </footer>
        <!-- Bootstrap -->
        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
