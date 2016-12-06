@@ -33,7 +33,7 @@
         <label for="intense"><input type="checkbox" name="climb" id="intense" value="intense"  class="checkboxTrigger" /> Intense</label> 
       </div>
       <div>
-        <label for="distance">Distance to <a href="#" id="popover" rel="popover" data-content="All of these hiking locations are accessible by public subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
+        <label for="distance">Distance to <a href="#" id="popover" data-rel="popover" data-content="All of these hiking locations are accessible by public subway, bus, or commuter rail." data-original-title="Massachusetts Bay Transportation Authority" data-trigger="hover">MBTA</a>: </label>
         <select id="distance" class="form-control dropdownTrigger" name="distance">
           <option label="distance">Distance</option>
           <option value="0.25">&lt; .25 mi </option>
