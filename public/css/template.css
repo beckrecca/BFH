@@ -15,7 +15,6 @@ a:hover, a:active, a.active {
 body {
   background-color: #efefef;
   font-family: 'Lato', sans-serif;
-  font-size: 1.12;
 }
 #brand {
   float: left;
