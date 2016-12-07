@@ -57,7 +57,7 @@
             $index = 0;
             ?>
           @foreach ($markers as $marker)
-            <option value='{{ $index++ }}'>{{ $marker->name }}</option>
+            <option value='{{ $index++ }}' id="marker_{{ $marker->id }}">{{ $marker->name }}</option>
           @endforeach
           </select>
         </div>
@@ -138,12 +138,14 @@
    <script>
     var markerData = <?php echo json_encode($markers) ?>;
    </script>
-   <!-- directions panel code -->
-   <script src="/js/usercookie.js"></script>
-   <script src="/js/directions.js"></script>
    <!-- user address cookie -->
+   <script src="/js/usercookie.js"></script>
+   <!-- selected entrance cookie -->
+   <script src="/js/entrancecookie.js"></script>
+   <!-- directions panel code -->
+   <script src="/js/directions.js"></script>
    <script>
-      // get the address
+      // get the address cookie
       var address = readAddress();
       // if there is an address cookie
       if (address != null) {

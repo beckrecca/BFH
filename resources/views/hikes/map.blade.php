@@ -99,8 +99,10 @@
   <script src="/js/haversine.js"></script>
   <!-- user address cookie -->
   <script src="/js/usercookie.js"></script>
+  <!-- entrance selected cookie -->
+  <script src="/js/entrancecookie.js"></script>
    <script>
-      // get the address
+      // get the address cookie
       var address = readAddress();
       // if there is an address cookie
       if (address != null) {

@@ -168,7 +168,9 @@ function createMultipleMarkers(markers, userPosition) {
       // set the icon to blue
       icon: '/img/markers/blue-dot.png',
       // set URL to view accompanying thumbnail
-      url: '#hike_' + (hike_id + 1)
+      url: '#hike_' + (hike_id + 1),
+      // set id
+      id: markers[i].id
     });
     // create a new info window
     var infoWindow = new google.maps.InfoWindow();
@@ -191,6 +193,8 @@ function createMultipleMarkers(markers, userPosition) {
         }
         // remember this marker as having just been clicked
         previousClick = this;
+        // remember this marker's id
+        setEntrance(this.id);
       }
     });
     // extend the boundaries of the map around this marker

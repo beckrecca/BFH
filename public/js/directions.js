@@ -116,6 +116,26 @@ function initMap() {
       }
     });
   }
+  // get the entrance cookie
+  var entrance = readEntrance();
+  // if there is an entrance cookie
+  if (entrance != null) {
+    // the entrance id
+    var id = "marker_" + entrance;
+    // if that entrance exists on this page
+    if ($("#" + id).length > 0) {
+      // iterate over each #end option
+      $("#end > option").each(function() {
+        // if there is a match
+        if (id === this.id) {
+          // set the #end select to this entrance
+          $("#end option[id='" + id + "']").attr("selected", "selected");
+          // set this entrance as selected
+          selected = $("#end").val();
+        }
+      });
+    }
+  }
   // If the user selects a different entrance,
   $('#end').change(function () {
     // display that marker's lines
