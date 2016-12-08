@@ -20,20 +20,20 @@
 
 @section('content')
   <div class="container" id="wrapper">
-    <h2>Search MBTA-Accessible Hikes</h2>
-    <div id="errors">
-    @if (isset($errors))
-      @if (count($errors) > 0)
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-      @endif
-    @endif
-    </div>
     <div class="row">
-      <div class="col-lg-5">
+      <div class="col-lg-6">
+        <h2>Search MBTA-Accessible Hikes</h2>
+        <div id="errors">
+        @if (isset($errors))
+          @if (count($errors) > 0)
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+          @endif
+        @endif
+        </div>
         <form class="form-horizontal" method="POST" action="/explore">
           {{ csrf_field() }}
           <div class="form-group" id="climb">
@@ -115,7 +115,7 @@
           </div>
         </form>
       </div>
-      <div class="col-lg-7">
+      <div class="col-lg-6">
         <!-- RESULTS LIST -->
         @if (isset($hikes))
           <ul id="explore">
@@ -168,12 +168,12 @@
           </ul>
           @if (isset($count))
           <!-- PAGINATION LINKS FOR POSTED COLLECTION RESULTS -->
-          <ul class="pagination">
+          <ul id="pagination" class="pagination">
             <li id="prev" class="pageTurn disabled"><span>&laquo;</span></li> 
-            <li id="1" class="pageNum active"><a href="#prev">1</a></li>
-            @if ($count > 10) <li id="2" class="pageNum"><a href="#prev">2</a></li> @endif
-            @if ($count > 20) <li id="3" class="pageNum"><a href="#prev">3</a></li> @endif
-            @if ($count > 10) <li id="next" class="pageTurn"><a href="#prev" rel="next">&raquo;</a></li>
+            <li id="1" class="pageNum active"><a href="#pagination">1</a></li>
+            @if ($count > 10) <li id="2" class="pageNum"><a href="#pagination">2</a></li> @endif
+            @if ($count > 20) <li id="3" class="pageNum"><a href="#pagination">3</a></li> @endif
+            @if ($count > 10) <li id="next" class="pageTurn"><a href="#next" rel="next">&raquo;</a></li>
             @else <li id="next" class="pageTurn disabled"><span>&raquo;</span></li> @endif
           </ul>
           @endif

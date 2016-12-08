@@ -19,7 +19,7 @@
       body {
         background: url('/img/backgrounds/bg{{ rand(1,10) }}.gif');
         background-attachment: fixed;
-        background-repeat: repeat-y;
+        background-repeat: repeat-x;
       }
     </style>
      <!-- JQuery -->
