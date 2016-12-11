@@ -1,7 +1,8 @@
 #banner {
 	background-color: #a8f7d6;
-	text-align: center;
+	display: none;
 	padding: 0.25em;
+	text-align: center;
 }
 #banner > p {
 	font-size: 1.3em;

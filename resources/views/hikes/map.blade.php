@@ -107,29 +107,48 @@
   <!-- entrance selected cookie -->
   <script src="/js/entrancecookie.js"></script>
    <script>
-      // get the address cookie
-      var address = readAddress();
-      // if there is an address cookie
-      if (address != null) {
-        // pre-fill it in the find nearest hike form
-        $('#user').val(address);
-      }
+      $(function () {
+        // get the address cookie
+        var address = readAddress();
+        // if there is an address cookie
+        if (address != null) {
+          // pre-fill it in the find nearest hike form
+          $('#user').val(address);
+        }
+      });
    </script>
   <!-- Google Maps Javascript API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfIWxFiTBaolXUvFobvatofTwGKuEYaKA&callback=initMap"
     async defer></script>
   <!-- info window styling -->
   <link rel="stylesheet" href="/css/infowindow.css" />
+  <!-- first page load cookie -->
+  <script src="/js/firstloadcookie.js"></script>
   <!-- handle Google Maps error -->
   <script>
     if (typeof initMap != 'function') {
       $('#errors').html("Something went wrong. Please refresh the page!");
     }
   </script>
-  <!-- Close greeting banner -->
+  <!-- Detect if this is the first page load -->
+  <script>
+    $(function () {
+      // get the load cookie
+      var load = readLoad();
+      console.log(load);
+      // if the page has not been loaded before
+      if (load == null) {
+        console.log("This page has not been loaded before");
+        // display the banner
+        $("#banner").fadeToggle();
+        setLoad();
+      }
+    });
+  </script>
+  <!-- Close the greeting banner -->
   <script>
     $("#close-banner").click(function () {
-      $("#banner").toggle();
+      $("#banner").toggle("slow");
       $("#mobile-message").css("top", "125px");
     });
   </script>
