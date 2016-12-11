@@ -143,6 +143,8 @@
         $("#banner").fadeToggle();
         setLoad();
       }
+      // otherwise, scooch the mobile message back up
+      else $("#mobile-message").css("top", "125px");
     });
   </script>
   <!-- Close the greeting banner -->
