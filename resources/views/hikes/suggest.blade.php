@@ -64,7 +64,7 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="distance" class="col-sm-2 control-label">Distance to MBTA (in miles)</label>
+              <label for="distance" class="col-sm-2 control-label">Distance to MBTA in miles (optional)</label>
               <div class="col-sm-10">
                 <input type="number" step="any" class="form-control" id="distance" name="distance" placeholder="Distance in miles" value="{{ old('distance') }}" />
               </div>

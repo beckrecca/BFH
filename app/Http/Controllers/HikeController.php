@@ -309,7 +309,7 @@ class HikeController extends Controller
             'name' => 'required|max:160',
             'address' => 'required|max:160',
             'difficulty' => 'required|in:flat,easy,easy-to-moderate,moderate,moderate-to-intense,intense',
-            'distance' => 'required|numeric',
+            'distance' => 'numeric',
             'description' => 'max:300'
         ]);
 
