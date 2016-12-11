@@ -130,7 +130,7 @@ function findResults() {
       // otherwise, let the user know
       else {
         // error message
-        $("#errors").html("Sorry, no results found.");
+        $("#errors").html("Sorry, no results found. Please change your search and try again!");
       }
     } else if (userAddress == "") {
       $("#errors").html("Please provide an address.");
