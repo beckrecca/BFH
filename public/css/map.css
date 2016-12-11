@@ -1,3 +1,16 @@
+#banner {
+	background-color: #a8f7d6;
+	text-align: center;
+	padding: 0.25em;
+}
+#banner > p {
+	font-size: 1.3em;
+}
+#close-banner {
+	position: absolute;
+	right: 10px;
+	top: 70px;
+}
 #features {
 	height: 5.5em;
 	padding: 0.25em;
@@ -19,7 +32,7 @@ label {
 	padding: 0.5em;
 	position: absolute;
 	left: 10px;
-	top: 105px;
+	top: 200px;
 	z-index: 1;
 }
 #mobile-message a:hover {

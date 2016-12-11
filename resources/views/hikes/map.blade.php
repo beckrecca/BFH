@@ -9,6 +9,11 @@
 @stop
 
 @section('content')
+  <div id="banner">
+    <span id="close-banner"><a href="#">X</a></span>
+    <h1>Do you live in Greater Boston?</h1>
+    <p>Would you like to get outdoors, but you don't own a car?</p>
+  </div>
   <div id="mobile-message" class="visible-xs hidden-sm hidden-md hidden-lg">
     <h2><a href="#find-nearest">Find a T-Accessible Hike Near You</a></h2>
   </div>
@@ -120,5 +125,12 @@
     if (typeof initMap != 'function') {
       $('#errors').html("Something went wrong. Please refresh the page!");
     }
+  </script>
+  <!-- Close greeting banner -->
+  <script>
+    $("#close-banner").click(function () {
+      $("#banner").toggle();
+      $("#mobile-message").css("top", "125px");
+    });
   </script>
 @stop
