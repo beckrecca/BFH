@@ -22,6 +22,7 @@ class CreateHikesTable extends Migration
             # level of difficulty
             $table->string('climb');
             $table->text('description');
+            $table->string('city');
             # URL
             $table->string('web');
 

@@ -2,7 +2,8 @@
    {
       "name":"Arnold Arboretum of Harvard University",
       "path_name":"arnold-arboretum",
-      "description":"A romantic haven, the Arnold Arboretum sustains gentle hills of varied gardens, vibrant trees, and scenic paths. It makes for a lovely stroll, especially in the spring time. The Bonsai collection catches the eye. Its highest point, Peters Hill, has a view of the city at 240 feet.",
+      "description":"A romantic haven, the Arnold Arboretum sustains gentle hills of varied gardens, vibrant trees, and scenic paths. It makes for a lovely stroll, especially in the spring time. The Bonsai collection stands out in particular. Its highest point, Peters Hill, has a view of the city at 240 feet.",
+      "city":"Boston",
       "climb":"easy-to-moderate",
       "web":"http://www.arboretum.harvard.edu/"
    },
@@ -10,6 +11,7 @@
       "name":"Blue Hills Reservation",
       "path_name":"blue-hills",
       "description":"Popular for a reason, Blue Hills offers hundreds of miles of trails. Panoramic views surround the tops of its eponymous hills where wild blueberries grow in mid-summer. The Trailside Museum has paved accessible trails as well as animal exhibitions. However, most of the trails are unpaved, and some are rather steep. Its highest point, Great Blue Hill, is 635 feet. As it spans 7000 acres, it is recommended that you download the map on the website, and pack some snacks.",
+      "city":"Milton",
       "climb":"intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/blue-hills-reservation.html"
    },
@@ -17,6 +19,7 @@
       "name":"Mass Audubon Boston Nature Center & Wildlife Sanctuary",
       "path_name":"boston-nature-center",
       "description":"Mass Audubon Boston Nature Center's simple trails pass by wetlands, fields, and community gardens. Its facilities feature family-friendly activities, exhibits and classrooms. Its Sensory Trail is notably accessible. All of its trails maintain an easy level.",
+      "city":"Boston",
       "climb":"flat",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/boston-nature-center"
    },
@@ -24,6 +27,7 @@
       "name":"Breakheart Reservation",
       "path_name":"breakheart",
       "description":"Heartbreakingly beautiful, Breakheart Reservation's trails extend over seven rocky hills. It surrounds two lakes, one of which provides a designated swimming area. While some trails are challenging, there are paths for all levels, including a paved bike path. Its highest point is Castle Rock, 280 feet.",
+      "city":"Saugus",
       "climb":"moderate-to-intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-north/breakheart-reservation.html"
    },
@@ -31,6 +35,7 @@
       "name":"Brookline Reservoir",
       "path_name":"brookline-reservoir",
       "description":"Historically Boston's drinking water supply, the Brookline Reservoir makes a short and sweet loop for walkers and joggers. The tiny Reservoir also gives visitors a fishing spot. Its architecturally significant Gatehouse supports some of the oldest wrought iron structures in the US.",
+      "city":"Brookline",
       "climb":"flat",
       "web":"http://www.brooklinema.gov/Facilities/Facility/Details/Brookline-Reservoir-Park-81"
    },
@@ -38,6 +43,7 @@
       "name":"Charles River Park Reservation",
       "path_name":"charles-river",
       "description":"Twenty miles long, the Charles River Park Reservation maintains bike paths, pedestrian paths, playgrounds, athletic fields, and some of the best views of Boston and Cambridge. It is mostly flat, with extensively paved paths. The Dr. Paul Dudley Bike path makes an 18-mile loop from Science Park to Watertown Square. Concerts and public events often take place at the Hatch Shell.",
+      "city":"Boston and Cambridge",
       "climb":"easy",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/charles-river-reservation.html"
    },
@@ -45,6 +51,7 @@
       "name":"Chestnut Hill Reservoir",
       "path_name":"chestnut-hill-reservoir",
       "description":"On either side of the Chestnut Hill Reservoir, views of the city and Boston College stand on the horizon. Brief wooded trails augment the main path around the reservoir where waterfowl reside. The main path is flat, popular with walkers and joggers. Adjacent to the Reservoir stands Reilly Memorial Recreation Center, with a swimming pool and ice rink.",
+      "city":"Boston",
       "climb":"flat",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/chestnut-hill-reservation.html"
    },
@@ -52,6 +59,7 @@
       "name":"Emerald Necklace Conservancy",
       "path_name":"emerald-necklace",
       "description":"The Emerald Necklace lays a string of parks from Back Bay through Jamaica Plain, its jewels a wide variety of recreational activities. It is a historic park system designed by landscape architect Frederick Law Olmstead, creating a welcoming green space in an urban setting. Its paths are mostly flat.",
+      "city":"Boston",
       "climb":"easy",
       "web":"http://www.emeraldnecklace.org/park-overview/"
    },
@@ -59,6 +67,7 @@
       "name":"Forest Hills Cemetery",
       "path_name":"forest-hills",
       "description":"The sculptures and gardens of Forest Hills Cemetery create a restful yet visually stimulating escape from the city. Though some hills lie throughout the Cemetery, its paths are extensively paved and mostly flat. Local joggers frequent this favorite sanctuary. American poet e.e. cummings is buried here.",
+      "city":"Boston",
       "climb":"easy",
       "web":"http://www.foresthillscemetery.com/"
    },
@@ -66,6 +75,7 @@
       "name":"Fresh Pond",
       "path_name":"fresh-pond",
       "description":"A two and a half mile wooded path surrounds Fresh Pond, Cambridge's source of drinking water. There are a few hills, but it is mostly flat. Its paths often run busy with joggers, walkers, dog owners, and bike riders. Well-behaved, well-attended dogs with Cambridge licenses are permitted off-leash.",
+      "city":"Cambridge",
       "climb":"easy",
       "web":"https://www.cambridgema.gov/Water/freshpondreservation"
    },
@@ -73,6 +83,7 @@
       "name":"Hammond Pond Park/Webster Conservation",
       "path_name":"hammond-webster",
       "description":"Sprinkled with lilies, Hammond Pond lies adjacent to the wooded trails of Webster Conservation Area. The latter features fascinating geological formations of Roxbury puddingstone and woodland Houghton Garden. With few hills, its inclines are not particularly steep.",
+      "city":"Newton",
       "climb":"easy-to-moderate",
       "web":"http://www.newtonconservators.org/18webster.htm"
    },
@@ -80,6 +91,7 @@
       "name":"Hemlock Gorge Reservation",
       "path_name":"hemlock-gorge",
       "description":"Tucked in between suburban Newton and Needham, tiny Hemlock Gorge Reservation features a few mild hills and waterfalls. Any slopes are extremely short in this limited space. Echo Bridge stands as a particularly picturesque structure.",
+      "city":"Needham",
       "climb":"easy-to-moderate",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/hemlock-gorge-reservation.html"
    },
@@ -87,6 +99,7 @@
       "name":"Horn Pond Mountain",
       "path_name":"horn-pond",
       "description":"Skyline views and an abandoned reservoir await discovery atop Horn Pond Mountain. Originally planned as a ski resort, the Mountain retains some signs of early development. The eerily overgrown, empty reservoir draws interest. Some paved flat paths surround Horn Pond, but there are dirt paths with some significant inclines up the Mountain. Also known as Mt. Towanda, its elevation is 269 feet.",
+      "city":"Woburn",
       "climb":"moderate-to-intense",
       "web":"http://woburnmaps.com/hornpond/index.htm"
    },
@@ -94,6 +107,7 @@
       "name":"Lynn Woods Reservation",
       "path_name":"lynn-woods",
       "description":"Lynn Woods Reservation entices with scenic trails, multiple reservoirs, rose gardens, and tall tales behind cryptic sites. An old door in Dungeon Rock leads deep into the earth. The Wolf Pits' original purpose remains a mystery. The Stone Tower, on Burrell hill at 285 feet, gives access to 360 degree views of the Boston and Lynn harbor. Its extensive roads and paths are unpaved. The detailed maps available at the Pennybrook Rd entrance are recommended. It would be wise to pack snacks.",
+      "city":"Lynn",
       "climb":"moderate-to-intense",
       "web":"http://www.cityoflynn.net/citydepartments_lynnwoods.shtml"
    },
@@ -101,6 +115,7 @@
       "name":"Middlesex Fells Reservation",
       "path_name":"middlesex-fells",
       "description":"Waterfalls, rocky hills, and city views grace the trails of Middlesex Fells Reservation. Ruggedly picturesque, it offers an extensive trail network with endless hills and some steep slopes. Popular with dog owners, hikers, trail runners, and mountain bikers, its highest point is Bear Hill at 317 feet. It is recommended that you download the trail map on the website, and pack some snacks.",
+      "city":"Medford and Melrose",
       "climb":"moderate-to-intense",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-north/middlesex-fells-reservation.html"
    },
@@ -108,6 +123,7 @@
       "name":"Moose Hill Wildlife Sanctuary",
       "path_name":"moose-hill",
       "description":"With 25 miles of trails, the Mass Audubon Moose Hill Wildlife Sanctuary harbors forests, fields, and wetlands. Vernal pools teem with life in the spring time. Its inclines are mostly moderate or short in duration. However, the Summit Trail leads up to a 534-foot hill.",
+      "city":"Sharon",
       "climb":"moderate-to-intense",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/moose-hill"
    },
@@ -115,6 +131,7 @@
       "name":"Mount Auburn Cemetery",
       "path_name":"mt-auburn-cemetery",
       "description":"Bucolic Mount Auburn Cemetery preserves a sanctuary of natural solace and urban wildlife. A favorite among bird watchers, this island of green in an urban setting attracts migratory coastal birds. There are some steady hills, but many paths are paved. The Tower lies at the top of a 125 foot hill. Historically famous Mary Baker Eddy and Isabella Stewart Gardner are buried here.",
+      "city":"Cambridge",
       "climb":"easy-to-moderate",
       "web":"http://mountauburn.org/"
    },
@@ -122,6 +139,7 @@
       "name":"Drumlin Farm Wildlife Sanctuary",
       "path_name":"drumlin-farm",
       "description":"With only four miles of trails, animal exhibitions form the main attraction at Mass Audubon Drumlin Farm Wildlife Sanctuary. Displays of both domestic and wild animals entertain children and adults alike. Check out the farm stand or go for a hayride. Its paths are not intense, and its Sensory Exploration Trail is universally accessible. Its trails lead to views of the farms and the Drumlin, its eponymous 270 foot oval-shaped hill deposited by glaciers.",
+      "city":"Lincoln",
       "climb":"easy-to-moderate",
       "web":"http://www.massaudubon.org/get-outdoors/wildlife-sanctuaries/drumlin-farm"
    },
@@ -129,6 +147,7 @@
       "name":"Pine Banks Park",
       "path_name":"pine-banks",
       "description":"Pine Banks Park provides recreational fields and brief wooded trails that climb to a scenic outlook. The park's unique geology stands out, with rocky volcanic hills and an esker path. Its few hills make a moderately challenging climb. From its highest point, called Mount Ephraim, Boston is visible when the trees are bare.",
+      "city":"Malden",
       "climb":"moderate",
       "web":"http://www.pinebanks.org/"
    },
@@ -136,6 +155,7 @@
       "name":"Prospect Hill Park",
       "path_name":"prospect-hill",
       "description":"Prospect Hill Park's steep hills, vernal pools, and dense woods open up to scenic outlooks east and west.  There are trails for all levels, and paved roads throughout the park. Its highest point, Big Prospect at 485 feet, looks towards Mount Monadnock on a clear day. The Little Prospect trail, with views of Boston, is handicap accessible.",
+      "city":"Waltham",
       "climb":"intense",
       "web":"http://walthamlandtrust.org/open-space/guide-to-open-spaces/prospect-hill-park-trails"
    },
@@ -143,6 +163,7 @@
       "name":"Stony Brook Reservation",
       "path_name":"stony-brook",
       "description":"The quiet woods of Stony Brook Reservation hide ponds, wetlands, brooks, and rock-outcroppings. Paved paths give access to adventurers of all abilities, and its hills are brief and mild. Its southern area features athletic fields, a skating rink, and a pool.",
+      "city":"Boston",
       "climb":"easy",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-boston/stony-brook-reservation.html"
    },
@@ -150,6 +171,7 @@
       "name":"Great Esker Park",
       "path_name":"great-esker",
       "description":"Great Esker Park lies along the Weymouth Back River with salt water marshes, reversing falls, and six miles of trails. It is named for the winding ridge of stratified sand and gravel left behind by a glacier 12,000 years ago. Its paths can be moderately steep. During high tide, some paths are flooded.",
+      "city":"Weymouth",
       "climb":"moderate",
       "web":"http://www.south-shore-hiking-trails.com/hiking-trails-weymouth-great-esker-park.html"
    },
@@ -157,6 +179,7 @@
       "name":"Wompatuck State Park",
       "path_name":"wompatuck",
       "description":"Visitors to Wompatuck State Park enjoy 12 miles of bike trails and camping facilities. Free fresh water pours from Mt. Blue Spring. The park is mostly flat and ideal for bicycles. Abandoned railways and decommissioned military bunkers lie throughout the park. It would be a good idea to bring a snack.",
+      "city":"Cohasset",
       "climb":"flat",
       "web":"http://www.mass.gov/eea/agencies/dcr/massparks/region-south/wompatuck-state-park.html"
    },
@@ -164,6 +187,7 @@
       "name":"World's End",
       "path_name":"worlds-end",
       "description":"At World's End, the bay views on the hilly peninsula merit the fee charged to non-members. Its drumlin hills, deposited by glaciers, are moderately steep. A merry yet peaceful place, many visitors bring their dogs to enjoy the carriage paths designed by landscape architect Frederick Law Olmsted. Its highest point is 140 feet. Please see the website for current fee information.",
+      "city":"Hingham",
       "climb":"moderate",
       "web":"http://www.thetrustees.org/places-to-visit/south-shore/worlds-end.html"
    }
