@@ -63,7 +63,8 @@
             <span>Features:</span> 
               @foreach ($single_hikes_tags as $list_tag)
               <a href="/tags/{{ $list_tag->id }}">{{ $list_tag->name }}</a> <span class="glyphicon glyphicon-asterisk"></span> 
-              @endforeach
+              @endforeach <br/>
+            <span>City:</span> {{ $hike->city }}, MA
           </p>
         </div>
       </li>

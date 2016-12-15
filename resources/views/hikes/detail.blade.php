@@ -16,6 +16,7 @@
 	<div class="container">
     <div id="hike-info">
       <h1>{{ $hike->name }}</h1>
+      <h3>{{ $hike->city }}, MA</h3>
       <div class="row">
         <ul id="features">
           <li>Features:</li>
