@@ -47,8 +47,8 @@
       <p>This directions service will only work for addresses with access to public transportation in the Greater Boston area.</p>
       <form class="form-horizontal" id="form">
         <div class="form-group">
-          <label for="start" class="control-label">User address: </label>
-          <input type="text" class="form-control" id="start" name="start" placeholder="Enter your address" size="40" />
+          <label for="start" class="control-label">User location: </label>
+          <input type="text" class="form-control" id="start" name="start" placeholder="Enter your location" size="40" />
         </div>
         <div class="form-group">
           <label for="end" class="control-label">Select Hike Entrance:</label>

@@ -21,8 +21,8 @@
   <div id="find-nearest">
     <h2 class="hidden-xs visible-sm visible-md visible-lg">Find a T-Accessible Hike Near You</h2>
     <form class="form-inline">
-      <label class="sr-only" for="user">User address</label>
-      <input type="text" class="form-control" id="user" name="user" placeholder="Enter your address"/>
+      <label class="sr-only" for="user">User location</label>
+      <input type="text" class="form-control" id="user" name="user" placeholder="Enter your location"/>
       <label class="sr-only" for="radius">Desired radius</label>
       <select id="radius" class="form-control dropdownTrigger" name="radius">
         <option value="3">Within 3 miles</option>
