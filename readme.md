@@ -2,7 +2,7 @@
 
 Boston Fare Hikes is a navigational web exhibition of MBTA-accessible hikes. It is Rebecca Doris's capstone project for Fall 2016 towards completing her Master of Liberal Arts Degree in Digital Media Arts at Harvard Extension School.
 
-For updates, follow the Boston Fare Hikes blog: [http://bostonfarehikes.tumblr.com/](http://bostonfarehikes.tumblr.com/)
+For updates, follow the Boston Fare Hikes blog: [http://bostonfarehikes-blog.tumblr.com/](http://bostonfarehikes-blog.tumblr.com/)
 
 ## The Original README.md that ships with Laravel follows below!
 
